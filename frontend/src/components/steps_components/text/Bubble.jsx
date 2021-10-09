@@ -21,6 +21,7 @@ const Bubble = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   color: ${props => (props.user ? props.theme.userFontColor : props.theme.botFontColor)};
   display: inline-block;
+  white-space: pre-line;
   font-size: 16px;
   max-width: 50%;
   margin: ${props => {

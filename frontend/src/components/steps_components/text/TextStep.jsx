@@ -74,7 +74,7 @@ class TextStep extends Component {
       bubbleStyle,
     } = this.props;
     const { loading } = this.state;
-    const { avatar, user, botName, uploading } = step;
+    const { avatar, user, botName } = step;
 
     const imageAltText = user ? "Your avatar" : `${botName}'s avatar`;
 
@@ -100,13 +100,7 @@ class TextStep extends Component {
           isFirst={isFirst}
           isLast={isLast}
         >
-          {loading ? <Loading /> : 
-            (
-              this.renderMessage().split("/").length>5
-              ? <img src={this.renderMessage()} width="100%" height="100%" alt="uploaded"/>
-              : (uploading ? <img src={this.renderMessage()} width="100%" height="100%" alt="uploaded" />
-                           : this.renderMessage())
-            )}
+          {loading ? <Loading /> : this.renderMessage()}
         </Bubble>}
       </TextStepContainer>
     );

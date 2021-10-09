@@ -17,11 +17,11 @@ import {
   SubmitButton
 } from './components';
 import { ChatIcon, CloseIcon, SubmitIcon } from './icons';
-import ImageUploader from 'react-images-upload';
-import { GrImage } from "react-icons/gr";
+/* import ImageUploader from 'react-images-upload';
+import { GrImage } from "react-icons/gr"; */
 import Axios from 'axios';
 
-const UploadComponent = props => (
+/* const UploadComponent = props => (
   <form onClick = {props.onClick}>
       <ImageUploader
           buttonStyles ={{background:'rgba(141, 131, 156, 0.667)'}}
@@ -36,7 +36,7 @@ const UploadComponent = props => (
           maxFileSize={5242880}
       ></ImageUploader>
   </form>
-);
+); */
 
 class ChatBot extends Component {
   /* istanbul ignore next */
@@ -565,7 +565,6 @@ class ChatBot extends Component {
       opened,
       disabled,
       renderedSteps,
-      uploading,
     } = this.state;
     const {
       className,
@@ -643,13 +642,7 @@ class ChatBot extends Component {
           <Footer className="rsc-footer" style={footerStyle}>
               {!currentStep.hideInput && (
                 <div>
-                  <UploadComponent onImage={this.onImage} url={this.state.url} onClick = {this.onClickImg}/>
-                  {
-                    uploading && this.state.url?
-                    (
-                      <img src={this.state.url} width="8%" height="8%" alt="uploaded"/>
-                    ):(
-                      <Input
+                  <Input
                         type="textarea"
                         style={inputStyle}
                         ref={this.setInputRef}
@@ -663,8 +656,6 @@ class ChatBot extends Component {
                         invalid={inputInvalid}
                         {...inputAttributesOverride}
                       />
-                    )
-                  }
                 </div>
                 
             )}

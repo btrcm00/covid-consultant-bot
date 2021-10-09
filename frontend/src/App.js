@@ -2,33 +2,23 @@ import './App.css';
 import React, { Component } from 'react';
 import ChatBot from './components';
 import { ThemeProvider } from 'styled-components';
-import * as reply from './reply.json' ;
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      prediction: '',
-      conversation: [],
-      symptoms: {
-        'cough': 0,
-        'fever': 0,
-        'sore_throat': 0,
-        'shortness_breath': 0,
-        'headache': 0,
-        'test_indicator': 0
-      }
-    };
+    this.state ={
+      response: '',
+    }
     this.theme = {
       background: 'rgba(255, 255, 255, 1)',
       fontFamily: 'Helvetica Neue',
       'border-radius': '10px',
-      headerBgColor: 'rgba(141, 131, 156, 0.667)',
+      headerBgColor: 'rgb(70, 138, 150, 1)',
       headerFontColor: '#fff',
       headerFontSize: '25px',
       botBubbleColor: '#fff',
       botFontColor: '#4a4a4a',
-      userBubbleColor: 'rgba(141, 131, 156, 0.667)',
+      userBubbleColor: 'rgb(70, 138, 150, 0.85)',
       userFontColor: '#fff',
     };
   };
@@ -43,7 +33,7 @@ class App extends Component {
     .then((resp)=>resp.json())
     .then((respJ)=> {
       this.setState({
-        prediction:respJ.label,
+        response:respJ.label,
       }, ()=>{
         console.log(respJ.label)
 
@@ -74,20 +64,17 @@ class App extends Component {
         <header className = "App-header">
         <ThemeProvider theme = {this.theme}>
           <ChatBot
-            headerTitle = 'TMT chatbot'
-            botDelay = {5000}
+            headerTitle = 'Covid19 chatbot'
+            botDelay = {3000}
             userDelay = {1500}
-            width = {'750px'}
+            width = {'500px'}
             height = {'650px'}
+            floating = {true}
             steps = {[
               {
                 id: 'start',
                 message: () => {
-                  const {conversation} = this.state;
-                  var newcon = conversation;
-                  newcon.push('Bot: Welcome!')
-                  this.setState({conversation:newcon})
-                  return reply['Hello-Connect']
+                  return 'Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?'
                 },
                 trigger: 'user',
               },
@@ -99,9 +86,6 @@ class App extends Component {
                     return 'user'
                   }
                   this.predict(value.value)
-                  const {conversation} = this.state;
-                  var newcon = conversation;
-                  this.setState({conversation: newcon})
                   return 'bot'
                 }
               },
@@ -115,7 +99,8 @@ class App extends Component {
                 id: 'reply',
                 message: (value)=>{
                   console.log(value.steps);
-                  return 'ok nha'
+                  console.log(this.state.response)
+                  return this.state.response;
                 },
                 trigger: 'user'
               }
