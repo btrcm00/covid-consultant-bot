@@ -70,6 +70,7 @@ class App extends Component {
             width = {'500px'}
             height = {'650px'}
             floating = {true}
+            hideUserAvatar = {true}
             steps = {[
               {
                 id: 'start',

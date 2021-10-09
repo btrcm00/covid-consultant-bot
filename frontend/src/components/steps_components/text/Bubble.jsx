@@ -23,7 +23,7 @@ const Bubble = styled.div`
   display: inline-block;
   white-space: pre-line;
   font-size: 16px;
-  max-width: 50%;
+  max-width: 70%;
   margin: ${props => {
     const { isFirst, showAvatar, user } = props;
 

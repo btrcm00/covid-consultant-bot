@@ -48,6 +48,7 @@ class TextStep extends Component {
     if(message.split("/").length>2){
       return message;
     }
+    
     return message ? this.capitalizeFirstLetter(message.replace(/{previousValue}/g, previousValue)) : '';
   };
 
@@ -81,7 +82,7 @@ class TextStep extends Component {
     return (
       <TextStepContainer className={`rsc-ts ${user ? 'rsc-ts-user' : 'rsc-ts-bot'}`} user={user}>
         <ImageContainer className="rsc-ts-image-container" user={user}>
-          {this.renderMessage()!=='GypERR!sackError:Col o id nyVisualStuio nstallationtouse' && (
+          {this.renderMessage()!=='GypERR!sackError:Col o id nyVisualStuio nstallationtouse' && !user&&(
             <Image
               className="rsc-ts-image"
               style={avatarStyle}

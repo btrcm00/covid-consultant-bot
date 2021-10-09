@@ -1,6 +1,12 @@
 import regex as re
 import bogo
 from unidecode import unidecode
+import json
+import os
+
+path = os.getcwd()
+short_file = open(path+'/classifierbackend/short_word.json', encoding='utf-8')
+short_dic = json.load(short_file)
 
 bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
@@ -134,4 +140,11 @@ def text_preprocess(document):
     document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
     # remove multiple space character
     document = re.sub(r'\s+', ' ', document).strip()
-    return document
+    #replace teencode
+    out_document = []
+    for word in document.split():
+        if word in short_dic:
+            out_document.append(short_dic[word])
+        else:
+            out_document.append(word)
+    return ' '.join(out_document)
