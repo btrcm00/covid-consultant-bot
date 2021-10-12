@@ -1,8 +1,30 @@
 {
-    "symptom": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan\nCác triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái\nTriệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực",
-    "current_numbers" : "Anh/Chị có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/ hoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
+    "Request": {
+        "symptom_infor": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan\nCác triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái\nTriệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực",
 
-    "covid_infor":"COVID-19 là một căn bệnh nguy hiểm gây ra bởi một chủng vi-rút được phát hiện vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc. Chủng vi-rút này rất dễ gây truyền nhiễm và nhanh chóng lây lan ra khắp thế giới.\nCOVID-19 thường gây ra các triệu chứng hô hấp giống như cảm lạnh, cúm hoặc, viêm phổi, nhưng COVID-19 còn có thể gây hại tới các bộ phận khác trên cơ thể.\n\t-Hầu hết những người mắc COVID-19 đều có các triệu chứng nhẹ, nhưng một số người có xu hướng mắc bệnh nặng hơn.\n\t-Những người cao tuổi hoặc người có các bệnh lý nền nhất định có nguy cơ cao mắc bệnh nghiêm trọng do COVID-19.\n\t-Hàng nghìn người đã tử vong do COVID-19 tại Hoa Kỳ.\n\t-Vắc-xin ngừa COVID-19 là an toàn và hiệu quả.",
+        "symptom_have": "triệu chứng gì á",
+
+        "current_numbers" : "Anh/Chị có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/ hoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
+
+        "covid_infor":"COVID-19 là một căn bệnh nguy hiểm gây ra bởi một chủng vi-rút được phát hiện vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc. Chủng vi-rút này rất dễ gây truyền nhiễm và nhanh chóng lây lan ra khắp thế giới.\nCOVID-19 thường gây ra các triệu chứng hô hấp giống như cảm lạnh, cúm hoặc, viêm phổi, nhưng COVID-19 còn có thể gây hại tới các bộ phận khác trên cơ thể.\n\t-Hầu hết những người mắc COVID-19 đều có các triệu chứng nhẹ, nhưng một số người có xu hướng mắc bệnh nặng hơn.\n\t-Những người cao tuổi hoặc người có các bệnh lý nền nhất định có nguy cơ cao mắc bệnh nghiêm trọng do COVID-19.\n\t-Hàng nghìn người đã tử vong do COVID-19 tại Hoa Kỳ.\n\t-Vắc-xin ngừa COVID-19 là an toàn và hiệu quả.",
+
+
+        "how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
+
+        "precautions":"Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
+
+        "medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
+
+        "emergency_contact": {
+            "common":
+                ["Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn đối với trường hợp khẩn cấp, liên hệ ngay với tổng đài 115\nHoặc bạn có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở nhen.", "Bạn muốn liên hệ trạm y tế hay trạm y tế lưu động ạ?"],
+            "tophanungnhanh": "Bạn ở quận mấy vậy ạ?",
+            "tramyte": "Bạn ở quận mấy vậy ạ",
+            "tramyteluudong": "Bạn ở quận mấy vậy ạ"
+        },
+
+        "vacxin": "Sau tiêm vắc xin, tùy vào đáp ứng cơ thể của mỗi người mà có những tác dụng phụ khác nhau, có thể xuất hiện từ vài ngày đến 1 tuần. Người dân tự theo dõi triệu chứng trong vòng 28 ngày đặc biệt là 7 ngày đầu.\nSau tiêm vắc xin, người dân lưu ý:\n-Ăn uống đầy đủ, bổ sung vitamin, không uống rượu bia trong 3 ngày đầu sau tiêm.\n-Nếu có triệu chứng đau chỗ tiêm, tiếp tục theo dõi. Nếu chỗ tiêm sưng to và nhanh thì đi khám ngay. Không bôi, chườm, đắp bất cứ thứ gì vào chỗ sưng, đau.\n-Luôn có người hỗ trợ bên cạnh 24/24 giờ ít tnhất trong 3 ngày đầu."
+    },
 
     "Hello":"Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
 
@@ -10,13 +32,5 @@
 
     "Other":"Mình chưa hiểu câu hỏi của bạn :(( bạn vui lòng ghi rõ dấu tiếng Việt giúp mình nhen",
 
-    "how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
-
-    "precautions":"Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
-
-    "medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
-
-    "emergency_contact": "1. Kết nối với tổ phản ứng nhanh tại nơi cư trú\n2. Để giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4\n3. Trạm y tế lưu động\n4. Trạm y tế, trung tâm y tế\n5. Đối với trường hợp khẩn cấp, liên hệ ngay với tổng đài 115",
-
-    "vacxin": "Sau tiêm vắc xin, tùy vào đáp ứng cơ thể của mỗi người mà có những tác dụng phụ khác nhau, có thể xuất hiện từ vài ngày đến 1 tuần. Người dân tự theo dõi triệu chứng trong vòng 28 ngày đặc biệt là 7 ngày đầu.\nSau tiêm vắc xin, người dân lưu ý:\n-Ăn uống đầy đủ, bổ sung vitamin, không uống rượu bia trong 3 ngày đầu sau tiêm.\n-Nếu có triệu chứng đau chỗ tiêm, tiếp tục theo dõi. Nếu chỗ tiêm sưng to và nhanh thì đi khám ngay. Không bôi, chườm, đắp bất cứ thứ gì vào chỗ sưng, đau.\n-Luôn có người hỗ trợ bên cạnh 24/24 giờ ít tnhất trong 3 ngày đầu."
+    "Done": "Dạ cảm ơn bạn nhìu ạ."
 }

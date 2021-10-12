@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      response: '',
+      response: 'Hệ thống đang gặp sự cố, bạn vui lòng chờ vài phút nhe',
     }
     this.theme = {
       background: 'rgba(255, 255, 255, 1)',
@@ -36,9 +36,13 @@ class App extends Component {
         response:respJ.label,
       }, ()=>{
         console.log(respJ.label)
-
       })
-    });
+    })
+    .catch(()=>{
+      this.setState({
+        response: 'Hệ thống đang gặp sự cố, bạn vui lòng chờ vài phút nhe',
+      })
+    })
   };
 
   async conversationUpdate(conv){
@@ -101,9 +105,39 @@ class App extends Component {
                 message: (value)=>{
                   console.log(value.steps);
                   console.log(this.state.response)
+                  if (Array.isArray(this.state.response)){
+                      return this.state.response[0]
+                  }
                   return this.state.response;
                 },
-                trigger: 'user'
+                trigger: ()=>{
+                  if (Array.isArray(this.state.response) && (this.state.response).length >=2){
+                      return 'reply1'
+                  }
+                  return 'user'
+                }
+              },
+              {
+                id: 'reply1',
+                message: (value)=>{
+                  console.log(this.state.response[1])
+                  return this.state.response[1];
+                },
+                trigger: ()=>{
+                  if (Array.isArray(this.state.response) && (this.state.response).length >=3){
+                    return 'reply2'
+                  }
+                  return 'user'
+                }
+              },
+              {
+                id: 'reply2',
+                message: (value)=>{
+                  return this.state.response[2];
+                },
+                trigger: ()=>{
+                  return 'user'
+                }
               }
             ]}
           />
