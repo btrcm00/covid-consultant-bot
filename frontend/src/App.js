@@ -69,7 +69,7 @@ class App extends Component {
         <ThemeProvider theme = {this.theme}>
           <ChatBot
             headerTitle = 'Covid19 chatbot'
-            botDelay = {3000}
+            botDelay = {2000}
             userDelay = {1500}
             width = {'500px'}
             height = {'650px'}
@@ -98,6 +98,12 @@ class App extends Component {
                 // this step to wait to states updated
                 id: 'bot',
                 message: 'gypERR!sackError:Col o id nyVisualStuio nstallationtouse',
+                trigger: 'bot1'
+              },
+              {
+                // this step to wait to states updated
+                id: 'bot1',
+                message: 'gypERR!sackError:Col o id nyVisualStuio nstallationtouse',
                 trigger: 'reply'
               },
               {
@@ -106,8 +112,10 @@ class App extends Component {
                   console.log(value.steps);
                   console.log(this.state.response)
                   if (Array.isArray(this.state.response)){
+                    console.log(this.state.response[0])
                       return this.state.response[0]
                   }
+                  console.log(this.state.response[0])
                   return this.state.response;
                 },
                 trigger: ()=>{

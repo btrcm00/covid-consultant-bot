@@ -50,6 +50,31 @@
         "cu-chi": "https://hcdc.vn/public/img/02bf8460bf0d6384849ca010eda38cf8e9dbc4c7/images/mod1/images/danh-sach-so-dien-thoai-duong-day-nong-cua-cac-trung-tam-y-te/files/hCC.jpg",
         "hoc-mon": "https://hcdc.vn/public/img/02bf8460bf0d6384849ca010eda38cf8e9dbc4c7/images/mod1/images/hotline-tram-y-te-luu-dong-tai-tp-hcm/files/hHM(1).png",
         "nha-be": "https://hcdc.vn/public/img/02bf8460bf0d6384849ca010eda38cf8e9dbc4c7/images/mod1/images/hotline-tram-y-te-luu-dong-tai-tp-hcm/files/hNBa.png"
+    },
+    "to-phan-ung-nhanh":{
+        "1": "https://hcdc.vn/public/img/da39a3ee5e6b4b0d3255bfef95601890afd80709/images/mod1/images/danh-sach-to-phan-ung-nhanh-quanhuyen/files/q1-.pdf",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "binh-tan": "",
+        "binh-thanh": "",
+        "go-vap": "",
+        "phu-nhuan": "",
+        "tan-binh": "",
+        "tan-phu": "",
+        "thu-duc": "",
+        "binh-chanh": "",
+        "can-gio": "",
+        "cu-chi": "",
+        "hoc-mon": "",
+        "nha-be": ""
     }
-
 }

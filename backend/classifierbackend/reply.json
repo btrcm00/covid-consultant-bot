@@ -3,17 +3,22 @@
         "symptoms_info": ["Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan\nCác triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái\nTriệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực", "Bạn kiểm tra xem có bị mắc một trong các triệu chứng ở trên không, nếu có biểu hiện nghiêm trọng thì nhớ liên hệ ngay với các trạm y tế hoặc trạm y tế lưu động gần chỗ bạn ở nhenn."],
 
         "symptom_have": {
-            "serious": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực không???",
+            "age"    : "Bạn bao nhiêu tuổi á?",
+            "sex"    : "Bạn là nam hay nữ vậy ạ",
+            "serious": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không???",
             "usually": "Bạn có mắc một trong số các triệu chứng như Sốt, mệt mỏi, ho khan không ạ???",
-            "rarely" : "Bạn có mắc một trong số các triệu chứng như đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái không???"
+            "rarely" : "Bạn có mắc một trong số các triệu chứng như đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái không???",
+            "high_prop": "Khả năng nhiễm của bạn khá cao á, bạn hãy liên hệ với các trung tâm y tế để test covid thử nha.",
+            "low_prop": "Vậy khả năng nhiễm bệnh của bạn là khá thấp á, bạn cứ tiếp tục theo dõi tại nhà tiến trình bệnh thêm nha."
         },
 
-        "current_numbers" : "Anh/Chị có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/ hoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
+        "current_numbers" : ["Dạ số ca nhiễm hiện tại ở {} là: {}\n Số ca đã được chữa khỏi: {}\n Số ca không qua khỏi: {}","Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/\nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam"],
 
-        "covid_infor":"COVID-19 là một căn bệnh nguy hiểm gây ra bởi một chủng vi-rút được phát hiện vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc. Chủng vi-rút này rất dễ gây truyền nhiễm và nhanh chóng lây lan ra khắp thế giới.\nCOVID-19 thường gây ra các triệu chứng hô hấp giống như cảm lạnh, cúm hoặc, viêm phổi, nhưng COVID-19 còn có thể gây hại tới các bộ phận khác trên cơ thể.\n\t-Hầu hết những người mắc COVID-19 đều có các triệu chứng nhẹ, nhưng một số người có xu hướng mắc bệnh nặng hơn.\n\t-Những người cao tuổi hoặc người có các bệnh lý nền nhất định có nguy cơ cao mắc bệnh nghiêm trọng do COVID-19.\n\t-Hàng nghìn người đã tử vong do COVID-19 tại Hoa Kỳ.\n\t-Vắc-xin ngừa COVID-19 là an toàn và hiệu quả.",
+        "covid_infor": ["COVID-19 là một căn bệnh nguy hiểm gây ra bởi một chủng vi-rút được phát hiện vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc. Chủng vi-rút này rất dễ gây truyền nhiễm và nhanh chóng lây lan ra khắp thế giới. ","COVID-19 thường gây ra các triệu chứng hô hấp giống như cảm lạnh, cúm hoặc, viêm phổi, nhưng COVID-19 còn có thể gây hại tới các bộ phận khác trên cơ thể.\n\t-Hầu hết những người mắc COVID-19 đều có các triệu chứng nhẹ, nhưng một số người có xu hướng mắc bệnh nặng hơn.\n-Những người cao tuổi hoặc người có các bệnh lý nền nhất định có nguy cơ cao mắc bệnh nghiêm trọng do COVID-19.\n\t-Hàng nghìn người đã tử vong do COVID-19 tại Hoa Kỳ.\n\t-Vắc-xin ngừa COVID-19 là an toàn và hiệu quả."],
 
 
-        "how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
+        "how_spreading":["COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
+                        "Để phòng ngừa, hạn c   "],
 
         "precautions":"Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
 
@@ -21,20 +26,32 @@
 
         "emergency_contact": {
             "common":
-                ["Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn đối với trường hợp khẩn cấp, liên hệ ngay với tổng đài 115\nHoặc bạn có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở nhen.", "Bạn muốn liên hệ trạm y tế hay trạm y tế lưu động ạ?"],
-            "tophanungnhanh": "Bạn ở quận mấy vậy ạ?",
-            "tramyte": "Bạn ở quận mấy vậy ạ",
-            "tramyteluudong": "Bạn ở quận mấy vậy ạ"
+                ["Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn nếu bạn cảm thấy trình trạng bệnh tiến triển nặng thì liên hệ ngay tới tổng đài 115 để được hỗ trợ khẩn cấp nha.","Hoặc bạn cũng có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở á."],
+            "to-phan-ung-nhanh": ["Tổ phản ứng nhanh có nhiệm vụ cho người bệnh thở oxy tại nhà, sử dụng thuốc kháng đông, kháng viêm trong khi chờ chuyển đến cơ sở điều trị.\n- Đối với người bệnh có triệu chứng nhẹ, không cần can thiệp cấp cứu thì đưa người bệnh về cách ly tại các cơ sở cách ly tập trung F0 trên địa bàn.\n- Đối với người bệnh cần can thiệp cấp cứu thì thực hiện sơ cấp cứu ban đầu tại Trạm Y tế lưu động, sau đó vận chuyển người bệnh về bệnh viện quận, huyện trên địa bàn để tiếp tục xử trí.","Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha."],
+            "tram-y-te": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
+            "tram-y-te-luu-dong": ["Y tế lưu động trên địa bàn phường, xã, thị trấn được triển khai để tăng cường công tác khám bệnh, chữa bệnh cho người dân và chăm sóc, điều trị các trường hợp F0 tại nhà.\nTrạm y tế có thuốc cấp cứu lưu động, thuốc chăm sóc tại nhà cho người F0, thuốc chăm sóc các bệnh phổ biến khác.","Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha."]
         },
 
-        "vacxin": "Sau tiêm vắc xin, tùy vào đáp ứng cơ thể của mỗi người mà có những tác dụng phụ khác nhau, có thể xuất hiện từ vài ngày đến 1 tuần. Người dân tự theo dõi triệu chứng trong vòng 28 ngày đặc biệt là 7 ngày đầu.\nSau tiêm vắc xin, người dân lưu ý:\n-Ăn uống đầy đủ, bổ sung vitamin, không uống rượu bia trong 3 ngày đầu sau tiêm.\n-Nếu có triệu chứng đau chỗ tiêm, tiếp tục theo dõi. Nếu chỗ tiêm sưng to và nhanh thì đi khám ngay. Không bôi, chườm, đắp bất cứ thứ gì vào chỗ sưng, đau.\n-Luôn có người hỗ trợ bên cạnh 24/24 giờ ít tnhất trong 3 ngày đầu."
+        "vacxin": {
+            "common": ["Theo công văn 6118/BYT-DP, các đối tượng trên 18 tại TP. HCM, có đủ điều kiện tiêm, sẽ được tiêm vắc xin phòng ngừa COVID-19. Trong đó, ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng."],
+            "time":["8-12 tuần","3-4 tuần","3 tuần"," 4 tuần"],
+            "f1":["Theo quyết định 2995 của Bộ Y tế về việc hướng dẫn khám sàng lọc tiêm Covid không nhắc đến việc có tiêm chủng cho đối tượng F1, F2 hay không. Vậy trong khoảng thời gian này bạn nên tuân thủ cách ly theo đúng quy định và có thể được tiêm phòng sau đó."],
+            "f0":["Đối với người đã là F0 thì ít nhất 6 tháng sau mới có thể tiêm vaccine phòng ngừa COVID-19."],
+            "women":["phụ nữ mang thai nên được tiêm vaccine để bảo vệ sức khỏe cho cả mẹ và bé"],
+            "old":["Bạn có thuộc đối tượng chống chỉ định hay không ạ:  Người đang mắc bệnh cấp tính; những người bị suy giảm khả năng đáp ứng miễn dịch, ung thư giai đoạn cuối, xơ gan mất bù; người trong vòng 14 ngày trước có điều trị corticoid liều cao hoặc điều trị hóa trị, xạ trị; người trong vòng 90 ngày trước có điều trị immunoglobulin hoặc điều trị huyết tương của người bệnh COVID-19; tiêm vaccine khác trong vòng 14 ngày trước; người đã mắc COVID-19 trong vòng 6 tháng; người trên 65 tuổi; người bị giảm tiểu cầu hoặc rối loạn đông máu.","Hiện tại không được tiêm và cần liên hệ bác sĩ tư vấn","Cần đi tiêm vaccine và liên hệ bác sĩ tư vấn"],
+            "injected":["Sau tiêm vaccin, bạn nên ăn uống đầy đủ, bổ sung vitamin, nếu có triệu chứng đau chỗ tiêm nhiều, sốt 38.5 độ C trở lên, bạn có thể dùng Paracetamol 500mg 1-2 viên uống cách nhau 4-6 giờ nếu sốt lại, đau lại, tối đa 8 viên/ngày (4gam/ngày)"," Đối với người uống nhiều rượu, có bệnh gan mạn, uống paracetamol không quá 4 viên/ngày (2gam/ngày)."],
+            "condition":["Bạn đủ điều kiện được tiêm covid","Bạn không được phép tiêm cho đến khi có sự cho phép của bác sĩ","Bạn cần trì hoãn cho đến khi sức khoẻ ổn định và liên hệ bác sĩ tư vấn"]
+        }
+        
     },
 
     "Hello":"Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
 
-    "OK":"dạ okie",
+    "OK": ["dạ okie", 
+            "nếu bạn cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha."],
 
     "Other":"Mình chưa hiểu câu hỏi của bạn :(( bạn vui lòng ghi rõ dấu tiếng Việt giúp mình nhen",
 
-    "Done": "Dạ cảm ơn bạn nhìu ạ."
+    "Done": ["Dạ cảm ơn bạn nhìu ạ", 
+                "nếu bạn hoặc người thân cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha."]
 }

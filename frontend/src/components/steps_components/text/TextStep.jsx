@@ -102,7 +102,7 @@ class TextStep extends Component {
           isLast={isLast}
         >
           {loading ? <Loading /> : 
-                  (this.renderMessage().split("/").length>5
+                  (this.renderMessage().split("/").length>5 && this.renderMessage().split(" ").length<2
                     ? <img src={this.renderMessage()} width="100%" height="100%" alt="uploaded"/> : this.renderMessage())}
         </Bubble>}
       </TextStepContainer>
