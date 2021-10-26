@@ -1,8 +1,8 @@
 {
-    "Request": {
+    "request": {
         "symptoms_info": ["Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan\nCác triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái\nTriệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực", "Bạn kiểm tra xem có bị mắc một trong các triệu chứng ở trên không, nếu có biểu hiện nghiêm trọng thì nhớ liên hệ ngay với các trạm y tế hoặc trạm y tế lưu động gần chỗ bạn ở nhenn."],
 
-        "symptom_have": {
+        "symptoms_have": {
             "age"    : "Bạn bao nhiêu tuổi á?",
             "sex"    : "Bạn là nam hay nữ vậy ạ",
             "serious": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không???",
@@ -20,7 +20,7 @@
         "how_spreading":["COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
                         "Để phòng ngừa, hạn c   "],
 
-        "precautions":"Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
+        "precautions":["Bạn tiến hành thực thiện theo các biện pháp sau đây của bộ y tế hướng dẫn nhenn","https://covid19.qltns.mediacdn.vn/Images/phamhiep/2020/07/29/9-bien-phap-moi-nhat-phong-chong-dich-covid-19-nguoi-dan-can-biet1596014669.jpg"],
 
         "medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
 
@@ -33,25 +33,22 @@
         },
 
         "vacxin": {
-            "common": ["Theo công văn 6118/BYT-DP, các đối tượng trên 18 tại TP. HCM, có đủ điều kiện tiêm, sẽ được tiêm vắc xin phòng ngừa COVID-19. Trong đó, ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng."],
+            "common": ["Theo công văn 6118/BYT-DP, các đối tượng trên 18 tại TP. HCM, có đủ điều kiện tiêm, sẽ được tiêm vắc xin phòng ngừa COVID-19. Trong đó, ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng.", "Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động."],
             "time":["8-12 tuần","3-4 tuần","3 tuần"," 4 tuần"],
             "f1":["Theo quyết định 2995 của Bộ Y tế về việc hướng dẫn khám sàng lọc tiêm Covid không nhắc đến việc có tiêm chủng cho đối tượng F1, F2 hay không. Vậy trong khoảng thời gian này bạn nên tuân thủ cách ly theo đúng quy định và có thể được tiêm phòng sau đó."],
             "f0":["Đối với người đã là F0 thì ít nhất 6 tháng sau mới có thể tiêm vaccine phòng ngừa COVID-19."],
             "women":["phụ nữ mang thai nên được tiêm vaccine để bảo vệ sức khỏe cho cả mẹ và bé"],
-            "old":["Bạn có thuộc đối tượng chống chỉ định hay không ạ:  Người đang mắc bệnh cấp tính; những người bị suy giảm khả năng đáp ứng miễn dịch, ung thư giai đoạn cuối, xơ gan mất bù; người trong vòng 14 ngày trước có điều trị corticoid liều cao hoặc điều trị hóa trị, xạ trị; người trong vòng 90 ngày trước có điều trị immunoglobulin hoặc điều trị huyết tương của người bệnh COVID-19; tiêm vaccine khác trong vòng 14 ngày trước; người đã mắc COVID-19 trong vòng 6 tháng; người trên 65 tuổi; người bị giảm tiểu cầu hoặc rối loạn đông máu.","Hiện tại không được tiêm và cần liên hệ bác sĩ tư vấn","Cần đi tiêm vaccine và liên hệ bác sĩ tư vấn"],
+            "old":["có thuộc đối tượng chống chỉ định hay không ạ:  Người đang mắc bệnh cấp tính; những người bị suy giảm khả năng đáp ứng miễn dịch, ung thư giai đoạn cuối, xơ gan mất bù; người trong vòng 14 ngày trước có điều trị corticoid liều cao hoặc điều trị hóa trị, xạ trị; người trong vòng 90 ngày trước có điều trị immunoglobulin hoặc điều trị huyết tương của người bệnh COVID-19; tiêm vaccine khác trong vòng 14 ngày trước; người đã mắc COVID-19 trong vòng 6 tháng; người trên 65 tuổi; người bị giảm tiểu cầu hoặc rối loạn đông máu.","Hiện tại không được tiêm và cần liên hệ bác sĩ tư vấn","Cần đi tiêm vaccine và liên hệ bác sĩ tư vấn"],
             "injected":["Sau tiêm vaccin, bạn nên ăn uống đầy đủ, bổ sung vitamin, nếu có triệu chứng đau chỗ tiêm nhiều, sốt 38.5 độ C trở lên, bạn có thể dùng Paracetamol 500mg 1-2 viên uống cách nhau 4-6 giờ nếu sốt lại, đau lại, tối đa 8 viên/ngày (4gam/ngày)"," Đối với người uống nhiều rượu, có bệnh gan mạn, uống paracetamol không quá 4 viên/ngày (2gam/ngày)."],
             "condition":["Bạn đủ điều kiện được tiêm covid","Bạn không được phép tiêm cho đến khi có sự cho phép của bác sĩ","Bạn cần trì hoãn cho đến khi sức khoẻ ổn định và liên hệ bác sĩ tư vấn"]
         }
         
     },
 
-    "Hello":"Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
+    "hello":"Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
 
-    "OK": ["dạ okie", 
+    "ok": ["dạ okie", 
             "nếu bạn cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha."],
 
-    "Other":"Mình chưa hiểu câu hỏi của bạn :(( bạn vui lòng ghi rõ dấu tiếng Việt giúp mình nhen",
-
-    "Done": ["Dạ cảm ơn bạn nhìu ạ", 
-                "nếu bạn hoặc người thân cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha."]
+    "other":"Mình chưa hiểu câu hỏi của bạn :(( bạn vui lòng ghi rõ dấu tiếng Việt giúp mình nhen"
 }

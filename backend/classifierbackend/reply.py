@@ -73,7 +73,7 @@ def symptom(text, intent = 'Request'):
             if ele in severity:
                 severity[ele] = 1
 
-    if intent == 'OK':
+    if intent == 'ok':
         print(pre_intent)
         if pre_intent == 'age':
             severity['age'] = re.findall(r'(\d+)', text)[0]
@@ -92,13 +92,13 @@ def symptom(text, intent = 'Request'):
 
     if any([severity[ele]=="" for ele in severity]):
         pre_intent = [i for i in severity if severity[i]==""][0]
-        return reply_dic['Request']['symptom_have'][pre_intent]
+        return reply_dic['request']['symptoms_have'][pre_intent]
     
     pre_intent == 'Done-Symptom'
     if severity['serious']==1 or all([severity[ele] for ele in severity if ele != 'serious']):
-        return reply_dic['Request']['symptom_have']['high_prop']
+        return reply_dic['request']['symptoms_have']['high_prop']
     
-    return reply_dic['Request']['symptom_have']['low_prop']
+    return reply_dic['request']['symptoms_have']['low_prop']
 
 def common_information(text):
     pass
@@ -110,12 +110,12 @@ def medication(text):
     pass
 
 ques={"time":["lâu","giãn","2","hai","gian","atras","sino","pfizer",'mode'],
-    "f1":["f1"],
-    "f0":["f0"],
-    "women":["thai"],
-    "old":["già"],
-    "injected":["xong","về"],
-    "condition":["nhiêu","điều","đang dùng","nền"]
+        "f1":["f1"],
+        "f0":["f0"],
+        "women":["thai"],
+        "old":["già"],
+        "injected":["xong","về"],
+        "condition":["nhiêu","điều","đang dùng","nền"]
     }
 def timevaccine(cus,intent):
     global check
@@ -126,12 +126,12 @@ def timevaccine(cus,intent):
         for ele2 in cus.split():
             for x in  vaccine:
                 if ele2.lower() in x:
-                    return reply_dic['Request']['vacxin']['time'][num]
+                    return reply_dic['request']['vacxin']['time'][num]
                     break
                 num=num+1
             num=0
         check='time_next'
-        return "cho hỏi bạn đã tiêm vacxin loại nào"
+        return "Bạn muốn hỏi về vacxin loại nào ạ?"
         
     if check=='time_next':
         for x in vaccine:
@@ -139,54 +139,54 @@ def timevaccine(cus,intent):
                 break
             num=num+1
         
-    return reply_dic['Request']['vacxin']['time'][num]
+    return reply_dic['request']['vacxin']['time'][num]
 
 def womenn(cus,intent):
     global check
     if check=="women":
         check="women_next"
-        return "Phụ nữ "+reply_dic['Request']['vacxin']['old'][0]
+        return "Phụ nữ "+reply_dic['request']['vacxin']['old'][0]
     if check=="women_next":
-        if intent=="Ok":
-            return reply_dic['Request']['vacxin']['old'][1]
+        if intent=="ok":
+            return reply_dic['request']['vacxin']['old'][1]
         else:
-            return reply_dic['Request']['vacxin']['women'][0]
+            return reply_dic['request']['vacxin']['women'][0]
 
 def oldd(cus,intent):
     global check
     if check=="old":
         check="old_next"
-        return "Người già " +reply_dic['Request']['vacxin']['old'][0]
+        return "Người già " +reply_dic['request']['vacxin']['old'][0]
     if check=="old_next":
-        if intent=="Ok":
-            return reply_dic['Request']['vacxin']['old'][1]
+        if intent=="ok":
+            return reply_dic['request']['vacxin']['old'][1]
         else:
-            return reply_dic['Request']['vacxin']['old'][2]
+            return reply_dic['request']['vacxin']['old'][2]
 def injecc(cus,intent):
     global check
     if check=="injected":
         check="injected_next"
         return "Bạn có hay uống rượu bia hay có tiền sử bệnh gan không ạ"
     if check=="injected_next":
-        if intent=='Ok':
-            return reply_dic['Request']['vacxin']['injected'][1] 
+        if intent=='ok':
+            return reply_dic['request']['vacxin']['injected'][1] 
         else:
-            return reply_dic['Request']['vacxin']['injected'][0]
+            return reply_dic['request']['vacxin']['injected'][0]
 def condition(cus,intent):
     global check
     if check=="condition":
         check="condition_next1"
-        return "Bạn "+ reply_dic['Request']['vacxin']['old'][0]
+        return "Bạn "+ reply_dic['request']['vacxin']['old'][0]
     if check=="condition_next1":
-        if intent=='Ok':
-            return reply_dic['Request']['vacxin']['condition'][1]
+        if intent=='ok':
+            return reply_dic['request']['vacxin']['condition'][1]
         check="condition_next2"
         return "Bạn có bị bệnh mãn tính hay dị ứng gì không ạ"
     if check=="condition_next2":
-        if intent=='Ok':
-            return reply_dic['Request']['vacxin']['condition'][2]
+        if intent=='ok':
+            return reply_dic['request']['vacxin']['condition'][2]
         else:
-            return reply_dic['Request']['vacxin']['condition'][0]
+            return reply_dic['request']['vacxin']['condition'][0]
 def vaccine(cus,intent):
     global check
     for ele in ques:
@@ -196,25 +196,24 @@ def vaccine(cus,intent):
     
     if check=='f1':
         #return
-        return reply_dic['Request']['vacxin']['f1'][0]
+        return reply_dic['request']['vacxin']['f1'][0]
     elif check=='f0':
         #return
-        return reply_dic['Request']['vacxin']['f0'][0] 
+        return reply_dic['request']['vacxin']['f0'][0] 
     elif check=='old'or check=='old_next':
         #return
         return oldd(cus,intent)
         
     elif check=='women'or check=='women_next':
-        #return
         return womenn(cus,intent)
     elif check=='time' or check=='time_next':
-        return timevaccine(cus)
+        return timevaccine(cus, intent)
     elif check=="injected" or check=="injected_next":
         return injecc(cus,intent)
     elif check=="condition" or check=="condition_next1"  or check=="condition_next2":
         return condition(cus,intent)
     else:
-        return reply_dic['Request']['vacxin']['common']
+        return reply_dic['request']['vacxin']['common']
 
 def emergency_contact(text):
     #----------------------------------------------#
@@ -248,10 +247,10 @@ def emergency_contact(text):
         state["emergency_contact"]["location"] = location[0]
 
     if len(contact)==0 and state["emergency_contact"]["who"] =="":
-        reply = reply_dic["Request"]["emergency_contact"]["common"]
+        reply = reply_dic["request"]["emergency_contact"]["common"]
     elif len(location)==0:
         state["emergency_contact"]["who"] = contact[0]
-        reply = reply_dic['Request']['emergency_contact'][who_contact]
+        reply = reply_dic['request']['emergency_contact'][who_contact]
     else:   
         print(['-'.join(unidecode(location[0]).split())])
         print(who_contact)
@@ -284,37 +283,39 @@ def current_numbers(text):
             loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
             recovered = 0
 
-    res = reply_dic['Request']['current_numbers']
+    res = reply_dic['request']['current_numbers']
     return [res[0].format(loc, infected, recovered, died), res[1]]
 
 def reply(text):
-    #intent: ['current_numbers''symptom''covid_infor''Hello''OK''Other''how_spreading''precautions''medication''emergency_contact']
+    #intent: ['current_numbers''symptom''covid_infor''Hello''ok''Other''how_spreading''precautions''medication''emergency_contact']
     #intent cho câu của bệnh nhân
     intent = model_intent.predict(tfidf_intent.transform([text]))[0]
     #intent sử dụng cho Request
     intent_request = model_svm.predict(tfidf_svm.transform([text]))[0]
     global state_conversation
+    global check
     global pre_intent
     print(intent, intent_request)
     
     response = ""
 
     #Nếu bệnh nhân request intent nào thì chuyển state hội thoại sang hướng đó
-    if intent in ['Request', 'Inform']:
+    if intent in ['request', 'inform']:
         state_conversation = intent_request
-    elif intent == 'OK':
-        if state_conversation == 'symptom_have' and not pre_intent == 'Done-Symptom':
+    elif intent == 'ok':
+        if state_conversation == 'symptoms_have' and not pre_intent == 'Done-Symptom':
             return symptom(text, intent)
         elif state_conversation == 'emergency_contact' and not pre_intent == 'Done-contact':
             return emergency_contact(text)
+        print(check)
 
-    if intent in ['Request', 'Inform']:
+    if intent in ['request', 'inform']:
         if state_conversation == 'emergency_contact':
             response = emergency_contact(text)
-        elif state_conversation == 'symptom_have':
+        elif state_conversation == 'symptoms_have':
             response = symptom(text)
         elif state_conversation == 'precautions':
-            pass
+            response = reply_dic["request"][state_conversation]
         elif state_conversation == 'medication':
             pass
         elif state_conversation == 'vacxin':
@@ -322,7 +323,7 @@ def reply(text):
         elif state_conversation == 'current_numbers':
             response = current_numbers(text)
         else:
-            return reply_dic["Request"][state_conversation]
+            return reply_dic["request"][state_conversation]
     else:
         response = reply_dic[intent]
     print(response)
