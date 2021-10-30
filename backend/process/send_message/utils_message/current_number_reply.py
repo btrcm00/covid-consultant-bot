@@ -1,9 +1,8 @@
 import urllib.request, json 
 import regex as re
 from backend.config.constant import province_lst
-from backend.config.constant import reply_text
 
-def current_numbers_rep(text):
+def current_numbers_rep(text, reply_text):
     #----------------------------------------------#
     # - Bắt địa chỉ trong câu của bệnh nhân (tỉnh thành)
     # - Nếu bắt được thì sẽ reply theo tỉnh thành đó

@@ -16,7 +16,7 @@ class PretrainedModel:
             cls._instance = super(PretrainedModel, cls).__new__(cls, *args, **kwargs)
             
             # 1. Load response data trong send-message
-            json_data = open(cfg['models_chatbot']['response_data'], 'rb')
+            json_data = open(cfg['response_data'], 'rb')
             cls.reply_text = json.loads(json_data.read())
 
             # 2. Model load text

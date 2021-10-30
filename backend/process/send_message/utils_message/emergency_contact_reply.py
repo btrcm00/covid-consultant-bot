@@ -1,8 +1,8 @@
-from backend.config.constant import reply_text, contact_emergency, district_reg, MAP_TO_DISTRICT_HCM
+from backend.config.constant import contact_emergency, district_reg, MAP_TO_DISTRICT_HCM
 import regex as re
 from unidecode import unidecode
 
-def emergency_contact_rep(text, pre_intent):
+def emergency_contact_rep(text, reply_text, last_infor):
     #----------------------------------------------#
     # Kịch bản:
     # - Khi khách hàng request liên lạc với các trung tâm y tế, ...

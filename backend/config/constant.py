@@ -15,7 +15,7 @@ CODE_RETURN = [
     'inform_medication', 'inform_common_contact', 'inform_tophanungnhanh','inform_tramyte',
     'inform_common_vaccine', 'inform_time_vaccine', 'inform_f1_vaccine','inform_f0_vaccine',
     'inform_women_vaccine','inform_old_vaccine','inform_injected_vaccine','inform_condition_vaccine',
-    'hello','other','ok'
+    'hello','other','ok','req'
 ]
 
 district_reg = r'qu[âậa]n*\s*([1-9]+|b[i|ì]nh\s*th[a|ạ]nh|t[a|â]n\s*ph[u|ú]|b[i|ì]nh\s*t[a|â]n|b[i|ì]nh\s*ch[a|á]nh|nh[a|à]\s*b[e|è]|g[o|ò]\s*v[a|á|ấ|â]p|ph[u|ú]\s*nhu[a|ạ|â|ậ]n|t[a|â]n\s*b[i|ì][|n]h|th[u|ủ]\s[d|đ][u|ú|ư|ứ]c|c[a|à|ầ|â]n\s*gi[o|ơ|ờ]|c[u|ủ]\schi|h[o|ó]c\s*m[o|ô]n)'

@@ -1,5 +1,3 @@
-from backend.config.constant import reply_text
-
 ques={"time":["lâu","giãn","2","hai","gian","atras","sino","pfizer",'mode'],
         "f1":["f1"],
         "f0":["f0"],
@@ -8,7 +6,7 @@ ques={"time":["lâu","giãn","2","hai","gian","atras","sino","pfizer",'mode'],
         "injected":["xong","về"],
         "condition":["nhiêu","điều","đang dùng","nền"]
     }
-def timevaccine(cus,intent):
+def timevaccine(message, reply_text, last_infor):
     global check
   
     num=0
@@ -78,7 +76,7 @@ def condition(cus,intent):
             return reply_text['request']['vacxin']['condition'][2]
         else:
             return reply_text['request']['vacxin']['condition'][0]
-def vaccine_rep(cus,intent):
+def vaccine_rep(message,reply_text, cus,intent):
     global check
     for ele in ques:
         for ele2 in cus.split():

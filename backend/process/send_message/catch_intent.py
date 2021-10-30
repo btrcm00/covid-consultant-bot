@@ -24,9 +24,7 @@ def predict_message(self, message, conversation_history, conversation_message):
     res = {}
     last_infor = {}
     if conversation_history:
-        for ele in CODE_RETURN:
-            if any(ele in key for key in conversation_history[-1]):
-                pass
+        last_infor = conversation_history
 
     intent_history = [list(ele.keys())[0] for ele in conversation_history]
     print('\t\t+++++++++ INTENT HISTORY +++++++++')
@@ -49,14 +47,14 @@ def predict_message(self, message, conversation_history, conversation_message):
     print("\t\t+++++++++++++++++++++++++++++++++++")
 
     if conversation_history:
-        pass
-    
+        if 'request_age' in conversation_history[-1]:
+            pass
     if intent in ['other', 'hello']:
         res={
-            'rep_hello': {
+            'hello': {
                 'infor':{
                     'name': 'Công Minh' ,
-                    'age' : 21 ,
+                    'age' : '' ,
                     'sex' : 'nam' ,
                     'address': '',
                 },
@@ -76,11 +74,11 @@ def predict_message(self, message, conversation_history, conversation_message):
                 }
             }
         }
-    if intent == 'request':
+    elif intent == 'request':
         if 'symptom' in intent_request:
             res = symptom_rep(message, models.reply_text)
         elif 'vaccine' in intent_request:
-            pass
+            res = vaccine_rep(message, reply_text, intent)
         elif 'contact' in intent_request:
             pass
         elif 'precaution' in intent_request:

@@ -60,16 +60,8 @@ class CovidBot():
                     conversation_history,
                     conversation_message)
 
-            # Update 'CHANGING' key for res because of losing this attr through asking info
-            '''if conversation_history:
-                last_key, cur_key = list(conversation_history[-1].keys())[0], list(result.keys())[0] 
-                if 'changing' in conversation_history[-1][last_key] \
-                and 'changing' not in result[cur_key]:
-                    # Support chosing changed color/size after changing
-                    result[cur_key].update({'changing': conversation_history[-1][last_key]['changing']})
-            
             # ----------------------------- #
-            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,last_suggest,models.code_product) '''
+            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,last_suggest,models.code_product)
 
             image = []
             suggest_reply = 'Hihih chào công mình'
