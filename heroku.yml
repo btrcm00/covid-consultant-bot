@@ -4,26 +4,26 @@ services:
     build: ./backend
     container_name: fastapi_backend
     command: >
-        sh -c "python app.py"
+      sh -c "python app.py"
     volumes:
-        - ./backend:/app/backend
+      - ./backend:/app/backend
     ports:
-        - "5050:5050"
+      - "5050:5050"
     networks:
-        - mynetwork
+      - mynetwork
   frontend:
     build: ./frontend
     container_name: react_frontend
     volumes:
-        - ./frontend:/app/frontend
-        - /app/frontend/node_modules
+      - ./frontend:/app/frontend
+      - /app/frontend/node_modules
     ports:
-        - "3000:3000"
+      - "3000:3000"
     command: ["node", "bot.js"]
     depends_on:
-        - backend
+      - backend
     networks:
-        - mynetwork
+      - mynetwork
 networks:
-    mynetwork:
-        driver: bridge
+  mynetwork:
+    driver: bridge
