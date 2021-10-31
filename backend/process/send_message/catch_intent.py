@@ -1,6 +1,7 @@
 from backend.config.config import get_config
 config_app = get_config()
 from backend.config.constant import MAP_TO_DISTRICT_HCM, CODE_RETURN
+from backend.config.regrex import sex_reg, age_reg, agree, disagree, check_has_symp, symptom_list
 from backend.process.PretrainedModel import PretrainedModel
 from backend.utils.utils import preprocess_message
 import copy
@@ -23,40 +24,22 @@ def catch_intent(self,message, conversation_history,conversation_message):
 def predict_message(self, message, conversation_history, conversation_message):
     res = {}
     last_infor = {}
+    last_intent = ''
     if conversation_history:
-        last_infor = conversation_history[-1]
+        last_intent = list(conversation_history[-1].keys())[0]
+        last_infor = conversation_history[-1][last_intent]
 
     intent_history = [list(ele.keys())[0] for ele in conversation_history]
     print('\t\t+++++++++ INTENT HISTORY +++++++++')
-    print(intent_history)
+    print(intent_history, last_intent)
 
     print("\t\t+++++++++ LAST INFOR in message +++++++++")
     if last_infor: print("last_infor: ", last_infor)
-    
-    # ---------------TRANSFORM Q1 -> QUẬN 1, Q2 -> Quận 2, etc---------
-    for key, value in MAP_TO_DISTRICT_HCM.items():
-        if key in message:
-            message = message.replace(key, value)
-    
-    # ---------- Check entity in message ----------- #
-    print("\t\t+++++++++ INTENT message +++++++++")
-    intent = models.model_intent.predict(models.tfidf_intent.transform([message]))[0].lower()
-    #intent sử dụng cho Request
-    intent_request = models.model_svm.predict(models.tfidf_svm.transform([message]))[0].lower()
-    print(intent,intent_request)
-    print("\t\t+++++++++++++++++++++++++++++++++++")
-
-    if conversation_history:
-        if 'request_age' in conversation_history[-1]:
-            pass
-    if intent in ['other', 'hello']:
-        res={
-            'hello': {
+    else:
+        last_infor = {
                 'infor':{
-                    'name': 'Công Minh' ,
-                    'age' : '' ,
-                    'sex' : 'nam' ,
-                    'address': '',
+                    'age' : 25 ,
+                    'sex' : '' ,
                 },
                 'symptom': {
                     "sot": "",
@@ -73,18 +56,67 @@ def predict_message(self, message, conversation_history, conversation_message):
                     "noi-man": ""
                 }
             }
-        }
+    
+    # ---------------TRANSFORM Q1 -> QUẬN 1, Q2 -> Quận 2, etc---------
+    for key, value in MAP_TO_DISTRICT_HCM.items():
+        if key in message:
+            message = message.replace(key, value)
+    
+    # ---------- Check entity in message ----------- #
+    print("\t\t+++++++++ INTENT message +++++++++")
+    intent = models.model_intent.predict(models.tfidf_intent.transform([message]))[0].lower()
+    #intent sử dụng cho Request
+    sub_intent = models.model_svm.predict(models.tfidf_svm.transform([message]))[0].lower()
+    print(intent,sub_intent)
+    print("\t\t+++++++++++++++++++++++++++++++++++")
+    check_sym_has = 'None'
+    if conversation_history:
+        if 'request_age' == last_intent:
+            age = re.findall(r'\d{1,2}', message)
+            if not age:
+                res['request_age_again'] = last_infor
+                return res
+            else:
+                last_infor['infor']['age'] = age[0]
+        elif 'request_sex' == last_intent:
+            check = False
+            for s in sex_reg:
+                if re.search(s, message):
+                    check = True
+                    last_infor['infor']['sex'] = sex_reg[s]
+                    break
+            if not check:
+                res['request_sex_again'] = last_infor
+                return res
+            else:
+                intent = 'request'
+                sub_intent = 'symptom_have'
+        elif 'request' in last_intent and 'symptom' in last_intent:
+            symptom = re.sub(r'request_','',last_intent)
+            if re.search(disagree, message):
+                check_sym_has = 0
+                for sym in symptom_list[symptom].values():
+                    message += ' ' + sym
+
+            intent = 'request'
+            sub_intent = 'symptom_have'
+
+
+    if intent =='hello':
+        res['hello'] = last_infor
     elif intent == 'request':
-        if 'symptom' in intent_request:
-            res = symptom_rep(message, models.reply_text)
-        elif 'vaccine' in intent_request:
+        if 'symptom' in sub_intent:
+            res = symptom_rep(message, sub_intent, models.reply_text, last_infor, check_sym_has)
+        elif 'vaccine' in sub_intent:
             res = vaccine_rep(message, models.reply_text, last_infor)
-        elif 'contact' in intent_request:
+        elif 'contact' in sub_intent:
             pass
-        elif 'precaution' in intent_request:
+        elif 'precaution' in sub_intent:
             pass
-        elif 'current' in intent_request:
-            res = current_numbers_rep(message, last_infor)
-        elif 'medication' in intent_request:
+        elif 'current' in sub_intent:
+            res = current_numbers_rep(message,models.reply_text, last_infor)
+        elif 'medication' in sub_intent:
             pass
+    else:
+        res['other'] = last_infor
     return res

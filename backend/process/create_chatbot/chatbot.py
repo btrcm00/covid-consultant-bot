@@ -26,7 +26,6 @@ class CovidBot():
         # get time start
         time_start = datetime.now()
         time_start = time_start.strftime("%Y-%m-%d")
-        suggest_reply_text = ""
         # 1. Get in Mongo
         try:
             mydb = models.myclient["chatbot_data"]
@@ -61,11 +60,9 @@ class CovidBot():
                     conversation_message)
 
             # ----------------------------- #
-            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,last_suggest)
+            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text)
 
             image = []
-            suggest_reply = 'Hihih chào công mình'
-            check_end = True
             reply_image = suggest_reply
             rep_intent = [key for key in result]
             # 3. Insert data
