@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  backend:    
+    build: ./backend
+    container_name: fastapi_backend
+    command: >
+        sh -c "python app.py"
+    volumes:
+        - ./backend:/app/backend
+    ports:
+        - "5050:5050"
+    networks:
+        - mynetwork
+  frontend:
+    build: ./frontend
+    container_name: react_frontend
+    volumes:
+        - ./frontend:/app/frontend
+        - /app/frontend/node_modules
+    ports:
+        - "3000:3000"
+    command: ["node", "bot.js"]
+    depends_on:
+        - backend
+    networks:
+        - mynetwork
+networks:
+    mynetwork:
+        driver: bridge
