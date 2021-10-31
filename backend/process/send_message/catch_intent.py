@@ -24,7 +24,7 @@ def predict_message(self, message, conversation_history, conversation_message):
     res = {}
     last_infor = {}
     if conversation_history:
-        last_infor = conversation_history
+        last_infor = conversation_history[-1]
 
     intent_history = [list(ele.keys())[0] for ele in conversation_history]
     print('\t\t+++++++++ INTENT HISTORY +++++++++')
@@ -78,13 +78,13 @@ def predict_message(self, message, conversation_history, conversation_message):
         if 'symptom' in intent_request:
             res = symptom_rep(message, models.reply_text)
         elif 'vaccine' in intent_request:
-            res = vaccine_rep(message, reply_text, intent)
+            res = vaccine_rep(message, models.reply_text, last_infor)
         elif 'contact' in intent_request:
             pass
         elif 'precaution' in intent_request:
             pass
         elif 'current' in intent_request:
-            pass
+            res = current_numbers_rep(message, last_infor)
         elif 'medication' in intent_request:
             pass
     return res

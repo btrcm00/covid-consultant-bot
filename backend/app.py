@@ -30,16 +30,10 @@ async def api_send_image(request: Request):
     result = send_image(json_param) '''
     result = {
         'rep_intent': 'inform',
-        'suggest_reply': 'Hiện tại chatbot chưa hỗ trợ phần gửi ảnh, chức năng này sẽ có trong thời gian sớm nhất ạ.',
+        'suggest_reply': 'Hiện tại chatbot chưa hỗ trợ tính năng gửi ảnh, tính năng này sẽ có trong thời gian sớm nhất ạ.',
         'id_job': 456363,
         'check_end':False
     }
     return result
 
-
-def restart():
-    with open(config_app['data']['store_bot'],"wb") as file_store_object:
-        pickle.dump([],file_store_object)
-
-# restart()
 uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

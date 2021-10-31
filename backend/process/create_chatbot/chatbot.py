@@ -61,7 +61,7 @@ class CovidBot():
                     conversation_message)
 
             # ----------------------------- #
-            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,last_suggest,models.code_product)
+            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,last_suggest)
 
             image = []
             suggest_reply = 'Hihih chào công mình'

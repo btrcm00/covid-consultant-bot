@@ -24,5 +24,5 @@ def current_numbers_rep(text, reply_text):
         if pro.lower() in text:
             loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
             recovered = 0
-
+    res_code = 'inform_current_number'
     return res[0].format(loc, infected, recovered, died)
