@@ -19,9 +19,11 @@ from backend.api.api_message import send_message
 
 @app.post('/api/send-message')
 async def api_send_message(request: Request):
+    print('alo test')
     json_param = await request.form()
     json_param = jsonable_encoder(json_param)
     result = send_message(json_param)
+    print(result)
     return result
 @app.post('/api/send-image')
 async def api_send_image(request: Request):
@@ -35,5 +37,8 @@ async def api_send_image(request: Request):
         'check_end':False
     }
     return result
+@app.get('/')
+def home():
+    return "Hello covid"
 
 uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

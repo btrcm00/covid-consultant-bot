@@ -20,3 +20,4 @@ pyyaml
 fastapi
 uvicorn
 python-multipart
+gunicorn==20.0.4
