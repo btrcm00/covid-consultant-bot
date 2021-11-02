@@ -1,4 +1,8 @@
 {
+
+    "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất nhenn.",
+    "diagnose": "Những dự đoán hiện tại có thể chưa hoàn toàn chính xác nên để chắc chắn bạn hãy liên hệ với các trung tâm y tế để được hỗ trợ một cách tốt nhất nha",
+    "incomming": "tính năng này sẽ được hỗ trợ trong thời gian sớm nhất ạ",
     "inform_symptoms_info": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan*Các triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái*Triệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực*Bạn kiểm tra xem có bị mắc một trong các triệu chứng ở trên không, nếu có biểu hiện nghiêm trọng thì nhớ liên hệ ngay với các trạm y tế hoặc trạm y tế lưu động gần chỗ bạn ở nhenn.",
     "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
@@ -15,7 +19,8 @@
     "inform_medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
     "inform_common_contact":"Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn nếu bạn cảm thấy trình trạng bệnh tiến triển nặng thì liên hệ ngay tới tổng đài 115 để được hỗ trợ khẩn cấp nha.*Hoặc bạn cũng có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở á.",
     "inform_tophanungnhanh": "Tổ phản ứng nhanh có nhiệm vụ cho người bệnh thở oxy tại nhà, sử dụng thuốc kháng đông, kháng viêm trong khi chờ chuyển đến cơ sở điều trị.\n- Đối với người bệnh có triệu chứng nhẹ, không cần can thiệp cấp cứu thì đưa người bệnh về cách ly tại các cơ sở cách ly tập trung F0 trên địa bàn.\n- Đối với người bệnh cần can thiệp cấp cứu thì thực hiện sơ cấp cứu ban đầu tại Trạm Y tế lưu động, sau đó vận chuyển người bệnh về bệnh viện quận, huyện trên địa bàn để tiếp tục xử trí.*Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
-    "inform_tramyte": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
+    "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau nha",
+    "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
     "inform_tramyteluudong": "Y tế lưu động trên địa bàn phường, xã, thị trấn được triển khai để tăng cường công tác khám bệnh, chữa bệnh cho người dân và chăm sóc, điều trị các trường hợp F0 tại nhà.\nTrạm y tế có thuốc cấp cứu lưu động, thuốc chăm sóc tại nhà cho người F0, thuốc chăm sóc các bệnh phổ biến khác.*Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
     "inform_common_vaccine": "Theo công văn 6118/BYT-DP, các đối tượng trên 18 tại TP. HCM, có đủ điều kiện tiêm, sẽ được tiêm vắc xin phòng ngừa COVID-19. Trong đó, ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng.*Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
     "inform_time_vaccine":"8-12 tuần*3-4 tuần*3 tuần* 4 tuần",

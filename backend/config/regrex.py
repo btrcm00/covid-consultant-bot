@@ -13,7 +13,7 @@ usual_symptom = {
 }
 serious_symptom = {
     r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
-    r't[ư|ứ|ú]c\s*ng[ư|ự|u]c': 'tuc-nguc',
+    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
     r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang'
 }
 rare_symptom = {
@@ -31,7 +31,7 @@ symptom_list = {
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
-age_reg = r'\d+'
+age_reg = r'\d{1,2}'
 sex_reg = {
     r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g': 'male',
     r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i': 'female'
@@ -53,3 +53,6 @@ pt_time_phrase = r'(gi|h)ờ\shành\sch[á|í]nh(ngày\sthường)*'
 pt_spec_date = r'({})'.format(pt_time_pre) + r'\s\d{1,2}((\s|-|\/)\d{1,2}((\s|-|\/)\d{2,4})*)*'
 pt_time_summary = r'\b({}|{}|{}|{}|{}|{}|sáng|trưa|tối|mai|mốt|chủ\snhật)\b'.format(pt_pre_day_date, pt_num_pre, pt_date, pt_hour,pt_time_phrase, pt_spec_date)
 ###-------------------------------------------
+
+
+num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s*(nh[i|ĩ][|e|ễ|ê]m|m[ắ|a|ă]c)'

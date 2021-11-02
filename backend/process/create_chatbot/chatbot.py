@@ -42,10 +42,7 @@ class CovidBot():
 
             # sửa lỗi chính tả
             print("RAW MESSAGE:", message)
-            # message = requests.post(config_app['create_chatbot_api']['general_chatbot']['api_spell_corrector_url'],\
-            #     json={"text": message}).json()['result']
-
-            # preprocessing "còn k => còn ko"
+            
             if re.search(r'\bc[òo]n\s*k\b', message):
                 message = re.sub(r'\bc[òo]n\s*k\b', 'còn ko', message)
             message = correct_sent(message)
@@ -89,6 +86,4 @@ class CovidBot():
             error_type = error_handler(e)
             return {'suggest_reply': "Hệ thống đang gặp lỗi ({error_type})".format(error_type=error_type), 'id_job': 1, 'check_end': False,\
                  'rep_intent': ['BIG ERROR']}
-
-        # print('RETURNED RES: ', returned_res)
         return returned_res
