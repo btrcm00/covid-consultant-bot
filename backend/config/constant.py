@@ -13,8 +13,8 @@ CODE_RETURN = [
     'request_usual_symptom', 'request_rare_symptom', 'inform_high_prop', 'inform_low_prop',
     'inform_current_numbers', 'inform_covid_infor', 'inform_how_spreading', 'inform_precautions',
     'inform_medication', 'inform_common_contact', 'inform_tophanungnhanh','inform_tramyte',
-    'inform_common_vaccine', 'inform_time_vaccine', 'inform_f1_vaccine','inform_f0_vaccine',
-    'inform_women_vaccine','inform_old_vaccine','inform_injected_vaccine','inform_condition_vaccine',
+    'inform_common_vaccine', 'inform_time_vaccine', 'inform_time_vaccine1', 'inform_time_vaccine2', 'inform_time_vaccine3', 'inform_time_vaccine4', 'inform_f1_vaccine','inform_f0_vaccine',
+    'inform_women_vaccine','inform_old_vaccine','inform_old_vaccine2','inform_old_vaccine3','inform_injected_vaccine','inform_injected_vaccine1','inform_injected_vaccine2','inform_condition_vaccine','inform_condition_vaccine1','inform_condition_vaccine2','inform_condition_vaccine3','inform_condition_vaccine4',
     'hello','other','ok','req'
 ]
 

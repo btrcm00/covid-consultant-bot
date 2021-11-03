@@ -34,6 +34,7 @@ def generate_reply_text(self, result, reply_text):
             suggest_reply += reply_text['diagnose']
         if res == 'incomming':
             suggest_reply += reply_text['incomming']
-
+        if 'vaccine' in res:
+            suggest_reply=reply_text[res]
     
     return suggest_reply, result, check_end

@@ -111,6 +111,10 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif 'request_location' in last_intent:
             intent = 'request'
             sub_intent = 'emergency_contact'
+
+        elif last_infor['history']['state_vaccine']!='' :
+            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
+            return res
     print("\t\t+++++++++++++ check entity in message+++++++++++++++")
     symp_in_text = re.search(check_has_symp, message)
     if symp_in_text:
@@ -126,8 +130,8 @@ def predict_message(self, message, conversation_history, conversation_message):
     elif intent == 'request':
         if 'symptom' in sub_intent:
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
-        elif 'vaccine' in sub_intent:
-            res = vaccine_rep(message, models.reply_text, last_infor)
+        elif re.search(r'\b(v[a|á|â|ạ|ã|ả|â|ấ]*[c|t|g].*)\b', message.lower()) != None:
+            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
         elif 'contact' in sub_intent:
             res['incomming'] = last_infor
             res = emergency_contact_rep(message, models.reply_text, last_infor)
