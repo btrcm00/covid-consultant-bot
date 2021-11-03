@@ -30,7 +30,7 @@ def insert_mongo(mycol, result={}, input_data={},
         cur_intent = [ele for ele in result.keys()]
         if cur_intent and cur_intent[0] == 'rep_feedback':
             data['last_conversation'] = result
-            data['message_text'] = 'GỬI ẢNH PHẢN HỒI CHO LỖI GIAO HÀNG CỦA SHOP'
+            data['message_text'] = 'GỬI ẢNH PHẢN HỒI'
         else:
             if ls_product:
                 data['last_conversation'] = result
@@ -40,7 +40,7 @@ def insert_mongo(mycol, result={}, input_data={},
                 data['message_text'] = input_data['text']
     else:
         data['last_conversation'] = {'dontunderstand': None}
-        data['message_text'] = 'GỬI ẢNH KHÔNG PHẢI CỦA HUME'
+        data['message_text'] = 'GỬI ẢNH KHÔNG PHẢi'
     print(f"Data:{data}")
     tmp = mycol.insert_one(data)
     print('INSERT TO MONGO')

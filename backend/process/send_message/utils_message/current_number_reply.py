@@ -2,13 +2,13 @@ import urllib.request, json
 import regex as re
 from backend.config.constant import province_lst
 
-def current_numbers_rep(text, reply_text, last_infor):
+def current_numbers_rep(text, last_infor):
     #----------------------------------------------#
     # - Bắt địa chỉ trong câu của bệnh nhân (tỉnh thành)
     # - Nếu bắt được thì sẽ reply theo tỉnh thành đó
     # - Nếu không thì mặc định là số liệu cho cả nước VN.
     #----------------------------------------------#
-    
+    print('\t\t------------------THÔNG TIN SỐ CA NHIỄM-------------------')
     data = {}
     res = {}
     with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true") as url:
@@ -25,6 +25,6 @@ def current_numbers_rep(text, reply_text, last_infor):
         if pro.lower() in text:
             loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
             recovered = 0
-    res_code = 'inform_current_numbers-{}-{}-{}'.format(loc,infected,recovered)
+    res_code = 'inform_current_numbers+{}+{}+{}'.format(loc,infected,recovered)
     res[res_code] = last_infor
     return res
