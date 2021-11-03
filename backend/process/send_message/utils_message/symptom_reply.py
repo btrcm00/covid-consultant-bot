@@ -6,7 +6,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
     res = {}
     res_code = ''
     print('\t\t------------------TƯ VẤN TRIỆU CHỨNG-------------------')
-    if 'infor' in sub_intent:
+    if 'info' in sub_intent:
         res_code = 'inform_symptoms_info'
     else:
         if last_req and 'symptom' in last_req and 'request' in last_req:
