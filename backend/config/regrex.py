@@ -59,18 +59,18 @@ num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s
 
 
 
-ques={"time":[r'\b(l[a|â]*u*)\b',r'\b([g|d][i]*[a|ã|â]*[n|m]*[g]*)\b',r'\b(2|h[a|â]*i*)\b',r'\b(a[s|t]*r*[a|á|ấ]*.*)\b',r'\b([s|x]+[i|í]*[n|m]*o.*)\b',r'\b([p|f]+i+[z|d|]*e+r*.*)\b',r'\b([m|n]+[o|ô|ơ]+[|d]*e+r*.*)\b'],
-        "f1":[r'\b(f\s*(1|m+[o|ô|ộ]*t*).*)\b'],
-        "f0":[r'\b(f\s*(0|k+h[o|ô|ộ]n*).*)\b'],
-        "women":[r'\b(th[o]*[a|â|á|ă]+i*.*)\b'],
-        "old":[r'\b([d|g]+[i]*[a|â|á|ă|à|ã]+.*)\b'],
-        "register":[r'\b([d|đ]+[a|â|á|ă|à|ã|ắ|ặ|ấ]+n+.*)\b',r'\b([k|c]+[i|y|í|ý]+.*)\b'],
-        "injected":[r'\b([x|s]+[o|ô|ơ]+[n|m]*[g]*)\b',r'\b([v|d]+[ê|e|è|ề|é|iề|ie|iê|iè])\b'],
-        "condition":[r'\b(n+h+[i|ê|e|è|ề|é|iề|ie|iê|iè]*u*)\b',r'\b([d|đ]+[i|ê|e|è|ề|é|iề|ie|iê|iè]+u*)\b',r'\b([n|m]+[ê|e|è|ề]+n*)\b']
-
+ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|â]i)\b',r'\b(a[s|t]r[a|á|ấ])\b',r'\b([s|x][i|í][n|m]o)\b',r'\b([p|f]i[z|d|]er)\b',r'\b([m|n][o|ô|ơ][|d]er)\b'],
+        "f1":[r'\b(f\s*(1|m+[o|ô|ộ]t))\b'],
+        "f0":[r'\b(f\s*(0|kh[o|ô|ộ]n))\b'],
+        "women":[r'\b(th[o][a|â|á|ă]i)\b'],
+        "old":[r'\b([d|g][i][a|â|á|ă|à|ã])\b'],
+        "register":[r'\b([d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n)\b',r'\b([k|c][i|y|í|ý])\b'],
+        "injected":[r'\b([x|s][o|ô|ơ][n|m][g])\b',r'\b([v|d][ê|e|è|ề|é|iề|ie|iê|iè])\b'],
+        "condition":[r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u',r'[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n',r'[n|m][ê|e|è|ề]n'],
+        "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
     }
-vaccine=[r'\b([a|á|â|ấ]+[s|t]*r*[a|á|ấ]*.*)\b',r'\b([s|x]+[i|í]*[n|m]*o.*)\b',r'\b([p|f]+i+[z|d|]*e+r*.*)\b',r'\b([m|n]+[o|ô|ơ]+[|d]*e+r*.*)\b']
-gan=r'\b(g+[a|á|â|ạ|ă]*[m|n]*)\b'
-man=r'\b(m+[a|ã|â|ẫ|ẵ]*[m|n]*)\b'
-di=r'\b([d|g]+[i|y|ỵ|ị|í]*)\b'
-bia=r'\b([b|p]+[i|í]*[a]*| r*[u]*[o|ô|ơ|ọ|ộ|ợ]*u*|r*[i|ị]*u*)\b'
+vaccine=[r'[a|á|â|ấ][s|t]r[a|á|ấ]',r'[s|x]i[n|m]o',r'[p|f]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
+gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
+man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
+di=r'\b([d|g][i|y|ỵ|ị|í])\b'
+bia=r'\b([b|p]i[a]|r[u|ư|ụ|i|ị][ơ|o|]u)\b'
