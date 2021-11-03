@@ -16,40 +16,6 @@ def emergency_contact_rep(text, reply_text, last_infor):
     #----------------------------------------------#
 
     print('\t\t------------------TƯ VẤN LIÊN HỆ HỖ TRỢ-------------------')
-    # entity_lst = ['tổ phản ứng nhanh', 'trạm y tế lưu động', 'trạm y tế']
-    # contact = []
-    # reply = ''
-    # for ent in entity_lst:
-    #     if ent in text:
-    #         contact.append(ent)
-
-    # if len(contact)==0 and state["emergency_contact"]["who"]:
-    #     contact = [state["emergency_contact"]["who"]]
-
-    # who_contact = '-'.join(unidecode(contact[0]).split()) if contact else ''
-    # for reg in MAP_TO_DISTRICT_HCM:
-    #     if reg in text:
-    #         text = re.sub(reg, MAP_TO_DISTRICT_HCM[reg], text)
-    # print(text)
-    # location = re.findall(district_reg, text)
-    # if not location and state["emergency_contact"]["location"]:
-    #     location = [state["emergency_contact"]["location"]]
-    # elif location:
-    #     state["emergency_contact"]["location"] = location[0]
-
-    # if len(contact)==0 and state["emergency_contact"]["who"] =="":
-    #     reply = reply_text["request"]["emergency_contact"]["common"]
-    # elif len(location)==0:
-    #     state["emergency_contact"]["who"] = contact[0]
-    #     reply = reply_text['request']['emergency_contact'][who_contact]
-    # else:   
-    #     print(['-'.join(unidecode(location[0]).split())])
-    #     print(who_contact)
-    #     pre_intent = 'Done-contact'
-    #     reply = ['Bạn liên hệ theo một trong những số điện thoại dưới đây nha']
-    #     reply.append(contact_emergency[who_contact]['-'.join(unidecode(location[0]).split())])
-    
-    # return reply
     res = {}
     if last_infor['infor']['address'] and not re.search(DISTRICT, text):
         res_code = 'inform_contact+' + last_infor['infor']['address']
