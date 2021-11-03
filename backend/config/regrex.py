@@ -13,7 +13,7 @@ usual_symptom = {
 }
 serious_symptom = {
     r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
-    r't[ư|ứ|ú]c\s*ng[ư|ự|u]c': 'tuc-nguc',
+    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
     r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang'
 }
 rare_symptom = {
@@ -31,7 +31,7 @@ symptom_list = {
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
-age_reg = r'\d+'
+age_reg = r'\d{1,2}'
 sex_reg = {
     r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g': 'male',
     r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i': 'female'
@@ -53,3 +53,24 @@ pt_time_phrase = r'(gi|h)ờ\shành\sch[á|í]nh(ngày\sthường)*'
 pt_spec_date = r'({})'.format(pt_time_pre) + r'\s\d{1,2}((\s|-|\/)\d{1,2}((\s|-|\/)\d{2,4})*)*'
 pt_time_summary = r'\b({}|{}|{}|{}|{}|{}|sáng|trưa|tối|mai|mốt|chủ\snhật)\b'.format(pt_pre_day_date, pt_num_pre, pt_date, pt_hour,pt_time_phrase, pt_spec_date)
 ###-------------------------------------------
+
+
+num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s*(nh[i|ĩ][|e|ễ|ê]m|m[ắ|a|ă]c)'
+
+
+
+ques={"time":[r'\b(l[a|â]*u*)\b',r'\b([g|d][i]*[a|ã|â]*[n|m]*[g]*)\b',r'\b(2|h[a|â]*i*)\b',r'\b(a[s|t]*r*[a|á|ấ]*.*)\b',r'\b([s|x]+[i|í]*[n|m]*o.*)\b',r'\b([p|f]+i+[z|d|]*e+r*.*)\b',r'\b([m|n]+[o|ô|ơ]+[|d]*e+r*.*)\b'],
+        "f1":[r'\b(f\s*(1|m+[o|ô|ộ]*t*).*)\b'],
+        "f0":[r'\b(f\s*(0|k+h[o|ô|ộ]n*).*)\b'],
+        "women":[r'\b(th[o]*[a|â|á|ă]+i*.*)\b'],
+        "old":[r'\b([d|g]+[i]*[a|â|á|ă|à|ã]+.*)\b'],
+        "register":[r'\b([d|đ]+[a|â|á|ă|à|ã|ắ|ặ|ấ]+n+.*)\b',r'\b([k|c]+[i|y|í|ý]+.*)\b'],
+        "injected":[r'\b([x|s]+[o|ô|ơ]+[n|m]*[g]*)\b',r'\b([v|d]+[ê|e|è|ề|é|iề|ie|iê|iè])\b'],
+        "condition":[r'\b(n+h+[i|ê|e|è|ề|é|iề|ie|iê|iè]*u*)\b',r'\b([d|đ]+[i|ê|e|è|ề|é|iề|ie|iê|iè]+u*)\b',r'\b([n|m]+[ê|e|è|ề]+n*)\b']
+
+    }
+vaccine=[r'\b([a|á|â|ấ]+[s|t]*r*[a|á|ấ]*.*)\b',r'\b([s|x]+[i|í]*[n|m]*o.*)\b',r'\b([p|f]+i+[z|d|]*e+r*.*)\b',r'\b([m|n]+[o|ô|ơ]+[|d]*e+r*.*)\b']
+gan=r'\b(g+[a|á|â|ạ|ă]*[m|n]*)\b'
+man=r'\b(m+[a|ã|â|ẫ|ẵ]*[m|n]*)\b'
+di=r'\b([d|g]+[i|y|ỵ|ị|í]*)\b'
+bia=r'\b([b|p]+[i|í]*[a]*| r*[u]*[o|ô|ơ|ọ|ộ|ợ]*u*|r*[i|ị]*u*)\b'
