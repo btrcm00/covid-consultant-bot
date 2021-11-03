@@ -8,8 +8,8 @@ var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
 
-var url ='https://apibackend-covid-chatbot.herokuapp.com/api/send-message'
-var image_url = 'https://apibackend-covid-chatbot.herokuapp.com/api/send-image' ;
+var url ='http://0.0.0.0:8000/api/send-message'
+var image_url = 'http://0.0.0.0:8000/api/send-image' ;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};
@@ -30,7 +30,6 @@ async function callMessageAPI(options,message,bot){
     var send_time = new Date().addSeconds(6);
     console.log("SEND TIME");
     console.log(send_time);
-    console.log(options);
     var job = 'jobList.SendingSpan' + String(id_job_js[message.user]);
     if (eval(job) != undefined){
       eval(job +'.cancel()')};

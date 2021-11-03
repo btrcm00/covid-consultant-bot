@@ -4,7 +4,7 @@ services:
     build: ./backend
     container_name: fastapi_backend
     command: >
-        sh -c "cd backend&&python app.py"
+        sh -c "python app.py"
     volumes:
         - ./backend:/app/backend
     ports:

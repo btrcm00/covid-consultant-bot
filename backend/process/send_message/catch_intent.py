@@ -55,6 +55,18 @@ def predict_message(self, message, conversation_history, conversation_message):
                     "mat-vi-giac": "",
                     "tim-tai": "",
                     "noi-man": ""
+                },
+                'history':{
+                'cothai':'',
+                'gan':'',
+                'diung':'',
+                'mantinh':'',
+                'datiemvaccine':'',
+                'vaccinedatiem':'',
+                'f':'',
+                'ruoubia':'',
+                'chongchidinh':'',
+                'state_vaccine':''
                 }
             }
     
@@ -111,23 +123,30 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif 'request_location' in last_intent:
             intent = 'request'
             sub_intent = 'emergency_contact'
+
+        elif last_infor['history']['state_vaccine']!='' :
+            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
+            return res
     print("\t\t+++++++++++++ check entity in message+++++++++++++++")
     symp_in_text = re.search(check_has_symp, message)
     if symp_in_text:
         intent = 'request'
         sub_intent = 'symptom_have'
     
-    if re.search(num_req, message):
+    if re.search(num_req, message) and sub_intent != 'vacxin':
         intent = 'request'
         sub_intent = 'current_numbers'
+    if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ|ắ][c|t|g]\s*[x|s][i|y]n|vaccine', message):
+        intent = 'request'
+        sub_intent = 'vacxin'
 
     if intent =='hello':
         res['hello'] = last_infor
     elif intent == 'request':
         if 'symptom' in sub_intent:
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
-        elif 'vaccine' in sub_intent:
-            res = vaccine_rep(message, models.reply_text, last_infor)
+        elif sub_intent == 'vacxin':
+            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
         elif 'contact' in sub_intent:
             res['incomming'] = last_infor
             res = emergency_contact_rep(message, models.reply_text, last_infor)
@@ -139,6 +158,8 @@ def predict_message(self, message, conversation_history, conversation_message):
             res['incomming'] = last_infor
         else:
             res['incomming'] = last_infor
+    elif intent == 'ok':
+        res['done'] = last_infor
     else:
         res['other'] = last_infor
     return res
