@@ -31,6 +31,7 @@ symptom_list = {
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
+
 age_reg = r'\d{1,2}'
 sex_reg = {
     r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g': 'male',
@@ -69,8 +70,21 @@ ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|�
         "condition":[r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u',r'[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n',r'[n|m][ê|e|è|ề]n'],
         "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
     }
-vaccine=[r'[a|á|â|ấ][s|t]r[a|á|ấ]',r'[s|x]i[n|m]o',r'[p|f]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
+vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
 gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
 man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
 di=r'\b([d|g][i|y|ỵ|ị|í])\b'
 bia=r'\b([b|p]i[a]|r[u|ư|ụ|i|ị][ơ|o|]u)\b'
+
+
+covid_infor_reg = {
+    r'ch[i|ỉ]\s*th[i|ị]' : 'chithi',
+    r'test|tes|tét|tet\s*(nha[n|]h|covi[d|t]|cô vít)': 'testnhanh',
+}
+
+w_ques = {
+    'what': r'l[à|a]\s*[g|d][i|ì]',
+    'how' : r'nh[u|ư]\s*(th[e|ê|ế])?\s*n[a|à]o|b[ă|ằ|a][n|]g\s*c[a|á]ch\s*n[a|à]o|l[à|a]m\s*sao',
+    'where': r'[o|ơ|ở]\s*[d|đ][a|â|ă]u|ch[o|ô|ỗ]\s*n[a|à]o',
+    'when': r'khi\s*n[a|à]o|l[u|ú]c\s*n[a|à]o',
+}

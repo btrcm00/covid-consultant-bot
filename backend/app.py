@@ -40,4 +40,4 @@ async def api_send_image(request: Request):
 def home():
     return "This is covid chatbot"
 
-uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+#uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

@@ -5,8 +5,8 @@ COPY setup.py .
 RUN pip install -e .
 
 WORKDIR /app/backend
-COPY requirements.txt /app/backend
+COPY . /app/backend
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
-CMD ["sh","-c","python app.py"]
+CMD ["sh","-c","gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app"]
