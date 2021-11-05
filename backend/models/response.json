@@ -7,6 +7,7 @@
 
     "inform_symptoms_info_temp": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan*Các triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái*Triệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực*Danh sách này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.",
     "inform_symptoms_info" : "Một số triệu chứng thường gặp của bệnh COVID-19:\n- Khó thở\n- Đau hoặc tức ngực thường xuyên\n- Trạng thái lẫn lộn mới\n- Không thể thức dậy hay duy trì sự tỉnh táo*Những triệu chứng này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.*Hoặc bạn cũng có thể cung cấp cho mình một số triệu chứng bạn gặp phải để mình có thể tư vấn thêm cho bạn nhen.",
+
     "inform_first_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
     "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
@@ -44,8 +45,10 @@
     "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau nha",
     "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
     "inform_tramyteluudong": "Y tế lưu động trên địa bàn phường, xã, thị trấn được triển khai để tăng cường công tác khám bệnh, chữa bệnh cho người dân và chăm sóc, điều trị các trường hợp F0 tại nhà.\nTrạm y tế có thuốc cấp cứu lưu động, thuốc chăm sóc tại nhà cho người F0, thuốc chăm sóc các bệnh phổ biến khác.*Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
+
     "inform_common_vaccine": "Các đối tượng trên 18 tại TP. HCM nếu có đủ điều kiện tiêm thì đều sẽ được tiêm vắc xin phòng ngừa COVID-19 nha. Nhưng trong đó sẽ ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng đó ạ.",
     "inform_vaccine_register": "Để đăng ký tiêm vaccine online, bạn có thể truy cập cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động để tiến hành đăng ký nha.",
+
     "inform_time_vaccine":"Bạn muốn hỏi về vacxin loại nào ạ?*Hiện nay tại Việt Nam có các loại vaccine đã được cấp phép là:\n- AstraZeneca\n- Sputnik V\n- Pfizer\n- Vero Cell\n- Moderna\n- Sinopharm",
     "inform_number_vaccine": "Dạ hiện nay tại Việt Nam có các loại vaccine đã được cấp phép là:\n- AstraZeneca\n- Sputnik V\n- Pfizer\n- Vero Cell\n- Moderna\n- Sinopharm",
     "inform_time_vaccine1":"Dạ khoảng cách giữa hai mũi AstraZeneca là từ 8 đến 12 tuần. Bạn nên tiêm vaccine phòng Covid-19 tối thiểu cách 14 ngày với các vaccine phòng bệnh khác nhee",

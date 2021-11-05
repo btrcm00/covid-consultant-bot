@@ -70,6 +70,7 @@ ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|�
         "condition":[r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u',r'[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n',r'[n|m][ê|e|è|ề]n'],
         "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
     }
+
 vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
 gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
 man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
