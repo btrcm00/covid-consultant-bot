@@ -83,7 +83,7 @@ covid_infor_reg = {
 }
 
 w_ques = {
-    r'what': r'l[à|a]\s*([g|d][i|ì]|sao)',
+    r'what': r'l[à|a]\s*([g|d][i|ì]|sao)|l[a|à]m\s*([d|g][i|ì|]|chi)',
     r'how' : r'(th[e|ê|ế]|nh[ư|u])\s*n[a|à]o|b[ă|ằ|a][n|]g\s*c[a|á]ch\s*n[a|à]o|l[à|a]m\s*sao',
     r'where': r'[o|ơ|ở]\s*[d|đ][a|â|ă]u|ch[o|ô|ỗ]\s*n[a|à]o',
     r'when': r'khi\s*n[a|à]o|l[u|ú]c\s*n[a|à]o|bao\s*l[a|â]u|(m[â|ấ|á|a]y|bao\s*nhi[ê|e|]u)\s*ng[a|à]y',

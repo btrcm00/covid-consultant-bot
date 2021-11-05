@@ -19,7 +19,9 @@ def precaution_rep(text):
     for i in w_ques:
         if re.search(w_ques[i], text):
             w_code = i
-    if sub_pre == 'common': w_code = 'common'
+    if sub_pre == 'common' or w_code = 'common': 
+        w_code = 'common'
+        sub_pre == 'common'
     res_code = 'inform_precaution+' + sub_pre + '+' + w_code
 
     return res_code    
