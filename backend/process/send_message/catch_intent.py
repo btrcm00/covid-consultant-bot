@@ -85,25 +85,27 @@ def predict_message(self, message, conversation_history, conversation_message):
 
     if conversation_history:
         if 'request_age' in last_intent and intent != 'request':
-            age = re.findall(r'\d{1,2}', message)
-            if not age:
+            age = re.findall(r'\d+', message)
+            if not age or (age and (len(age[0])>2 or age[0]=='0')):
                 res['request_age-again'] = last_infor
-                return res
+                return res, intent, sub_intent
             else:
                 last_infor['infor']['age'] = age[0]
-            return symptom_rep(message, 'symptoms_have', last_intent, last_infor)
+                intent = 'inform'
+            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
         elif 'request_sex' in last_intent and intent != 'request':
             check = False
             for s in sex_reg:
                 if re.search(s, message):
                     check = True
                     last_infor['infor']['sex'] = sex_reg[s]
+                    intent = 'inform'
                     break
             if not check:
                 res['request_sex-again'] = last_infor
-                return res
+                return res, intent, sub_intent
 
-            return symptom_rep(message, 'symptoms_have', last_intent, last_infor)
+            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
             
         elif 'request' in last_intent and 'symptom' in last_intent:
             symptom = re.sub(r'request_','',last_intent)
@@ -114,22 +116,24 @@ def predict_message(self, message, conversation_history, conversation_message):
             elif re.search(agree, message):
                 for sym in symptom_list[symptom].values():
                     message += ' ' + ' '.join(sym.split('-'))
-
+            intent = 'inform'
             print('message after append', message)
-            return symptom_rep(message, 'symptoms_have', last_intent, last_infor)
+            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
 
         elif 'request_location' in last_intent and intent!='request':
-            return emergency_contact_rep(message, models.reply_text, last_infor)
+            intent = 'inform'
+            return emergency_contact_rep(message, models.reply_text, last_infor), intent, sub_intent
 
         elif last_infor['history']['state_vaccine']!='' :
             res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
-            return res
+            return res, intent, sub_intent
 
         elif last_intent == 'request_covid_infor_chithi' and intent!='request':
             message += 'chỉ thị như nào'
+            intent = 'inform'
             res_code = common_infor_rep(message)
             res[res_code] = last_infor
-            return res
+            return res, intent, sub_intent
 
     print("\t\t+++++++++++++ check entity in message+++++++++++++++")
     symp_in_text = re.search(check_has_symp, message)
@@ -159,7 +163,8 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif 'contact' in sub_intent:
             res = emergency_contact_rep(message, models.reply_text, last_infor)
         elif 'precaution' in sub_intent:
-            res['incomming'] = last_infor
+            res_code = precaution_rep(message)
+            res[res_code] = last_infor
         elif 'current' in sub_intent:
             res = current_numbers_rep(message, last_infor)
         elif 'medication' in sub_intent:
@@ -171,4 +176,4 @@ def predict_message(self, message, conversation_history, conversation_message):
         res['done'] = last_infor
     else:
         res['other'] = last_infor
-    return res
+    return res, intent, sub_intent

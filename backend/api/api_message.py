@@ -10,11 +10,9 @@ from backend.process.create_chatbot.chatbot import CovidBot
 
 def send_message(data):
 # ---------------- 4.BOT ---------------- #
-    print("\t\t+++++++++++++++ Start API send-message +++++++++++++++\n\n")
+    print("\t\t+++Start API send-message +++\n\n")
 
-    ls_param = ['sender_id', 'recipient_id', 'mid', 'text']
-    # -------------------- Check and add missing params of request -------------------- #
-    print("\t\t+++++++++++++++ Check and add missing params of request +++++++++++++++")
+    ls_param = ['sender_id', 'mid', 'text']
     for ele in ls_param:
         if ele not in data or not data[ele]:
             # THROW ERROR because of not enough param

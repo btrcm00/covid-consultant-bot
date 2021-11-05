@@ -31,6 +31,8 @@ def generate_reply_text(self, result, reply_text):
                 suggest_reply += reply_text['inform_covid_infor_chithi_how'][res.split('+')[-1]]
             else:
                 suggest_reply += reply_text[res]
+        if res.startswith('inform_precaution'):
+            suggest_reply += reply_text[res.split('+')[0]][res.split('+')[1]][res.split('+')[2]]
         if 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]

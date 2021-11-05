@@ -1,6 +1,6 @@
 {
 
-    "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất nhenn.",
+    "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất nhenn🤨",
     "diagnose": "Những dự đoán hiện tại có thể chưa hoàn toàn chính xác nên để chắc chắn bạn hãy liên hệ với các trung tâm y tế để được hỗ trợ một cách tốt nhất nha",
     "incomming": "tính năng này sẽ được hỗ trợ trong thời gian sớm nhất ạ",
 
@@ -36,8 +36,7 @@
     "inform_current_numbers" : "Dạ số ca nhiễm hiện tại ở {} là: {}\nSố ca đã được chữa khỏi: {}*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/\nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
 
 
-    "inform_how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.*Để phòng ngừa, hạn c   ",
-    "inform_precautions":"Bạn tiến hành thực thiện theo các biện pháp sau đây của bộ y tế hướng dẫn nhenn*https://covid19.qltns.mediacdn.vn/Images/phamhiep/2020/07/29/9-bien-phap-moi-nhat-phong-chong-dich-covid-19-nguoi-dan-can-biet1596014669.jpg",
+    "inform_how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
 
     "inform_medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
     "inform_common_contact":"Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn nếu bạn cảm thấy trình trạng bệnh tiến triển nặng thì liên hệ ngay tới tổng đài 115 để được hỗ trợ khẩn cấp nha.*Hoặc bạn cũng có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở á.",
@@ -71,10 +70,51 @@
     "inform_condition_vaccine3": "Bạn không được phép tiêm cho đến khi có sự cho phép của bác sĩ",
     "inform_condition_vaccine4": "Bạn cần liên hệ bác sĩ để được tư vấn rõ về tình trạng hiện tại trước khi đi tiêm vaccine nha ^^",
 
-    "hello":"Chào bạn, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
+    "hello":"Hilo, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?😍",
 
-    "ok": "dạ okie*nếu bạn cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha.",
+    "ok": "dạ okie*nếu bạn cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha ",
 
-    "other":"Mình chưa hiểu câu hỏi của bạn :(( bạn vui lòng ghi rõ dấu tiếng Việt giúp mình nhen", 
-    "done": "Dạ cảm ơn bạn ạ, nếu có vấn đề cần hỗ trợ tư vấn thì bạn hãy liên hệ với mình nhe*Chúc bạn giữ gìn sức khỏe thật tốt để vượt qua đại dịch này ạ ^^"
+    "other":"Mình hong hiểu câu hỏi của bạn 😥 bạn vui lòng ghi đầy đủ dấu giúp mình nha.*À mình chỉ cung cấp/tư vấn những thông tin liên quan đến covid-19 thui nha🙄", 
+    "done": "Dạ cảm ơn bạn ạ, nếu có vấn đề cần hỗ trợ tư vấn thì bạn hãy liên hệ với mình nhe*Chúc bạn giữ gìn sức khỏe thật tốt để vượt qua đại dịch này ạ ^^",
+
+    "inform_precaution": {
+        "common": {
+            "common":"Dạ bạn hãy thực hiện các hướng dẫn phòng ngừa covid như sau nha*image https://trungtamytetienyen.vn/wp-content/uploads/2020/07/86A40F51-F56A-4ADF-8F0E-E252D5ECE41C.jpeg"
+        },
+        "cachly": {
+            "what": "Dạ cách ly y tế là việc tách riêng người mắc bệnh truyền nhiễm, người bị nghi ngờ mắc bệnh truyền nhiễm, người mang mầm bệnh truyền nhiễm hoặc vật có khả năng mang tác nhân gây bệnh truyền nhiễm nhằm hạn chế sự lây truyền bệnh ạ",
+            "how": "Dạ có một số hình thức cách ly như sau:\n- Cách ly tại nhà, nơi lưu trú: Áp dụng với các bệnh dịch thông thường, ít có nguy cơ gây hậu quả nghiêm trọng cho sức khỏe cộng đồng;\n- Cách ly tại cơ sở khám bệnh, chữa bệnh (bệnh viện): Áp dụng với các bệnh dịch có nguy cơ cao, gây hậu quả nghiêm trọng cho sức khỏe cộng đồng;\n- Cách ly nghiêm ngặt: Là hình thức cách ly cao nhất “nội bất xuất - ngoại bất nhập”.",
+            "where": "Dạ tùy từng trường hợp mà bạn sẽ phải cách ly tại những nơi khác nhau nha\n- Cách ly tại nhà\n- Cách ly tại cơ sở khám bệnh, chữa bệnh (bệnh viện)\n- Khu vực xác định (ví dụ: Một thôn/bản hoặc một xã) hoặc ở một đơn vị, cơ quan nào đó mà có quyết định cách ly nghiêm ngặt thì đều được dùng làm khu cách ly",
+            "when": "Dạ thời gian cách ly tối thiểu là 14 ngày kể từ ngày phát hiện triệu chứng hoặc đến khi có xét nghiệm Covid-19 âm tính.",
+            "who": "Dạ những người thuộc diện phải cách ly trong đợt dịch Covid-19 này là:\n- Có tiếp xúc gần trong vòng 2m với trường hợp bệnh xác định hoặc trường hợp bệnh nghi ngờ trong trong thời gian mắc bệnh ở bất kỳ tình huống nào.\n- Người nước ngoài nhập cảnh vào Việt Nam từ quốc gia có dịch trong vòng 14 ngày kể từ ngày nhập cảnh.\n- Cùng làm việc với trường hợp bệnh xác định hoặc trường hợp bệnh nghi ngờ trong thời gian mắc bệnh; "
+        },
+        "thannhiet": {
+            "what": "Dạ giám sát thân nhiệt là một biện pháp kiểm soát dịch bước đầu để phát hiện người có sốt khi nhập cảnh, khám bệnh... Hầu hết các ca bệnh nhiễm Covid-19 đều có sốt nên đây là bước sơ bộ để kiểm soát dịch vì đơn giản và dễ thực hiện đó ạ",
+            "how": "Đo thân nhiệt thì bạn có thể dùng máy đo thân nhiệt từ xa, đo thân nhiệt qua da bằng nhiệt kế điện tử, nhiệt kế điện tử đo trán, tai.*Tuy nhiên, các cách đo này chỉ để sàng lọc vì chúng có sai số nhất định. Các trường hợp nghi ngờ sốt cần được kiểm tra lại bằng nhiệt kế y tế để xác định một cách chắc chắn nha",
+            "where": "Đo thân nhiệt thì bạn có thể dùng máy đo thân nhiệt từ xa, đo thân nhiệt qua da bằng nhiệt kế điện tử, nhiệt kế điện tử đo trán, tai.*Tuy nhiên, các cách đo này chỉ để sàng lọc vì chúng có sai số nhất định. Các trường hợp nghi ngờ sốt cần được kiểm tra lại bằng nhiệt kế y tế để xác định một cách chắc chắn nha",
+            "when": "Bạn cần phải kiểm tra thân nhiệt hai lần mỗi ngày trong giai đoạn tự cách ly 14 ngày nếu bạn tiếp xúc với người mắc Covid nha.",
+            "who": "Nếu bạn đã tiếp xúc với người mắc COVID-19, có thể mất tới 14 ngày mới biết được bạn có lây bệnh hay không. Nên bạn cần phải kiểm tra thân nhiệt hai lần mỗi ngày trong giai đoạn tự cách ly 14 ngày ạ."
+        },
+        "khautrang": {
+            "what": "Dạ đeo khẩu tram*image https://cdnimg.vietnamplus.vn/uploaded/fsmsy/2020_02_04/infographics_deo_khau_trang.jpg",
+            "how": "Dạ khi đeo bạn phải đảm bảo tay sạch, luôn đeo mặt chống thấm ra ngoài, chỉnh thanh kim loại cho ôm sát mũi và quai đeo chắc chắn. Khẩu trang phải chùm kín được mũi, miệng. Không sờ tay vào mặt ngoài trong suốt quá trình sử dụng.*sau đó khi tháo phải vệ sinh tay, dùng tay tháo dây đeo và chỉ cầm dây đeo bỏ vào thùng rác, không sờ vào mặt ngoài khẩu trang nha",
+            "where": "Nhìn chung, bạn hãy cân nhắc đeo khẩu trang ở những nơi đông đúc ngoài trời và khi tham gia các hoạt động tiếp xúc gần với những người chưa được tiêm chủng đầy đủ nha",
+            "when": "Dạ bạn làm theo hướng dẫn sau nhenn*image https://cdnimg.vietnamplus.vn/uploaded/fsmsy/2020_02_04/infographics_deo_khau_trang.jpg",
+            "who": "Dạ mọi người, kể cả trẻ em trên 2 tuổi, nên đeo khẩu trang ở những nơi công cộng trong nhà nếu bạn\n- Chưa được tiêm chủng đầy đủ\n- Đã được tiêm chủng đầy đủ và trong khu vực có mức độ lây truyền đáng kể hoặc cao\n- Được tiêm chủng đầy đủ và có hệ thống miễn dịch bị suy giảm"
+        },
+        "vesinh": {
+            "what": "Để phòng lây nhiễm Covid-19, cần vệ sinh cá nhân tốt. Đây là biện pháp dự phòng không đặc hiệu. Vệ sinh cá nhân gồm:\n- Vệ sinh bàn tay: Luôn giữ bàn tay sạch sẽ; rửa tay thường xuyên (như các câu trên).\n- Vệ sinh thân thể: Tắm rửa hàng ngày. Dù vào mùa đông, vẫn cần tắm rửa hàng ngày để loại bỏ các tác nhân gây bệnh có thể bám trên da. ",
+            "how": "Dạ bạn hãy thực hiện theo các hướng dẫn sau nha*image https://image.infographics.vn/media//2021/7/19/3.JPG",
+            "where": "Dạ bạn cần vệ sinh những vật dụng trong gia đình và cả những mỗi trường sống xung quanh để đảm bảo an toàn nha.",
+            "when": "Bạn nên thực hiện vệ sinh cá nhân, các vật dụng trong gia đình và môi trường xung quanh thường xuyên nha.",
+            "who": "Dạ bạn hãy thực hiện theo các hướng dẫn sau nha*image https://image.infographics.vn/media//2021/7/19/3.JPG"
+        },
+        "ruatay": {
+            "what": "Dạ rửa tay làm hạn chế, thậm chí loại bỏ các tác nhân trên tay bị ô nhiễm nên hạn chế được nguy cơ lây nhiễm mầm bệnh nói chung và Covid-19 nói riêng nha",
+            "how": "Dạ bạn hãy thực hiện theo những hướng dẫn sau của bộ y tế nha*image https://vinmec-prod.s3.amazonaws.com/images/20190322_111259_170239_Quy-Trinh-Rua-Tay-1.max-1800x1800.png",
+            "where": "Dạ bất kỳ khi nào có nguy cơ ô nhiễm tay, nhất là sau khi lấy tay che mũi, miệng khi ho, hắt hơi; sau khi sờ, cầm, nắm vào các vật dụng xung quanh. Ngoài ra, bạn cũng nên rửa tay trước và sau khi ăn, sau khi đi vệ sinh, sau khi chế biến thực phẩm… nha",
+            "when": "Dạ bất kỳ khi nào có nguy cơ ô nhiễm tay, nhất là sau khi lấy tay che mũi, miệng khi ho, hắt hơi; sau khi sờ, cầm, nắm vào các vật dụng xung quanh. Ngoài ra, bạn cũng nên rửa tay trước và sau khi ăn, sau khi đi vệ sinh, sau khi chế biến thực phẩm… nha",
+            "who": "Dạ bạn hãy thực hiện theo những hướng dẫn sau của bộ y tế nha*image https://vinmec-prod.s3.amazonaws.com/images/20190322_111259_170239_Quy-Trinh-Rua-Tay-1.max-1800x1800.png"
+        }
+    }
 }

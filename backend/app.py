@@ -6,8 +6,6 @@ import pickle
 import uvicorn
 import logging
 from fastapi.encoders import jsonable_encoder
-
-
 app = FastAPI()
 
 config_app = get_config()
@@ -38,6 +36,8 @@ async def api_send_image(request: Request):
 
 @app.get('/')
 def home():
-    return "This is covid chatbot"
+    mydb = models.myclient["chatbot_data"]
+    mycol = mydb["chatbot_conversations"]
+    return "Covid-chatbot " + str(mycol.count_documents({}))
 
-#uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
