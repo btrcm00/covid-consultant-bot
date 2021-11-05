@@ -146,8 +146,12 @@ def predict_message(self, message, conversation_history, conversation_message):
         intent = 'request'
         sub_intent = 'covid_infor'
     elif re.search(num_req, message) and sub_intent != 'vacxin':
+
         intent = 'request'
         sub_intent = 'current_numbers'
+    if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ|ắ][c|t|g]\s*[x|s][i|y]n|vaccine', message):
+        intent = 'request'
+        sub_intent = 'vacxin'
 
     if intent =='hello':
         res['hello'] = last_infor
@@ -167,6 +171,7 @@ def predict_message(self, message, conversation_history, conversation_message):
         else:
             res_code = common_infor_rep(message)
             res[res_code] = last_infor
+
     elif intent == 'ok':
         res['done'] = last_infor
     else:
