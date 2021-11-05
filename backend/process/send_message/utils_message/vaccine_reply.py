@@ -170,7 +170,7 @@ def vaccine_rep(message, reply_text, last_infor, intent, last_intent):
             res['inform_number_vaccine'] = last_infor
             return res
         elif check == 'register':
-            res['inform_common_vaccine'] = last_infor
+            res['inform_vaccine_register'] = last_infor
     else:
 
         if 'old' in last_infor['history']['state_vaccine']:

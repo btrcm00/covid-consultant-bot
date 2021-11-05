@@ -3,17 +3,40 @@
     "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất nhenn.",
     "diagnose": "Những dự đoán hiện tại có thể chưa hoàn toàn chính xác nên để chắc chắn bạn hãy liên hệ với các trung tâm y tế để được hỗ trợ một cách tốt nhất nha",
     "incomming": "tính năng này sẽ được hỗ trợ trong thời gian sớm nhất ạ",
+
+
     "inform_symptoms_info_temp": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan*Các triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái*Triệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực*Danh sách này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.",
     "inform_symptoms_info" : "Một số triệu chứng thường gặp của bệnh COVID-19:\n- Khó thở\n- Đau hoặc tức ngực thường xuyên\n- Trạng thái lẫn lộn mới\n- Không thể thức dậy hay duy trì sự tỉnh táo*Những triệu chứng này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.*Hoặc bạn cũng có thể cung cấp cho mình một số triệu chứng bạn gặp phải để mình có thể tư vấn thêm cho bạn nhen.",
-    "request_age"    : "Bạn bao nhiêu tuổi á?*Mình cần một số thông tin của bạn để có thể đưa ra những dự đoán chính xác nhất ạ.",
+
+    "inform_first_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
+    "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
     "request_serious_symptom": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không ạ??",
     "request_usual_symptom": "Bạn có mắc một trong số các triệu chứng như sốt, mệt mỏi, ho khan không ạ???",
     "request_rare_symptom" : "Vậy còn một trong số các triệu chứng như đau họng, đau nhức, tiêu chảy, mất vị giác, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái thì sao ạ",
     "inform_high_prop": "Khả năng nhiễm của bạn khá cao á, bạn hãy liên hệ với các trung tâm y tế để test covid thử nha.",
     "inform_low_prop": "Vậy khả năng nhiễm bệnh của bạn là khá thấp á, bạn cứ tiếp tục theo dõi tại nhà tiến trình bệnh thêm nha.",
-    "inform_current_numbers" : "Dạ số ca nhiễm hiện tại ở {} là: {}\n-Số ca đã được chữa khỏi: {}\n*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/\nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
-    "inform_covid_infor": "COVID-19 là một căn bệnh nguy hiểm gây ra bởi một chủng vi-rút được phát hiện vào tháng 12 năm 2019 tại Vũ Hán, Trung Quốc. Chủng vi-rút này rất dễ gây truyền nhiễm và nhanh chóng lây lan ra khắp thế giới. *COVID-19 thường gây ra các triệu chứng hô hấp giống như cảm lạnh, cúm hoặc, viêm phổi, nhưng COVID-19 còn có thể gây hại tới các bộ phận khác trên cơ thể.\n\t-Hầu hết những người mắc COVID-19 đều có các triệu chứng nhẹ, nhưng một số người có xu hướng mắc bệnh nặng hơn.\n-Những người cao tuổi hoặc người có các bệnh lý nền nhất định có nguy cơ cao mắc bệnh nghiêm trọng do COVID-19.\n\t-Hàng nghìn người đã tử vong do COVID-19 tại Hoa Kỳ.\n\t-Vắc-xin ngừa COVID-19 là an toàn và hiệu quả.",
+
+
+    "inform_covid_infor_testnhanh_what": "Dạ test nhanh hay còn gọi là xét nghiệm nhanh kháng nguyên, dựa trên cơ sở phát hiện protein bao ngoài của Virus SARS - CoV2 nhằm xác định tình trạng hiện đang nhiễm virus",
+    "inform_covid_infor_testnhanh_how": "Bạn có thể tiến hành test nhanh tại nhà theo các bước sau nha*image https://hcdc.vn/public/img/da39a3ee5e6b4b0d3255bfef95601890afd80709/images/dangbai1/images/7-buoc-tu-thuc-hien-xet-nghiem-nhanh-khang-nguyen-tai-nha/images/ae04f06629dfde8187ce.jpg",
+    "inform_covid_infor_testnhanh_where": "Bạn có thể tiến hành lấy mẫu test nhanh chủ động tại bệnh viện hoặc đăng ký test nhanh tại các chốt chặn kiểm dịch lưu động ạ.*Tuy nhiên, việc triển khai test nhanh lưu động sẽ có thể có nguy cơ không đủ độ an toàn sinh học. Nên là hiện nay bạn vẫn nên tiến hành xét nghiệm nhanh Covid-19 tại bệnh viện để có quy trình an toàn, kết quả chính xác nhất nha.",
+    "inform_covid_infor_testnhanh_who": "Dạ hiện nay có 6 nhóm đối tượng cần test nhanh kháng nguyên Virus Sars-Cov-2 là\n- Người có yếu tố dịch tễ, sinh sống tại khu vực có ca mắc Covid-19 trong vòng 28 ngày.\n- Người có các dấu hiệu như ho, sốt, rát họng… cần xét nghiệm để sàng lọc.\n- Người tiếp xúc trực tiếp ca nhiễm Covid-19, nhưng chưa thể thực hiện xét nghiệm Realtime RT-PCR trong thời gian ngắn.\n- Người cần di chuyển liên tỉnh như lái xe, giao hàng, người cần giấy thông hành về quê.\n- Người cần di chuyển liên tỉnh như lái xe, giao hàng, người cần giấy thông hành về quê.\n- Người lao động làm việc trong môi trường đông đúc, kín gió như khu công nghiệp, nhà máy…\n- Áp dụng cho các cơ sở y tế chưa đủ điều kiện xét nghiệm sàng lọc Covid-19 bằng phương pháp RT-PCR.",
+    "inform_covid_infor_chithi_what": "Dạ đó là những chỉ đạo về các biện pháp phòng, chống dịch COVID-19 như việc tập trung đông người, khoảng cách an toàn tối thiểu, hoạt động của các cơ sở kinh doanh, vận tải… nhằm ngăn chặn và đẩy lùi dịch bệnh trong thời gian ngắn nhất có thể, đặt sức khỏe và tính mạng của mọi người lên trên hết đó ạ.",
+    "request_covid_infor_chithi": "Hiện có 3 loại chỉ thị 15, 16 và 19 đều là chỉ đạo của Thủ tướng Chính phủ về các biện pháp phòng, chống dịch Covid-19 trong những thời điểm khác nhau.*Bạn muốn hỏi cụ thể về chỉ thị nào ạ?",
+    "inform_covid_infor_chithi_how": {
+        "15": "Bạn hãy nghiêm túc thực hiện theo hướng dẫn như sau nhe*image https://ben.com.vn/tin-tuc/wp-content/uploads/2021/09/chi-thi-15-la-gi-02.jpg",
+        "16": "Bạn hãy nghiêm túc thực hiện theo hướng dẫn như sau nhe*image https://tinhdoanhatinh.vn/uploads/news/2021_06/1_14.jpg",
+        "19": "Bạn hãy nghiêm túc thực hiện theo hướng dẫn như sau nhe*image https://lh3.googleusercontent.com/proxy/G2mOhseDByNL_SE9QDdLN-ONHGGck3cDaDLnfQVF2pQXT2OBAl_N-tUnz_B2B1xouZ2yk5Za0GGyh-hjOy8udxcpXiBeWwg0mmWAvFFrcsX0vYsrA93XzO4CCz7yOMCOJmXTf4azZslCqWulOPi6uI5Qbou-CTrGy9SBaoRdl4ydr59Ml3VLdPKK56FzisUufNeffZ9wVKmhWPfyAEw58wqYs6DhynfJkjNc"
+    },
+    "inform_covid_infor_common_what": "Dạ corona là một họ virus lớn, trong đó một số chủng có khả năng gây bệnh khi xâm nhiễm từ động vật sang người, số khác chỉ xâm nhiễm và tồn tại ở các loài động vật bao gồm lạc đà, mèo và dơi.*Đôi khi virus corona từ động vật tiến hóa để lây sang người để rồi sau đó lây từ người sang người như trường hợp Hội chứng Hô hấp Trung Đông (MERS) và hội chứng hô hấp cấp nặng (SARS). ",
+    "inform_covid_infor_common_where": "Dạ virus SARS-CoV-2 lần đầu tiên được phát hiện tại thành phố Vũ Hán, thủ phủ tỉnh Hồ Bắc. Các nhà khoa học ban đầu cho rằng virus lây từ động vật sang người tại chợ hải sản Hoa Nam ở thành phố Vũ Hán, nơi phát hiện ca mắc đầu tiên ạ.",
+    "inform_covid_infor_common_when": "Dạ virus SARS-CoV-2 lần đầu tiên được phát hiện vào cuối năm 2019 tại thành phố Vũ Hán, thủ phủ tỉnh Hồ Bắc ạ.",
+
+
+    "inform_current_numbers" : "Dạ số ca nhiễm hiện tại ở {} là: {}\nSố ca đã được chữa khỏi: {}*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/\nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
+
+
     "inform_how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.*Để phòng ngừa, hạn c   ",
     "inform_precautions":"Bạn tiến hành thực thiện theo các biện pháp sau đây của bộ y tế hướng dẫn nhenn*https://covid19.qltns.mediacdn.vn/Images/phamhiep/2020/07/29/9-bien-phap-moi-nhat-phong-chong-dich-covid-19-nguoi-dan-can-biet1596014669.jpg",
 
@@ -23,7 +46,10 @@
     "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau nha",
     "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
     "inform_tramyteluudong": "Y tế lưu động trên địa bàn phường, xã, thị trấn được triển khai để tăng cường công tác khám bệnh, chữa bệnh cho người dân và chăm sóc, điều trị các trường hợp F0 tại nhà.\nTrạm y tế có thuốc cấp cứu lưu động, thuốc chăm sóc tại nhà cho người F0, thuốc chăm sóc các bệnh phổ biến khác.*Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
-    "inform_common_vaccine": "Theo công văn 6118/BYT-DP, các đối tượng trên 18 tại TP. HCM, có đủ điều kiện tiêm, sẽ được tiêm vắc xin phòng ngừa COVID-19. Trong đó, ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng.*Để đăng ký tiêm vaccine online, người dân có thể truy cập Cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động.",
+
+    "inform_common_vaccine": "Các đối tượng trên 18 tại TP. HCM nếu có đủ điều kiện tiêm thì đều sẽ được tiêm vắc xin phòng ngừa COVID-19 nha. Nhưng trong đó sẽ ưu tiên tiêm chủng cho lực lượng y tế tuyến đầu, người cao tuổi, các trường hợp có bệnh lý nền và đẩy nhanh việc tăng độ bao phủ tiêm chủng đó ạ.",
+    "inform_vaccine_register": "Để đăng ký tiêm vaccine online, bạn có thể truy cập cổng thông tin tiêm chủng Covid-19: https://tiemchungcovid19.gov.vn/portal/register-person hoặc tải ứng dụng \"Sổ sức khỏe điện tử\" cho điện thoại di động để tiến hành đăng ký nha.",
+
     "inform_time_vaccine":"Bạn muốn hỏi về vacxin loại nào ạ?*Hiện nay tại Việt Nam có các loại vaccine đã được cấp phép là:\n- AstraZeneca\n- Sputnik V\n- Pfizer\n- Vero Cell\n- Moderna\n- Sinopharm",
     "inform_number_vaccine": "Dạ hiện nay tại Việt Nam có các loại vaccine đã được cấp phép là:\n- AstraZeneca\n- Sputnik V\n- Pfizer\n- Vero Cell\n- Moderna\n- Sinopharm",
     "inform_time_vaccine1":"Dạ khoảng cách giữa hai mũi AstraZeneca là từ 8 đến 12 tuần. Bạn nên tiêm vaccine phòng Covid-19 tối thiểu cách 14 ngày với các vaccine phòng bệnh khác nhee",
