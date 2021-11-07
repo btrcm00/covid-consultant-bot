@@ -16,7 +16,6 @@
     "inform_high_prop": "Khả năng nhiễm của bạn khá cao á, bạn hãy liên hệ với các trung tâm y tế để test covid thử nha.",
     "inform_low_prop": "Vậy khả năng nhiễm bệnh của bạn là khá thấp á, bạn cứ tiếp tục theo dõi tại nhà tiến trình bệnh thêm nha.",
 
-
     "inform_covid_infor_testnhanh_what": "Dạ test nhanh hay còn gọi là xét nghiệm nhanh kháng nguyên, dựa trên cơ sở phát hiện protein bao ngoài của Virus SARS - CoV2 nhằm xác định tình trạng hiện đang nhiễm virus",
     "inform_covid_infor_testnhanh_how": "Bạn có thể tiến hành test nhanh tại nhà theo các bước sau nha*image https://hcdc.vn/public/img/da39a3ee5e6b4b0d3255bfef95601890afd80709/images/dangbai1/images/7-buoc-tu-thuc-hien-xet-nghiem-nhanh-khang-nguyen-tai-nha/images/ae04f06629dfde8187ce.jpg",
     "inform_covid_infor_testnhanh_where": "Bạn có thể tiến hành lấy mẫu test nhanh chủ động tại bệnh viện hoặc đăng ký test nhanh tại các chốt chặn kiểm dịch lưu động ạ.*Tuy nhiên, việc triển khai test nhanh lưu động sẽ có thể có nguy cơ không đủ độ an toàn sinh học. Nên là hiện nay bạn vẫn nên tiến hành xét nghiệm nhanh Covid-19 tại bệnh viện để có quy trình an toàn, kết quả chính xác nhất nha.",
@@ -38,7 +37,6 @@
 
     "inform_how_spreading":"COVID-19 lây lan theo ba cách chính:\n-Hít vào không khí khi ở gần người bị nhiễm bệnh đang thở ra những giọt nhỏ và các hạt có chứa vi-rút.\n-Để những giọt nhỏ và các hạt có chứa vi-rút rơi vào mắt, mũi hoặc miệng, đặc biệt là thông qua sự bắn tóe và tia xịt như ho hoặc hắt hơi.\n-Chạm vào mắt, mũi hoặc miệng bằng tay có vi-rút trên đó.",
 
-    "inform_medication":"Tất cả các vắc xin được WHO phê duyệt và Bộ y tế cấp phép đều có tác dụng bảo vệ người dân trước sự nguy hiểm của Virus SARS-CoV-2. Theo đó, tất cả các vaccine được cấp phép và đưa về Việt Nam sử dụng đều đảm bảo an toàn và hiệu quả.",
     "inform_common_contact":"Nếu bạn muốn được giải đáp thắc mắc từ xa, liên hệ Tổng đài 1022, bấm số 3 hoặc 4 nha.\nCòn nếu bạn cảm thấy trình trạng bệnh tiến triển nặng thì liên hệ ngay tới tổng đài 115 để được hỗ trợ khẩn cấp nha.*Hoặc bạn cũng có thể liên hệ trạm y tế lưu động hoặc trạm y tế, trung tâm y tế gần khu vực bạn ở á.",
     "inform_tophanungnhanh": "Tổ phản ứng nhanh có nhiệm vụ cho người bệnh thở oxy tại nhà, sử dụng thuốc kháng đông, kháng viêm trong khi chờ chuyển đến cơ sở điều trị.\n- Đối với người bệnh có triệu chứng nhẹ, không cần can thiệp cấp cứu thì đưa người bệnh về cách ly tại các cơ sở cách ly tập trung F0 trên địa bàn.\n- Đối với người bệnh cần can thiệp cấp cứu thì thực hiện sơ cấp cứu ban đầu tại Trạm Y tế lưu động, sau đó vận chuyển người bệnh về bệnh viện quận, huyện trên địa bàn để tiếp tục xử trí.*Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
     "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau nha",
@@ -56,7 +54,7 @@
     "inform_time_vaccine6":"Dạ khoảng cách giữa hai mũi Vero Cell là 3-4 tuần nhe",
     "inform_f1_vaccine":"Theo quyết định 2995 của Bộ Y tế về việc hướng dẫn khám sàng lọc tiêm Covid không nhắc đến việc có tiêm chủng cho đối tượng F1, F2 hay không. Vậy trong khoảng thời gian này bạn nên tuân thủ cách ly theo đúng quy định và có thể được tiêm phòng sau đó.",
     "inform_f0_vaccine": "Đối với người đã là F0 thì ít nhất 6 tháng sau mới có thể tiêm vaccine phòng ngừa COVID-19.",
-    "inform_women_vaccine":"phụ nữ mang thai nên được tiêm vaccine để bảo vệ sức khỏe cho cả mẹ và bé",
+    "inform_women_vaccine":"Dạ phụ nữ mang thai nên được tiêm vaccine để bảo vệ sức khỏe cho cả mẹ và bé nha chị",
     "inform_old_vaccine":"Bạn có thuộc đối tượng chống chỉ định sau đây hay không ạ: *Người đang mắc bệnh cấp tính; những người bị suy giảm khả năng đáp ứng miễn dịch, ung thư giai đoạn cuối, xơ gan mất bù; người trong vòng 14 ngày trước có điều trị corticoid liều cao hoặc điều trị hóa trị, xạ trị; người trong vòng 90 ngày trước có điều trị immunoglobulin hoặc điều trị huyết tương của người bệnh COVID-19; tiêm vaccine khác trong vòng 14 ngày trước; người đã mắc COVID-19 trong vòng 6 tháng; người trên 65 tuổi; người bị giảm tiểu cầu hoặc rối loạn đông máu.",
     "inform_old_vaccine2":"Hiện tại bạn chưa được tiêm và cần liên hệ bác sĩ tư vấn để được hỗ trợ thêm nha",
     "inform_old_vaccine3":"Bạn được phép đi tiêm vaccine á nhưng liên hệ bác sĩ để được tư vấn kĩ hơn nhé",
@@ -116,5 +114,34 @@
             "when": "Dạ bất kỳ khi nào có nguy cơ ô nhiễm tay, nhất là sau khi lấy tay che mũi, miệng khi ho, hắt hơi; sau khi sờ, cầm, nắm vào các vật dụng xung quanh. Ngoài ra, bạn cũng nên rửa tay trước và sau khi ăn, sau khi đi vệ sinh, sau khi chế biến thực phẩm… nha",
             "who": "Dạ bạn hãy thực hiện theo những hướng dẫn sau của bộ y tế nha*image https://vinmec-prod.s3.amazonaws.com/images/20190322_111259_170239_Quy-Trinh-Rua-Tay-1.max-1800x1800.png"
         }
+    },
+    "inform_medication": {
+        "huongdansudungbinhoxy": "Trường hợp cần thở oxy: Thở > 20 l/p, sp02 <94% *Cách sử dụng: \n- Tháo cốc tạo ẩm. Mở nắp cốc rồi đổ nước tinh khiết vào cốc theo vạch chỉ định sẵn của nhà sản xuất, sau đó vặn nắp lại như trước.\n- Lắp dây thở vào van điều áp\n- Mở van oxy (dấu hiệu nhận biết van oxy đã mở là kim trên đồng hồ chỉ vào khu vực màu xanh lá)\n- Tiếp tục chỉnh lưu lượng bằng van ở ngay trên cốc tạo ẩm, chỉnh lưu lượng sao cho cục sắt chỉ 1- 6L/p (không nên chỉnh> 6L/p vì chỉ tốn oxy mà không tăng hiệu quả)\n- Sau đó gắn dây thở ở phía có 2 cái râu vào mũi và hít thở đều\nThở khoảng 30 phút, đánh giá lại thấy Sp02 >92%, BN nhìn tỉnh táo, đỡ có khó thở hơn thì giảm lưu lượng từ từ\nLưu ý phải liên hệ cơ sở y tế nhanh nhất có thể, để được hướng dẫn cụ thể và đưa đi BV ngay",
+        "buymedicine_checkf1f0": "Bạn có đang thuộc diện f1 hoặc f0 không ạ",
+        "buymedicine_replyf1f0": "F1,F0 và người thân trong nhà không được tự ý ra ngoài mua thuốc.* Bạn có thể nhờ người mua hộ,shipper hoặc mua thuốc qua nhà thuốc online.",
+        "buymedicine_checkvaccine": "Bạn có tiêm đủ vaccine covid qua 14 ngày hay từng khỏi covid sau 14 ngày không",
+        "buymedicine_normal":"Hiện tại thành phố hcm cho phép đi lại bình  thường đối với nhóm đối tượng của bạn  ",
+        "spo_thongtin":"Máy đo SpO2 là thiết bị đo độ bão hòa ô-xy trong máu, kết hợp đo nhịp tim thông qua đầu ngón tay.*Chỉ số SpO2 bình thường là từ 95% trở lên (95-100%)",
+        "spo_cachdo":"Cách đo SpO2 như sau:\n- Lúc đo hít thở bình thường, làm ấm bàn tay nếu lạnh (tay phải sạch khô, cắt ngắn nếu móng tay dài)\n- Ngồi hay nằm đều được đưa ngón tay vào máy đến chạm vào điểm tận cùng của máy (mặt móng tay cùng với mặt trên của máy). \n- Nhấn nút “on” và giữ yên ngón tay rồi đọc kết quả sau vài giây\n- Cách xa các thiết bị điện tử khác\nChú ý: Nếu có sơn móng tay thì nên kẹp bên 2 bên móng tay hoặc lau sạch vết sơn bằng aceton \nHướng dẫn cách sử dụng chi tiết tại đây: https://ncov.moh.gov.vn/web/guest/-/6847426-6902",
+        "spo_cachmua": "Bạn có thể mua máy đo SpO2 tại các nhà thuốc lớn hoặc các chỗ bán dụng cụ y khoa.",
+        "spo_5k": "5K bao gồm: \nKHẨU TRANG: Đeo khẩu trang vải thường xuyên tại nơi công cộng, nơi tập trung đông người; đeo khẩu trang y tế tại các cơ sở y tế, khu cách ly.\n\nKHỬ KHUẨN: Rửa tay thường xuyên bằng xà phòng hoặc dung dịch sát khuẩn tay. Vệ sinh các bề mặt/ vật dụng thường xuyên tiếp xúc (tay nắm cửa, điện thoại, máy tính bảng, mặt bàn, ghế…). Giữ vệ sinh, lau rửa và để nhà cửa thông thoáng.\n\nKHOẢNG CÁCH: Giữ khoảng cách khi tiếp xúc với người khác.\n\nKHÔNG TỤ TẬP đông người.\n\nKHAI BÁO Y TẾ: thực hiện khai báo y tế trên App NCOVI; cài đặt ứng dụng BlueZone tại địa chỉ https://www.bluezone.gov.vnđể được cảnh báo nguy cơ lây nhiễm COVID-19.",
+        "spo_thietbichonguoibenh":"BS hướng dẫn điều trị & theo dõi tại nhà là cần các thiết bị sau đây để theo dõi:\n+ Máy SpO2, thiết bị này giúp theo dõi oxy trong máu của và nhịp tim của mình. Ở người lớn khỏe mạnh, SpO2 từ 94% trở lên là bình thường. Link bên dưới sẽ giúp bạn sử dụng máy đo SpO2 cũng như đếm nhịp thở\n+ Nhiệt kế: Loại đo ở nách, trán đều được.",
+        "spo_thietbichongbthhoacf>1": "Bạn chỉ cần đeo khẩu trang vải từ 4 lớp trở lên và nước sát khuẩn để phòng bệnh ",
+        "maccovid_sotgiamdau": "Sốt, nhức đầu, đau cơ,,… là những triệu chứng điển hình của Covid-19.Các loại thuốc hạ sốt, giảm đau chứa biệt dược acetaminophen như  Panadol, Efferalgan, Tylenol, Hapacol*Những lưu ý khi sử dụng thuốc:\n\n- Chỉ nên dùng khi sốt cao hoặc đau nhiều. Không nên tự ý sử dụng nếu không có triệu chứng vì sẽ ảnh hưởng đến gan, thận.\n\n- Liều lượng sử dụng Acetaminophen cho phép là 10-15 mg/kg/ lần.\nVí dụ bạn cân nặng 50kg => liều lượng sử dụng acetaminophen cho phép của bạn là trong khoảng từ 500mg (50kg x 10mg) đến 750mg (50kg x 15mg), tương đương  từ 1-1,5 viên\n\n- Khoảng cách 2 liều ít nhất 4 giờ và KHÔNG nên dùng quá 4 lần hoặc 3g/24 giờ.",
+        "maccovid_tieuchay":"Oresol là dung dịch bù nước khá phổ biến dùng để bù nước và điện giải khi bị tiêu chảy hoặc nôn.",
+        "maccovid_daubung": "Phosphalugel, Omeprazole, Lansoprazole, Rabeprazole… là những thuốc mà bạn có thể sử dụng đối với triệu chứng đau vùng bụng.",
+        "maccovid_ho": "Các loại thuốc giúp trị ho long đàm như Bromhexin, Acetylcystein, Thảo dược",
+        "maccovid_nghiemtrong": "Đây là các triệu chứng đặc biệt cần ý kiến chỉ định từ bác sĩ",
+        "maccovid_check": "Bạn có đang mắc covid hay có từng tiếp xúc với f0 không?",
+        "khongmaccovid_ho":"Trường hợp bạn chỉ rát họng nhẹ và không kèm triệu chứng khác thì hiện tại chưa cần uống thuốc, bạn có thể thực hiện những cách sau: uống nước chanh mật ong ấm, tăng cường súc miệng bằng nước muối loãng, uống thêm một số vitamine đa sinh tố như vitamine C, vitamine PP)",
+        "khongmaccovid_khotho":"Với các loại bệnh lý viêm đường hô hấp và có tình trạng khó thở, các chuyên gia y tế thường chỉ định sử dụng một số loại thuốc làm giãn phế quản để đường thở được khai thông, cải thiện lại các chức năng hô hấp. Một số loại thuốc thường được sử dụng bao gồm: Thuốc phòng cơn khó thở (salmeterol, theophylin,..); thuốc cắt nhanh các cơn khó thở (salbutamol, terbutaline, ipratropium,...)",
+        "khongmaccovid_sot": "Nếu bạn chỉ ho và sốt nhẹ thì có thể chưa cần uống thuốc mà áp dụng các biện pháp như uống nhiều nước nguội, ấm, hạn chế uống nước lạnh, lau mát, và mặc quần áo thoáng mát, tránh ủ kín cơ thể. Nếu sốt trên 38,5 độ có thể dùng thuốc hạ sốt paracetamol \nNếu vẫn còn sốt khi đã dùng thuốc paracetamol, có thể tiến hành lau mát theo hướng dẫn sau: pha nước 2 phần lạnh 1 phần nóng, nhiệt độ như khi tắm nước ấm, nhúng nước ấm 5 khăn sạch, 4 khăn kẹp ở hõm nách và vùng bẹn 2 bên, 1 khăn còn lại dùng để lau khắp người trong 15 – 30 phút, nhúng ấm lại khi khăn lạnh đi.\nTheo dõi thân nhiệt ít nhất 2 lần mỗi ngày.",
+        "khongmaccovid_daubung": "Với trường hợp nhẹ không phải do covid bạn nên uống thuốc Berberin.",
+        "khongmaccovid_conlai": "Đây là các triệu chứng đặc biệt bạn xem có kèm theo triệu chứng khác trong quá trình mắc phải không.Cần liên hệ với bác sĩ để được tư vấn",
+        "vaccine_check": "Bạn có bất kỳ chống chỉ định cụ thể nào nếu phát triển các tác dụng phụ như đau, sốt, nhức đầu hoặc đau cơ sau khi tiêm không ạ?",
+        "vaccine_replyok": "Bạn có thể dùng paracetamol hoặc các loại thuốc giảm đau, hạ sốt",
+        "vaccine_replynot": "Bạn không được tiếp tục dùng thuốc cho đến khi hết tác dụng phụ sau vaccine ",
+        "cothai":"Khi thai phụ mắc Covid-19 sẽ làm tăng nguy cơ tiền sản giật, sinh non, thai chậm tăng trưởng và tăng tỷ lệ mổ lấy thai. Do đó, phụ nữ mang thai khi mắc covid cần được tư vấn đầy đủ với các bác sĩ điều trị"
     }
+
 }

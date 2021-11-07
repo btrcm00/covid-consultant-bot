@@ -60,16 +60,16 @@ num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s
 
 
 
-ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|â]i)\b',r'\b(a[s|t]r[a|á|ấ])\b',r'\b([s|x][i|í][n|m]o)\b',r'\b([p|f]i[z|d|]er)\b',r'\b([m|n][o|ô|ơ][|d]er)\b'],
-        "f1":[r'\b(f\s*(1|m+[o|ô|ộ]t))\b'],
-        "f0":[r'\b(f\s*(0|kh[o|ô|ộ]n))\b'],
-        "women":[r'\b(th[o][a|â|á|ă]i)\b'],
-        "old":[r'\b([d|g][i][a|â|á|ă|à|ã])\b'],
-        "register":[r'\b([d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n)\b',r'\b([k|c][i|y|í|ý])\b'],
-        "injected":[r'\b([x|s][o|ô|ơ][n|m][g])\b',r'\b([v|d][ê|e|è|ề|é|iề|ie|iê|iè])\b'],
-        "condition":[r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u',r'[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n',r'[n|m][ê|e|è|ề]n'],
-        "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
-    }
+ques={"time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
+        "f1":r'f\s*(1|m+[o|ô|ộ]t)',
+        "f0":r'f\s*(0|kh[o|ô|ộ]n)',
+        "women":r'(ma[n|]g|c[ó|o])?\s*thai',
+        "old":r'[d|g][i][a|à]',
+        "register":r'[d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n|[k|c][i|y|í|ý]',
+        "injected":r'[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè]',
+        "condition":r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u|[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n|[n|m][ê|e|è|ề]n',
+        "number":r'm[a|á|ấ|â]y\s*lo[a|ạ]i|(bao)?\s*nhi[|e|ê]u'
+}
 vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
 gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
 man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
@@ -97,3 +97,17 @@ precaution_reg = {
     r'ruatay': r'r[u|ư|ủ|ử]a\s*tay',
     r'vesinh': r'(v[e|ê|ẹ|ệ]\s*[x|s]i[n|]h|di[n|]h\s*d[u|ư][o|ơ|ỡ][n|]g)'
 }
+
+medication_reg={
+    "damac_covid_chuaco_trieuchung": r'ch[ă|a]m|u[o|ố]ng|d[u|ù|ụ]ng\s*thu[o|ố]c',
+    "location_medicine":r'thu[o|ố]c.*(mua|ph[a|á]t).*(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u)|(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u).*(mua|ph[a|á]t).*thu[o|ố]c',
+    "buy_medicine":r'thuốc.*(mua|ph[a|á]t)|(mua|ph[a|á]t).*thuốc',
+    "spo":r'spo|[đ|d]o.*[o|ô]\s*x[y|i]',
+    "device":r'thi[e|ê|é|ế]t\s*b[ị|i]|d[ụ|u]ng\s*c[ụ|u]|v[ậ|a]t\s*d[ụ|u]ng|má[y|i]',
+    "5k": r'5k',
+    "binhoxy":r'b[i|ì]nh.*[o|ô]\s*x[y|i]'
+}
+
+cachdo=r'c[á|a]ch\s*d[u|ù|ụ]ng|s[ử|ư|u]\s*d[u|ù|ụ][n|]g|c[á|a]ch\s*[d|đ]o|[d|đ]o\s*th[e|ế]|d[u|ù|ụ]ng\s*[d|đ]o'
+f0_macbenh=r'f\s*(1|m[o|ô|ộ]t)|b[e|ệ][n|]h'
+daubung=r'[d|đ]a[u|o]\s*b[u|ụ]ng'

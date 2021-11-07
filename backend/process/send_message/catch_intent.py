@@ -1,4 +1,4 @@
-from backend.config.constant import MAP_TO_DISTRICT_HCM, CODE_RETURN
+from backend.config.constant import MAP_TO_DISTRICT_HCM
 from backend.config.regrex import sex_reg, age_reg, agree, disagree, check_has_symp, symptom_list, num_req, covid_infor_reg
 from backend.utils.utils import preprocess_message
 import regex as re
@@ -66,7 +66,8 @@ def predict_message(self, message, conversation_history, conversation_message):
                 'f':'',
                 'ruoubia':'',
                 'chongchidinh':'',
-                'state_vaccine':''
+                'state_vaccine':'',
+                'state_medication':''
                 }
             }
     
@@ -105,9 +106,8 @@ def predict_message(self, message, conversation_history, conversation_message):
                 res['request_sex-again'] = last_infor
                 return res, intent, sub_intent
 
-            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
-            
-        elif 'request' in last_intent and 'symptom' in last_intent:
+            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent        
+        elif 'request' in last_intent and 'symptom' in last_intent and intent != 'request':
             symptom = re.sub(r'request_','',last_intent)
             if re.search('|'.join([i for i in symptom_list[symptom]]), message):
                 pass
@@ -119,15 +119,31 @@ def predict_message(self, message, conversation_history, conversation_message):
             intent = 'inform'
             print('message after append', message)
             return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
-
         elif 'request_location' in last_intent and intent!='request':
             intent = 'inform'
-            return emergency_contact_rep(message, models.reply_text, last_infor), intent, sub_intent
+            return emergency_contact_rep(message, last_infor), intent, sub_intent
 
         elif last_infor['history']['state_vaccine']!='' :
-            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
+            res = vaccine_rep(message, last_infor)
             return res, intent, sub_intent
-
+        elif last_infor['history']['state_medication'] != '':
+            if not 'request' in last_intent:
+                res = medication_rep(message, last_infor, last_intent)
+                return res, intent, sub_intent
+            else:
+                if 'rare' in last_intent:
+                    symp_in_text = re.search(check_has_symp, message)
+                    if symp_in_text:
+                        intent = 'request'
+                        sub_intent = 'symptom_have'
+                    if re.search(num_req, message):
+                        intent = 'request'
+                        sub_intent = 'current_numbers'
+                    t = symptom_rep(message, sub_intent, last_intent, last_infor)
+                    last_intent = list(t.keys())[0]
+                    last_infor = t[last_intent]
+                    res = medication_rep(message, last_infor, last_intent)
+                    return res, intent, sub_intent
         elif last_intent == 'request_covid_infor_chithi' and intent!='request':
             message += 'chỉ thị như nào'
             intent = 'inform'
@@ -141,17 +157,17 @@ def predict_message(self, message, conversation_history, conversation_message):
         intent = 'request'
         sub_intent = 'symptom_have'
 
-
     print("\t\t+++++++++++++Tự infer intent dùng regex (vì model chưa đủ tốt để predict)+++++++++++++++")
-    if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ|ắ][c|t|g]\s*[x|s][i|y]n|vaccine', message):
-        intent = 'request'
-        sub_intent = 'vacxin'
-    elif any(re.search(reg, message) for reg in covid_infor_reg):
-        intent = 'request'
-        sub_intent = 'covid_infor'
-    elif re.search(num_req, message) and sub_intent != 'vacxin':
-        intent = 'request'
-        sub_intent = 'current_numbers'
+    if intent=='other' or intent == 'ok':
+        if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ|ắ][c|t|g]\s*[x|s][i|y]n|vaccine', message):
+            intent = 'request'
+            sub_intent = 'vacxin'
+        elif any(re.search(reg, message) for reg in covid_infor_reg):
+            intent = 'request'
+            sub_intent = 'covid_infor'
+        elif re.search(num_req, message) and sub_intent != 'vacxin':
+            intent = 'request'
+            sub_intent = 'current_numbers'
 
     if intent =='hello':
         res['hello'] = last_infor
@@ -159,16 +175,16 @@ def predict_message(self, message, conversation_history, conversation_message):
         if 'symptom' in sub_intent:
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
         elif sub_intent == 'vacxin':
-            res = vaccine_rep(message, models.reply_text, last_infor, intent, last_intent)
+            res = vaccine_rep(message, last_infor)
         elif 'contact' in sub_intent:
-            res = emergency_contact_rep(message, models.reply_text, last_infor)
+            res = emergency_contact_rep(message, last_infor)
         elif 'precaution' in sub_intent:
             res_code = precaution_rep(message)
             res[res_code] = last_infor
         elif 'current' in sub_intent:
             res = current_numbers_rep(message, last_infor)
-        elif 'medication' in sub_intent:
-            res['incomming'] = last_infor
+        elif 'medication' in sub_intent or re.search(r'thu(ố|o)c',message):
+            res = medication_rep(message, last_infor, last_intent)
         else:
             res_code = common_infor_rep(message)
             res[res_code] = last_infor

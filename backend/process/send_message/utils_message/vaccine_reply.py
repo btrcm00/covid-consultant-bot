@@ -4,16 +4,16 @@ from backend.config.regrex import *
 import regex as re
 
 
-def timevaccine(message, reply_text, last_infor, last_intent):
+def timevaccine(message, last_infor):
     res = {}
-    t = ''
+    res_code = ''
     num = 0
 
     if not last_infor['history']['state_vaccine']:
         for ele2 in message.split():
             for x in vaccine:
                 if re.search(x, ele2.lower()):
-                    t = 'inform_time_vaccine' + str(num + 1)
+                    res_code = 'inform_time_vaccine' + str(num + 1)
                     res[t] = last_infor
                     return res
                 num = num + 1
@@ -26,7 +26,7 @@ def timevaccine(message, reply_text, last_infor, last_intent):
         for ele2 in message.split():
             for x in vaccine:
                 if re.search(x, ele2.lower()):
-                    t = 'inform_time_vaccine' + str(num + 1)
+                    res_code = 'inform_time_vaccine' + str(num + 1)
                     last_infor['history']['state_vaccine'] = ''
                     res[t] = last_infor
                     return res
@@ -35,16 +35,7 @@ def timevaccine(message, reply_text, last_infor, last_intent):
     res['inform_time_vaccine'] = last_infor
     return res
 
-
-def womenn(message, intent, last_infor, last_intent):
-    res = {}
-    last_infor['history']['cothai'] = 'y'
-    last_infor['infor']['sex'] = 'nu'
-    res['inform_women_vaccine'] = last_infor
-    return res
-
-
-def oldd(message, intent, last_infor, last_intent):
+def oldd(message, last_infor):
     res = {}
     if not last_infor['history']['state_vaccine']:
         last_infor['history']['state_vaccine'] = 'old'
@@ -61,8 +52,7 @@ def oldd(message, intent, last_infor, last_intent):
             res['inform_old_vaccine3'] = last_infor
             return res
 
-
-def injecc(message, intent, last_infor, last_intent):
+def injecc(message, last_infor):
     res = {}
     check = False
     if not last_infor['history']['state_vaccine']:
@@ -91,8 +81,7 @@ def injecc(message, intent, last_infor, last_intent):
             res['inform_injected_vaccine1'] = last_infor
             return res
 
-
-def condition(message, intent, last_infor, last_intent):
+def condition(message, last_infor):
     res = {}
     if not last_infor['history']['state_vaccine']:
         last_infor['history']['state_vaccine'] = 'condition'
@@ -135,52 +124,43 @@ def condition(message, intent, last_infor, last_intent):
                 res['inform_condition_vaccine2'] = last_infor
                 return res
 
-
-def vaccine_rep(message, reply_text, last_infor, intent, last_intent):
+def vaccine_rep(message, last_infor):
 
     print('\t\t------------------TƯ VẤN VACCINE-------------------')
     check = ''
     res = {}
     for ele in ques:
-        for x in ques[ele]:
-            if re.search(x, message):
-                check = ele
-        if check:
+        if re.search(ques[ele], message):
+            check = ele
             break
-    if not last_infor['history']['state_vaccine']:
-        if check == 'f1':
-            last_infor['history']['f'] = 1
-            res['inform_f1_vaccine'] = last_infor
-            return res
-        elif check == 'f0':
-            last_infor['history']['f'] = 0
-            res['inform_f0_vaccine'] = last_infor
-            return res
-        elif check == 'old':
-            return oldd(message, intent, last_infor, last_intent)
-        elif check == 'women':
-            return womenn(message, intent, last_infor, last_intent)
-        elif check == 'time':
-            return timevaccine(message, intent, last_infor, last_intent)
-        elif check == 'injected':
-            return injecc(message, intent, last_infor, last_intent)
-        elif check == 'condition':
-            return condition(message, intent, last_infor, last_intent)
-        elif check == 'number':
-            res['inform_number_vaccine'] = last_infor
-            return res
-        elif check == 'register':
-            res['inform_vaccine_register'] = last_infor
-    else:
+        
+    if check == 'f1':
+        last_infor['history']['f'] = 1
+        res['inform_f1_vaccine'] = last_infor
+        return res
+    elif check == 'f0':
+        last_infor['history']['f'] = 0
+        res['inform_f0_vaccine'] = last_infor
+        return res
+    elif check == 'number':
+        res['inform_number_vaccine'] = last_infor
+        return res
+    elif check == 'register':
+        res['inform_vaccine_register'] = last_infor
+    elif check == 'old' or 'old' in last_infor['history']['state_vaccine']:
+        return oldd(message, last_infor)
+    elif check == 'women':
+        last_infor['history']['cothai'] = 'y'
+        last_infor['infor']['sex'] = 'female'
+        res['inform_women_vaccine'] = last_infor
+        return res
+    elif check == 'time' or 'time' in last_infor['history']['state_vaccine']:
+        return timevaccine(message, last_infor)
+    elif check == 'condition' or 'condition' in last_infor['history']['state_vaccine']:
+        return condition(message, last_infor)
+    elif check == 'injected' or 'injec' in last_infor['history']['state_vaccine']:
+        return injecc(message, last_infor)
 
-        if 'old' in last_infor['history']['state_vaccine']:
-            return oldd(message, intent, last_infor, last_intent)
-        elif 'time' in last_infor['history']['state_vaccine']:
-            return timevaccine(message, intent, last_infor, last_intent)
-        elif 'injec' in last_infor['history']['state_vaccine']:
-            return injecc(message, intent, last_infor, last_intent)
-        elif 'condition' in last_infor['history']['state_vaccine']:
-            return condition(message, intent, last_infor, last_intent)
     if not res:
         res['inform_common_vaccine'] = last_infor
     return res

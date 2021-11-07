@@ -1,10 +1,4 @@
-from functools import reduce
-import random
-import json
-import re
-import requests
-from collections import defaultdict
-from backend.process.PretrainedModel import PretrainedModel
+import regex as re
 
 def generate_reply_text(self, result, reply_text):
     res_code = list(result.keys())[0]
@@ -36,7 +30,9 @@ def generate_reply_text(self, result, reply_text):
         if 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
-        if 'vaccine' in res:
+        if 'vaccine' in res and not 'medication' in res:
             suggest_reply += reply_text[res]
+        if 'medication' in res:
+            suggest_reply += reply_text['inform_medication'][re.sub('medication_', '', res)]
     
     return suggest_reply, result, check_end
