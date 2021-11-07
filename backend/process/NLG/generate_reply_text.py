@@ -38,5 +38,7 @@ def generate_reply_text(self, result, reply_text):
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
         if 'vaccine' in res:
             suggest_reply += reply_text[res]
+        if 'medication' in res:
+            suggest_reply += reply_text[res]
     
     return suggest_reply, result, check_end

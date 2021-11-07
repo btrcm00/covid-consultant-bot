@@ -48,4 +48,3 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                 res_code += 'inform_low_prop-diagnose'
     res[res_code] = last_infor
     return res
-    

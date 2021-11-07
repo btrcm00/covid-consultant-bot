@@ -32,15 +32,14 @@ symptom_list = {
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
 
-age_reg = r'\d{1,2}'
+age_reg = r'(\d{1,2})\s*t[u|ủ][ỏ|o|ô|ổ|]i'
 sex_reg = {
-    r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g': 'male',
-    r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i': 'female'
+    'male': r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g',
+    'female': r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i'
 }
 
 agree = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr)\b'
 disagree = r'\b(th[u|ô|o][i|y]*|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
-
 
 
 ### TIME
@@ -58,8 +57,6 @@ pt_time_summary = r'\b({}|{}|{}|{}|{}|{}|sáng|trưa|tối|mai|mốt|chủ\snh�
 
 num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s*(nh[i|ĩ][|e|ễ|ê]m|m[ắ|a|ă]c)'
 
-
-
 ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|â]i)\b',r'\b(a[s|t]r[a|á|ấ])\b',r'\b([s|x][i|í][n|m]o)\b',r'\b([p|f]i[z|d|]er)\b',r'\b([m|n][o|ô|ơ][|d]er)\b'],
         "f1":[r'\b(f\s*(1|m+[o|ô|ộ]t))\b'],
         "f0":[r'\b(f\s*(0|kh[o|ô|ộ]n))\b'],
@@ -71,10 +68,13 @@ ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|�
         "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
     }
 vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
-gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
-man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
-di=r'\b([d|g][i|y|ỵ|ị|í])\b'
-bia=r'\b([b|p]i[a]|r[u|ư|ụ|i|ị][ơ|o|]u)\b'
+
+medical_his_reg = {
+    'gan': r'gan',
+    'mantinh': r'm[a|ã]n\s*t[i|í][n|]h',
+    'diung': r'[g|d][i|y|ị|ỵ]\s*[u|ư|ứ|ú][n|]g',
+    'bia': r'bia|r[u|ư|ự|ụ][ơ|o|ợ|]u|rịu'
+}
 
 
 covid_infor_reg = {
@@ -97,3 +97,18 @@ precaution_reg = {
     r'ruatay': r'r[u|ư|ủ|ử]a\s*tay',
     r'vesinh': r'(v[e|ê|ẹ|ệ]\s*[x|s]i[n|]h|di[n|]h\s*d[u|ư][o|ơ|ỡ][n|]g)'
 }
+
+ques_medication={
+    "damac_covid_chuaco_trieuchung": [r'\b(ch(ă|a)m)\b',r'\b(u(o|ố)ng)\b',r'\b(d(u|ù|ụ)ng.*thu(o|ố)c)\b'],
+    "location_medicine":[r'\b(thuốc.*(mua|phát|phat).*(ở|n(ơ|o)i|ch(ỗ|o)|đ(â|a)u))\b',r'\b((ở|n(ơ|o)i|ch(ỗ|o)|đ(â|a)u).*(mua|phát|phat).*thuốc)\b'],
+    "buy_medicine":[r'\b(thuốc.*(mua|phát|phat))\b',r'\b((mua|phát|phat).*thuốc)\b'],
+        "spo":[r'\b(spo)\b',r'\b((đ|d)o.*(o|ô)\s*x(y|i).*)\b'],
+        "device":[r'\b(.*thi(e|ê|é|ế)t.*b(ị|).*)\b',r'\b(d(ụ|u)ng\s*c(ụ|u)|v(ậ|a)t\s*d(ụ|u)ng|má(y|i))\b'],
+        "5k":[r'\b(.*5(K|k)*)\b'],
+        "binhoxy":[r'\b(.*b(i|ì)nh.*(o|ô)\s*x(y|i))\b']
+     }
+
+
+cachdo=r'\b((c(á|a)ch.*d(u|ù|ụ)ng)|(s(ử|ư|u).*d(u|ù|ụ)ng)|(c(á|a)ch.*(d|đ)o)|((d|đ)o.*th(e|ế))|(d(u|ù|ụ)ng.*(d|đ)o))\b'
+f0_macbenh=r'\b(f\s*(1|m[o|ô|ộ]t)|b(e|ệ)nh)\b'
+daubung=r'\b((d|đ)a(u|o)\s*b(u|ụ)ng)\b'

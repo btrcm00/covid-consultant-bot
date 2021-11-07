@@ -2,6 +2,7 @@ import re
 from backend.process.PretrainedModel import PretrainedModel
 import numpy as np
 from numpy.linalg import norm
+from backend.utils.spell_corrector import correct_sent
 global dictionary
 dictionary = {}
 
@@ -10,21 +11,6 @@ def split(delimiters, string, maxsplit=0):
     regexPattern = '|'.join(map(re.escape, delimiters))
     return re.split(regexPattern, string, maxsplit)
 
-def preprocess_before_classify(ID_product, alias, message):
-    if ID_product:
-        if isinstance(ID_product,list):
-            for product_ele in ID_product:
-                message = message.replace(product_ele,'')
-        else:
-            message = message.replace(ID_product,'')
-    if alias:
-        if isinstance(alias,list):
-            for alias_ele in alias:
-                message = message.replace(alias_ele,'')
-        else:
-            message = message.replace(alias,'')
-    return message
-
 def split(delimiters, string, maxsplit=0):
     # regexPattern = '|'.join(map(re.escape, delimiters))
     regexPattern = '|'.join(delimiters)
@@ -32,6 +18,7 @@ def split(delimiters, string, maxsplit=0):
 
 # Preprocessing message
 def preprocess_message(message):
+    message = correct_sent(message)
     message = re.sub(
         '[\:\_=\#\@\$\%\$\\(\)\~\@\;\'\|\<\>\]\[\"\–“”…*]', ' ', message)
 
@@ -46,8 +33,6 @@ def preprocess_message(message):
     message = message.replace('+', ' + ')
     message = compound2unicode(message)
     list_token = message.split(' ')
-    # ---------------------- Chuẩn hóa một số từ sai chính tả đặc thù
-    list_token = ['đầm' if ele in ['dầm'] else ele for ele in list_token]   
     while '' in list_token:
         list_token.remove('')
     message = ' '.join(list_token)

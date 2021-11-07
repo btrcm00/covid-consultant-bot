@@ -29,6 +29,3 @@ def emergency_contact_rep(text, reply_text, last_infor):
     res[res_code] = last_infor
     return res
     
-
-
-    
