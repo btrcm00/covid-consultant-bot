@@ -6,7 +6,7 @@ from backend.process.PretrainedModel import PretrainedModel
 models = PretrainedModel()
 from backend.config.config import get_config
 config_app = get_config()
-from backend.process.create_chatbot.chatbot import CovidBot
+from backend.process.chatbot import CovidBot
 
 def send_message(data):
 # ---------------- 4.BOT ---------------- #

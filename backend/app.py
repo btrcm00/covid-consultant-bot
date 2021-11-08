@@ -1,14 +1,13 @@
 
 from fastapi import FastAPI, Request
-from backend.config.config import get_config
-from backend.process.PretrainedModel import PretrainedModel
-import pickle
 import uvicorn
 import logging
 from fastapi.encoders import jsonable_encoder
-app = FastAPI()
 
+from backend.config.config import get_config
 config_app = get_config()
+from backend.process.PretrainedModel import PretrainedModel
+app = FastAPI()
 
 logging.basicConfig(filename=config_app['log']['app'],
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')

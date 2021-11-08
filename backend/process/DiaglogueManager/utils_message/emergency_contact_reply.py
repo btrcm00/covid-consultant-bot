@@ -1,4 +1,4 @@
-from backend.config.constant import contact_emergency, DISTRICT
+from backend.config.constant import DISTRICT
 import regex as re
 from unidecode import unidecode
 

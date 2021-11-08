@@ -1,11 +1,7 @@
 import json
-import sys
 import pickle
 import pymongo
-from os import path
-import re
-
-
+import regex as re
 from backend.config.config import get_config
 config_app = get_config()
 

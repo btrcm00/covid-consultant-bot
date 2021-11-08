@@ -6,6 +6,7 @@ from os import path
 import sys
 sys.path.append('..')
 
+#Symptom regex
 usual_symptom = {
     r's[ô|ố|ó|o]t' : 'sot',
     r'ho': 'ho',
@@ -31,16 +32,16 @@ symptom_list = {
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
-
+#Entity regex
 age_reg = r'(\d{1,2})\s*t[u|ủ][ỏ|o|ô|ổ|]i'
 sex_reg = {
     'male': r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g',
     'female': r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i'
 }
 
-agree = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr)\b'
-disagree = r'\b(th[u|ô|o][i|y]*|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
-
+agree = r'c[o|ó]|r[ồ|u|ù|o|ô]i|dr'
+disagree = r'kh[o|ô]ng|ko|k\s(\s)*'
+done = r'tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|[o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]'
 
 ### TIME
 pt_time_pre = r'sáng|trưa|tối|chiều|ng[à|a]y|h[ô|u|o]m|mùng|tuần|bữa'
@@ -73,7 +74,7 @@ medical_his_reg = {
     'gan': r'gan',
     'mantinh': r'm[a|ã]n\s*t[i|í][n|]h',
     'diung': r'[g|d][i|y|ị|ỵ]\s*[u|ư|ứ|ú][n|]g',
-    'bia': r'bia|r[u|ư|ự|ụ][ơ|o|ợ|]u|rịu'
+    'ruoubia': r'bia|r[u|ư|ự|ụ][ơ|o|ợ|]u|rịu'
 }
 
 

@@ -52,7 +52,7 @@ async function callMessageAPI(options,message,bot){
           };
           for (var sentence of suggest_reply.split("*")){
             bot.reply(message, sentence);
-            await sleep(1500);
+            //await sleep(1500);
           }
         }
       });
