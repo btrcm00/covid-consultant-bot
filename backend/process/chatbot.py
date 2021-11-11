@@ -8,6 +8,7 @@ sys.path.append("..")
 
 from backend.process.NLU.message_understanding import extract_information_message
 from backend.process.DiaglogueManager.dialogue import dialogue
+from backend.process.NLG.generate_reply_text import generate_reply_text
 from backend.utils.error_handler import error_handler
 
 from backend.process.PretrainedModel import PretrainedModel

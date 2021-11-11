@@ -1,8 +1,8 @@
 import urllib.request, json 
 import regex as re
-from backend.config.constant import province_lst
+from unidecode import unidecode
 
-def current_numbers_rep(text, last_infor):
+def current_numbers_rep(intent,last_infor):
     #----------------------------------------------#
     # - Bắt địa chỉ trong câu của bệnh nhân (tỉnh thành)
     # - Nếu bắt được thì sẽ reply theo tỉnh thành đó
@@ -11,20 +11,16 @@ def current_numbers_rep(text, last_infor):
     print('\t\t------------------THÔNG TIN SỐ CA NHIỄM-------------------')
     data = {}
     res = {}
+    
     with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true") as url:
         data = json.loads(url.read().decode())
     infected = data['infected']
     recovered = data['recovered']
     died = data['died']
     loc = 'Việt Nam'
-    text = re.sub(r'sài gòn|hồ chí minh', 'tp. hồ chí minh', text)
-    text = re.sub(r'huế', 'thừa thiên huế', text)
-    text = re.sub(r'vũng tàu', 'bà rịa – vũng tàu', text)
-
-    for pro in province_lst:
-        if pro.lower() in text:
-            loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
-            recovered = 0
+    
+    loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if unidecode(ele['name'].lower()) in intent][0]
+    recovered = 0
     res_code = 'inform_current_numbers+{}+{}+{}'.format(loc,infected,recovered)
     res[res_code] = last_infor
     return res

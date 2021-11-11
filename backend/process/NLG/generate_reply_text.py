@@ -6,7 +6,7 @@ import requests
 from collections import defaultdict
 from backend.process.PretrainedModel import PretrainedModel
 
-def generate_reply_text(self, result, reply_text):
+def generate_reply_text(result, reply_text):
     res_code = list(result.keys())[0]
     suggest_reply = ""
     check_end = False

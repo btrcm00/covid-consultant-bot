@@ -1,6 +1,6 @@
 from backend.utils.utils import preprocess_message
 from backend.config.regrex import *
-from backend.config.constant import DISTRICT
+from backend.config.constant import DISTRICT, PROVINCE
 from backend.process.PretrainedModel import PretrainedModel
 from unidecode import unidecode
 
@@ -18,8 +18,8 @@ def extract_entity_message(message):
     entity_dict = {
         'age': '',
         'sex': '',
-        'location': '',
-        'symptoms': [],
+        'address': '',
+        'symptom': [],
         'medical_history': []
     }
     print("\t\t+++++++++ Extract entity +++++++++")
@@ -38,12 +38,12 @@ def extract_entity_message(message):
         for intensive in symptom_list:
             for sym in symptom_list[intensive]:
                 if re.search(sym, message):
-                    entity_dict['symptoms'].append(symptom_list[intensive][sym])
+                    entity_dict['symptom'].append(symptom_list[intensive][sym])
 
     if re.search(DISTRICT, message):
         location = re.findall(DISTRICT, message)
         if location:
-            entity_dict['location'] = ''.join(unidecode(location[0]).split())
+            entity_dict['address'] = ''.join(unidecode(location[0]).split())
 
     for ele in medical_his_reg:
         if re.search(medical_his_reg[ele], message):
@@ -66,12 +66,11 @@ def extract_intent_message(message, entity_dict):
         if sub_intent == 'precautions':
             t = [i for i in precaution_reg if re.search(precaution_reg[i], message)]
             intent += '_' + t[0] if t else ''
+        if sub_intent == 'current_numbers':
+            t = [i.lower() for i in PROVINCE if re.search(i.lower(), message)]
+            intent += '_' + unidecode(t[0]) if t else ''
     elif intent == 'inform' or any(entity_dict[i] for i in entity_dict):
-        temp = [i for i in entity_dict if entity_dict[i]]
-        if temp:
-            intent = 'inform_' + temp[0]
-        else:
-            intent = 'inform'
+        intent = 'inform'
     else:
         if re.search(disagree, message):
             intent = 'disagree'
