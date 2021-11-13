@@ -129,7 +129,14 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif last_infor['history']['state_vaccine']!='' :
             res = vaccine_rep(message, last_infor)
             return res, intent, sub_intent
-        elif last_infor['history']['state_medication'] != '':
+
+        elif last_intent == 'request_covid_infor_chithi' and intent!='request':
+            message += 'chỉ thị như nào'
+            intent = 'inform'
+            res_code = common_infor_rep(message)
+            res[res_code] = last_infor
+            return res, intent, sub_intent
+        if last_infor['history']['state_medication'] != '':
             if not 'request' in last_intent:
                 res = medication_rep(message, last_infor, last_intent)
                 return res, intent, sub_intent
@@ -147,13 +154,6 @@ def predict_message(self, message, conversation_history, conversation_message):
                     last_infor = t[last_intent]
                     res = medication_rep(message, last_infor, last_intent)
                     return res, intent, sub_intent
-        elif last_intent == 'request_covid_infor_chithi' and intent!='request':
-            message += 'chỉ thị như nào'
-            intent = 'inform'
-            res_code = common_infor_rep(message)
-            res[res_code] = last_infor
-            return res, intent, sub_intent
-
     ''' print("\t\t+++++++++++++ check entity in message+++++++++++++++")
     symp_in_text = re.search(check_has_symp, message)
     if symp_in_text:

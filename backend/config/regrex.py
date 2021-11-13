@@ -60,13 +60,29 @@ pt_time_summary = r'\b({}|{}|{}|{}|{}|{}|sáng|trưa|tối|mai|mốt|chủ\snh�
 num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s*(nh[i|ĩ][|e|ễ|ê]m|m[ắ|a|ă]c)'
 
 
+trieuchung_nhe_check=r'[d|đ]au|s[ư|u]ng|m[e|ệ]t|s[o|ố]t|bu[o|ồ]n|l[a|ạ]nh|ho'
+trieuchung_nang_check=r'kh[o|ó]\sth[o|ở]|ng[u|ự]c|li[ệ|e]t|nguy\s*hi[ể|e]m'
+bienchung_cotiem=r'c[ơ|o]\s*tim'
+bienchung_huyetkhoi_tieucau=r'huy[e|ế]t|ti[e|ể]u\s*c[a|ầ]u'
 
-ques={"time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
+ques={
+"thongtin_trieuchungsautiem":r'tri[e|ệ]?u.*sau.*ti[e|ê]m.*là\s',
+"doituongtiemvaccine":r'((ai|ng(uo|ườ)i)|(doi\stuong|đối\s*tượng)).*(được|duoc|co\s*the|có\s*thể).*(tiem|tiêm|chich|chích)',
+    #nen làm gi(điều trị như thế nào) khi bi triệu chứng sốt sau khi tiem | bi triệu sốt sau khi tiem nên làm gì(điều trị như thế nào)
+    "cachdieutri_trieuchungsautiem":r'tri[e|ệ]?u.*sau.*ti[e|ê]m\s', #.*|l[a|à]m.*tri[e|ệ]?u.*sau.*ti[e|ê]m|tri[e|ệ]?u.*sau.*ti[e|ê]mtri[e|ệ]?u.*sau.*ti[e|ê]m|.*[d|đ]i[e|ề]u',
+#bien chung sau khi tiem vaccine|sau khi tiem vaccine gap bien chung gi
+"bienchung_trieuchungsautiem":r'bi[ế|e]n.*sau.*ti[e|ê]m|sau.*ti[e|ê]m.*bi[ế|e]n',
+
+
+"lamgisautiem_chuavenha":r'~(nh[à|a])(l[a|à]m.*sau.*ti[e|ê]m|sau.*ti[e|ê]m.*l[a|à]m)~(nh[à|a])',
+    "chuanbitruockhitiem":r'(chu[a|ẩ]n|[đ|d]em|mang).*tr[ướ|uo]c',
+    "child": r'tr[e|ẻ]\s*em|con\s*n[i|í][t|c]',
+    "time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
         "f1":r'f\s*(1|m+[o|ô|ộ]t)',
         "f0":r'f\s*(0|kh[o|ô|ộ]n)',
-        "women":r'(ma[n|]g|c[ó|o])?\s*thai',
-        "old":r'[d|g][i][a|à]',
-        "register":r'[d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n|[k|c][i|y|í|ý]',
+        "women":r'(ma[n|]g|c[ó|o])?\s*thai\s',
+        "old":r'[d|g][i][a|à]\s',
+        "register":r'[d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n|[k|c][i|y|í|ý]\s',
         "injected":r'[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè]',
         "condition":r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u|[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n|[n|m][ê|e|è|ề]n',
         "number":r'm[a|á|ấ|â]y\s*lo[a|ạ]i|(bao)?\s*nhi[|e|ê]u'

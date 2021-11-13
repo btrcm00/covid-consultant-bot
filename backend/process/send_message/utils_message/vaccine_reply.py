@@ -14,7 +14,7 @@ def timevaccine(message, last_infor):
             for x in vaccine:
                 if re.search(x, ele2.lower()):
                     res_code = 'inform_time_vaccine' + str(num + 1)
-                    res[res_code] = last_infor
+                    res[t] = last_infor
                     return res
                 num = num + 1
             num = 0
@@ -28,7 +28,7 @@ def timevaccine(message, last_infor):
                 if re.search(x, ele2.lower()):
                     res_code = 'inform_time_vaccine' + str(num + 1)
                     last_infor['history']['state_vaccine'] = ''
-                    res[res_code] = last_infor
+                    res[t] = last_infor
                     return res
                 num = num + 1
             num = 0
@@ -123,21 +123,91 @@ def condition(message, last_infor):
             else:
                 res['inform_condition_vaccine2'] = last_infor
                 return res
+def cachdieutri(message, last_infor):
+    res={}
+    t=last_infor['history']['state_vaccine']
+    if last_infor['history']['state_vaccine'] == 'cachdieutri':
+        last_infor['history']['state_vaccine'] = ''
+
+    if re.search(r'n[a|ặ]ng',message):
+        res['inform_dieutrisautiemvaccine_nang_vaccine'] = last_infor
+        return res
+    if re.search(r'nh[e|ẹ]\s',message):
+        res['inform_dieutrisautiemvaccine_nhe_vaccine'] = last_infor
+        return res
+    if t!='':
+        res['inform_dieutrisautiemvaccine_truonghopkhac_vaccine'] = last_infor
+        return res
+    res['request_trieuchungsautiemvaccine_vaccine'] = last_infor
+    return res
 
 def vaccine_rep(message, last_infor):
 
     print('\t\t------------------TƯ VẤN VACCINE-------------------')
     check = ''
     res = {}
+    checktrieuchung_nhe = re.search(trieuchung_nhe_check, message)
+    checktrieuchung_nang = re.search(trieuchung_nang_check, message)
+    if checktrieuchung_nang != None:
+        message = re.sub(trieuchung_nang_check, ' triệu nặng ', message)
+    else:
+        if checktrieuchung_nhe != None:
+            message = re.sub(trieuchung_nhe_check, ' triệu nhẹ ', message)
+
     for ele in ques:
         if re.search(ques[ele], message):
             check = ele
             break
-        
-    if check == 'f1':
+    print(check)
+
+    if check=='doituongtiemvaccine':
+        res['inform_common_vaccine'] = last_infor
+        return res
+    elif check=='cachdieutri_trieuchungsautiem':
+        return cachdieutri(message, last_infor)
+
+    elif check=='bienchung_trieuchungsautiem':
+        if re.search(bienchung_cotiem,message):
+            res['inform_bienchung_cotim_vaccine'] = last_infor
+            return res
+        if re.search(bienchung_huyetkhoi_tieucau,message):
+            res['inform_bienchung_huyetkhoigiamtieucau_vaccine'] = last_infor
+            return res
+        else:
+            res['inform_dieutrisautiemvaccine_nang_vaccine'] = last_infor
+            return res
+
+    elif check=='thongtin_trieuchungsautiem':
+        if re.search(r'n[a|ặ]ng',message):
+            res['inform_trieuchungsautiemvaccine_nang_vaccine']=last_infor
+            return res
+        elif re.search(r'b[a|á]c',message):
+            res['inform_candenbacsi_vaccine'] = last_infor
+            return res
+        else:
+            res['inform_trieuchungsautiemvaccine_nhe_vaccine'] = last_infor
+            return res
+    elif check=='lamgisautiem_chuavenha':
+        res['inform_lamgisautiem_chuavenha_vaccine'] = last_infor
+        return res
+    elif check == 'chuanbitruockhitiem':
+        if re.search(r'gi[a|ấ]y',message)!=None:
+            res['inform_chuanbitruockhitiem_giay_vaccine'] = last_infor
+            return res
+        if re.search(r'\s[ă|a]n\s', message) != None:
+            res['inform_chuanbitruockhitiem_an_vaccine'] = last_infor
+            return res
+        res['inform_chuanbitruockhitiem_giay_vaccine-inform_chuanbitruockhitiem_an_vaccine'] = last_infor
+        return res
+    elif check == 'child':
+        res['inform_vaccinecapphatchotreem_vaccine'] = last_infor
+        return res
+
+    elif check == 'f1':
         last_infor['history']['f'] = 1
         res['inform_f1_vaccine'] = last_infor
         return res
+
     elif check == 'f0':
         last_infor['history']['f'] = 0
         res['inform_f0_vaccine'] = last_infor
@@ -160,7 +230,8 @@ def vaccine_rep(message, last_infor):
         return condition(message, last_infor)
     elif check == 'injected' or 'injec' in last_infor['history']['state_vaccine']:
         return injecc(message, last_infor)
-
+    elif 'cachdieutri' in last_infor['history']['state_vaccine']:
+        return cachdieutri(message, last_infor)
     if not res:
         res['inform_common_vaccine'] = last_infor
     return res
