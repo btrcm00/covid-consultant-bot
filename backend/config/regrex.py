@@ -125,6 +125,20 @@ medication_reg={
     "binhoxy":r'b[i|ì]nh.*[o|ô]\s*x[y|i]'
 }
 
+thuocthongthuong={
+    "para":r'para',
+    "ibu":r'ibu',
+    "mol":r'mo(l|n)'
+}
+cauhoivethuoc={
+    "lagi":r'l(a|à)\s.*g(i|ì)',
+"doituongkhongduocsudung":r' ((không|khong).*(ai|(đối|doi)\s*(tuong|tượng)|nguoi|người)|(ai|(đối|doi)\s*(tuong|tượng)|nguoi|người).*(không|khong))',
+    "doituong":r'(ai|(đối|doi)\s*(tuong|tượng)|nguoi|người)',
+"tacdungphu":r't(a|á)c.*ph(ụ|u)\s|tri(e|ệ)u.*ph(ụ|u)\s',
+    "cachdung":r'(li(e|ề)u\s|c(a|á)ch|d(u|ụ|ù)ng\s|u(o|ố)ng\s)'
+
+}
+khangsinh=r'kh(a|á)ng\s*(sin|xin)'
 cachdo=r'c[á|a]ch\s*d[u|ù|ụ]ng|s[ử|ư|u]\s*d[u|ù|ụ][n|]g|c[á|a]ch\s*[d|đ]o|[d|đ]o\s*th[e|ế]|d[u|ù|ụ]ng\s*[d|đ]o'
 f0_macbenh=r'f\s*(1|m[o|ô|ộ]t)|b[e|ệ][n|]h'
 daubung=r'[d|đ]a[u|o]\s*b[u|ụ]ng'

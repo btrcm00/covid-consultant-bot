@@ -180,6 +180,23 @@ def medication_rep(message, last_infor, last_intent):
     check = ''
     message = message
     res = {}
+    s = ''
+    for x in thuocthongthuong:
+        if re.search(thuocthongthuong[x], message) != None:
+            s = x
+            break
+    e = ''
+    if s != '':
+        for x in cauhoivethuoc:
+            if re.search(cauhoivethuoc[x], message) != None:
+                e = x
+                break
+    if e != '':
+        res['medication_'+s+'_'+e] = last_infor
+        return res
+
+
+
     for ele in medication_reg:
         if re.search(medication_reg[ele], message):
             check = ele
@@ -194,6 +211,9 @@ def medication_rep(message, last_infor, last_intent):
                         check='co_trieuchung'
         if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ][c|t|g]|ti(e|ê)m',message):
             return saukhithiem_vaccine(message, last_infor)
+        if re.search(khangsinh,message):
+            res['medication_khangsinh'] = last_infor
+            return res
         if re.search(r'th(a|aa|â)i',message):
             res['medication_cothai']=last_infor
             return res

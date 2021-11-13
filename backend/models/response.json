@@ -136,6 +136,26 @@
         }
     },
     "inform_medication": {
+        "ibu_lagi": "Ibuprofen là thuốc kháng viêm không steroid (NSAID). Thuốc hoạt động bằng cách ngăn ngừa việc cơ thể sản xuất các chất tự nhiên nào đó gây viêm. Tác dụng này giúp làm giảm sưng, đau hoặc sốt",
+        "ibu_cachdung": "Uống thuốc cách mỗi 4-6 giờ với nhiều nước (240ml) trừ khi có chỉ định khác của bác sĩ. Không nằm trong ít nhất 10 phút sau khi uống thuốc.",
+        "ibu_doituong": "Tổ chức Y tế Thế giới (WHO) ra khuyến cáo những người đang có các triệu chứng mắc bệnh viêm đường hô hấp cấp COVID-19 tránh sử dụng thuốc chống viêm ibuprofen, bởi loại thuốc này có thể khiến tình trạng bệnh trở nên trầm trọng hơn.",
+        "ibu_doituongkhongduocsudung": "Tổ chức Y tế Thế giới (WHO) ra khuyến cáo những người đang có các triệu chứng mắc bệnh viêm đường hô hấp cấp COVID-19 tránh sử dụng thuốc chống viêm ibuprofen, bởi loại thuốc này có thể khiến tình trạng bệnh trở nên trầm trọng hơn.",
+        "ibu_tacdungphu": "Các triệu chứng quá liều có thể bao gồm:\n\nChóng mặt\nCử động mắt nhanh không thể kiểm soát\nThở chậm hoặc có thời gian ngắn không thể thở được\nMôi, miệng và mũi tái nhợt",
+
+        "para_lagi":"Thuốc giảm đau hạ sốt paracetamol được dùng để điều trị các triệu chứng như đau đầu, đau cơ, đau khớp, đau lưng, đau răng, cảm sốt… ",
+        "para_cachdung": "Liều thông thường là 325 mg đến 650 mg. Uống 4 đến 6 giờ một lần, tối đa 4 lần trong khoảng thời gian 24 giờ. Liều tối đa có thể thay đổi từ 3.000 mg đến 4.000 mg, nhưng không được phép dùng quá 4.000 mg trong khoảng thời gian 24 giờ. Làm theo tất cả các hướng dẫn trên nhãn.",
+        "para_doituong": "Paracetamol rất an toàn nếu sử dụng đúng liều, đúng chỉ định. Paracetamol được khuyến cáo sử dụng rộng rãi cho mọi đối tượng bệnh nhân, có bán ở tất cả các quầy thuốc với nhiều tên biệt dược khác nhau",
+"para_doituongkhongduocsudung":"Thuốc không nên sử dụng cho những người dị ứng với Paracetamol, người suy gan nặng.",
+        "para_tacdungphu":"Nếu uống quá liều paracetamol sẽ có nguy cơ ngộ độc, làm gan bị nhiễm độc.*Các triệu chứng ngộ độc biểu hiện: Ngày đầu có biểu hiện mệt mỏi, chán ăn, đau bụng, buồn nôn, da xanh tái, móng tay, móng chân tím tái... Ngày thứ hai có thêm các dấu hiệu nặng hơn như: Đau vùng gan, da mắt vàng, tiểu ít. Ngày thứ 3 và 4 biểu hiện toàn phát, rất nặng, người bệnh rơi vào trạng thái suy đa phủ tạng, hôn mê, sốt...\n      Bị ngộ độc paracetamol có thể bị tử vong bất cứ lúc nào nhưng thường tử vong sau 7 ngày ngộ độc.",
+
+        "mol_lagi": "Molnupiravir là thuốc kháng virus đặc hiệu* Trên cơ sở những kết quả nghiên cứu thử nghiệm lâm sàng Molnupiravir trong điều trị COVID-19 đã công bố tại một số quốc gia cho kết quả khả quan về tính an toàn, khả năng dung nạp, đặc biệt giảm tải lượng virus rõ rệt và làm sạch virus ở bệnh nhân thể nhẹ và vừa sau 5 ngày điều trị, giảm tỷ lệ nhập viện, giảm tử vong.",
+        "mol_cachdung": "một gói thuốc là một liệu trình sử dụng cho một người F0 sử dụng trong 5 ngày điều trị (gồm 20 viên Molnupiravir hàm lượng 400 mg",
+        "mol_doituong": "Đối tượng sử dụng thuốc kháng virus Molnupiravir là người có kết quả xét nghiệm SARS-CoV-2 dương tính (RT-PCR hoặc test nhanh kháng nguyên), độ tuổi từ 18-65 tuổi và đồng ý tham gia chương trình sử dụng thuốc Molnupiravir có kiểm soát tại cộng đồng cho người mắc COVID-19 có triệu chứng ở mức độ nhẹ",
+        "mol_doituongkhongduocsudung": "Tuy nhiên, phụ nữ có thai 3 tháng đầu, phụ nữ đang có kế hoạch mang thai chống chỉ định với loại thuốc này. \nBộ Y tế  khuyến cáo phụ nữ có thai; đang muốn có thai; đang cho con bú không nên sử dụng thuốc. Người dưới 18 tuổi; bị suy gan nặng, suy thận nặng mắc Covid-19 cũng không nên sử dụng thuốc này.",
+        "mol_tacdungphu": "Cũng như bất kỳ một loại thuốc nào khác, các thuốc kháng virus đều có thể gây tác dụng phụ lên trên bệnh nhân.",
+
+        "khangsinh": "kháng sinh không có tác dụng chống lại virus. Mặc dù một số bệnh nhân mắc COVID-19 được điều trị bằng kháng sinh, nhưng đó là biện pháp dùng để điều trị các nhiễm trùng cơ hội hay còn gọi là biến chứng do nhiễm khuẩn bội nhiễm. *Việc dùng kháng sinh phải được khuyến nghị bởi các thầy thuốc, dựa trên tình trạng bệnh tật của bệnh nhân tại bệnh viện.",
+
          "age"    : "Bạn bao nhiêu tuổi á?",
     "sex"    : "Bạn là nam hay nữ vậy ạ",
     "serious_symptom": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không???",
