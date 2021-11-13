@@ -121,6 +121,60 @@ def cotrieuchung(message, last_infor):
             return thuoc_chonguoi_khongbicovid(message, last_infor)
         else:
             return thuoc_chonguoi_bicovid(message, last_infor)
+
+def damaccovid_chuacotrieuchung(message, last_infor):
+    res={}
+    if  last_infor['history']['state_medication'] =='':
+
+        if last_infor['infor']['age']=='':
+            last_infor['history']['state_medication'] = 'damaccovid_tuoi'
+            res['medication_age']=last_infor
+            return  res
+        if last_infor['infor']['sex']=='':
+            last_infor['history']['state_medication'] = 'damaccovid_gioitinh'
+            res['medication_sex']=last_infor
+            return  res
+        else:
+            last_infor['history']['state_medication'] = 'damaccovid_normal'
+            res['medication_normal_symptom'] = last_infor
+            return res
+    else:
+        if 'tuoi' in last_infor['history']['state_medication'] :
+            last_infor['infor']['age']  = re.findall(age_reg, message)[0]
+            last_infor['history']['state_medication'] = 'damaccovid_gioitinh'
+            res['medication_sex'] = last_infor
+            return res
+        if 'gioitinh' in last_infor['history']['state_medication'] :
+
+            for x in sex_reg:
+                t = re.findall(x, message)
+                if re.search(x, message):
+                    break
+            last_infor['infor']['sex'] = 'nam'
+            last_infor['history']['state_medication'] = 'damaccovid_normal'
+            res['medication_normal_symptom'] = last_infor
+
+            return res
+        if 'normal' in  last_infor['history']['state_medication']:
+            print('thang2')
+            for x in normal_symptom:
+                if re.search(x, message) != None:
+                    last_infor['symptom'][normal_symptom[x]] = 1
+                else:
+                    last_infor['symptom'][normal_symptom[x]] = 0
+            last_infor['history']['state_medication'] = 'damaccovid_serious'
+            res['medication_serious_symptom'] = last_infor
+            return res
+        if 'serious' in last_infor['history']['state_medication']:
+            for x in serious_symptom:
+                if re.search(x, message) != None:
+                    last_infor['symptom'][serious_symptom[x]] = 1
+                else:
+                    last_infor['symptom'][serious_symptom[x]] = 0
+            last_infor['history']['state_medication'] =''
+            return thuoc_chonguoi_bicovid(message, last_infor)
+
+
 def medication_rep(message, last_infor, last_intent):
     print('\t\t------------------THÔNG TIN THUỐC-------------------')
     check = ''
@@ -146,9 +200,7 @@ def medication_rep(message, last_infor, last_intent):
         if check=='co_trieuchung':
             return cotrieuchung(message, last_infor)
         if check=='damac_covid_chuaco_trieuchung':
-            last_infor['history']['state_medication'] = 'damac_covid_chuaco_trieuchung'
-            res['request_age'] = last_infor
-            return res
+            return damaccovid_chuacotrieuchung(message, last_infor)
         if check == 'binhoxy':
             res['medication_huongdansudungbinhoxy'] = last_infor
             return res
@@ -164,9 +216,8 @@ def medication_rep(message, last_infor, last_intent):
     else:
         if 'buymedicine' in last_intent:
             return buy_medicine(message, last_infor, last_intent)
-        if 'prop' in last_intent:
-            last_infor['history']['state_medication'] = ''
-            return thuoc_chonguoi_bicovid(message, last_infor)
+        if 'damaccovid' in last_infor['history']['state_medication']:
+            return damaccovid_chuacotrieuchung(message, last_infor)
         if 'vaccine_check' in last_intent:
             return saukhithiem_vaccine(message, last_infor)
         if 'maccovid_check' in last_intent:

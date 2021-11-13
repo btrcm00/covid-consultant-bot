@@ -158,7 +158,7 @@ def vaccine_rep(message, last_infor):
         if re.search(ques[ele], message):
             check = ele
             break
-    print(check)
+
 
     if check=='doituongtiemvaccine':
         res['inform_common_vaccine'] = last_infor

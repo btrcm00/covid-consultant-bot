@@ -116,7 +116,7 @@ precaution_reg = {
 }
 
 medication_reg={
-    "damac_covid_chuaco_trieuchung": r'ch[ă|a]m|u[o|ố]ng|d[u|ù|ụ]ng\s*thu[o|ố]c',
+    "damac_covid_chuaco_trieuchung": r'(ch[ă|a]m|u[o|ố]ng|d[u|ù|ụ]ng)\s*thu[o|ố]c',
     "location_medicine":r'thu[o|ố]c.*(mua|ph[a|á]t).*(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u)|(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u).*(mua|ph[a|á]t).*thu[o|ố]c',
     "buy_medicine":r'thuốc.*(mua|ph[a|á]t)|(mua|ph[a|á]t).*thuốc',
     "spo":r'spo|[đ|d]o.*[o|ô]\s*x[y|i]',

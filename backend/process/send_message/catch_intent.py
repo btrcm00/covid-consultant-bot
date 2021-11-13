@@ -136,24 +136,10 @@ def predict_message(self, message, conversation_history, conversation_message):
             res_code = common_infor_rep(message)
             res[res_code] = last_infor
             return res, intent, sub_intent
-        if last_infor['history']['state_medication'] != '':
-            if not 'request' in last_intent:
-                res = medication_rep(message, last_infor, last_intent)
-                return res, intent, sub_intent
-            else:
-                if 'rare' in last_intent:
-                    symp_in_text = re.search(check_has_symp, message)
-                    if symp_in_text:
-                        intent = 'request'
-                        sub_intent = 'symptom_have'
-                    if re.search(num_req, message):
-                        intent = 'request'
-                        sub_intent = 'current_numbers'
-                    t = symptom_rep(message, sub_intent, last_intent, last_infor)
-                    last_intent = list(t.keys())[0]
-                    last_infor = t[last_intent]
-                    res = medication_rep(message, last_infor, last_intent)
-                    return res, intent, sub_intent
+        elif last_infor['history']['state_medication'] != '':
+            res = medication_rep(message, last_infor, last_intent)
+            return res, intent, sub_intent
+
     ''' print("\t\t+++++++++++++ check entity in message+++++++++++++++")
     symp_in_text = re.search(check_has_symp, message)
     if symp_in_text:

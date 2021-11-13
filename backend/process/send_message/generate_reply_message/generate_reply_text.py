@@ -36,5 +36,5 @@ def generate_reply_text(self, result, reply_text):
             suggest_reply += reply_text['inform_medication'][re.sub('medication_', '', res)]
         if res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
-    
+
     return suggest_reply, result, check_end

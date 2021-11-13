@@ -136,6 +136,11 @@
         }
     },
     "inform_medication": {
+         "age"    : "Bạn bao nhiêu tuổi á?",
+    "sex"    : "Bạn là nam hay nữ vậy ạ",
+    "serious_symptom": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không???",
+    "normal_symptom": "Bạn có mắc một trong số các triệu chứng như Sốt, mệt mỏi, ho khan,đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái không???",
+
         "huongdansudungbinhoxy": "Trường hợp cần thở oxy: Thở > 20 l/p, sp02 <94% *Cách sử dụng: \n- Tháo cốc tạo ẩm. Mở nắp cốc rồi đổ nước tinh khiết vào cốc theo vạch chỉ định sẵn của nhà sản xuất, sau đó vặn nắp lại như trước.\n- Lắp dây thở vào van điều áp\n- Mở van oxy (dấu hiệu nhận biết van oxy đã mở là kim trên đồng hồ chỉ vào khu vực màu xanh lá)\n- Tiếp tục chỉnh lưu lượng bằng van ở ngay trên cốc tạo ẩm, chỉnh lưu lượng sao cho cục sắt chỉ 1- 6L/p (không nên chỉnh> 6L/p vì chỉ tốn oxy mà không tăng hiệu quả)\n- Sau đó gắn dây thở ở phía có 2 cái râu vào mũi và hít thở đều\nThở khoảng 30 phút, đánh giá lại thấy Sp02 >92%, BN nhìn tỉnh táo, đỡ có khó thở hơn thì giảm lưu lượng từ từ\nLưu ý phải liên hệ cơ sở y tế nhanh nhất có thể, để được hướng dẫn cụ thể và đưa đi BV ngay",
         "buymedicine_checkf1f0": "Bạn có đang thuộc diện f1 hoặc f0 không ạ",
         "buymedicine_replyf1f0": "F1,F0 và người thân trong nhà không được tự ý ra ngoài mua thuốc.* Bạn có thể nhờ người mua hộ,shipper hoặc mua thuốc qua nhà thuốc online.",
