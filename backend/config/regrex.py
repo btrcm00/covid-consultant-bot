@@ -6,31 +6,32 @@ from os import path
 import sys
 sys.path.append('..')
 
-usual_symptom = {
+normal_symptom = {
     r's[ô|ố|ó|o]t' : 'sot',
     r'ho': 'ho',
-    r'm[ê|ệ|e|ẹ]t\s*m[o|ỏ]i': 'met-moi'
-}
-serious_symptom = {
-    r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
-    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
-    r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang'
-}
-rare_symptom = {
+    r'm[ê|ệ|e|ẹ]t\s*m[o|ỏ]i': 'met-moi',
     r'[d|đ]au\s*h[o|ọ][|n]g': 'dau-hong',
     r'[d|đ]au\s*nh[ứ|ư|u]c': 'dau-nhuc',
+    r'm[a|ấ|â]t\s*(v[i|ị]|kh[u|ư|ứ|ú|i]u)\s*gi[á|a]c': 'mat-vi-giac',
     r'ti[e|ê|]u\s*ch[a|ả]y': 'tieu-chay',
-    r'm[a|ấ|â]t\s*v[i|ị]\s*gi[á|a]c': 'mat-vi-giac',
     r't[í|i]m\s*t[a|á]i': 'tim-tai',
     r'n[ô|ổ|o]i\s*m[â|ẩ|a]n': 'noi-man'
 }
+serious_symptom = {
+    r'th[o|ơ|ở]\s*m[e|ệ|ẹ|ê]t': 'tho-met',
+    r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
+    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
+    r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang',
+    r'ho\s*ra\s*m[a|á]u': 'ho-ra-mau'
+}
 symptom_list = {
-    'usual_symptom':usual_symptom,
+    'normal_symptom':normal_symptom,
     'serious_symptom':serious_symptom,
-    'rare_symptom':rare_symptom
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 
+pos_reg = r'd[u|ư][o|ơ][n|]g\s*t[i|í][n|]h'
+neg_reg = r'[a|â]m\s*t[i|í][n|]h'
 
 age_reg = r'\d{1,2}'
 sex_reg = {
@@ -38,8 +39,8 @@ sex_reg = {
     r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i': 'female'
 }
 
-agree = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr)\b'
-disagree = r'\b(th[u|ô|o][i|y]*|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
+agree_reg = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr|r[o|ô|ồ]i)\b'
+disagree_reg = r'\b(th[u|ô|o][i|y]*|ch[u|ư]a|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
 
 
 

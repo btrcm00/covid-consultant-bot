@@ -27,7 +27,7 @@ async function callMessageAPI(options,message,bot){
     }
    
     var jobList = schedule.scheduledJobs;
-    var send_time = new Date().addSeconds(6);
+    var send_time = new Date().addSeconds(1);
     console.log("SEND TIME");
     console.log(send_time);
     var job = 'jobList.SendingSpan' + String(id_job_js[message.user]);
@@ -52,7 +52,7 @@ async function callMessageAPI(options,message,bot){
           };
           for (var sentence of suggest_reply.split("*")){
             bot.reply(message, sentence);
-            await sleep(1500);
+            await sleep(500);
           }
         }
       });

@@ -14,7 +14,7 @@ def timevaccine(message, last_infor):
             for x in vaccine:
                 if re.search(x, ele2.lower()):
                     res_code = 'inform_time_vaccine' + str(num + 1)
-                    res[t] = last_infor
+                    res[res_code] = last_infor
                     return res
                 num = num + 1
             num = 0
@@ -28,7 +28,7 @@ def timevaccine(message, last_infor):
                 if re.search(x, ele2.lower()):
                     res_code = 'inform_time_vaccine' + str(num + 1)
                     last_infor['history']['state_vaccine'] = ''
-                    res[t] = last_infor
+                    res[res_code] = last_infor
                     return res
                 num = num + 1
             num = 0

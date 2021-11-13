@@ -7,14 +7,20 @@
 
     "inform_symptoms_info_temp": "Các triệu chứng thường gặp của bệnh COVID-19:\n- Sốt, mệt mỏi, ho khan*Các triệu chứng ít gặp của bệnh COVID-19:\n- Đau họng, đau nhức, tiêu chảy, mất vị giác hoặc khứu giác, viêm kết mạc, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái*Triệu chứng nguy hiểm:\n- Khó thở, mất khả năng nói hoặc cử động, đau hoặc tức ngực*Danh sách này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.",
     "inform_symptoms_info" : "Một số triệu chứng thường gặp của bệnh COVID-19:\n- Khó thở\n- Đau hoặc tức ngực thường xuyên\n- Trạng thái lẫn lộn mới\n- Không thể thức dậy hay duy trì sự tỉnh táo*Những triệu chứng này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.*Hoặc bạn cũng có thể cung cấp cho mình một số triệu chứng bạn gặp phải để mình có thể tư vấn thêm cho bạn nhen.",
-    "inform_first_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
     "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
-    "request_serious_symptom": "Bạn có mắc một trong số các triệu chứng như khó thở, mất khả năng nói hoặc cử động, đau hay tức ngực không ạ??",
-    "request_usual_symptom": "Bạn có mắc một trong số các triệu chứng như sốt, mệt mỏi, ho khan không ạ???",
-    "request_rare_symptom" : "Vậy còn một trong số các triệu chứng như đau họng, đau nhức, tiêu chảy, mất vị giác, da nổi mẩn hay ngón tay/ngón chân bị tấy đỏ, tím tái thì sao ạ",
+    "request_symptom":{
+        "result_test": "Kết quả xét nghiệm là gì ạ? dương tính hay âm tính á",
+        "test_type":"Bạn đã thực hiện test nhanh hay là PT-PCR vậy ạ?",
+        "been_covidarea": "Gần đây bạn có từng đi từ nước ngoài về hay có từng đi qua những vùng có dịch theo thông báo của bộ y tế không ạ?",
+        "close_f": "Gần đây bạn có từng tiếp xúc với những bệnh nhân F0 hay những F1 theo thông báo của địa phương bạn ở không ạ?",
+        "covid_test" : "Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?"
+    },
+    "inform_first_normal_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
+    "inform_first_serious_symptom": "{} là một trong những triệu chứng nguy hiểm của covid-19",
     "inform_high_prop": "Khả năng nhiễm của bạn khá cao á, bạn hãy liên hệ với các trung tâm y tế để test covid thử nha.",
     "inform_low_prop": "Vậy khả năng nhiễm bệnh của bạn là khá thấp á, bạn cứ tiếp tục theo dõi tại nhà tiến trình bệnh thêm nha.",
+    "inform_serious_prop": "Vậy có thể đã mắc covid-19 rồi đấy ạ, bạn hãy thực hiện nghiêm những quy định của bộ y tế, hạn chế tối đa việc tiếp xúc với người khác và khẩn trương liên hệ với các trạm y tế gần nhất để được hướng dẫn chi tiết nha*Bạn ở quận mấy vậy ạ, để mình cung cấp cho bạn số liên lạc nhanh nhất á",
 
     "inform_covid_infor_testnhanh_what": "Dạ test nhanh hay còn gọi là xét nghiệm nhanh kháng nguyên, dựa trên cơ sở phát hiện protein bao ngoài của Virus SARS - CoV2 nhằm xác định tình trạng hiện đang nhiễm virus",
     "inform_covid_infor_testnhanh_how": "Bạn có thể tiến hành test nhanh tại nhà theo các bước sau nha*image https://hcdc.vn/public/img/da39a3ee5e6b4b0d3255bfef95601890afd80709/images/dangbai1/images/7-buoc-tu-thuc-hien-xet-nghiem-nhanh-khang-nguyen-tai-nha/images/ae04f06629dfde8187ce.jpg",
