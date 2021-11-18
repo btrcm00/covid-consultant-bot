@@ -8,8 +8,8 @@ var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
 
-var url ='http://apibackend-covid-chatbot.herokuapp.com/api/send-message'
-var image_url = 'http://apibackend-covid-chatbot.herokuapp.com/api/send-image' ;
+var url ='http://0.0.0.0:8000/api/send-message'
+var image_url = 'http://0.0.0.0:8000/api/send-image' ;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};

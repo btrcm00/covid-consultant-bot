@@ -1,5 +1,5 @@
 from backend.config.constant import MAP_TO_DISTRICT_HCM, DISTRICT
-from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg
+from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
 from backend.utils.utils import preprocess_message
 import regex as re
 
@@ -171,6 +171,9 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif re.search(num_req, message) and sub_intent != 'vacxin':
             intent = 'request'
             sub_intent = 'current_numbers' '''
+    
+    if any(re.search(w_ques[i], message) for i in w_ques):
+        intent = 'request'
 
     if intent =='hello':
         res['hello'] = last_infor

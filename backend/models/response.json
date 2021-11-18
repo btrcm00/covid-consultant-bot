@@ -12,14 +12,14 @@
     "request_symptom":{
         "result_test": "Kết quả xét nghiệm là gì ạ? dương tính hay âm tính á",
         "test_type":"Bạn đã thực hiện test nhanh hay là PT-PCR vậy ạ?",
-        "been_covidarea": "Gần đây bạn có từng đi từ nước ngoài về hay có từng đi qua những vùng có dịch theo thông báo của bộ y tế không ạ?",
-        "close_f": "Gần đây bạn có từng tiếp xúc với những bệnh nhân F0 hay những F1 theo thông báo của địa phương bạn ở không ạ?",
+        "been_covidarea": "Bạn có tiền sử đến/qua/ở/về từ vùng dịch tễ có bệnh COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
+        "close_f": "Bạn có tiếp xúc gần với trường hợp bệnh nghi ngờ hoặc xác định COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
         "covid_test" : "Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?"
     },
     "inform_first_normal_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
     "inform_first_serious_symptom": "{} là một trong những triệu chứng nguy hiểm của covid-19",
-    "inform_high_prop": "Khả năng nhiễm của bạn khá cao á, bạn hãy liên hệ với các trung tâm y tế để test covid thử nha.",
-    "inform_low_prop": "Vậy khả năng nhiễm bệnh của bạn là khá thấp á, bạn cứ tiếp tục theo dõi tại nhà tiến trình bệnh thêm nha.",
+    "inform_high_prop": "Nguy cơ mắc bệnh của bạn là cao á. Bạn nên liên hệ với cơ sở y tế gần nhất để được thực hiện xét nghiệm RT-PCR và thực hiện cách ly theo quy định của Bộ Y tế ngay nha",
+    "inform_low_prop": "Vậy nguy cơ mắc bệnh cuả bạn là khá thấp á. Bạn có thể bổ sung các thực phẩm chứa nhiều vitamin để tăng cường sức đề kháng trong mùa dịch, nghiêm chỉnh thực hiện 5K đồng thời theo dõi diễn tiến của triệu chứng để liên lạc kịp thời với cơ sở y tế gần nhất khi có diễn tiến xấu đi nha",
     "inform_serious_prop": "Vậy có thể đã mắc covid-19 rồi đấy ạ, bạn hãy thực hiện nghiêm những quy định của bộ y tế, hạn chế tối đa việc tiếp xúc với người khác và khẩn trương liên hệ với các trạm y tế gần nhất để được hướng dẫn chi tiết nha*Bạn ở quận mấy vậy ạ, để mình cung cấp cho bạn số liên lạc nhanh nhất á",
 
     "inform_covid_infor_testnhanh_what": "Dạ test nhanh hay còn gọi là xét nghiệm nhanh kháng nguyên, dựa trên cơ sở phát hiện protein bao ngoài của Virus SARS - CoV2 nhằm xác định tình trạng hiện đang nhiễm virus",
