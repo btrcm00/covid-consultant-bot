@@ -2,7 +2,7 @@ from backend.config.constant import DISTRICT
 import regex as re
 from unidecode import unidecode
 
-def emergency_contact_rep(text, reply_text, last_infor):
+def emergency_contact_rep(text, last_infor):
     #----------------------------------------------#
     # Kịch bản:
     # - Khi khách hàng request liên lạc với các trung tâm y tế, ...
@@ -28,4 +28,3 @@ def emergency_contact_rep(text, reply_text, last_infor):
             res_code = 'inform_contact+' + last_infor['infor']['address']
     res[res_code] = last_infor
     return res
-    

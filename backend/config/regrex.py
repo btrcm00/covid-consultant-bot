@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 from os import path
@@ -6,31 +5,32 @@ from os import path
 import sys
 sys.path.append('..')
 
-#Symptom regex
-usual_symptom = {
+normal_symptom = {
     r's[ô|ố|ó|o]t' : 'sot',
     r'ho': 'ho',
-    r'm[ê|ệ|e|ẹ]t\s*m[o|ỏ]i': 'met-moi'
-}
-serious_symptom = {
-    r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
-    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
-    r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang'
-}
-rare_symptom = {
+    r'm[ê|ệ|e|ẹ]t\s*m[o|ỏ]i': 'met-moi',
     r'[d|đ]au\s*h[o|ọ][|n]g': 'dau-hong',
     r'[d|đ]au\s*nh[ứ|ư|u]c': 'dau-nhuc',
+    r'm[a|ấ|â]t\s*(v[i|ị]|kh[u|ư|ứ|ú|i]u)\s*gi[á|a]c': 'mat-vi-giac',
     r'ti[e|ê|]u\s*ch[a|ả]y': 'tieu-chay',
-    r'm[a|ấ|â]t\s*v[i|ị]\s*gi[á|a]c': 'mat-vi-giac',
     r't[í|i]m\s*t[a|á]i': 'tim-tai',
     r'n[ô|ổ|o]i\s*m[â|ẩ|a]n': 'noi-man'
 }
+serious_symptom = {
+    r'th[o|ơ|ở]\s*m[e|ệ|ẹ|ê]t': 'tho-met',
+    r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
+    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
+    r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang',
+    r'ho\s*ra\s*m[a|á]u': 'ho-ra-mau'
+}
 symptom_list = {
-    'usual_symptom':usual_symptom,
+    'normal_symptom':normal_symptom,
     'serious_symptom':serious_symptom,
-    'rare_symptom':rare_symptom
 }
 check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
+
+pos_reg = r'd[u|ư][o|ơ][n|]g\s*t[i|í][n|]h'
+neg_reg = r'[a|â]m\s*t[i|í][n|]h'
 
 #Entity regex
 age_reg = r'(\d{1,2})\s*t[u|ủ][ỏ|o|ô|ổ|]i'
@@ -39,9 +39,12 @@ sex_reg = {
     'female': r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i'
 }
 
-agree = r'c[o|ó]|r[ồ|u|ù|o|ô]i|dr'
-disagree = r'kh[o|ô]ng|ko|k\s(\s)*'
-done = r'tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|[o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]'
+# agree = r'c[o|ó]|r[ồ|u|ù|o|ô]i|dr'
+# disagree = r'kh[o|ô]ng|ko|k\s(\s)*'
+done = r'tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]'
+agree_reg = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr|r[o|ô|ồ]i)\b'
+disagree_reg = r'\b(th[u|ô|o][i|y]*|ch[u|ư]a|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
+
 
 ### TIME
 pt_time_pre = r'sáng|trưa|tối|chiều|ng[à|a]y|h[ô|u|o]m|mùng|tuần|bữa'
@@ -58,16 +61,18 @@ pt_time_summary = r'\b({}|{}|{}|{}|{}|{}|sáng|trưa|tối|mai|mốt|chủ\snh�
 
 num_req = r's[o|ô|ố]\s*ca|(bao)?\s*nhi[|e|ê]u|t[i|ỉ|y|ỷ]\s*l[e|ê|ệ]\s*(nh[i|ĩ][|e|ễ|ê]m|m[ắ|a|ă]c)'
 
-ques={"time":[r'\b(l[a|â]u)\b',r'\b([g|d][i][a|ã|â][n|m][g|])\b',r'\b(2|h[a|â]i)\b',r'\b(a[s|t]r[a|á|ấ])\b',r'\b([s|x][i|í][n|m]o)\b',r'\b([p|f]i[z|d|]er)\b',r'\b([m|n][o|ô|ơ][|d]er)\b'],
-        "f1":[r'\b(f\s*(1|m+[o|ô|ộ]t))\b'],
-        "f0":[r'\b(f\s*(0|kh[o|ô|ộ]n))\b'],
-        "women":[r'\b(th[o][a|â|á|ă]i)\b'],
-        "old":[r'\b([d|g][i][a|â|á|ă|à|ã])\b'],
-        "register":[r'\b([d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n)\b',r'\b([k|c][i|y|í|ý])\b'],
-        "injected":[r'\b([x|s][o|ô|ơ][n|m][g])\b',r'\b([v|d][ê|e|è|ề|é|iề|ie|iê|iè])\b'],
-        "condition":[r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u',r'[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n',r'[n|m][ê|e|è|ề]n'],
-        "number":[r'm[a|á|ấ|â]y\s*lo[a|ạ]i', r'(bao)?\s*nhi[|e|ê]u']
-    }
+
+
+ques={"time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
+        "f1":r'f\s*(1|m+[o|ô|ộ]t)',
+        "f0":r'f\s*(0|kh[o|ô|ộ]n)',
+        "women":r'(ma[n|]g|c[ó|o])?\s*thai',
+        "old":r'[d|g][i][a|à]',
+        "register":r'[d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n|[k|c][i|y|í|ý]',
+        "injected":r'[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè]',
+        "condition":r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u|[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n|[n|m][ê|e|è|ề]n',
+        "number":r'm[a|á|ấ|â]y\s*lo[a|ạ]i|(bao)?\s*nhi[|e|ê]u'
+}
 vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
 
 medical_his_reg = {
@@ -76,7 +81,6 @@ medical_his_reg = {
     'diung': r'[g|d][i|y|ị|ỵ]\s*[u|ư|ứ|ú][n|]g',
     'ruoubia': r'bia|r[u|ư|ự|ụ][ơ|o|ợ|]u|rịu'
 }
-
 
 covid_infor_reg = {
     r'ch[i|ỉ]\s*th[i|ị]' : 'chithi',
@@ -99,17 +103,16 @@ precaution_reg = {
     r'vesinh': r'(v[e|ê|ẹ|ệ]\s*[x|s]i[n|]h|di[n|]h\s*d[u|ư][o|ơ|ỡ][n|]g)'
 }
 
-ques_medication={
-    "damac_covid_chuaco_trieuchung": [r'\b(ch(ă|a)m)\b',r'\b(u(o|ố)ng)\b',r'\b(d(u|ù|ụ)ng.*thu(o|ố)c)\b'],
-    "location_medicine":[r'\b(thuốc.*(mua|phát|phat).*(ở|n(ơ|o)i|ch(ỗ|o)|đ(â|a)u))\b',r'\b((ở|n(ơ|o)i|ch(ỗ|o)|đ(â|a)u).*(mua|phát|phat).*thuốc)\b'],
-    "buy_medicine":[r'\b(thuốc.*(mua|phát|phat))\b',r'\b((mua|phát|phat).*thuốc)\b'],
-        "spo":[r'\b(spo)\b',r'\b((đ|d)o.*(o|ô)\s*x(y|i).*)\b'],
-        "device":[r'\b(.*thi(e|ê|é|ế)t.*b(ị|).*)\b',r'\b(d(ụ|u)ng\s*c(ụ|u)|v(ậ|a)t\s*d(ụ|u)ng|má(y|i))\b'],
-        "5k":[r'\b(.*5(K|k)*)\b'],
-        "binhoxy":[r'\b(.*b(i|ì)nh.*(o|ô)\s*x(y|i))\b']
-     }
+medication_reg={
+    "damac_covid_chuaco_trieuchung": r'ch[ă|a]m|u[o|ố]ng|d[u|ù|ụ]ng\s*thu[o|ố]c',
+    "location_medicine":r'thu[o|ố]c.*(mua|ph[a|á]t).*(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u)|(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u).*(mua|ph[a|á]t).*thu[o|ố]c',
+    "buy_medicine":r'thuốc.*(mua|ph[a|á]t)|(mua|ph[a|á]t).*thuốc',
+    "spo":r'spo|[đ|d]o.*[o|ô]\s*x[y|i]',
+    "device":r'thi[e|ê|é|ế]t\s*b[ị|i]|d[ụ|u]ng\s*c[ụ|u]|v[ậ|a]t\s*d[ụ|u]ng|má[y|i]',
+    "5k": r'5k',
+    "binhoxy":r'b[i|ì]nh.*[o|ô]\s*x[y|i]'
+}
 
-
-cachdo=r'\b((c(á|a)ch.*d(u|ù|ụ)ng)|(s(ử|ư|u).*d(u|ù|ụ)ng)|(c(á|a)ch.*(d|đ)o)|((d|đ)o.*th(e|ế))|(d(u|ù|ụ)ng.*(d|đ)o))\b'
-f0_macbenh=r'\b(f\s*(1|m[o|ô|ộ]t)|b(e|ệ)nh)\b'
-daubung=r'\b((d|đ)a(u|o)\s*b(u|ụ)ng)\b'
+cachdo=r'c[á|a]ch\s*d[u|ù|ụ]ng|s[ử|ư|u]\s*d[u|ù|ụ][n|]g|c[á|a]ch\s*[d|đ]o|[d|đ]o\s*th[e|ế]|d[u|ù|ụ]ng\s*[d|đ]o'
+f0_macbenh=r'f\s*(1|m[o|ô|ộ]t)|b[e|ệ][n|]h'
+daubung=r'[d|đ]a[u|o]\s*b[u|ụ]ng'

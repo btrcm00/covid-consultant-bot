@@ -1,5 +1,5 @@
 import regex as re
-
+from backend.config.constant import DISTRICT
 from backend.process.DiaglogueManager.utils_message.symptom_reply import symptom_rep
 from backend.process.DiaglogueManager.utils_message.vaccine_reply import vaccine_rep
 from backend.process.DiaglogueManager.utils_message.precaution_reply import precaution_rep
@@ -11,9 +11,9 @@ from backend.process.DiaglogueManager.utils_message.common_infor_reply import co
 from backend.process.PretrainedModel import PretrainedModel
 models = PretrainedModel()
 
-def dialogue(last_intent, entity_dict, last_infor, intent):
+def dialogue(message,last_intent, entity_dict, last_infor, intent):
     new_last_infor = update_slots(entity_dict, last_infor)
-    result = predict_reply(last_intent, new_last_infor, intent)
+    result = predict_reply(message,last_intent, new_last_infor, intent)
     return result
 
 def update_slots(entity_dict, last_infor):
@@ -37,6 +37,15 @@ def update_slots(entity_dict, last_infor):
                     "mat-vi-giac": "",
                     "tim-tai": "",
                     "noi-man": ""
+                },
+                'diagnose':{
+                    "tree_degree":"",
+                    "normal_symptom": "",
+                    "serious_symptom": "",
+                    "covid_test": "",
+                    "result_test": "",
+                    "been_covidarea": "",
+                    "close_f": ""
                 },
                 'history':{
                 'cothai':'',
@@ -67,15 +76,29 @@ def update_slots(entity_dict, last_infor):
     print("last infor after update", last_infor)
     return last_infor
 
-def predict_reply(last_intent, last_infor, intent):
+def predict_reply(message, last_intent, last_infor, intent):
     res={}
-    if intent == ['other','hello']:
+    if intent in ['other','hello', 'ok', 'done']:
         res[intent] = last_infor
-    if intent in ['inform','ok']:
-        pass
-    if 'request' in intent:
+    elif intent in ['inform']:
+        if 'request_symptom' in last_intent:
+            res = symptom_rep(message, intent, last_intent, last_infor)
+        elif 'request_location' in last_intent or \
+            (re.search(DISTRICT, message) and last_intent == 'inform_serious_prop'):
+            res = emergency_contact_rep(message, last_infor)
+    elif 'request' in intent:
         if 'current_numbers' in intent:
             res = current_numbers_rep(intent, last_infor)
-        if 'covid_infor' in intent:
+        elif 'covid_infor' in intent:
             res = common_infor_rep(text)
+        elif 'symptom' in intent:
+            res = symptom_rep(message, intent, last_intent, last_infor)
+        elif 'vacxin' in intent:
+            res = vaccine_rep(message, last_infor)
+        elif 'contact' in intent:
+            res = emergency_contact_rep(message, last_infor)
+        elif 'precaution' in intent:
+            res_code = precaution_rep(message)
+            res[res_code] = last_infor
+    print(intent)
     return res

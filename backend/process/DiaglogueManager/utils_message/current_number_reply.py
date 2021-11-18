@@ -19,7 +19,11 @@ def current_numbers_rep(intent,last_infor):
     died = data['died']
     loc = 'Việt Nam'
     
-    loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if unidecode(ele['name'].lower()) in intent][0]
+    try:
+        loc,infected,died = [(ele['name'],ele['cases'], ele['death'])\
+            for ele in data['locations'] if unidecode(ele['name'].lower()) in intent][0]
+    except:
+        pass
     recovered = 0
     res_code = 'inform_current_numbers+{}+{}+{}'.format(loc,infected,recovered)
     res[res_code] = last_infor

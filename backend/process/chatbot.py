@@ -41,7 +41,7 @@ class CovidBot():
             print("Output NLU",intent,entity_dict)
 
             print("\t\t-------Dialogue Manager (DM)--------")
-            result = dialogue(last_intent,entity_dict, last_infor, intent)
+            result = dialogue(message,last_intent,entity_dict, last_infor, intent)
             print("\t\tReturn code->",[i for i in result])
 
             print("\t\t-------Natural Language Generation (NLG)--------")

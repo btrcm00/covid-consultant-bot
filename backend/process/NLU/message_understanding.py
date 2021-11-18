@@ -59,7 +59,7 @@ def extract_intent_message(message, entity_dict):
     print('Intent:',intent,'- Request intent:',sub_intent)
     
     print("\t\t+++++++++ Extract intent +++++++++")
-    if intent == 'hello':
+    if intent in ['hello', 'other']:
         pass
     elif intent == 'request' or any(re.search(w_ques[i], message) for i in w_ques):
         intent = 'request_' + sub_intent
@@ -72,14 +72,9 @@ def extract_intent_message(message, entity_dict):
     elif intent == 'inform' or any(entity_dict[i] for i in entity_dict):
         intent = 'inform'
     else:
-        if re.search(disagree, message):
-            intent = 'disagree'
-        elif re.search(agree, message):
-            intent = 'agree'
-        elif re.search(done, message):
+        if re.search(done, message):
             intent = 'done'
         else:
-            intent = 'other'
-    
+            intent = 'ok'
     return intent
 
