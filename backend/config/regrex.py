@@ -73,9 +73,10 @@ ques={
 #bien chung sau khi tiem vaccine|sau khi tiem vaccine gap bien chung gi
 "bienchung_trieuchungsautiem":r'bi[ế|e]n.*sau.*ti[e|ê]m|sau.*ti[e|ê]m.*bi[ế|e]n',
 
+    "injected": r'(l[a|à]m.*sau.*ti[e|ê]m .*(nhà|[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè])|sau.*ti[e|ê]m.*(nhà|[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè]).*l[a|à]m)',
 
-"lamgisautiem_chuavenha":r'~(nh[à|a])(l[a|à]m.*sau.*ti[e|ê]m|sau.*ti[e|ê]m.*l[a|à]m)~(nh[à|a])',
-    "chuanbitruockhitiem":r'(chu[a|ẩ]n|[đ|d]em|mang).*tr[ướ|uo]c',
+    "lamgisautiem_chuavenha":r'(l[a|à]m.*sau.*ti[e|ê]m|sau.*ti[e|ê]m.*l[a|à]m)',
+    "chuanbitruockhitiem":r'(chu(a|ẩ)n|(đ|d)em|mang).*tr(ướ|uo)c',
     "child": r'tr[e|ẻ]\s*em|con\s*n[i|í][t|c]',
     "time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
         "f1":r'f\s*(1|m+[o|ô|ộ]t)',
@@ -83,7 +84,6 @@ ques={
         "women":r'(ma[n|]g|c[ó|o])?\s*thai\s',
         "old":r'[d|g][i][a|à]\s',
         "register":r'[d|đ][a|â|á|ă|à|ã|ắ|ặ|ấ]n|[k|c][i|y|í|ý]\s',
-        "injected":r'[x|s][o|ô|ơ][n|m][g]|[v|d][ê|e|è|ề|é|iề|ie|iê|iè]',
         "condition":r'nh[i|ê|e|è|ề|é|iề|ie|iê|iè]u|[d|đ][i|ì][e|ề|ê|]u\s*k[i|ị][e|ẹ|ê|ệ]n|[n|m][ê|e|è|ề]n',
         "number":r'm[a|á|ấ|â]y\s*lo[a|ạ]i|(bao)?\s*nhi[|e|ê]u'
 }
@@ -117,7 +117,7 @@ precaution_reg = {
 
 medication_reg={
     "damac_covid_chuaco_trieuchung": r'(ch[ă|a]m|u[o|ố]ng|d[u|ù|ụ]ng)\s*thu[o|ố]c',
-    "location_medicine":r'thu[o|ố]c.*(mua|ph[a|á]t).*(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u)|(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u).*(mua|ph[a|á]t).*thu[o|ố]c',
+  #  "location_medicine":r'thu[o|ố]c.*(mua|ph[a|á]t).*(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u)|(ở|n[ơ|o]i|ch[ỗ|o]|đ[â|a]u).*(mua|ph[a|á]t).*thu[o|ố]c',
     "buy_medicine":r'thuốc.*(mua|ph[a|á]t)|(mua|ph[a|á]t).*thuốc',
     "spo":r'spo|[đ|d]o.*[o|ô]\s*x[y|i]',
     "device":r'thi[e|ê|é|ế]t\s*b[ị|i]|d[ụ|u]ng\s*c[ụ|u]|v[ậ|a]t\s*d[ụ|u]ng|má[y|i]',

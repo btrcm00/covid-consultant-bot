@@ -1,12 +1,14 @@
 from unidecode import unidecode
 import regex as re
 from backend.config.regrex import *
-
+disagree=disagree_reg
+argree=agree_reg
 def buy_medicine(message, last_infor, last_intent):
     res = {}
     if not last_infor['history']['state_medication']:
         last_infor['history']['state_medication'] ='buymedicine'
         if re.search(ques['f1'], message) or re.search(ques['f0'], message) or last_infor['history']['f']==0:
+            last_infor['history']['state_medication'] = ''
             res['medication_buymedicine_replyf1f0'] = last_infor
         else:
             res['medication_buymedicine_checkvaccine']=last_infor
@@ -53,9 +55,9 @@ def saukhithiem_vaccine(message, last_infor):
     else:
         last_infor['history']['state_medication'] = ''
         if re.search(disagree,message):
-            res['medication_vaccine_replynot'] = last_infor
+            res['medication_vaccine_replyok'] = last_infor
         else:
-            res['medication_vaccine_replyok']=last_infor
+            res['medication_vaccine_replynot']=last_infor
     return res
 
 def thuoc_chonguoi_bicovid(message, last_infor):

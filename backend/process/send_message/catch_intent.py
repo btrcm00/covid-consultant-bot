@@ -163,6 +163,8 @@ def predict_message(self, message, conversation_history, conversation_message):
     elif intent == 'request':
         if 'symptom' in sub_intent:
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
+        elif 'medication' in sub_intent or re.search(r'thu(ố|o)c', message):
+            res = medication_rep(message, last_infor, last_intent)
         elif sub_intent == 'vacxin':
             res = vaccine_rep(message, last_infor)
         elif 'contact' in sub_intent:
@@ -172,8 +174,7 @@ def predict_message(self, message, conversation_history, conversation_message):
             res[res_code] = last_infor
         elif 'current' in sub_intent:
             res = current_numbers_rep(message, last_infor)
-        elif 'medication' in sub_intent or re.search(r'thu(ố|o)c',message):
-            res = medication_rep(message, last_infor, last_intent)
+
         else:
             res_code = common_infor_rep(message)
             res[res_code] = last_infor
