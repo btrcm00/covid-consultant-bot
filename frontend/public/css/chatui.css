@@ -272,9 +272,6 @@
   margin: 0px 0px 0px 5px !important;
   padding: 0px !important;
 }
-#record_btn{
-  
-}
 #form_mesg {
   border-radius: 50px;
   margin-top: 5px !important;
@@ -507,11 +504,12 @@
 }
 
 .btn-px{
-  width: 30px;
+  text-align: left;
+  background-color: #a4bfc4;
   padding: 0.5px 6px;
-  margin-top:0.5px;
-  margin-bottom: 0.5px;
-  font-size: 14px;
+  margin-bottom: 2px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 .header-icon{
   display:flex;

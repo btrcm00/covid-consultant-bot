@@ -277,12 +277,12 @@ var Botkit = {
             that.next_line = that.createNextLine();
         }
 
-        if (message.text) {
+        if (message.text && message.text != '') {
             message.html = converter.makeHtml(message.text);
         }
 
-        if (message.text == "Covid chatbot"){
-            message.html = "<a href=\"https://khaibaoyte.khambenh.gov.vn/\"> Covid chatbot </a>" ;
+        if (message.text.includes("<a target=\"_bla") && message.text.includes("</a>")){
+            message.html = message.text ;
         }
         var re = new RegExp("image ");
         if (re.test(message.text)){
@@ -378,16 +378,15 @@ var Botkit = {
         if (!that.next_line) {
             that.next_line = that.createNextLine();
         }
+        console.log(options)
         res = document.createElement("div");
         options.forEach((v, i) => {
             wrapper = document.createElement("div");
             button = document.createElement("button");
-            button.className = "btn btn-success btn-px";
-            text1 = document.createTextNode(i + 1);
-            text2 = document.createTextNode(v.value);
-            button.appendChild(text1);
+            button.className = "btn btn-secondary btn-px";
+            text = document.createTextNode(v.value);
+            button.appendChild(text);
             wrapper.appendChild(button);
-            wrapper.appendChild(text2);
             res.appendChild(wrapper);
         });
         const messageNode = that.message_template({
@@ -396,15 +395,26 @@ var Botkit = {
             },
         });
         that.next_line.innerHTML = messageNode;
-        Array.from(that.next_line.childNodes[1].children).forEach((e, i) => {
+        var count = 0;
+        Array.from(that.next_line.childNodes[1].children).some((e, i) => {
             e.childNodes[0].addEventListener("click", () => {
                 that.tthc_id = options[i].key;
-                that.deliverMessage({
-                    type: "message",
-                    tthc_id: options[i].key,
-                    tthc_name: options[i].value,
-                    select: true,
-                });
+                if (count == 0){
+                    console.log(count)
+                    that.renderMessage({
+                        type: "outgoing",
+                        text:options[i].value
+                    });
+                    that.deliverMessage({
+                        type: "message",
+                        tthc_id: options[i].key,    
+                        text: options[i].value,
+                        select: true,
+                        user: this.guid,
+                        channel: this.options.use_sockets ? "socket" : "webhook",
+                    });
+                }
+                count +=1;
             });
         });
         that.message_list.appendChild(that.next_line);
@@ -767,12 +777,6 @@ var Botkit = {
             if (message.choices) {
                 that.renderMessage(message);
                 that.renderOptions(message.choices);
-            } else if (message.demo) {
-                that.renderMessage(message);
-                that.renderDemo(message.demo);
-            } else if (message.chiphi) {
-                that.renderMessage(message);
-                that.renderChiPhi(message.chiphi);
             } else if (message.type === "response") {
                 that.renderMessage(message);
             } else if (message.thuchien) {

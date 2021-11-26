@@ -45,14 +45,30 @@ async function callMessageAPI(options,message,bot){
         id_job = JSON.parse(response.body)["id_job"];
         check_end  = JSON.parse(response.body)["check_end"];
         rep_intent = JSON.parse(response.body)["rep_intent"];
+        option = JSON.parse(response.body)["option"];
         if (suggest_reply){
           var job = 'jobList.RemindMess' + (id_job);
           if (eval(job) != undefined){
             eval(job +'.cancel()')
           };
-          for (var sentence of suggest_reply.split("*")){
-            bot.reply(message, sentence);
-            await sleep(500);
+          if(option && option.length>0){
+            choices = []
+            for(let i = 0;i<option.length;i++){
+              choices.push({value:option[i]})
+            }
+            for (var sentence of suggest_reply.split("*")){
+              bot.reply(message, {
+                text:sentence,
+                choices: choices
+              });
+              await sleep(500);
+            }
+          }
+          else{
+            for (var sentence of suggest_reply.split("*")){
+              bot.reply(message,sentence);
+              await sleep(500);
+            }
           }
         }
       });
