@@ -1,6 +1,6 @@
 import regex as re
 
-def generate_reply_text(self, result, reply_text):
+def generate_reply_text(self, result, reply_text,response_knn):
     res_code = list(result.keys())[0]
     suggest_reply = ""
     check_end = False
@@ -39,7 +39,10 @@ def generate_reply_text(self, result, reply_text):
         if res == 'other':
             result['request_correct_text'] = result.pop('other')
             suggest_reply += reply_text['request_correct_text'].format(option_1='số ca nhiễm nhiêu á', option_2='triệu chứng covid là gì á')
-    
+        if res == 'reply_correct_text':
+            suggest_reply += response_knn.get(result[res]['choices'][0].lower(),'')
+        if res == 'request_correct_text':
+            suggest_reply += 'Dạ ý bạn có phải là:'
     #convert link
     out_text = suggest_reply.split(" ")
     for idx, text in enumerate(out_text):

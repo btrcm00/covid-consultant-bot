@@ -58,15 +58,14 @@ class CovidBot():
 
             # ----------------------------- #
             print("\t\t-------Return code-------->",[i for i in result])
-            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text)
+            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,models.response_knn)
 
             image = []
             option = []
-            reply_image = suggest_reply
             rep_intent = [key for key in result]
-            if rep_intent[0] == 'request_correct_text':
-                option = [i for i in suggest_reply.split('*')[1].split('|')]
-                suggest_reply = suggest_reply.split('*')[0]
+            if result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
+                option = result[rep_intent[0]]['choices']
+                
             # 3. Insert data
             tmp = mycol.insert_one({
                 'mid' : input_data['mid'],

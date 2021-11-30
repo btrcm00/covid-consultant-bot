@@ -178,22 +178,12 @@ def predict_message(self, message, conversation_history, conversation_message):
     if intent =='hello':
         res['hello'] = last_infor
     elif intent == 'request':
-        if 'symptom' in sub_intent:
+        if 'diagnostic' in sub_intent:
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
-        elif sub_intent == 'vacxin':
-            res = vaccine_rep(message, last_infor)
         elif 'contact' in sub_intent:
             res = emergency_contact_rep(message, last_infor)
-        elif 'precaution' in sub_intent:
-            res_code = precaution_rep(message)
-            res[res_code] = last_infor
-        elif 'current' in sub_intent:
-            res = current_numbers_rep(message, last_infor)
-        elif 'medication' in sub_intent or re.search(r'thu(ố|o)c',message):
-            res = medication_rep(message, last_infor, last_intent)
         else:
-            res_code = common_infor_rep(message)
-            res[res_code] = last_infor
+            res = common_infor_rep(message, models.corpus_knn, models.tfidf_knn, models.model_knn,models.pca_knn,last_infor)
     elif intent == 'ok':
         res['done'] = last_infor
     else:

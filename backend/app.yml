@@ -21,6 +21,7 @@ models_chatbot:
   model_load_text:
     intent_model:  "models/intent_svm.pickle"
     model: "models/sub_svm.pickle"
+    knn_model: "models/knn.pickle"
 log:
   app: "app.log"
   request: "request.log"
