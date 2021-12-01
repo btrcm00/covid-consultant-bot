@@ -3,9 +3,8 @@ from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list
 from backend.utils.utils import preprocess_message
 import regex as re
 
-from backend.process.send_message.utils_message.symptom_reply import symptom_rep
+from backend.process.send_message.utils_message.diagnose_reply import symptom_rep
 from backend.process.send_message.utils_message.vaccine_reply import vaccine_rep
-from backend.process.send_message.utils_message.precaution_reply import precaution_rep
 from backend.process.send_message.utils_message.medication_reply import medication_rep
 from backend.process.send_message.utils_message.emergency_contact_reply import emergency_contact_rep
 from backend.process.send_message.utils_message.current_number_reply import current_numbers_rep
