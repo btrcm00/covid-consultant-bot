@@ -63,7 +63,7 @@ class CovidBot():
             image = []
             option = []
             rep_intent = [key for key in result]
-            if result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
+            if 'choices' in result[rep_intent[0]] and result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
                 option = result[rep_intent[0]]['choices']
                 
             # 3. Insert data

@@ -18,7 +18,7 @@ def generate_reply_text(self, result, reply_text,response_knn):
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
         if res in ['request_age','request_sex', 'inform_symptoms_info',
                         'inform_low_prop', 'inform_high_prop','request_location_contact', 'done',
-                         'again','diagnose','incomming', 'request_covid_infor_chithi','inform_serious_prop']:
+                         'again','diagnose','incomming', 'request_covid_infor_chithi','inform_serious_prop','other']:
             suggest_reply += reply_text[res]
         if res.startswith('inform_covid_infor'):
             if res.startswith('inform_covid_infor_chithi_how'):
@@ -36,11 +36,10 @@ def generate_reply_text(self, result, reply_text,response_knn):
             suggest_reply += reply_text['inform_medication'][re.sub('medication_', '', res)]
         if res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
-        if res == 'other':
-            result['request_correct_text'] = result.pop('other')
-            suggest_reply += reply_text['request_correct_text'].format(option_1='số ca nhiễm nhiêu á', option_2='triệu chứng covid là gì á')
         if res == 'reply_correct_text':
-            suggest_reply += response_knn.get(result[res]['choices'][0].lower(),'')
+            suggest_reply += response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
+            if not suggest_reply:
+                suggest_reply += "Chưa có dữ liệu câu trả lời cho câu hỏi này"
         if res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
     #convert link

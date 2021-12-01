@@ -182,8 +182,10 @@ def predict_message(self, message, conversation_history, conversation_message):
             res = symptom_rep(message, sub_intent, last_intent, last_infor)
         elif 'contact' in sub_intent:
             res = emergency_contact_rep(message, last_infor)
+        elif 'number' in sub_intent:
+            res = current_numbers_rep(message, last_infor)
         else:
-            res = common_infor_rep(message, models.corpus_knn, models.tfidf_knn, models.model_knn,models.pca_knn,last_infor)
+            res = common_infor_rep(message, models.corpus_knn, models.tfidf_knn, models.model_knn,last_infor)
     elif intent == 'ok':
         res['done'] = last_infor
     else:
