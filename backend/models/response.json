@@ -10,11 +10,16 @@
     "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
     "request_symptom":{
-        "result_test": "Kết quả xét nghiệm là gì ạ? dương tính hay âm tính á",
+        "result_test": "Kết quả xét nghiệm của bạn là gì ạ?",
         "test_type":"Bạn đã thực hiện test nhanh hay là PT-PCR vậy ạ?",
         "been_covidarea": "Bạn có tiền sử đến/qua/ở/về từ vùng dịch tễ có bệnh COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
         "close_f": "Bạn có tiếp xúc gần với trường hợp bệnh nghi ngờ hoặc xác định COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
-        "covid_test" : "Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?"
+        "covid_test" : "Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?",
+        "correct_test_type": "Dạ bạn vui lòng cung cấp chính xác loại xét nghiệm bạn đã thực hiện nha",
+        "correct_result_test": "Dạ bạn vui lòng cung cấp chính xác kết quả xét nghiệm của bạn nha",
+        "correct_been_covidarea":"Dạ bạn vui lòng cung cấp chính xác thông tin của bạn để mình có thể đưa ra chẩn đoán chính xác nhất nha",
+        "correct_close_f":"Dạ bạn vui lòng cung cấp chính xác thông tin của bạn để mình có thể đưa ra chẩn đoán chính xác nhất nha",
+        "correct_covid_test":"Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?"
     },
     "inform_first_normal_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
     "inform_first_serious_symptom": "{} là một trong những triệu chứng nguy hiểm của covid-19",

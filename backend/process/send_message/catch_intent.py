@@ -119,7 +119,7 @@ def predict_message(self, message, conversation_history, conversation_message):
             return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent        
         elif 'request_symptom' in last_intent:
             
-            return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent
+            return symptom_rep(message, 'diagnostic', last_intent, last_infor), intent, sub_intent
         elif ('request_location' in last_intent and intent!='request') or \
             (re.search(DISTRICT, message) and last_intent == 'inform_serious_prop'):
             intent = 'inform'
@@ -152,28 +152,13 @@ def predict_message(self, message, conversation_history, conversation_message):
             res_code = common_infor_rep(message)
             res[res_code] = last_infor
             return res, intent, sub_intent
-
-    ''' print("\t\t+++++++++++++ check entity in message+++++++++++++++")
-    symp_in_text = re.search(check_has_symp, message)
-    if symp_in_text:
-        intent = 'request'
-        sub_intent = 'symptom_have'
-
-    print("\t\t+++++++++++++Tự infer intent dùng regex (vì model chưa đủ tốt để predict)+++++++++++++++")
-    if intent=='other' or intent == 'ok':
-        if re.search(r'v[a|á|â|ạ|ã|ả|â|ấ|ắ][c|t|g]\s*[x|s][i|y]n|vaccine', message):
+        elif last_intent=='request_correct_text' and message in last_infor['choices']:
             intent = 'request'
-            sub_intent = 'vacxin'
-        elif any(re.search(reg, message) for reg in covid_infor_reg):
-            intent = 'request'
-            sub_intent = 'covid_infor'
-        elif re.search(num_req, message) and sub_intent != 'vacxin':
-            intent = 'request'
-            sub_intent = 'current_numbers' '''
+            sub_intent = 'common_infor'
     
-    if any(re.search(w_ques[i], message) for i in w_ques):
-        intent = 'request'
-
+    if intent!='request' and 'diagnostic' not in sub_intent:
+        last_infor['choices']=[]
+    
     if intent =='hello':
         res['hello'] = last_infor
     elif intent == 'request':

@@ -304,7 +304,6 @@ var Botkit = {
 
         that.next_line.innerHTML = messageNode;
         that.userID = that.generate_guid();       
-        that.historyChat = this.historyChat.concat("\n"+messageNode);
         // const boxStyler = styler(that.next_line);
         // if (boxStyler != null) {
         //     tween({
@@ -382,6 +381,8 @@ var Botkit = {
         res = document.createElement("div");
         options.forEach((v, i) => {
             wrapper = document.createElement("div");
+            wrapper.style.display = 'inline'
+            wrapper.style.margin = '10px'
             button = document.createElement("button");
             button.className = "btn btn-secondary btn-px";
             text = document.createTextNode(v.value);
@@ -417,37 +418,6 @@ var Botkit = {
                 count +=1;
             });
         });
-        that.message_list.appendChild(that.next_line);
-        that.next_line = that.createNextLine();
-    },
-    renderChiPhi: function (prices) {
-        var that = this;
-        if (!that.next_line) {
-            that.next_line = that.createNextLine();
-        }
-        var list_row =
-            '<tr><th class="sotien">Số Tiền</th><th class="mota">Mô Tả</th></tr>';
-
-        for (var v of prices) {
-            list_row += `<tr><td>${
-                v.SoTien ? v.SoTien : "Không Mất Phí"
-            }</td><td>${v.MoTa ? v.MoTa : ""}</td></tr>`;
-        }
-
-        if (prices.length == 0) {
-            list_row += `<tr><td>${"Không Mất Phí"}</td><td>${""}</td></tr>`;
-            return;
-        }
-
-        var table = `<table class="chiphi">${list_row}</table>`;
-
-        const messageNode = that.message_template({
-            message: {
-                html: table,
-                type: "scroll",
-            },
-        });
-        that.next_line.innerHTML = messageNode;
         that.message_list.appendChild(that.next_line);
         that.next_line = that.createNextLine();
     },
@@ -512,73 +482,6 @@ var Botkit = {
                 html: res.outerHTML,
             },
         });
-        that.next_line.innerHTML = messageNode;
-        that.message_list.appendChild(that.next_line);
-        that.next_line = that.createNextLine();
-    },
-    renderDemo: function (demo) {
-        var that = this;
-        if (!that.next_line) {
-            that.next_line = that.createNextLine();
-        }
-        var sum = 0;
-        
-        var list_row = `<tr><th class="products">MẶT HÀNG</th></tr>`;
-        for (var v of demo.products) {
-            sum += v.price * v.amount;
-            list_row += `<tr><td style="width:700px">${v.amount} ${v.name} màu ${v.color} size ${v.size}<br>Giá tiền: ${v.price * v.amount}</br></td></tr>`;
-        }
-        sum += demo.fee;
-        // list_row += `<tr><td style="width:700px">${demo.products}</td></tr>`;
-        list_row += `<tr><th class="date">NGÀY ĐẶT HÀNG</th></tr>`;
-        list_row += `<tr><td style="width:700px">${demo.date}</td></tr>`;
-        list_row += `<tr><th class="date">THANH TOÁN BẰNG</th></tr>`;
-        list_row += `<tr><td style="width:700px">Thanh toán khi giao hàng (COD)</td></tr>`;
-        list_row += `<tr><th class="date">VẬN CHUYỂN ĐẾN</th></tr>`;
-        list_row += `<tr><td style="width:700px">${demo.address}</td></tr>`;
-        list_row += `<tr><th class="date">PHÍ GIAO HÀNG</th></tr>`;
-        list_row += `<tr><td style="width:700px">${demo.fee}</td></tr>`;
-        list_row += `<tr><th class="date">TỔNG CỘNG</th></tr>`;
-        list_row += `<tr><td style="width:700px">${sum}</td></tr>`;
-
-        // var list_row = 
-        //     '<tr><th class="product_name">Tên sản phẩm</th><th class="color">Màu sắc</th><th class="s">S</th><th class="m">M</th><th class="l">L</th><th class="xl">XL</th><th class="xxl">XXL</th><th class="price">Giá tiền</th></tr>';
-        // for (var v of product_introduction) {
-        //     list_row += `<tr ><td style="width:700px">${v.product_name}</td><td>${
-        //         v.color ? v.color : "Chưa xác định"
-        //     }</td><td>${
-        //         v.S ? v.S : 0
-        //     }</td><td>${
-        //         v.M ? v.M : 0
-        //     }</td><td>${
-        //         v.L ? v.L : 0
-        //     }</td><td>${
-        //         v.XL ? v.XL : 0
-        //     }</td><td>${
-        //         v.XXL ? v.XXL : 0
-        //     }</td><td>${
-        //         v.price ? v.price : 0
-        //     }</td></tr>`;
-            
-            
-        //    <td><a href="${v.url ? v.url : "#"}">${
-        //         v.url ? "Link" : ""
-        //     }</a></td></tr>`;
-        // }
-        var table = `<table class="table">${list_row}</table>`;
-        var nameId = "showhide" + index.toString();
-        console.log(index);
-        var button = `<input type="button" onclick="javascript:toggle(${index})" value="XÁC NHẬN ĐƠN ĐẶT HÀNG">
-        <div id=${nameId} style="display: block">${table}</div>`;
-        const messageNode = that.message_template({
-            message: {
-                html: button,
-                type: "scroll",
-            },
-        });
-        index += 1;
-        console.log(index);
-
         that.next_line.innerHTML = messageNode;
         that.message_list.appendChild(that.next_line);
         that.next_line = that.createNextLine();

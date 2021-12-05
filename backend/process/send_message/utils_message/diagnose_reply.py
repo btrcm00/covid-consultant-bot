@@ -17,11 +17,11 @@ def diagnose(text, last_request, last_infor):
         2: {
             "result_test": {
                 "pos": {
-                    "pt-pcr": "inform_serious_prop",
+                    "rt-pcr": "inform_serious_prop",
                     "test-nhanh": "inform_high_prop"
                 },
                 "neg": {
-                    "pt-pcr": "inform_low_prop",
+                    "rt-pcr": "inform_low_prop",
                     "test-nhanh": "request_symptom_been_covidarea"
                 }
             },
@@ -41,33 +41,70 @@ def diagnose(text, last_request, last_infor):
     }
     res = {}
     res_code = ''
-    agree = 0 if re.search(disagree_reg, text) else 1
-    pos = 'pos' if re.search(pos_reg,text) else 'neg'
-    
+    agree = 0 if re.search(disagree_reg, text) else (1 if re.search(agree_reg, text) else None)
+    pos = 'pos' if re.search(pos_reg,text) else ('neg' if re.search(neg_reg,text) else '')
+    choices = []
     degree = last_infor["diagnose"]["tree_degree"]
+    
     if degree in [0,3,4]:
-        last_infor['diagnose'][re.sub('request_symptom_','',last_request)] = agree
-        res_code = tree_diagnose[degree][agree]
+        if agree != None:
+            last_infor['diagnose'][re.sub('request_symptom_','',last_request)] = agree
+            res_code = tree_diagnose[degree][agree]
+        else:
+            if degree==0:
+                choices = ['chưa á','rồi á']
+                res_code = 'request_symptom_correct_covid_test'
+            else:
+                choices = last_infor['choices']
+                res_code = 'request_symptom_correct_' + last_request.replace('request_symptom_', '')
     elif degree == 2:
         if "result_test" in last_request:
-            last_infor['diagnose']['result_test'] = pos
-            res_code = tree_diagnose[degree]["result_test"][pos][last_infor['diagnose']['covid_test']]
+            if pos:
+                last_infor['diagnose']['result_test'] = pos
+                res_code = tree_diagnose[degree]["result_test"][pos][last_infor['diagnose']['covid_test']]
+            else:
+                res_code = 'request_symptom_correct_result_test'
+                choices = ['dương tính','âm tính']
         else:
-            res_code = tree_diagnose[degree]["close_f"][agree]
+            if agree==None:
+                choices = ['chưa á','rồi á']
+                res_code = 'request_symptom_correct_close_f'
+            else:
+                last_infor['diagnose']['been_covidarea'] = agree
+                res_code = tree_diagnose[degree]["close_f"][agree]
     else:
         if "test_type" in last_request:
             if re.search(r't[e|é][s|t]*\s*nha[n|]h',text):
                 last_infor['diagnose']['covid_test'] = 'test-nhanh'
+            elif re.search(r'pcr|rt.pcr',text):
+                last_infor['diagnose']['covid_test'] = 'rt-pcr'
             else:
-                last_infor['diagnose']['covid_test'] = 'pt-pcr'
-                
-            res_code = tree_diagnose[degree]["test_type"]
+                choices = ['test nhanh', 'rt-pcr']
+                res_code = 'request_symptom_correct_test_type'
+            if not res_code:    
+                res_code = tree_diagnose[degree]["test_type"]
         else:
-            last_infor['diagnose']['been_covidarea'] = agree
-            res_code = tree_diagnose[degree]["been_covidarea"][agree]
+            if agree==None:
+                choices = ['không','có']
+                res_code = 'request_symptom_correct_been_covidarea'
+            else:
+                last_infor['diagnose']['been_covidarea'] = agree
+                res_code = tree_diagnose[degree]["been_covidarea"][agree]
     
+    if not choices:
+        last_infor["diagnose"]["tree_degree"] += 1
     
-    last_infor["diagnose"]["tree_degree"] += 1
+    if res_code.startswith('request'):
+        if 'been_covidarea' in res_code:
+            choices = ['không','có']
+        elif 'test_type' in res_code:
+            choices = ['test nhanh','RT-PCR']
+        elif 'result_test' in res_code:
+            choices = ['dương tính','âm tính']
+        elif 'close_f' in res_code:
+            choices = ['có','không']
+            
+    last_infor['choices']=choices
     res[res_code] = last_infor
     return res
     
@@ -76,7 +113,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
     res = {}
     res_code = ''
     print('\t\t------------------TƯ VẤN TRIỆU CHỨNG-------------------')
-    if 'info' in sub_intent:
+    if 'symptom' in sub_intent:
         res_code = 'inform_symptoms_info'
     else:
         if 'request_symptom' in last_req:
@@ -97,7 +134,8 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                 res_code = 'inform_first_serious_symptom/' + ','.join(lst_sym) + '-inform_high_prop'
             else:
                 res_code = 'inform_first_normal_symptom/'+','.join(lst_sym) +'-request_symptom_covid_test'
-                    
+                
+    last_infor['choices']=[]
     res[res_code] = last_infor
     return res
     

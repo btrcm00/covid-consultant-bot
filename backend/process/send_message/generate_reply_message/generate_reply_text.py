@@ -11,36 +11,42 @@ def generate_reply_text(self, result, reply_text,response_knn):
 
         if res == 'hello':
             suggest_reply += reply_text['hello']
-        if res.startswith('inform_first'):
+        elif res.startswith('inform_first'):
             suggest_reply += reply_text[res.split('/')[0]].format(res.split('/')[1])
-        if res.startswith('inform_current_numbers'):
+        elif res.startswith('inform_current_numbers'):
             loc,infected,recovered = res.split('+')[1:]
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
-        if res in ['request_age','request_sex', 'inform_symptoms_info',
+        elif res in ['request_age','request_sex', 'inform_symptoms_info',
                         'inform_low_prop', 'inform_high_prop','request_location_contact', 'done',
                          'again','diagnose','incomming', 'request_covid_infor_chithi','inform_serious_prop','other']:
             suggest_reply += reply_text[res]
-        if res.startswith('inform_covid_infor'):
+        elif res.startswith('inform_covid_infor'):
             if res.startswith('inform_covid_infor_chithi_how'):
                 suggest_reply += reply_text['inform_covid_infor_chithi_how'][res.split('+')[-1]]
             else:
                 suggest_reply += reply_text[res]
-        if res.startswith('inform_precaution'):
+        elif res.startswith('inform_precaution'):
             suggest_reply += reply_text[res.split('+')[0]][res.split('+')[1]][res.split('+')[2]]
-        if 'inform_contact' in res:
+        elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
-        if 'vaccine' in res and not 'medication' in res:
+        elif 'vaccine' in res and not 'medication' in res:
             suggest_reply += reply_text[res]
-        if 'medication' in res:
+        elif 'medication' in res:
             suggest_reply += reply_text['inform_medication'][re.sub('medication_', '', res)]
-        if res.startswith('request_symptom'):
+        elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
-        if res == 'reply_correct_text':
-            suggest_reply += response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
+        elif res == 'reply_correct_text':
+            a = response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
+            if isinstance(a,list):
+                suggest_reply += a[0]
+                result[res]['choices'] = a[1]
+                result['request_correct_text'] = result.pop(res)
+            else:
+                suggest_reply+=a
             if not suggest_reply:
                 suggest_reply += "Chưa có dữ liệu câu trả lời cho câu hỏi này"
-        if res == 'request_correct_text':
+        elif res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
     #convert link
     out_text = suggest_reply.split(" ")
