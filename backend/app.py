@@ -11,10 +11,6 @@ import csv
 from fastapi.encoders import jsonable_encoder
 app = FastAPI()
 
-from sklearn.metrics.pairwise import cosine_similarity
-from scipy import sparse
-def cos(a,b):
-    return 1-cosine_similarity(sparse.csr_matrix(a),sparse.csr_matrix(b))
 
 config_app = get_config()
 

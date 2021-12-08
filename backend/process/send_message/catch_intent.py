@@ -169,7 +169,7 @@ def predict_message(self, message, conversation_history, conversation_message):
         elif 'number' in sub_intent:
             res = current_numbers_rep(message, last_infor)
         else:
-            res = common_infor_rep(message, models.corpus_knn, models.tfidf_knn, models.model_knn,last_infor)
+            res = common_infor_rep(message, last_infor)
     elif intent == 'ok':
         res['done'] = last_infor
     else:

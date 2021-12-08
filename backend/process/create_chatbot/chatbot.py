@@ -90,5 +90,6 @@ class CovidBot():
         except Exception as e:
             print("IndexError")
             error_type = error_handler(e)
-            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ chút xíu nhenn😭", 'id_job': 1, 'check_end': False, 'rep_intent': ['BIG ERROR']}
+            error_message = "Hệ thống đang gặp lỗi ({error_type})".format(error_type=error_type)
+            return {'suggest_reply': error_message, 'id_job': 1, 'check_end': False, 'rep_intent': ['BIG ERROR']}
         return returned_res

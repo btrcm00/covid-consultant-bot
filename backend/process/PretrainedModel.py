@@ -26,7 +26,6 @@ class PretrainedModel:
             cls.tfidf_svm, cls.model_svm = pickle.load(open(cfg['model_load_text']['model'], 'rb'))
             cls.tfidf_intent, cls.model_intent = pickle.load(open(cfg['model_load_text']['intent_model'], 'rb'))
             
-            cls.corpus_knn,cls.model_knn,cls.tfidf_knn  = pickle.load(open(cfg['model_load_text']['knn_model'], 'rb'))
             #3. Load monggodb
             cls.myclient = pymongo.MongoClient(config_app['mongodb']['link_db_server'])
 
