@@ -8,8 +8,8 @@ var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
 
-var url ='https://apibackend-covid-chatbot.herokuapp.com/api/send-message'
-var image_url = 'https://apibackend-covid-chatbot.herokuapp.com/api/send-image' ;
+var url ='http://0.0.0.0:8000/api/send-message'
+var image_url = 'http://0.0.0.0:8000/api/send-image' ;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};
@@ -27,10 +27,9 @@ async function callMessageAPI(options,message,bot){
     }
    
     var jobList = schedule.scheduledJobs;
-    var send_time = new Date().addSeconds(6);
+    var send_time = new Date().addSeconds(1);
     console.log("SEND TIME");
     console.log(send_time);
-    console.log(options);
     var job = 'jobList.SendingSpan' + String(id_job_js[message.user]);
     if (eval(job) != undefined){
       eval(job +'.cancel()')};
@@ -46,14 +45,30 @@ async function callMessageAPI(options,message,bot){
         id_job = JSON.parse(response.body)["id_job"];
         check_end  = JSON.parse(response.body)["check_end"];
         rep_intent = JSON.parse(response.body)["rep_intent"];
+        option = JSON.parse(response.body)["option"];
         if (suggest_reply){
           var job = 'jobList.RemindMess' + (id_job);
           if (eval(job) != undefined){
             eval(job +'.cancel()')
           };
-          for (var sentence of suggest_reply.split("*")){
-            bot.reply(message, sentence);
-            await sleep(1500);
+          if(option && option.length>0){
+            choices = []
+            for(let i = 0;i<option.length;i++){
+              choices.push({value:option[i]})
+            }
+            for (var sentence of suggest_reply.split("*")){
+              bot.reply(message, {
+                text:sentence,
+                choices: choices
+              });
+              await sleep(500);
+            }
+          }
+          else{
+            for (var sentence of suggest_reply.split("*")){
+              bot.reply(message,sentence);
+              await sleep(500);
+            }
           }
         }
       });

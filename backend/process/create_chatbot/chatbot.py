@@ -50,23 +50,28 @@ class CovidBot():
             print('Historyyy',conversation_history)
             # lấy những câu chưa được xử lý
             print("\t\t-------START PROCESSS SENTENCE--------")
-            result = catch_intent(
+            result, intent, sub_intent = catch_intent(
                     self,
                     message,
                     conversation_history,
                     conversation_message)
 
             # ----------------------------- #
-            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text)
+            print("\t\t-------Return code-------->",[i for i in result])
+            suggest_reply,result,check_end = generate_reply_text(self,result,models.reply_text,models.response_knn)
 
             image = []
-            reply_image = suggest_reply
+            option = []
             rep_intent = [key for key in result]
+            if 'choices' in result[rep_intent[0]] and result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
+                option = result[rep_intent[0]]['choices']
+                
             # 3. Insert data
             tmp = mycol.insert_one({
                 'mid' : input_data['mid'],
                 'SenderId': input_data['sender_id'],
-                'RecipientId': input_data['recipient_id'],
+                'intent': intent,
+                'sub_intent': sub_intent,
                 'last_conversation': result,
                 'message_text': input_data['text'],
                 'bot_suggest': suggest_reply,
@@ -77,13 +82,14 @@ class CovidBot():
                     'check_end':check_end, 
                     'rep_intent': rep_intent,
                     'sender_id': input_data['sender_id'],
-                    'recipient_id':input_data['recipient_id']}            
+                    'option': option
+                    }            
                     
             print('RETURNED RES: ', returned_res)
             
         except Exception as e:
             print("IndexError")
             error_type = error_handler(e)
-            return {'suggest_reply': "Hệ thống đang gặp lỗi ({error_type})".format(error_type=error_type), 'id_job': 1, 'check_end': False,\
-                 'rep_intent': ['BIG ERROR']}
+            error_message = "Hệ thống đang gặp lỗi ({error_type})".format(error_type=error_type)
+            return {'suggest_reply': error_message, 'id_job': 1, 'check_end': False, 'rep_intent': ['BIG ERROR']}
         return returned_res

@@ -3,12 +3,14 @@ from fastapi import FastAPI, Request
 from backend.config.config import get_config
 from backend.process.PretrainedModel import PretrainedModel
 import pickle
+from fastapi.responses import FileResponse
 import uvicorn
 import logging
+import os
+import csv
 from fastapi.encoders import jsonable_encoder
-
-
 app = FastAPI()
+
 
 config_app = get_config()
 
@@ -38,6 +40,35 @@ async def api_send_image(request: Request):
 
 @app.get('/')
 def home():
-    return "This is covid chatbot"
+    mydb = models.myclient["chatbot_data"]
+    mycol = mydb["chatbot_conversations"]
+    return "Covid-chatbot " + str(mycol.count_documents({}))
+
+@app.get('/api/export_data')
+def export_data():
+    mydb = models.myclient["chatbot_data"]
+    mycol = mydb["chatbot_conversations"]
+    cursor = mycol.find({})
+    data = []
+    for doc in cursor:
+        if 'intent' in doc:
+            intent = doc['intent']
+        else:
+            intent = ''
+        
+        if 'sub_intent' in doc:
+            sub = doc['sub_intent']
+        else:
+            sub = ''
+        data.append({'text': doc['message_text'], 'intent': intent, 'sub': sub})
+    
+    with open('data1.csv', encoding='utf8', mode='a+') as csv_file:
+        fieldnames = ['text','intent','sub']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for i in data:
+            writer.writerow(i)
+        
+    return FileResponse(path=os.getcwd() + '/data1.csv', filename='data1.csv', media_type='text/mp4')
 
 uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

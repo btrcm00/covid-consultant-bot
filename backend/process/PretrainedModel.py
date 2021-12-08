@@ -5,7 +5,6 @@ import pymongo
 from os import path
 import re
 
-
 from backend.config.config import get_config
 config_app = get_config()
 
@@ -20,11 +19,13 @@ class PretrainedModel:
             cls.reply_text = json.loads(json_data.read())
             json_contact = open(cfg['emergency_contact'], 'rb')
             cls.reply_text.update({'contact_list': json.loads(json_contact.read())})
+            json_knn = open(cfg['response_knn'], 'rb')
+            cls.response_knn = json.loads(json_knn.read())
 
             # 2. Model load text
             cls.tfidf_svm, cls.model_svm = pickle.load(open(cfg['model_load_text']['model'], 'rb'))
             cls.tfidf_intent, cls.model_intent = pickle.load(open(cfg['model_load_text']['intent_model'], 'rb'))
-
+            
             #3. Load monggodb
             cls.myclient = pymongo.MongoClient(config_app['mongodb']['link_db_server'])
 
