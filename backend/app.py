@@ -75,4 +75,4 @@ def export_data():
         
     return FileResponse(path=os.getcwd() + '/data1.csv', filename='data1.csv', media_type='text/mp4')
 
-uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+#uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

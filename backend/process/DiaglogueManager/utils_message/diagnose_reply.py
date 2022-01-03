@@ -120,10 +120,13 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
             return diagnose(text, last_req, last_infor)[1]
         else:
             lst_sym = []
+            serious_sym = []
             for intensity_sym in symptom_list:
                 for sym in symptom_list[intensity_sym]:
                     if re.search(sym, text):
                         lst_sym.append(re.findall(sym,text)[0])
+                        if intensity_sym == 'serious_symptom':
+                            serious_sym.append(re.findall(sym,text)[0])
                         symp = symptom_list[intensity_sym][sym]
                         if last_infor['symptom'][symp]=='':
                             last_infor['symptom'][symp] = 1
@@ -131,16 +134,24 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
             if last_infor['diagnose']["tree_degree"] == "":
                 last_infor['diagnose']["tree_degree"] = 0
                 if last_infor['diagnose']['serious_symptom']:
-                    res_code = 'inform_first_serious_symptom/' + ','.join(lst_sym) + '-inform_suggest_prop'
+                    res_code = 'inform_first_serious_symptom/' + ','.join(serious_sym) + '-inform_suggest_prop'
                 else:
                     res_code = 'inform_first_normal_symptom/'+','.join(lst_sym) +'-request_symptom_covid_test'
+            elif last_infor['diagnose']['serious_symptom'] and serious_sym:
+                res_code = 'inform_first_serious_symptom/' + ','.join(serious_sym) + '-inform_suggest_prop'
             else:
+                print('hâhah',last_infor["diagnose"]["tree_degree"])
                 last_infor["diagnose"]["tree_degree"] -= 1
                 if last_infor["diagnose"]["tree_degree"] < 0:
                     last_infor["diagnose"]["tree_degree"] = 0
-                res_code,ress = diagnose(text, last_req, last_infor)
-                res[res_code] = ress[res_code]
-                return res
+                    res_code = 'request_symptom_covid_test'
+                    last_infor['choices'] = ['chưa', 'rồi']
+                    res[res_code] = last_infor
+                    return res
+                else:
+                    res_code,ress = diagnose(text, last_req, last_infor)
+                    res[res_code] = ress[res_code]
+                    return res
                 
                 
                 
