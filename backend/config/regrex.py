@@ -25,6 +25,13 @@ serious_symptom = {
     r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang',
     r'ho\s*ra\s*m[a|á]u': 'ho-ra-mau'
 }
+serious_symptom = {
+    r'th[o|ơ|ở]\s*m[e|ệ|ẹ|ê]t': 'tho-met',
+    r'kh[o|ó]\s*th[o|ơ|ở]': 'kho-tho',
+    r't[ư|ứ|ú|u]c\s*ng[ư|ự|u]c': 'tuc-nguc',
+    r'm[â|ấ|a]t\s*kh[a|ả]\s*n[a|ă][|n]g': 'mat-kha-nang',
+    r'ho\s*ra\s*m[a|á]u': 'ho-ra-mau'
+}
 symptom_list = {
     'normal_symptom':normal_symptom,
     'serious_symptom':serious_symptom,

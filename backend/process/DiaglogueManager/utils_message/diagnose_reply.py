@@ -10,7 +10,7 @@ def diagnose(text, last_request, last_infor):
         1: {
             "test_type": "request_symptom_result_test",
             "been_covidarea": {
-                1: "inform_suspicion_prop",
+                1: "inform_high_prop",
                 0: "request_symptom_close_f"
             }
         },
@@ -21,21 +21,21 @@ def diagnose(text, last_request, last_infor):
                     "test-nhanh": "inform_high_prop"
                 },
                 "neg": {
-                    "rt-pcr": "inform_verylow_prop",
+                    "rt-pcr": "inform_low_prop",
                     "test-nhanh": "request_symptom_been_covidarea"
                 }
             },
             "close_f": {
-                1: "inform_suspicion_prop",
-                0: "inform_nonsuspicion_prop"
+                1: "inform_high_prop",
+                0: "inform_low_prop"
             }
         },
         3: {
-            1: "inform_suggest_prop",
+            1: "inform_high_prop",
             0: "request_symptom_close_f"
         },
         4: {
-            1: "inform_suggest_prop",
+            1: "inform_high_prop",
             0: "inform_low_prop"
         }
     }
@@ -106,7 +106,7 @@ def diagnose(text, last_request, last_infor):
             
     last_infor['choices']=choices
     res[res_code] = last_infor
-    return res_code,res
+    return res
     
 
 def symptom_rep(text, sub_intent, last_req, last_infor):
@@ -117,7 +117,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
         res_code = 'inform_symptoms_info'
     else:
         if 'request_symptom' in last_req:
-            return diagnose(text, last_req, last_infor)[1]
+            return diagnose(text, last_req, last_infor)
         else:
             lst_sym = []
             serious_sym = []
@@ -131,6 +131,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                         if last_infor['symptom'][symp]=='':
                             last_infor['symptom'][symp] = 1
                         last_infor['diagnose'][intensity_sym] = 1
+
             if last_infor['diagnose']["tree_degree"] == "":
                 last_infor['diagnose']["tree_degree"] = 0
                 if last_infor['diagnose']['serious_symptom']:
@@ -152,8 +153,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                     res_code,ress = diagnose(text, last_req, last_infor)
                     res[res_code] = ress[res_code]
                     return res
-                
-                
+
                 
     last_infor['choices']=[]
     res[res_code] = last_infor
