@@ -79,18 +79,20 @@ def update_slots(entity_dict, last_infor):
 def predict_reply(message, last_intent, last_infor, intent):
     res={}
     
-    if intent!='request' and 'diagnostic' not in intent:
+    if last_intent!='request_correct_text':
         last_infor['choices']=[]
-    
     if intent in ['hello']:
         res[intent] = last_infor
     elif intent in ['inform', 'ok', 'other']:
+        print('haha',intent,last_intent )
         if 'request_symptom' in last_intent and 'request' not in intent:
             return symptom_rep(message, 'diagnostic', last_intent, last_infor)
         elif ('request_location' in last_intent and intent!='request') or \
             (re.search(DISTRICT, message) and last_intent == 'inform_serious_prop'):
             intent = 'inform'
             return emergency_contact_rep(message, last_infor)
+        elif last_intent=='request_correct_text' and message in last_infor['choices']:
+            return common_infor_rep(message, last_infor)
         else:
             res[intent] = last_infor
             
