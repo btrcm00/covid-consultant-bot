@@ -1,4 +1,4 @@
-from backend.config.constant import contact_emergency, DISTRICT
+from backend.config.constant import DISTRICT
 import regex as re
 from unidecode import unidecode
 
@@ -17,18 +17,9 @@ def emergency_contact_rep(text, last_infor):
 
     print('\t\t------------------TƯ VẤN LIÊN HỆ HỖ TRỢ-------------------')
     res = {}
-    if last_infor['infor']['address'] and not re.search(DISTRICT, text):
+    if last_infor['infor']['address']:
         res_code = 'inform_contact+' + last_infor['infor']['address']
     else:
-        location = re.findall(DISTRICT, text)
-        if not location:
-            res_code = 'request_location_contact'
-        else:
-            last_infor['infor']['address'] = ''.join(unidecode(location[0]).split())
-            res_code = 'inform_contact+' + last_infor['infor']['address']
+        res_code = 'request_location_contact'
     res[res_code] = last_infor
     return res
-    
-
-
-    

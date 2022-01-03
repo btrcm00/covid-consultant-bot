@@ -3,6 +3,7 @@ import re
 import unicodedata
 from backend.process.PretrainedModel import PretrainedModel
 import unidecode
+from backend.config.constant import MAP_TO_DISTRICT_HCM
 
 models = PretrainedModel()
 def preprocess(sent):
@@ -33,6 +34,12 @@ def in_dictionary(word):
 
 def correct_sent(sent):
     sent = preprocess(sent)
+    
+    # ---------------TRANSFORM Q1 -> QUẬN 1, Q2 -> Quận 2, etc---------
+    for key, value in MAP_TO_DISTRICT_HCM.items():
+        if key in sent:
+            sent = sent.replace(key, value)
+
     words = re.findall('\w*[~`\']\w*|\w+&\w+|\w+\s?:|\w+|[^\s\w]+', sent)
     sent = ""
     for word in words:

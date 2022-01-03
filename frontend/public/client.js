@@ -714,4 +714,3 @@ var Botkit = {
 (function () {
     Botkit.boot();
 })();
-

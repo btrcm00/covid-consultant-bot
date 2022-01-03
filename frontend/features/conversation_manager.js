@@ -9,7 +9,7 @@ var AdminState = {};
 const pLimit = require('p-limit');
 
 var url ='http://0.0.0.0:8000/api/send-message'
-var image_url = 'http://0.0.0y.0:8000/api/send-image' ;
+var image_url = 'http://0.0.0.0:8000/api/send-image' ;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};

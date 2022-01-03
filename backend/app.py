@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, Request
 from backend.config.config import get_config
 from backend.process.PretrainedModel import PretrainedModel
