@@ -1,13 +1,15 @@
 from backend.utils.utils import preprocess_message
-from backend.config.regrex import *
-from backend.config.constant import DISTRICT, PROVINCE
+from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
+from backend.config.constant import DISTRICT
 from backend.process.PretrainedModel import PretrainedModel
 from unidecode import unidecode
 
 import regex as re
 models = PretrainedModel()
 def extract_information_message(message):
+    print('RAW MESSAGE====', message)
     message = preprocess_message(message)
+    print('CORRECT MESSAGE====',message)
     
     entity_dict = extract_entity_message(message)
     intent = extract_intent_message(message, entity_dict)
@@ -45,10 +47,6 @@ def extract_entity_message(message):
         if location:
             entity_dict['address'] = ''.join(unidecode(location[0]).split())
 
-    for ele in medical_his_reg:
-        if re.search(medical_his_reg[ele], message):
-            entity_dict['medical_history'].append(ele)
-
     return entity_dict
 
 def extract_intent_message(message, entity_dict):
@@ -63,18 +61,9 @@ def extract_intent_message(message, entity_dict):
         pass
     elif intent == 'request' or any(re.search(w_ques[i], message) for i in w_ques):
         intent = 'request_' + sub_intent
-        if sub_intent == 'precautions':
-            t = [i for i in precaution_reg if re.search(precaution_reg[i], message)]
-            intent += '_' + t[0] if t else ''
-        if sub_intent == 'current_numbers':
-            t = [i.lower() for i in PROVINCE if re.search(i.lower(), message)]
-            intent += '_' + unidecode(t[0]) if t else ''
     elif intent == 'inform' or any(entity_dict[i] for i in entity_dict):
         intent = 'inform'
     else:
-        if re.search(done, message):
-            intent = 'done'
-        else:
-            intent = 'ok'
+        intent = 'ok'
     return intent
 

@@ -45,8 +45,12 @@ class CovidBot():
             print("\t\tReturn code->",[i for i in result])
 
             print("\t\t-------Natural Language Generation (NLG)--------")
-            suggest_reply,result,check_end = generate_reply_text(result,models.reply_text)
+            suggest_reply,result,check_end = generate_reply_text(result,models.reply_text,models.response_knn)
 
+            option = []
+            rep_intent = [key for key in result]
+            if 'choices' in result[rep_intent[0]] and result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
+                option = result[rep_intent[0]]['choices']
             print("\t\t-------Insert data to DB--------")
             col = {
                 'mid' : input_data['mid'],
@@ -62,9 +66,10 @@ class CovidBot():
             # ---------------
             returned_res = {'suggest_reply': suggest_reply, 
                     'check_end':check_end, 
-                    'rep_intent': [key for key in result],
-                    'sender_id': input_data['sender_id']
-                    }            
+                    'rep_intent': rep_intent,
+                    'sender_id': input_data['sender_id'],
+                    'option': option
+                    }          
                     
             print('RETURNED RES: ', returned_res)
             

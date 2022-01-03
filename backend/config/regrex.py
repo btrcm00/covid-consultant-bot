@@ -1,3 +1,4 @@
+
 import pandas as pd
 
 from os import path
@@ -32,18 +33,15 @@ check_has_symp = '|'.join([i for j in symptom_list for i in symptom_list[j]])
 pos_reg = r'd[u|ư][o|ơ][n|]g\s*t[i|í][n|]h'
 neg_reg = r'[a|â]m\s*t[i|í][n|]h'
 
-#Entity regex
-age_reg = r'(\d{1,2})\s*t[u|ủ][ỏ|o|ô|ổ|]i'
+age_reg = r'\d{1,2}'
 sex_reg = {
-    'male': r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g',
-    'female': r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i'
+    r'nam|trai|[d|đ][a|à]n\s*[o|ô][n|]g': 'male',
+    r'n[ữ|ư]|[d|đ][a|à]n\s*b[a|à]|ph[u|ụ]\s*n[ư|ữ]|g[a|á]i': 'female'
 }
 
-# agree = r'c[o|ó]|r[ồ|u|ù|o|ô]i|dr'
-# disagree = r'kh[o|ô]ng|ko|k\s(\s)*'
-done = r'tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]'
 agree_reg = r'\b([o|ô|0|u]k[a-zA-Z]*|oce|[d|z][a|ạ|à][a-zA-Z]*|c[o|ó]|ola|[u|ừ|o|ù][m|h|k|a]*|[o|ờ]|v[a|â|ầ]n*g|v[a|â|ầ]ng*|[d|đ][u|ú]n*g|[đ|d]c|[d|đ][u|ư][ơ|o|ợ]c|r[ồ|u|ù|o|ô]i|tks|thank|thanks|c[a|ả]m\s*[o|ơ]n|đ[o|ồ]ng\s*[y|ý]|dr|r[o|ô|ồ]i)\b'
 disagree_reg = r'\b(th[u|ô|o][i|y]*|ch[u|ư]a|(hix)+|kh[o|ô]ng|ko|k\s(\s)*|(hu)+|tks|c[a|ả|á|u|ủ]m\s*[o|ơ]n|thanks|thank|thank\s*you|ti[e|ế|ê]c|ch[a|ậ]t)\b'
+
 
 
 ### TIME
@@ -74,13 +72,11 @@ ques={"time":r'l[a|â]u|[g|d][i][a|ã|â][n|m][g|]|2|\sh[a|â]i',
         "number":r'm[a|á|ấ|â]y\s*lo[a|ạ]i|(bao)?\s*nhi[|e|ê]u'
 }
 vaccine=[r'a[s|t]t[r|]a',r'[s|x]i[n|m]o',r'[p|f][f|]i[z|d]er',r'[m|n][o|ô|ơ][|d]er', r'sputni[t|k]', r'[v|z][i|e|ê][r|d][ô|o]']
+gan=r'\b(g[a|á|â|ạ|ă][m|n])\b'
+man=r'\b(m[a|ã|â|ẫ|ẵ][m|n])\b'
+di=r'\b([d|g][i|y|ỵ|ị|í])\b'
+bia=r'\b([b|p]i[a]|r[u|ư|ụ|i|ị][ơ|o|]u)\b'
 
-medical_his_reg = {
-    'gan': r'gan',
-    'mantinh': r'm[a|ã]n\s*t[i|í][n|]h',
-    'diung': r'[g|d][i|y|ị|ỵ]\s*[u|ư|ứ|ú][n|]g',
-    'ruoubia': r'bia|r[u|ư|ự|ụ][ơ|o|ợ|]u|rịu'
-}
 
 covid_infor_reg = {
     r'ch[i|ỉ]\s*th[i|ị]' : 'chithi',

@@ -1,43 +1,28 @@
 import regex as re
 from backend.config.regrex import covid_infor_reg,w_ques
+from backend.config.config import get_config
+config_app = get_config()
+import pickle
 
 
-def common_infor_rep(text):
+def common_infor_rep(text,last_infor):
     print('\t\t------------------TƯ VẤN THÔNG TIN-------------------')
     sub_intent = ''
-    res_code = 'inform_covid_infor_'
-
-    for i in covid_infor_reg:
-        if re.search(i, text):
-            sub_intent = covid_infor_reg[i]
-    
-    if sub_intent=='chithi':
-        if re.search(w_ques['what'], text):
-            res_code += 'chithi_what'
-        elif re.search(w_ques['how'], text):
-            if not any(i in text for i in ['15', '16', '19']):
-                res_code = 'request_covid_infor_chithi'
-            else:
-                res_code += 'chithi_how+' + [i for i in ['15', '16', '19'] if i in text][0]
-        else:
-            res_code += 'chithi_what'
-    elif sub_intent=='testnhanh':
-        if re.search(w_ques['what'], text):
-            res_code += 'testnhanh_what'
-        elif re.search(w_ques['how'], text):
-            res_code += 'testnhanh_how'
-        elif re.search(w_ques['where'], text):
-            res_code += 'testnhanh_where'
-        else:
-            res_code += 'testnhanh_what'
+    res_code = 'request_correct_text'
+    threshold = 0.85
+    res = {}
+    corpus_knn,model_knn,tfidf_knn = pickle.load(open(config_app['models_chatbot']['model_load_text']['knn_model'], 'rb'))
+    trans = tfidf_knn.transform([text])
+    distance, idx_choices = model_knn.kneighbors(trans)
+    distance = 1 - distance[0]
+    if distance[0] > threshold:
+        res_code = 'reply_correct_text'
+        choices = [corpus_knn[idx_choices[0][0]]]
+        print([corpus_knn[i] for i in idx_choices[0]][:2])
     else:
-        if re.search(w_ques['what'], text):
-            res_code += 'common_what'
-        elif re.search(w_ques['where'], text):
-            res_code += 'common_where'
-        elif re.search(w_ques['when'], text):
-            res_code += 'common_when'
-        else:
-            res_code += 'common_what'
+        res_code = 'request_correct_text'
+        choices = [corpus_knn[i] for i in idx_choices[0]][:2]
     
-    return res_code
+    res[res_code] = last_infor
+    res[res_code]['choices'] = choices
+    return res

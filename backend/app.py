@@ -10,6 +10,7 @@ import csv
 from fastapi.encoders import jsonable_encoder
 app = FastAPI()
 
+
 config_app = get_config()
 
 logging.basicConfig(filename=config_app['log']['app'],
