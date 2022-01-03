@@ -10,13 +10,13 @@ import csv
 from fastapi.encoders import jsonable_encoder
 app = FastAPI()
 
-
 config_app = get_config()
 
 logging.basicConfig(filename=config_app['log']['app'],
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 models = PretrainedModel(config_app['models_chatbot'])
 from backend.api.api_message import send_message
+from backend.api.api_update_database import update_database
 
 @app.post('/api/send-message')
 async def api_send_message(request: Request):
@@ -42,6 +42,11 @@ def home():
     mydb = models.myclient["chatbot_data"]
     mycol = mydb["chatbot_conversations"]
     return "Covid-chatbot " + str(mycol.count_documents({}))
+
+@app.get('/api/update_database_knn')
+def update_db():
+    data = models.response_knn
+    return update_database(data)
 
 @app.get('/api/export_data')
 def export_data():

@@ -1,5 +1,8 @@
 import regex as re
 
+from backend.process.PretrainedModel import PretrainedModel
+models = PretrainedModel()
+
 def generate_reply_text(result, reply_text,response_knn):
     print('result nè',result)
     res_code = list(result.keys())[0]
@@ -23,7 +26,17 @@ def generate_reply_text(result, reply_text,response_knn):
         elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
         elif res == 'reply_correct_text':
-            a = response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
+            mydb = models.myclient["chatbot_data"]
+            mycol = mydb["data_response_knn"]
+            reply = []
+            document = mycol.find_one({'question': result[res]['choices'][0].lower()})
+            if document:
+                print(document)
+                a = document['answer']
+            else:
+                a = 'Chưa có dữ liệu cho câu hỏi này'
+            
+            #a = response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
             if isinstance(a,list):
                 suggest_reply += a[0]
                 result[res]['choices'] = a[1]
@@ -35,7 +48,7 @@ def generate_reply_text(result, reply_text,response_knn):
         elif res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
         else:
-            suggest_reply += reply_text[res]
+            suggest_reply += reply_text.get(res, 'Bạn muốn hỏi gì ạ?')
     #convert link
     out_text = suggest_reply.split(" ")
     for idx, text in enumerate(out_text):
