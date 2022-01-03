@@ -15,7 +15,8 @@ normal_symptom = {
     r'm[a|ấ|â]t\s*(v[i|ị]|kh[u|ư|ứ|ú|i]u)\s*gi[á|a]c': 'mat-vi-giac',
     r'ti[e|ê|]u\s*ch[a|ả]y': 'tieu-chay',
     r't[í|i]m\s*t[a|á]i': 'tim-tai',
-    r'n[ô|ổ|o]i\s*m[â|ẩ|a]n': 'noi-man'
+    r'n[ô|ổ|o]i\s*m[â|ẩ|a]n': 'noi-man',
+    r'[d|đ]au\s*[d|đ][a|à|ầ|â]u': 'dau-dau'
 }
 serious_symptom = {
     r'th[o|ơ|ở]\s*m[e|ệ|ẹ|ê]t': 'tho-met',

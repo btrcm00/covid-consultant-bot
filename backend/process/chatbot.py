@@ -47,6 +47,8 @@ class CovidBot():
             print("\t\t-------Natural Language Generation (NLG)--------")
             suggest_reply,result,check_end = generate_reply_text(result,models.reply_text,models.response_knn)
 
+            suggest_reply = suggest_reply[0].upper() + suggest_reply[1:]
+
             option = []
             rep_intent = [key for key in result]
             if 'choices' in result[rep_intent[0]] and result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:

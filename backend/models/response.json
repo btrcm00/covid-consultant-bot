@@ -1,10 +1,10 @@
 {
 
-    "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất nhenn🤨",
-    "diagnose": "Những dự đoán hiện tại có thể chưa hoàn toàn chính xác nên để chắc chắn bạn hãy liên hệ với các trung tâm y tế để được hỗ trợ một cách tốt nhất nha",
-    "incomming": "tính năng này sẽ được hỗ trợ trong thời gian sớm nhất ạ",
+    "again" : "Bạn vui lòng cung cấp thông tin chính xác để mình có thể tư vấn cho bạn một cách chính xác nhất ạ",
+    "diagnose": "Những dự đoán hiện tại có thể chưa hoàn toàn chính xác nên để chắc chắn bạn hãy liên hệ với các trung tâm y tế để được hỗ trợ một cách tốt nhất.",
+    "incomming": "Tính năng này sẽ được hỗ trợ trong thời gian sớm nhất ạ",
     "request_correct_text": "Dạ ý bạn có phải là:*{option_1}|{option_2}",
-    "inform_symptoms_info" : "Một số triệu chứng thường gặp của bệnh COVID-19:\n- Khó thở\n- Đau hoặc tức ngực thường xuyên\n- Trạng thái lẫn lộn mới\n- Không thể thức dậy hay duy trì sự tỉnh táo*Những triệu chứng này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.*Hoặc bạn cũng có thể cung cấp cho mình một số triệu chứng bạn gặp phải để mình có thể tư vấn thêm cho bạn nhen.",
+    "inform_symptoms_info" : "Một số triệu chứng thường gặp của bệnh COVID-19:\n- Khó thở\n- Đau hoặc tức ngực thường xuyên\n- Trạng thái lẫn lộn mới\n- Không thể thức dậy hay duy trì sự tỉnh táo*Những triệu chứng này không bao gồm tất cả các triệu chứng có thể xuất hiện. Nên bạn hãy gọi ngay cho trạm y tế gần nhất nếu có bất kỳ triệu chứng nào nghiêm trọng hoặc đáng lo nha.*Hoặc bạn cũng có thể cung cấp cho mình một số triệu chứng bạn gặp phải để mình có thể tư vấn thêm cho bạn.",
     "request_age"    : "Bạn bao nhiêu tuổi á?",
     "request_sex"    : "Bạn là nam hay nữ vậy ạ",
     "request_symptom":{
@@ -13,27 +13,38 @@
         "been_covidarea": "Bạn có tiền sử đến/qua/ở/về từ vùng dịch tễ có bệnh COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
         "close_f": "Bạn có tiếp xúc gần với trường hợp bệnh nghi ngờ hoặc xác định COVID-19 trong khoảng 14 ngày trước khi khởi phát các triệu chứng không ạ?",
         "covid_test" : "Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?",
-        "correct_test_type": "Dạ bạn vui lòng cung cấp chính xác loại xét nghiệm bạn đã thực hiện nha",
-        "correct_result_test": "Dạ bạn vui lòng cung cấp chính xác kết quả xét nghiệm của bạn nha",
+        "correct_test_type": "Dạ bạn vui lòng cung cấp chính xác loại xét nghiệm bạn đã thực hiện.",
+        "correct_result_test": "Dạ bạn vui lòng cung cấp chính xác kết quả xét nghiệm của bạn.",
         "correct_been_covidarea":"Dạ bạn vui lòng cung cấp chính xác thông tin của bạn để mình có thể đưa ra chẩn đoán chính xác nhất nha",
         "correct_close_f":"Dạ bạn vui lòng cung cấp chính xác thông tin của bạn để mình có thể đưa ra chẩn đoán chính xác nhất nha",
         "correct_covid_test":"Dạ gần đây bạn có tiến hành xét nghiệm covid ở đâu chưa ạ?"
     },
-    "inform_first_normal_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin nha.",
+    "inform_first_normal_symptom" : "{} là một trong những triệu chứng của covid-19 nhưng cũng có thể gặp trong những bệnh lý khác.*Nên để chính xác thì mình xin hỏi bạn thêm một số thông tin ạ.",
     "inform_first_serious_symptom": "{} là một trong những triệu chứng nguy hiểm của covid-19",
-    "inform_high_prop": "Nguy cơ mắc bệnh của bạn là cao á. Bạn nên liên hệ với cơ sở y tế gần nhất để được thực hiện xét nghiệm RT-PCR và thực hiện cách ly theo quy định của Bộ Y tế ngay nha",
-    "inform_low_prop": "Vậy nguy cơ mắc bệnh cuả bạn là khá thấp á. Bạn có thể bổ sung các thực phẩm chứa nhiều vitamin để tăng cường sức đề kháng trong mùa dịch, nghiêm chỉnh thực hiện 5K đồng thời theo dõi diễn tiến của triệu chứng để liên lạc kịp thời với cơ sở y tế gần nhất khi có diễn tiến xấu đi nha",
-    "inform_serious_prop": "Vậy có thể đã mắc covid-19 rồi đấy ạ, bạn hãy thực hiện nghiêm những quy định của bộ y tế, hạn chế tối đa việc tiếp xúc với người khác và khẩn trương liên hệ với các trạm y tế gần nhất để được hướng dẫn chi tiết nha*Bạn ở quận mấy vậy ạ, để mình cung cấp cho bạn số liên lạc nhanh nhất á",
+
+    "inform_high_prop": "Nguy cơ mắc bệnh của bạn là cao. Bạn nên liên hệ với cơ sở y tế gần nhất để được thực hiện xét nghiệm RT-PCR và thực hiện cách ly theo quy định của Bộ Y tế",
+
+    "inform_verylow_prop": "Khả năng cao là bạn không nhiễm bệnh tuy nhiên xét nghiệm vẫn có trường hợp là âm tính giả (tức bạn bị nhiễm bệnh nhưng kết quả lại âm tính)*Vì thế nếu bạn có yếu tố dịch tễ hay tiền căn tiếp xúc gần với người mang bệnh và nhiều triệu chứng nghi ngờ thì nên liên lạc với cơ sở y tế gần nhất để được thực hiện lại xét nghiệm",
+
+    "inform_low_prop": "Nguy cơ mắc bệnh của bạn là thấp. Bạn có thể bổ sung các thực phẩm chứa nhiều vitamin để tăng cường sức đề kháng trong mùa dịch, nghiêm chỉnh thực hiện 5K đồng thời theo dõi diễn tiến của triệu chứng để liên lạc kịp thời với cơ sở y tế gần nhất khi có diễn tiến xấu đi",
+
+    "inform_suggest_prop":"Bạn nên liên hệ ngay với cơ sở y tế gần nhất đề thực hiện test RT-PCR và được hướng dẫn cụ thể đồng thời hạn chế tiếp xúc với người xung quanh và tuân thủ đúng 5K",
+
+    "inform_serious_prop": "Vậy bạn đã bị nhiễm Covid, bạn hãy liên hệ với cơ sở y tế gần nhất để được hướng dẫn",
+
+    "inform_suspicion_prop": "Bạn thuộc diện ca bệnh nghi ngờ theo quyết định 4689/QĐ-BYT. Bạn nên hạn chế tiếp xúc với người thân, thực hiện 5K, theo dõi triệu chứng của bản thân, gọi ngay cho phường để được xét nghiệm, kiểm tra và theo dõi",
+
+    "inform_nonsuspicion_prop": "Bạn không nằm trong diện ca bệnh nghi ngờ theo quyết định 4689/QĐ-BYT.*Bạn có thể bổ sung các thực phẩm chứa nhiều vitamin để tăng cường sức đề kháng trong mùa dịch, nghiêm chỉnh thực hiện 5K đồng thời theo dõi diễn tiến của triệu chứng để liên lạc kịp thời với cơ sở y tế gần nhất khi có diễn tiến xấu đi",
 
     "inform_current_numbers" : "Dạ số ca nhiễm hiện tại ở {} là: {}\nSố ca đã được chữa khỏi: {}*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/ \nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
 
-    "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau nha",
-    "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc nha.",
-    "hello":"Hilo, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?😍",
+    "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau",
+    "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc cụ thể ạ.",
+    "hello":"Xin chào, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?",
 
-    "ok": "dạ okie*nếu bạn cần tư vấn thêm về các triệu chứng hay những thông tin về đại dịch covid19 thì liên hệ mình nha ",
+    "ok": "Dạ cảm ơn bạn ạ, nếu có vấn đề cần hỗ trợ tư vấn thì bạn hãy liên hệ với mình.*Chúc bạn giữ gìn sức khỏe thật tốt để vượt qua đại dịch này ạ.",
 
-    "other":"Mình hong hiểu câu hỏi của bạn 😥 bạn vui lòng ghi đầy đủ dấu giúp mình nha.*À mình chỉ cung cấp/tư vấn những thông tin liên quan đến covid-19 thui nha🙄", 
-    "done": "Dạ cảm ơn bạn ạ, nếu có vấn đề cần hỗ trợ tư vấn thì bạn hãy liên hệ với mình nhe*Chúc bạn giữ gìn sức khỏe thật tốt để vượt qua đại dịch này ạ ^^"
+    "other":"Mình không hiểu câu hỏi của bạn, bạn vui lòng ghi đầy đủ dấu giúp mình ạ.*Mình chỉ cung cấp/tư vấn những thông tin liên quan đến covid-19 thôi ạ", 
+    "done": "Dạ cảm ơn bạn ạ, nếu có vấn đề cần hỗ trợ tư vấn thì bạn hãy liên hệ với mình nhe*Chúc bạn giữ gìn sức khỏe thật tốt để vượt qua đại dịch này ạ."
 
 }

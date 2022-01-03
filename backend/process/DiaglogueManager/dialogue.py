@@ -36,6 +36,7 @@ def update_slots(entity_dict, last_infor):
                     "noi-man": "",
                     "tho-met": "",
                     "ho-ra-mau": "",
+                    "dau-dau": ""
                 },
                 'diagnose':{
                     "tree_degree":"",

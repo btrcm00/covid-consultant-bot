@@ -17,10 +17,6 @@ def generate_reply_text(result, reply_text,response_knn):
         elif res.startswith('inform_current_numbers'):
             loc,infected,recovered = res.split('+')[1:]
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
-        elif res in ['inform_symptoms_info',
-                        'inform_low_prop', 'inform_high_prop','request_location_contact', 'done',
-                         'again','diagnose','incomming','inform_serious_prop','other']:
-            suggest_reply += reply_text[res]
         elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
@@ -38,6 +34,8 @@ def generate_reply_text(result, reply_text,response_knn):
                 suggest_reply += "Chưa có dữ liệu câu trả lời cho câu hỏi này"
         elif res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
+        else:
+            suggest_reply += reply_text[res]
     #convert link
     out_text = suggest_reply.split(" ")
     for idx, text in enumerate(out_text):

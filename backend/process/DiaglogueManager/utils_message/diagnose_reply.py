@@ -10,7 +10,7 @@ def diagnose(text, last_request, last_infor):
         1: {
             "test_type": "request_symptom_result_test",
             "been_covidarea": {
-                1: "inform_high_prop",
+                1: "inform_suspicion_prop",
                 0: "request_symptom_close_f"
             }
         },
@@ -21,21 +21,21 @@ def diagnose(text, last_request, last_infor):
                     "test-nhanh": "inform_high_prop"
                 },
                 "neg": {
-                    "rt-pcr": "inform_low_prop",
+                    "rt-pcr": "inform_verylow_prop",
                     "test-nhanh": "request_symptom_been_covidarea"
                 }
             },
             "close_f": {
-                1: "inform_high_prop",
-                0: "inform_low_prop"
+                1: "inform_suspicion_prop",
+                0: "inform_nonsuspicion_prop"
             }
         },
         3: {
-            1: "inform_high_prop",
+            1: "inform_suggest_prop",
             0: "request_symptom_close_f"
         },
         4: {
-            1: "inform_high_prop",
+            1: "inform_suggest_prop",
             0: "inform_low_prop"
         }
     }
@@ -131,7 +131,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
             if last_infor['diagnose']["tree_degree"] == "":
                 last_infor['diagnose']["tree_degree"] = 0
                 if last_infor['diagnose']['serious_symptom']:
-                    res_code = 'inform_first_serious_symptom/' + ','.join(lst_sym) + '-inform_high_prop'
+                    res_code = 'inform_first_serious_symptom/' + ','.join(lst_sym) + '-inform_suggest_prop'
                 else:
                     res_code = 'inform_first_normal_symptom/'+','.join(lst_sym) +'-request_symptom_covid_test'
             else:
