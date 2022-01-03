@@ -18,22 +18,11 @@ def generate_reply_text(self, result, reply_text,response_knn):
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
         elif res in ['request_age','request_sex', 'inform_symptoms_info',
                         'inform_low_prop', 'inform_high_prop','request_location_contact', 'done',
-                         'again','diagnose','incomming', 'request_covid_infor_chithi','inform_serious_prop','other']:
+                         'again','diagnose','incomming','inform_serious_prop','other']:
             suggest_reply += reply_text[res]
-        elif res.startswith('inform_covid_infor'):
-            if res.startswith('inform_covid_infor_chithi_how'):
-                suggest_reply += reply_text['inform_covid_infor_chithi_how'][res.split('+')[-1]]
-            else:
-                suggest_reply += reply_text[res]
-        elif res.startswith('inform_precaution'):
-            suggest_reply += reply_text[res.split('+')[0]][res.split('+')[1]][res.split('+')[2]]
         elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
-        elif 'vaccine' in res and not 'medication' in res:
-            suggest_reply += reply_text[res]
-        elif 'medication' in res:
-            suggest_reply += reply_text['inform_medication'][re.sub('medication_', '', res)]
         elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
         elif res == 'reply_correct_text':

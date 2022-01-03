@@ -117,7 +117,7 @@ def predict_message(self, message, conversation_history, conversation_message):
                 return res, intent, sub_intent
 
             return symptom_rep(message, 'symptoms_have', last_intent, last_infor), intent, sub_intent        
-        elif 'request_symptom' in last_intent:
+        elif 'request_symptom' in last_intent and 'request' not in intent:
             
             return symptom_rep(message, 'diagnostic', last_intent, last_infor), intent, sub_intent
         elif ('request_location' in last_intent and intent!='request') or \
