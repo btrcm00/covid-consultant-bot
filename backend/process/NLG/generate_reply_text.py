@@ -22,7 +22,12 @@ def generate_reply_text(result, reply_text,response_knn):
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
         elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
-            suggest_reply += "*image " + reply_text['contact_list']['tram-y-te'][res.split('+')[-1]]
+            link = reply_text['contact_list']['tram-y-te'].get(res.split('+')[-1], 'none')
+            if link == 'none':
+                suggest_reply = reply_text['request_location_contact']
+                result['request_location_contact'] = result.pop(res)
+            else:
+                suggest_reply += "*image " + link
         elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
         elif res == 'reply_correct_text':
