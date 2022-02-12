@@ -18,8 +18,8 @@ def generate_reply_text(result, reply_text,response_knn):
         elif res.startswith('inform_first'):
             suggest_reply += reply_text[res.split('/')[0]].format(res.split('/')[1])
         elif res.startswith('inform_current_numbers'):
-            loc,infected,recovered = res.split('+')[1:]
-            suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,recovered)
+            loc,infected,caseToday,died = res.split('+')[1:]
+            suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,died,caseToday)
         elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             link = reply_text['contact_list']['tram-y-te'].get(res.split('+')[-1], 'none')

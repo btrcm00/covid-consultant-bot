@@ -133,15 +133,23 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                         last_infor['diagnose'][intensity_sym] = 1
 
             if last_infor['diagnose']["tree_degree"] == "":
-                last_infor['diagnose']["tree_degree"] = 0
+                
                 if last_infor['diagnose']['serious_symptom']:
-                    res_code = 'inform_first_serious_symptom/' + ','.join(serious_sym) + '-inform_suggest_prop'
+                    if not serious_sym:
+                        res_code = 'inform_symptoms_info'
+                    else:
+                        last_infor['diagnose']["tree_degree"] = 0
+                        res_code = 'inform_first_serious_symptom/' + ','.join(serious_sym) + '-inform_suggest_prop'
                 else:
-                    res_code = 'inform_first_normal_symptom/'+','.join(lst_sym) +'-request_symptom_covid_test'
+                    if not lst_sym:
+                        res_code = 'inform_symptoms_info'
+                    else:
+                        last_infor['diagnose']["tree_degree"] = 0
+                        res_code = 'inform_first_normal_symptom/'+','.join(lst_sym) +'-request_symptom_covid_test'
             elif last_infor['diagnose']['serious_symptom'] and serious_sym:
                 res_code = 'inform_first_serious_symptom/' + ','.join(serious_sym) + '-inform_suggest_prop'
             else:
-                print('hâhah',last_infor["diagnose"]["tree_degree"])
+                #print('hâhah',last_infor["diagnose"]["tree_degree"])
                 last_infor["diagnose"]["tree_degree"] -= 1
                 if last_infor["diagnose"]["tree_degree"] < 0:
                     last_infor["diagnose"]["tree_degree"] = 0

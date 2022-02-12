@@ -16,6 +16,7 @@ def current_numbers_rep(text, last_infor):
     infected = data['infected']
     recovered = data['recovered']
     died = data['died']
+    caseToday = data['infectedToday']
     loc = 'Việt Nam'
     text = re.sub(r'sài gòn|hồ chí minh', 'tp. hồ chí minh', text)
     text = re.sub(r'huế', 'thừa thiên huế', text)
@@ -23,8 +24,8 @@ def current_numbers_rep(text, last_infor):
 
     for pro in province_lst:
         if pro.lower() in text:
-            loc,infected,died = [(ele['name'],ele['cases'], ele['death']) for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
-            recovered = 0
-    res_code = 'inform_current_numbers+{}+{}+{}'.format(loc,infected,recovered)
+            loc,caseToday,recovered,infected,died = [(ele['name'],ele['casesToday'],ele['recovered'],ele['cases'], ele['death']) \
+                                            for ele in data['locations'] if ele['name'].lower() == pro.lower()][0]
+    res_code = 'inform_current_numbers+{}+{}+{}+{}'.format(loc,infected,caseToday,died)
     res[res_code] = last_infor
     return res

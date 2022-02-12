@@ -11,7 +11,7 @@ models = PretrainedModel(config_app['models_chatbot'])
 def update_database(data):
 # ---------------- 4.BOT ---------------- #
     mydb = models.myclient["chatbot_data"]
-    mycol = mydb["data_response_knn"]
+    mycol = mydb["data_response"]
     col = []
     all_doc = [doc['question'] for doc in list(mycol.find({}))]
     for key,value in data.items():

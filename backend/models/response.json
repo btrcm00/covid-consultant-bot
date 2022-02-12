@@ -36,7 +36,7 @@
 
     "inform_nonsuspicion_prop": "Bạn không nằm trong diện ca bệnh nghi ngờ theo quyết định 4689/QĐ-BYT.*Bạn có thể bổ sung các thực phẩm chứa nhiều vitamin để tăng cường sức đề kháng trong mùa dịch, nghiêm chỉnh thực hiện 5K đồng thời theo dõi diễn tiến của triệu chứng để liên lạc kịp thời với cơ sở y tế gần nhất khi có diễn tiến xấu đi",
 
-    "inform_current_numbers" : "Dạ số ca nhiễm hiện tại ở {} là: {}\nSố ca đã được chữa khỏi: {}*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau: https://ncov.moh.gov.vn/ \nHoặc của trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
+    "inform_current_numbers" : "Số liệu hiện nay ở {} là:\n- Tổng số ca nhiễm {}\n- Số ca không qua khỏi: {}\n- Số ca ghi nhận ngày hôm nay: {}*Bạn có thể theo dõi số bệnh nhân nhiễm SARS-CoV2 (COVID-19) từ các trang thông tin chính thống của bộ Y tế, Trung tâm Kiểm soát bệnh tật TP. Hồ Chí Minh theo các đường link sau:\n- Bộ y tế: https://ncov.moh.gov.vn/ \n- Trang báo VnExpress: https://vnexpress.net/covid-19/covid-19-viet-nam",
 
     "inform_contact": "Bạn có thể liên hệ theo một trong các số điện thoại sau",
     "request_location_contact": "Bạn cho mình xin tên quận nơi bạn ở để có thể cung cấp cho bạn thông tin liên lạc cụ thể ạ.",
