@@ -22,3 +22,4 @@ uvicorn
 python-multipart
 gunicorn==20.0.4
 fastapi_cloud_drives
+aiofiles

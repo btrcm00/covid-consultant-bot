@@ -11,6 +11,8 @@ import csv
 from fastapi.encoders import jsonable_encoder
 from typing import List
 from fastapi.templating import Jinja2Templates
+from backend.api.api_insert_update_data import insert_data
+
 
 app = FastAPI()
 
@@ -20,7 +22,6 @@ logging.basicConfig(filename=config_app['log']['app'],
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 models = PretrainedModel(config_app['models_chatbot'])
 from backend.api.api_message import send_message
-from backend.api.api_insert_update_response import insert_update_database
 
 
 templates =  Jinja2Templates(directory = 'templates')
@@ -74,16 +75,16 @@ def export_data():
             sub = doc['sub_intent']
         else:
             sub = ''
-        data.append({'text': doc['message_text'], 'intent': intent, 'sub': sub})
+        data.append({'text': doc['message_text'], 'intent': intent, 'sub_intent': sub})
     
-    with open('data1.csv', encoding='utf8', mode='a+') as csv_file:
-        fieldnames = ['text','intent','sub']
+    with open('data_export.csv', encoding='utf-8-sig', mode='w',newline='') as csv_file:
+        fieldnames = ['text','intent','sub_intent']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for i in data:
             writer.writerow(i)
         
-    return FileResponse(path=os.getcwd() + '/data1.csv', filename='data1.csv', media_type='text/mp4')
+    return FileResponse(path=os.getcwd() + '/data_export.csv', filename='data_export.csv', media_type='text/mp4')
 
 @app.get('/api/re_train_model')
 def retrain():
@@ -101,13 +102,24 @@ def retrain():
 async def submit_insert(password: str = Form(...), files: List[UploadFile] = File(...)):
     import pandas as pd
     data = []
-    if password != 'congminh':
+    if password != 'yds.hcmut@covidchatbot':
         return 'SAI MAT KHAU'
     for file in files:
         data = await file.read()
         if not data:
             return 'Vui lòng chọn file data'
-        data = pd.read_excel(data)
+        try:
+            data = pd.read_excel(data)
+            data_insert = {
+                'text': [ele if pd.notna(ele) else 'None' for ele in data['text'].values],
+                'intent': [ele if pd.notna(ele) else 'None' for ele in data['intent'].values],
+                'sub_intent': [ele if pd.notna(ele) else 'None' for ele in data['sub_intent'].values],
+                'response': [ele if pd.notna(ele) else 'None' for ele in data['response']]
+            }
+            
+            insert_data(data_insert)
+        except:
+            return "Vui lòng insert data theo đúng format"
 
     return "Đã insert thành công " +  " và ".join([file.filename for file in files])
 

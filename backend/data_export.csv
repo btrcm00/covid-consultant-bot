@@ -1,0 +1,1678 @@
+﻿text,intent,sub_intent
+tui bị ho thì có sao k,request,diagnostic
+rồi ạ,inform,information
+test nhanh,inform,information
+dạ âm tính á,inform,information
+dạ có ạ,inform,information
+liên hệ như nào á,request,contact
+dạ quận 9,inform,information
+dạ cảm ơn ạ,ok,information
+oki,ok,information
+đeo khẩu trang làm gì á,request,prevention
+số ca nhiễm gia lai,request,current_number
+mình ở vùng dịch về có cần cách ly ko ạ,request,rule
+mình tiêm 2 mũi rồi thì có nguy cơ nhiễm k,request,vaccine
+mình bị ho có nguy cơ nhiễm không,request,diagnostic
+mình tiêm 2 mũi rồi thì có nguy cơ nhiễm k,request,vaccine
+mình tiêm 2 mũi rồi thì có nguy cơ nhiễm k,request,vaccine
+chỉ thị 16 là gì,request,information
+mình tiêm 2 mũi rồi thì có nguy cơ nhiễm k,request,vaccine
+mình đăng ký tiêm vacxin rồi mà giờ bị nhiễm covid thì có tiêm được không,request,vaccine
+chỉ thị 16 là gì,request,information
+em test nhanh bị dương tính thì có nguy cơ nhiễm covid k,request,information
+test nhanh dương tính thì có bị covid không,request,test
+em bị ho có nguy cơ nhiêm xk,request,diagnostic
+rồi ạ,inform,information
+dạ abcd,ok,information
+test nhanh,inform,information
+em bị ho có sao ko,request,diagnostic
+dạ rồi ,inform,information
+em bị ho có sao  k ạ,request,diagnostic
+dạ rồi,inform,information
+pcc á,other,information
+test nhanh,inform,information
+em bị ho có sao k ạ,request,diagnostic
+rồi,inform,information
+pcc,other,information
+test nhanh,inform,information
+em bị ho có sao k ạ,request,diagnostic
+rồi á,inform,information
+pcc,other,information
+test nhanh,inform,information
+âm tính ,inform,information
+ko,inform,healthcare
+k,other,information
+em bị ho có sao ko,request,diagnostic
+test nhanh dương tính,inform,test
+test nhanh dương tính,inform,test
+dương,inform,information
+em bij ho cos saok,inform,diagnostic
+em bị ho có sao k,request,diagnostic
+rồi á,inform,information
+test nhanh,inform,information
+dương tính,inform,test
+liên hệ như thế nào,request,contact
+quận 3,inform,information
+dạ,ok,information
+em bị ho có sao ko,request,diagnostic
+chưa á,ok,information
+rồi á,inform,information
+em bị ho có sao ko ạ,request,diagnostic
+chưa,ok,information
+không,inform,healthcare
+không,inform,healthcare
+mình bị ho có sao ko ạ,request,diagnostic
+pcc,other,information
+pcc,other,information
+em bị ho có sao ko ạ,request,diagnostic
+rồi,inform,information
+pcc,other,information
+test nhanh,inform,information
+ko biết,request,information
+dương tính,inform,test
+mình bị ho có sao k ạ,request,diagnostic
+mình bị ho có sao k,request,diagnostic
+mình bị ho có sao k,request,diagnostic
+mình bị ho có sao k,request,diagnostic
+mình bị ho có sao k ạ,request,diagnostic
+là soa,request,information
+chưa á,ok,information
+có,inform,information
+ác,other,information
+mình bị ho có sao k,request,diagnostic
+rồi,inform,information
+mình bị ho có sao ko,request,diagnostic
+rồi,inform,information
+test nhanh,inform,information
+đeo khẩu trang làm gì an,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình bị ho có sao ko,request,diagnostic
+mình bị ho có sao ko,request,diagnostic
+chưa,ok,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+alo,hello,information
+alo,hello,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình bị ho có sao ko,request,diagnostic
+chưa,ok,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+đeo khẩu trang làm gì á,request,prevention
+mình bị ho vs khó thở có sao k,request,diagnostic
+mình bị ho có sao k,request,diagnostic
+chưa,ok,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình bị ho có sao k,request,diagnostic
+chưa,ok,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+là sao,request,information
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+số ca nhiễm ở gia lai,request,current_number
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+minhf bij ho cos sao ko,request,diagnostic
+mình ở gia lai đeo khẩu trang làm gì,request,prevention
+mình bị ho có sao ko,request,diagnostic
+là sao á,request,information
+là soa,request,information
+rồi á,inform,information
+hmm quên rùi,inform,information
+quên rồi,inform,information
+RT-PCR,inform,test
+ko biết,request,information
+là sao,request,information
+dương tính,inform,test
+quận 5 nha,inform,information
+đeo khẩu trang làm gì á,request,prevention
+có bao nhiêu người trên máy thở?,request,current_number
+tỷ lệ tử vong của covid là nhiuee,request,information
+triệu chứng của covid là gì,request,symptom
+trịu chứng của covid là gì,request,symptom
+sốt có phải triệu chứng của covid ko,request,symptom
+khai báo y tế ở đâu v bác sĩ,request,contact
+khai báo y tế như thế nào,request,prevention
+khai báo y tế như thế nào,request,prevention
+tôi cần khai báo như thế nào,request,prevention
+khai báo y tế như thế nào,request,prevention
+tôi cần khai báo như thế nào,request,prevention
+mình mang thai có đc tiêm vacxin ko,request,vaccine
+mình đang mang thai có nên tiêm vacxin ko,request,vaccine
+địa chỉ e-mail là gì,request,contact
+các bài tập thực hiện chăm sóc sức khỏe,request,healthcare
+có những bài tập thể dục nào,request,symptom
+cách giặt khẩu trang vải sao cho đúng,request,prevention
+vungf dichj là gì á,request,rule
+vùng dịch tễ là ở đâu,request,rule
+đối tượng nào được ưu tiên tiêm vaccine covid 19,request,vaccine
+đối tượng nào được ưu tiên tiêm vaccine covid 19,request,vaccine
+đối tượng được ưu tiên tiêm vaccine covid 19,request,vaccine
+đối tượng được ưu tiên tiêm vaccine covid 19,request,vaccine
+các bệnh nền và yếu tố nguy cơ lây nhiễm covid 19 là gì,request,symptom
+giãn cơ vai,inform,information
+các bài tập giãn cơ vai,inform,symptom
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,symptom
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ vai,inform,common_infor
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ vai,inform,common_infor
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ vai,request,common_infor
+các bệnh nền và yếu tố nguy cơ lây nhiễm covid 19 là gì,request,symptom
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ vai,request,common_infor
+mình bị ho có sao ko ạ,request,diagnostic
+hmm là sao,request,information
+mình bị ho có sao ko,request,diagnostic
+ko hiểu,request,information
+ko biết,request,information
+không biết,request,information
+ mác ác ,other,information
+mình bị ho có sao k,request,diagnostic
+ko nhớ á,inform,healthcare
+mình bị ho có sao ko,request,diagnostic
+chưa,ok,information
+mình bị ho có sao ko,request,diagnostic
+ko nhớ á,inform,healthcare
+mình bị ho có sao ko,request,diagnostic
+ko nhớ,inform,healthcare
+chịu á,request,information
+có,inform,information
+Hậu covid là gì,request,covid_infor
+Aloooo,hello,covid_infor
+các bài tập giãn cơ là gì,request,symptom
+các bài tập giãn cơ vai,inform,symptom
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+các bài tập giãn cơ vai là gì,request,information
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+laf sao,request,information
+giãn cơ có những bài tập n,request,symptom
+giãn cơ có những bài tập nao,request,symptom
+giãn cơ có những bài tập nafo,request,symptom
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+giãn cơ cánh tay,inform,prevention
+các bài tập giãn cơ vai là gì,request,information
+giãn cơ có những bài tập nào,request,common_infor
+giãn cơ cánh tay,request,common_infor
+mình bị ho có sao k,request,diagnostic
+chưa ,ok,information
+có,inform,information
+liên hệ vs số nào,request,contact
+q9,inform,information
+đeo khẩu trang như nào,request,prevention
+cách đeo khẩu trang vải,request,common_infor
+khai báo y tế ntn á,request,prevention
+tôi phải khai báo y tế ở đâu,request,common_infor
+biến thể nào kháng đc vaccine,request,information
+có bao nhiu biến thể,request,current_number
+có mấy biến thể,request,information
+có những biến thể nào,request,common_infor
+có mấy loại biến thể,request,information
+biến thể là gì,request,common_infor
+có mấy biến thể,request,information
+có những biến thể nào,request,common_infor
+có các bài tập giãn cơ nào á,request,symptom
+có mấy bài tập giãn cơ vai,inform,healthcare
+bài tập giãn cơ vai thực hiện ntn,request,information
+giãn cơ có những bài tập nào,request,common_infor
+giãn cơ cánh tay,request,common_infor
+mình ms đi nc ngoài về có cần khai báo y tế k,request,rule
+khi nào tôi cần khai báo y tế,request,common_infor
+tôi vừa đi nc ngoài về có cần cách  li ko ạ,request,prevention
+tôi vừa ở nước ngoài về thì có phải cách ly không,request,common_infor
+biến thể là gì,request,information
+Tần suất bị đau mỏi cơ người trên người mắc Covid-19 là bao nhiêu á,request,symptom
+Tần suất bị đau mỏi cơ người trên người mắc Covid-19 là bao nhiêu?,request,symptom
+mình vừa đi nc ngoài về thì có nghi nhiễm k,request,rule
+tôi vừa ở nước ngoài về thì có phải cách ly không,request,common_infor
+trieeujc chứng covid là gì,request,symptom
+biến chứng của covid 19 là gì,request,common_infor
+triệu chứng của covid là gì,request,symptom
+triệu chứng nặng nguy hiểm của covid 19 là gì,request,common_infor
+số ca nhiễm nhiêu á,request,current_number
+Tần suất bị  sổ mũi trên người mắc Covid-19 là bao nhiêu?,request,symptom
+thực hiện các bài tập như thế nào,request,healthcare
+giãn cơ có những bài tập nào,request,common_infor
+giãn cơ cánh tay,request,common_infor
+có mấy loại biến thể,request,information
+biến thể là gì,request,common_infor
+có mấy biến thể,request,information
+có những biến thể nào,request,common_infor
+e bị ho có sao ko ạ,request,diagnostic
+chưa,ok,information
+ca sa ,request,current_number
+có,inform,information
+alo,hello,information
+ddeod khaaur trang lafm gif,request,prevention
+ddeo khaaur trang lafm gif,request,prevention
+cách đeo khẩu trang vải,request,common_infor
+ddeo khaaur trang lafm gif,request,prevention
+ddeo khaaur trang lafm gif,request,prevention
+ddeo khaaur trang lafm gif,request,prevention
+alo,hello,information
+mình bị ho có sao ko,request,diagnostic
+kaf sap,other,information
+rồi á,inform,information
+test nhanh,inform,information
+âm tính,inform,information
+có,inform,information
+đeo khẩu trang làm gì á,request,prevention
+cách đeo khẩu trang y tế,request,common_infor
+ddeo khaaur trang lamf gif,request,prevention
+cách đeo khẩu trang y tế,request,common_infor
+minhf bij ho cos sao ko,request,diagnostic
+chuwa,ok,information
+" las,c a",request,healthcare
+có,inform,information
+alo,hello,information
+mình bị ho có sao ko,request,diagnostic
+lác a,other,information
+rồi á,inform,information
+RT-PCR,inform,test
+là so,request,information
+âm tính,inform,information
+liên hệ ntn á,request,contact
+q6,inform,information
+ho có sao k,request,diagnostic
+chuea,other,information
+rồi á,inform,information
+RT-PCR,inform,test
+âm tính,inform,information
+số ca nhiễm nhiêu á,request,current_number
+đeo khẩu trang để làm gì,request,prevention
+cách đeo khẩu trang y tế,request,common_infor
+minhf bij ho cos sao k,request,diagnostic
+koasc asc,other,information
+rồi á,inform,information
+RT-PCR,inform,test
+số ca nhiễm kon tum nhiu á,request,current_number
+liên hệ trạm y tế q8 ntn,request,contact
+số ca nhiễm nhiu á,request,current_number
+khai báo y tế làm gì,request,contact
+khai báo y tế ntn,request,prevention
+khai báo y tế ntn á,request,prevention
+tôi phải khai báo y tế ở đâu,request,common_infor
+chỉ thị 16 là gì á,request,information
+chỉ thị 16 có gì khác 15,request,common_infor
+chỉ thị 16 là gì á,request,information
+giãn cách theo chỉ thị 16 là gì,request,common_infor
+số ca nhiễm nhiu á,request,current_number
+tui bị ho có sao k,request,diagnostic
+aksca sc,other,information
+rồi á,inform,information
+RT-PCR,inform,test
+dương tính,inform,test
+q9,inform,information
+các bài tập giãn cơ vai ntn ,request,information
+giãn cơ vai,request,common_infor
+gập khuỷu tay ntn á,request,prevention
+gập khuỷu,request,common_infor
+khai báo y tế ntn,request,prevention
+tôi phải khai báo y tế ở đâu,request,common_infor
+tư thế ngồi là sao,inform,information
+thực hiện tư thế ngồi ntn,request,information
+tư thế ngồi,request,common_infor
+số ca nhiễm ở gia lai nhiêu á,request,current_number
+chỉ thị 16 là gì,request,information
+chỉ thị 16 là gì,request,information
+chỉ thị 16 có gì khác 15,request,common_infor
+số ca nhiễm hiện nay bao nhiêu á,request,current_number
+chỉ thị 16 là gì,request,information
+giãn cách theo chỉ thị 16 là gì,request,common_infor
+mình bị ho có sao ko ạ,request,diagnostic
+chưa á,ok,information
+có,inform,information
+Số ca nhiễm ở gia lai bao nhiêu vậy,request,current_number
+Hello,ok,information
+số ca nhiễm ở gia lai bao nhiêu vậy,request,current_number
+Triệu chứng covid là gì,request,symptom
+triệu chứng nặng nguy hiểm của covid 19 là gì,request,common_infor
+Cách đeo khẩu trang,request,prevention
+Số ca nhiễm ở tphcm bao nhiêu,request,current_number
+Vùng xanh là gì,request,rule
+Cách đeo khẩu trang cho đúng,request,prevention
+cách đeo khẩu trang y tế,request,common_infor
+Vùng xanh là gì,request,rule
+tôi sốt sau tiêm vaccine,request,vaccine
+Không,inform,healthcare
+tôi sốt sau tiêm vaccine,request,vaccine
+tôi cần làm gì sau tiêm vaccine,request,common_infor
+Tôi bị sốt,request,diagnostic
+Chưa ,ok,information
+mình cảm thấy buồn,request,diagnostic
+có,inform,information
+tôi bị ho,request,diagnostic
+Ok cảm ơn,ok,information
+có,inform,information
+RT-PCR,inform,test
+âm tính,inform,information
+chưa,ok,information
+không,inform,healthcare
+không,inform,healthcare
+tôi muốn tập thể dục,request,healthcare
+tôi nên tập thể dục như thế nào,request,common_infor
+bài tập gì ạ,request,symptom
+có các cách nào tập thể dục,request,common_infor
+vận động tại giường,inform,information
+giãn cơ,inform,information
+giãn cơ có các bài tập nào,request,symptom
+giãn cơ cánh tay,request,common_infor
+tôi muốn biết khi nào phải thực hiện cách ly,request,rule
+Covid là gì,request,information
+tôi thấy buồn phải làm gì,request,healthcare
+covid 19 là gì,request,common_infor
+tôi cảm thấy buồn bã lo sợ thì phải làm sao,request,common_infor
+tôi đi chợ có tiếp xúc người bán bị covid-19 nhưng không nói chuyện gì thì có phải cách ly không,request,rule
+tôi nói chuyện với f0 thì có phải cách ly không,request,rule
+Ủ bệnh là gì,request,information
+tôi nói chuyện với người nghi nhiễm covid 19 thì có phải cách ly không,request,common_infor
+Tôi bị khó thở có bị covid không?,request,diagnostic
+tôi hút thuốc nhiều phải làm sao,request,healthcare
+hút thuốc lá có làm bệnh nặng hơn không,request,common_infor
+khó thở,request,diagnostic
+tôi là f1 có phải cách ly không,request,rule
+Biến thể là gì,request,information
+tôi là f1 thì phải cách ly tại nhà bao lâu,request,common_infor
+khó thở thì phải làm gì,request,healthcare
+tôi nằm thấy khó thở thì phải làm sao,request,common_infor
+Bị khó thở,request,diagnostic
+có tư thế nào giảm khó thở,request,healthcare
+Tôi bị ho,request,diagnostic
+Ncov là gì,request,information
+2019 ncov là gì,request,common_infor
+Tôi bị đau đầu,request,diagnostic
+Bị đau đầu có mắc covid không,request,diagnostic
+Sarcovi là gì,request,information
+Sar covi là gì,request,information
+Tôi bị sốt có mắc covid không?,request,diagnostic
+Rồi,inform,information
+Sarc cov là gì,request,information
+test nhanh,inform,information
+dương tính,inform,test
+sars cov 2 là gì,request,common_infor
+tôi là fo phải cách ly không,request,rule
+Tôi bik ho có bị covid không,request,diagnostic
+Rồi,inform,information
+RT-PCR,inform,test
+âm tính,inform,information
+Tôi bị đau họng,request,diagnostic
+Thời gian ủ bệnh là bao lâu,request,information
+Chưa,ok,information
+có,inform,information
+Ủ bệnh bao lâu,request,information
+nếu tôi bị nhiễm covid 19 thì sau bao lâu tôi phát bệnh,request,common_infor
+Tôi bị đau họng,request,diagnostic
+Rồi,inform,information
+RT-PCR,inform,test
+dương tính,inform,test
+Quận 5,inform,information
+tôi có được cách ly tại nhà không,request,rule
+điều kiện để cách ly tại nhà,request,rule
+Tôi bị đau đầu,request,diagnostic
+Chưa,ok,information
+không,inform,healthcare
+không,inform,healthcare
+cần chuẩn bị gì để cách ly tại nhà,request,rule
+tôi phải chuẩn bị những gì khi cách ly tại nhà,request,common_infor
+Tôi bị mất vị giác,request,diagnostic
+Rồi,inform,information
+test nhanh,inform,information
+âm tính,inform,information
+không,inform,healthcare
+có,inform,information
+vùng đỏ là gì,request,rule
+có cần mang khẩu trang không,request,prevention
+tại sao phải mang khẩu trang,request,common_infor
+mang khẩu trang vải có an toàn không,request,prevention
+tôi mang khẩu trang vải khi ra đường thì có được không,request,common_infor
+tôi có cần khai báo y tế không,request,prevention
+khi nào tôi cần khai báo y tế,request,common_infor
+Tôi bị ho ra máy,request,diagnostic
+Tôi bị ho ra máu,request,diagnostic
+Có ai liên hệ để giúp vấn đề về covid không,request,contact
+tư vấn tâm lí,request,contact
+Tôi bị ho ra máu có phải bị covid không,request,diagnostic
+Quận Tân Bình,request,information
+quận tân bình,request,information
+Tôi bị ho ra máu có phải bị covid không,request,diagnostic
+Có mấy cách khai báo y tế,request,contact
+Quận 10,inform,information
+tôi nghi ngờ tôi bị nhiễm covid,request,diagnostic
+Tôi bị đau hịng,request,diagnostic
+tôi nghi ngờ tôi bị nhiễm covid thì làm gì,request,healthcare
+rồi á,inform,information
+test nhanh,inform,information
+dương tính,inform,test
+tôi nghi ngờ bị nhiễm covid thì làm gì,request,healthcare
+tôi bị đau vai sau tiêm vaccine,request,vaccine
+tôi uống vitamin C được không,request,healthcare
+nếu tôi nghi ngờ mình là f1 thì phải làm gì,request,common_infor
+hướng dẫn cách ly ,request,prevention
+Tôi bị đau họng,request,diagnostic
+hướng dẫn chi tiết cách ly tại nhà,request,common_infor
+Rồi,inform,information
+RT-PCR,inform,test
+âm tính,inform,information
+tôi cần làm gì sau tiêm vaccine,request,common_infor
+tôi sốt sau tiêm vaccine,request,vaccine
+có được sử dụng vitamin không,request,common_infor
+tôi cần làm gì sau tiêm vaccine,request,common_infor
+phản ứng phụ sau tiêm vaccine,request,vaccine
+Tôi bị sốt,request,diagnostic
+Rồi,inform,information
+test nhanh,inform,information
+dương tính,inform,test
+tôi ngứa cổ có bị covid không,request,diagnostic
+tôi cần chuẩn bị gì trước khi tiêm vaccine,request,vaccine
+tôi đau bụng có bị covid không,request,diagnostic
+Tôi bị sốt với đau họng,request,diagnostic
+Rồi,inform,information
+tôi cần làm gì sau tiêm vaccine,request,vaccine
+test nhanh,inform,information
+âm tính,inform,information
+có,inform,information
+T bị sốt,inform,diagnostic
+phụ nữ mang thai có tiêm vaccine được không,request,vaccine
+Tui bị sốt,inform,diagnostic
+có,inform,information
+tôi nên ngủ mấy tiếng một ngày,request,healthcare
+Tôi bị sốt,request,diagnostic
+Tôi đau họng,request,diagnostic
+rồi á,inform,information
+tôi chán ăn thì không ăn có được k,request,healthcare
+RT-PCR,inform,test
+tôi đang hành kinh có tiêm vaccine được không,request,vaccine
+âm tính,inform,information
+tôi đang đến kì kinh nguyệt có thể tiêm vaccine không,request,common_infor
+tôi không muốn ăn đc k,request,healthcare
+tôi không có vị giác nên không muốn ăn có được không,request,common_infor
+tiêm vaccine có ảnh hưởng đến vấn đề sinh sản,request,vaccine
+Cần mua spo2 không,request,healthcare
+tôi không biết cách đọc số trên máy đo spo2,request,common_infor
+tôi ăn không ngon miệng,request,healthcare
+tiêm chủng có làm ảnh hưởng đến khả năng sinh sản của tôi,request,common_infor
+tôi ăn không ngon miệng không muốn ăn thì nên làm gì,request,common_infor
+cách thiền ăn là gì,request,healthcare
+thiền ăn,request,healthcare
+tôi bị sốt thì phải làm sao,request,healthcare
+tôi bị sốt thì nên làm gì,request,common_infor
+tôi cần phải làm gì khi sốt,request,healthcare
+tiêm mũi 2 sau bao lâu,request,vaccine
+tôi đi du lịch phát hiện mình bị sốt thì phải làm sao,request,prevention
+Tôi bị ho,request,diagnostic
+Mua thuốc cho covid,request,medicine
+Rồi,inform,information
+test nhanh,inform,information
+tôi bị đau họng khi đi du lịch,request,diagnostic
+âm tính,inform,information
+có,inform,information
+các nhóm thuốc điều trị tại nhà cho bệnh nhân covid 19 là gì,request,common_infor
+tôi có xét nghiệm không,request,test
+không,inform,healthcare
+không,inform,healthcare
+nếu mũi 1 tôi tiêm astrazeneca thì mũi 2 tiêm cách mũi 1 bao lâu,request,common_infor
+tiêm vaccine có gây nhiễm bệnh,request,vaccine
+virus corona gây bệnh như thế nào,request,common_infor
+tiêm vaccine có bị nhiễm từ,request,vaccine
+tiêm vắc xin ngừa covid 19 có thể làm cho quý vị bị nhiễm từ không,request,common_infor
+tôi xét nghiệm dương tính thì phải làm gì,request,test
+tiêm vaccine pfizer có tốt không,request,vaccine
+xét nghiệm pcr dương tính là bị covid đúng không,request,common_infor
+nếu mũi 1 tôi tiêm vaccine pfizer comirnaty thì mũi 2 có thể tiêm vaccine khác được không,request,common_infor
+liên hệ cơ sở y tế như thế nào,request,contact
+tiêm vaccine vero cell có tốt không,request,vaccine
+quận 8,inform,information
+thiền ăn là gì,request,healthcare
+nếu mũi 1 tôi tiêm vaccine sinopharm vero cell thì mũi 2 có thể tiêm trộn loại khác không,request,common_infor
+cảm ơn,ok,diagnostic
+chào bạn,hello,information
+mất vị giác có nghiêm trọng không,request,healthcare
+mất vị giác thì nên làm gì,request,healthcare
+Bị Covid có chết không,request,information
+tôi mang khẩu trang thì có bị nhiễm covid không,request,common_infor
+tôi bị thay đổi vị giác thì nên làk gì,request,healthcare
+tôi bị thay đổi vị giác thì nên ăn như thế nào,request,common_infor
+Tôi có người thân qua đời vì covid có thể gọi ai để hỗ trợ không? ,request,contact
+Tôi có người thân qua đời vì covid có thể gọi ai để hỗ trợ không? ,request,contact
+Tôi có thể gọi ai để hỗ trợ theo dõi F0 tại nhà không? ,request,contact
+Tân Bình,request,information
+người nhà tôi không muốn ăn,request,healthcare
+Có người nước ngoài bị mắc bệnh cần tư vấn tôi có thể gọi ai để hỗ trợ không? ,request,contact
+tôi có được ra ngoài không,request,prevention
+người nhà tôi bị bệnh nên không muốn ăn tôi phải làm gì,request,common_infor
+người nhà tôi là f0 thì tôi có được đi ra ngoài mua thực phẩm không,request,common_infor
+Tôi phải liên hệ số nào để vận chuyển cấp cứu bệnh nhân covid ,request,contact
+tôi nên uống gì khi bệnh,request,healthcare
+"Tôi cần máy oxy, bình oxy thì phải liên hệ số nào ?",request,contact
+tôi có được đi mua thuốc không,request,medicine
+"Tôi cần máy oxy, bình oxy thì phải liên hệ số nào ?",request,contact
+tôi nên uống nước gì khi bị bệnh,request,common_infor
+người nhà tôi là f0 thì tôi có được đi ra ngoài mua thực phẩm không,request,common_infor
+Số điện thoại của trung tâm y tế quận 9 là số nào?,request,contact
+tôi uống nước đá được k,request,healthcare
+hút thuốc lá,request,healthcare
+nên uống bao nhiêu nước môic ngày,request,current_number
+Đường dây nóng ở Y tế TPHCM là số nào? ,request,contact
+nên uống bao nhiêu nước một ngày,request,current_number
+Đường dây nóng bộ y tế là số nào ?,request,contact
+Khai báo y tế là gì ?,request,contact
+Có những cách khai báo y tế nào?,request,contact
+Khai báo y tế cần khai báo những nội dung gì ?,request,contact
+Khai báo y tế cần khai báo những nội dung gì ?,request,contact
+tôi cần làm gì tăng sức đề kháng,request,healthcare
+"Khai báo y tế có cần khai báo trung thực, chính xác không? ",request,prevention
+khi nào tôi cần khai báo y tế,request,common_infor
+tôi cần khai báo y tế ở đâu,request,prevention
+ba tôi là f1 thì tôi phải làm sao,request,rule
+Khai báo y tế cần khai báo những nội dung gì ?,request,contact
+người nhà tôi là f1 thì phải làm sao,request,rule
+tôi nên uống vitamin C như thế nào,request,healthcare
+ba tôi dương tính thì phải làm sao,request,healthcare
+test nhanh dương tính thì có bị covid không,request,test
+nên ăn trái cây gì để bổ sung vit C,request,healthcare
+nên ăn gì để bổ sung C,request,healthcare
+có cần sử dụng thêm vit C không,request,healthcare
+Số điện thoại của trung tâm y tế TP Thủ Đức là số nào?,request,contact
+Covid la gi,request,information
+tôi có cần ăn kiêng không,request,healthcare
+covid 19 là gì,request,common_infor
+tôi có cần kiêng gì không,request,common_infor
+Số điện thoại của trung tâm y tế quận Phú Nhuận là số nào ?,request,contact
+Tôi phải gọi ai để báo cáo những người thu lợi bất chính từ dịch bệnh? ,request,contact
+tôi bị ho nên ăn uống gì,request,healthcare
+"Tôi phát hiện những sản phẩm bảo vệ sức khoẻ là hàng giả, buôn lậu thì nên gọi ai ?",request,contact
+Tôi cảm thấy sốt và đau họng ,request,diagnostic
+Có những cách khai báo y tế nào?,request,contact
+Chưa,ok,information
+Có nên mua máy đo huyết áp,request,device
+không,inform,healthcare
+chăm sóc f0 tại nhà có cần máy đo huyết áp không,request,common_infor
+không,inform,healthcare
+Số điện thoại của trung tâm y tế quận 9 là số nào?,request,contact
+Số điện thoại của trung tâm y tế quận 12 là số nào?,request,contact
+"Tôi cần hộ trợ chăm sóc y tế, an sinh xã hội thì phải liên hệ ai?",request,contact
+tôi bị ho đàm thì nên làm gì,request,healthcare
+"Tôi cần máy oxy, bình oxy thì phải liên hệ số nào ?",request,contact
+tôi bị ho đàm,request,diagnostic
+Tôi có người thân qua đời vì covid có thể gọi ai để hỗ trợ không? ,request,contact
+chưa,ok,information
+tôi bị ho đàm thì nên làm gì,request,healthcare
+tôi bị ho đàm thì nên làm gì,request,healthcare
+ho đàm thì nên uống gì,request,healthcare
+tôi bị sốt thì nên ăn gig,request,healthcare
+Chi phí test nhanh covid là bao nhiêu,request,information
+Biểu hiện cơ bản của nhiễm covid,request,symptom
+biểu hiện sớm nhất của bệnh virus corona là gì,request,common_infor
+bị sốt thì nên uống gì,request,healthcare
+có,inform,information
+tôi xông có được k,request,healthcare
+tôi xông hơi được không,request,common_infor
+xông hơi như thế nào,request,healthcare
+xông hôi bao lâu thì được,request,healthcare
+người ấm ấm thì nên làm gì,request,healthcare
+nóng như sốt thì nên làm gì,request,healthcare
+cần làm gì khi sốt,request,healthcare
+sốt có cần uống thuốc không,request,medicine
+tôi cần phải làm gì khi sốt,request,common_infor
+bị đau cơ thì nên làm gì,request,healthcare
+bài tập cơ là gì,request,symptom
+tôi bị đau cơ thì nên làm gì,request,common_infor
+mất khứu giác có hồi phục k,request,healthcare
+mất khứu giác nên làm gì,request,healthcare
+đau họng thì nên uống gì,request,healthcare
+đau cơ thì nên ăn gig,request,healthcare
+đi tiêu nhiều lần trong ngày phải làm gì,request,healthcare
+thấy mệt mỏi thì nên làm j,request,healthcare
+bị sổ mũi nên làm gig,request,healthcare
+Thử test 2 vạch,request,information
+que test có một vạch đậm một vạch nhạt có dương tính không,request,information
+Pcr dương tính,inform,test
+Test pcr âm tính,inform,test
+làm sao để giảm khó thở,request,healthcare
+làm sao để phòng ngừa khó thở,request,common_infor
+Tôi có pcr dương tính là chắc chắn bị bệnh đúng không,request,test
+cách tập hít thở,request,healthcare
+Pcr dương tính là bị covid đúng không,request,test
+cách tập hít thở như thế nào,request,common_infor
+Pcr âm tính là không bị covid hả,request,test
+tôi làm pcr ra âm tính là không bị bệnh đúng không,request,common_infor
+Mẫu gộp là gì,request,test
+gộp mẫu để làm test nhanh có được không,request,test
+tập hít thở bao lâu đc,request,healthcare
+tôi đứng thấy khó thở thì phải làm sao,request,healthcare
+tư thế nằm sấp như thế nào,request,healthcare
+nằm đầu cao,request,healthcare
+tư thế nằm đầu cao như thế nào,request,common_infor
+nằm nghiêng,request,healthcare
+tư thế nằm nghiêng như thế nào,request,common_infor
+làm sao để khạc đàm,request,healthcare
+tôi hay bị đàm làm sao để khạc ra,request,common_infor
+tống đàm ntn,request,healthcare
+vận động tại giường,inform,information
+rèn sức bền có những cách nào,request,healthcare
+rèn luyện sức bền có những phương pháp nào,request,common_infor
+ấn lưng xuống giường,request,common_infor
+làm sao để giwux tâm lí bình tĩnh,request,healthcare
+tôi hay lo lắng phải làm s,request,healthcare
+tôi hay căng thẳng,request,healthcare
+tôi hay bị căng thẳng thì phải làm sao,request,common_infor
+stress phải làm gì,request,healthcare
+tôi hay bị stress thì phải làm sao,request,common_infor
+thiền có ích k,request,healthcare
+thiền có lợi ích gì tác hại gì,request,common_infor
+cách thiền,request,healthcare
+cách thiền như thế nào,request,common_infor
+khó khăn khi làm việc buồn,request,healthcare
+tôi cảm thấy khó khăn khi làm việc buồn lo lắng thì phải làm sao,request,common_infor
+khó ngủ phải làm gì,request,healthcare
+tôi không ngủ được thì phải làm sao,request,common_infor
+tôi thấy tuyệt vọng,request,diagnostic
+tôi thấy lo sợ phải làm s,request,healthcare
+tôi có ý định tự sát,request,information
+tôi có ý định tự sát phải làm s,request,information
+Tôi bị mất vị giác,request,diagnostic
+Tôi bị mất vị giác,request,diagnostic
+Bị mất vị giác thì có bị covid không,request,diagnostic
+có,inform,information
+Tôi bị mất vị giác,request,diagnostic
+Có những loại khẩu trang gì,request,device
+Bị covid nên dùng khẩu trang nào,request,prevention
+có những loại khẩu trang nào,request,common_infor
+Nên dùng loại khẩu trang gì,request,prevention
+có những loại khẩu trang nào,request,common_infor
+Khẩu trang y tế là gì,request,prevention
+cách đeo khẩu trang y tế,request,common_infor
+Bị covid nên dùng khẩu trang nào,request,prevention
+tôi mang khẩu trang thì có bị nhiễm covid không,request,common_infor
+Khẩu trang vải,request,device
+Khẩu trang y tế,request,prevention
+khi nào cần thay khẩu trang y tế,request,common_infor
+Cách đeo khẩu trang y tế,request,prevention
+Có nên dùng khẩu trang vải,request,device
+khẩu trang vải có giặt được không,request,common_infor
+Khẩu trang N95,request,device
+Có nên mua khẩu trang n95,request,device
+khẩu trang n95 là gì,request,common_infor
+alo,hello,information
+số ca nhiễm ở bình định,request,current_number
+tui mới ở nước ngoài về thì có nguy cơ nhiễm bệnh ko,request,information
+tôi vừa ở nước ngoài về thì có phải cách ly không,request,common_infor
+mình bị ho có sao k,request,diagnostic
+chưa á,ok,information
+ko,inform,healthcare
+là sao,request,information
+không,inform,healthcare
+chỉ thị 16 vs chỉ thị 15 khác nhau ntn,request,information
+corona bắt đầu từ đâu,request,information
+dịch covid 19 bùng phát từ đâu,request,common_infor
+có thuốc chữa trị ko,request,medicine
+toa thuốc để điều trị covid tại nhà là gì,request,common_infor
+dạ cảm ơn,ok,information
+tiêm vaccine vero cell có tốt không,request,vaccine
+nếu mũi 1 tôi tiêm vaccine sinopharm vero cell thì mũi 2 có thể tiêm trộn loại khác không,request,common_infor
+tiêm vaccine vero cell có tốt không,request,vaccine
+thiền có tốt không,request,common_infor
+nên ăn trái cây gì để bổ sung vit C,request,healthcare
+các bài tập giãn cơ ,request,symptom
+giãn cơ có những bài tập nào,request,common_infor
+giãn cơ ngực,request,common_infor
+Virus corona là gì,request,information
+Virus corona là gì,request,information
+Virut corona là gì??,request,information
+virus corona là gì,request,common_infor
+Vỉut cổna là gì,request,information
+Corona là gì vậy,request,prevention
+virus corona là gì,request,common_infor
+Covid 19 là gì,request,information
+Sars cov là gì,request,information
+Ncov là gì,request,information
+2019 ncov là gì,request,common_infor
+Covid từ đâu mà ra,request,information
+dịch covid 19 bùng phát từ đâu,request,common_infor
+Biến thể là gì?,request,information
+Biến chủng là gì,request,information
+Có những biến thể nào,request,information
+Việt nam có bao nhiêu biến thể,request,information
+Biến thể nào mạnh nhất,request,information
+Biến thể kháng thuốc là gì,request,information
+Các loại vaccine hiện nay có chống lại các chủng virus mới hay không ,request,information
+Corona có lây qua da không?,request,information
+Corona lây qua những đường nào?,request,information
+Corona ở trong không khí được bao lâu?,request,information
+virus corona có thể tồn tại bao lâu trong không khí,request,common_infor
+Động vật có lây truyền cho người hay không,request,information
+động vật có lây virus corona cho người không,request,common_infor
+Ủ bệnh là gì vậy,request,information
+ủ bệnh là gì,request,common_infor
+Sau bao lâu thì phát bệnh?,request,information
+nếu tôi bị nhiễm covid 19 thì sau bao lâu tôi phát bệnh,request,common_infor
+Hôm nay có bao nhiêu ca nhiễm mới vậy?,request,current_number
+Phú yên hôm nay có bao nhiêu ca nhiễm,request,current_number
+Bao nhiêu ca trong cộng đồng?,request,current_number
+Bao nhiêu ca nhập cảnh,request,current_number
+Tỉnh nào nhiễm nhiều nhất,request,information
+tỉnh thành phố nào có số ca nhiễm mới nhiều nhất,request,common_infor
+Từ trước tới nay có bao nhiêu đợt dịch,request,information
+từ trước tới nay ở việt nam có bao nhiêu đợt dịch rồi,request,common_infor
+Từ trước tới nay có bao nhiêu đợt dịch rồi?,request,information
+Từ trước tới nay có bao nhiêu đợt dịch,request,information
+từ trước tới nay trên thế giới có bao nhiêu đợt dịch rồi,request,common_infor
+Những đối tượng nào dễ bị nhiễm virut covid,request,information
+những đối tượng nào dễ bị mắc bệnh hơn những người khác,request,common_infor
+Tôi bị bệnh tuyến giáp có dễ mắc covid không?,request,information
+tôi đang bị bệnh cao huyết áp thì có dễ bị mắc bệnh hơn không,request,common_infor
+bị covid t cần mua dụng cụ gì,request,device
+làm sao để mua các dụng cụ y tế,request,common_infor
+cách đo huyết áp,request,device
+nên đo huyết áp tư thế nào,request,common_infor
+cách đo huyết áp,request,device
+cách đo huyết áp như thế nào,request,common_infor
+mua khẩu trang gì,request,prevention
+tôi nên mua bao nhiêu khẩu trang khi chăm sóc f0 tại nhà,request,common_infor
+cách đo nhiệt độ,request,device
+tôi đo nhiệt độ thấy 39 độ c thì có cần uống thuốc không,request,common_infor
+cách đo nhiệt độ bằng nhiệt kế điện tử,request,device
+tôi không biết cách đo nhiệt độ bằng thiết kế điện tử,request,common_infor
+cách đo máy oxy,request,information
+tôi không biết cách sử dụng máy đo nồng độ oxy máu spo2,request,common_infor
+tội bị spo2 dưới 90,request,symptom
+tôi không biết cách đọc số trên máy đo spo2,request,common_infor
+có nên mua găng tay,request,prevention
+chăm sóc f0 tại nhà có cần găng tay y tế không,request,common_infor
+khẩu trang y tế,request,prevention
+khi nào cần thay khẩu trang y tế,request,common_infor
+có nên dùng khẩu trang vải,request,device
+khẩu trang vải là gì,request,common_infor
+khi nào cần thay máy đo huyết áp,request,device
+chăm sóc f0 tại nhà có cần máy đo huyết áp không,request,common_infor
+hùng đựng chất thải lây nhiễm,request,information
+lây nhiễm đột phá là gì,request,common_infor
+Nhiệt kế thuỷ ngân,request,device
+bỏ nhiệt kế thuỷ ngân vào vị trí nào,request,device
+cần mua máy spo2 ở đâu,request,information
+mua dụng cụ y tế ở đâu,request,common_infor
+giá của máy đo huyết áp,request,device
+khẩu trang y tế là gì,request,prevention
+có bao nhiêu loại khẩu trang,request,device
+có những loại khẩu trang nào,request,common_infor
+khẩu trang pitta ,request,prevention
+khẩu trang n95 là gì,request,common_infor
+cách đeo khẩu trang N95,request,device
+khẩu trang n95 là gì,request,common_infor
+khẩu trang N95 có bao vệ tốt hơn khẩu trang y tế không,request,prevention
+khẩu trang n95 có đặc điểm gì,request,common_infor
+điều trị Fo như nào,request,healthcare
+các nhóm thuốc điều trị tại nhà cho bệnh nhân covid 19 là gì,request,common_infor
+có cần cách ly tập trung nếu bị covid,request,prevention
+f0 có cách ly tập trung không,request,rule
+máy đo huyết áp diện tử,request,device
+cách đo huyết áp như thế nào,request,common_infor
+có nên tiêm vaccin trung quố,request,vaccine
+có nên tiêm vaccin trung quốc,request,vaccine
+tiêm vaccin có bị sốc không,request,vaccine
+tiêm vaccin có bị sốc thuốc không,request,medicine
+tác dụng phụ của tiêm vaccin,request,vaccine
+tác dụng phụ của vaccine khi nào thì tôi cần đến bác sĩ,request,common_infor
+tiêm vaccin có bị shock phản vệ không,request,vaccine
+có cần vệ sinh nhà cửa thường xuyên không,request,common_infor
+đo spo2 như thế nào,request,device
+đo nhiệt độ như thế nào,request,device
+đặt nhiệt kế ở đâu,request,device
+chăm sóc f0 tại nhà có cần nhiệt kế không,request,common_infor
+khi đo nhiệt độ đặt nhiệt kế thủy ngân ở đâu,request,device
+có nên mua thùng đựng chất thải,request,information
+chăm sóc f0 tại nhà cần thùng đựng chất thải lấy nhiễm riêng không,request,common_infor
+khẩu trang y tế 4 lớp,request,prevention
+tái sử dụng khẩu trang y tế không,request,prevention
+tôi giặt khẩu trang y tế để tái sử dụng thì có được không,request,common_infor
+covid 19 hết chưa,inform,information
+dịch covid 19 chấm dứt chưa,request,information
+khi nào dịch covid hết,request,information
+có nên dùng chung đồ vật người bị covid19,request,information
+dùng chung dụng cụ với người bệnh covid được không,request,common_infor
+có nên xịt cồn lên đồ ăn không,request,healthcare
+nên mua cồn 90 hay cồn 70,request,healthcare
+cách rửa tay bằng cồn,request,prevention
+rửa tay bằng cái gì là tốt nhất,request,common_infor
+cách rửa tay bằng cờn,request,prevention
+tôi rửa tay bằng nước thì có diệt được covid không,request,common_infor
+biến thể mới của covid,request,information
+biến thể mới nhất là gì,request,common_infor
+nên không tiêm ngừa có bị phạt không,request,vaccine
+không khai báo y tế có bị phạt không,request,prevention
+tôi ở nhà không đi đâu thì có cần khai báo y tế không,request,common_infor
+không khai báo y tế có bị phạt không,request,prevention
+tôi đi chợ có phải khai báo y tế không,request,common_infor
+Tôi bị ho,request,diagnostic
+Rồi,inform,information
+Khai báo y tế là gì ?,request,contact
+test nhanh,inform,information
+âm tính,inform,information
+Có những cách khai báo y tế nào?,request,contact
+có,inform,information
+Khai báo y tế cần khai báo những nội dung gì ?,request,contact
+Khai báo y tế,request,contact
+Quận 10,inform,information
+"Khai báo y tế có cần khai báo trung thực, chính xác không? ",request,prevention
+Đường dây nóng bộ y tế là số nào ?,request,contact
+Tổng đài hỗ trợ khai báo y tế là số nào ?,request,contact
+Tôi phải gọi ai để báo cáo những người thu lợi bất chính từ dịch bệnh? ,request,contact
+Số điện thoại của trung tâm y tế quận Bình Thạnh là số nào?,request,contact
+Số điện thoại của trung tâm y tế quận Phú Nhuận là số nào ?,request,contact
+Số điện thoại của trung tâm y tế quận 7 là số nào?,request,contact
+Số điện thoại của trung tâm y tế huyện Nhà Bè là số nào?,request,contact
+"Tôi cần hộ trợ chăm sóc y tế, an sinh xã hội thì phải liên hệ ai?",request,contact
+Tôi có người thân qua đời vì covid có thể gọi ai để hỗ trợ không? ,request,contact
+Xét nhiệm covid o dau,request,information
+Xét nhiệm covid 19 ở đâu,request,information
+Bị covid có được di chơi không,request,diagnostic
+Chưa xet nhiệm ne,request,information
+không,inform,healthcare
+không,inform,healthcare
+Làm xét nghiệm PCR ở đâu?,request,test
+Tôi muốn làm xét nghiệm Covid,request,test
+Tôi có thể đến đâu làm xét nghiệm RT-PCR,request,test
+Tôi làm xét nghiệm PCR ở đâu,request,test
+tôi có thể đến đâu để làm xét nghiệm rt pcr,request,common_infor
+Xét nghiệm covid 19 ở đâu?,request,information
+tôi có thể đến đâu để làm xét nghiệm rt pcr,request,common_infor
+Xét nghiệm covid ở đâu,request,test
+Xét nghiệm covid 19 ở đâu,request,information
+Ở đâu làm được xét nghiệm covid 19,request,information
+tôi có thể đến đâu để làm xét nghiệm rt pcr,request,common_infor
+Tôi nhiễm covid làm xét nghiệm ở đâu ,request,test
+tôi bị nghi ngờ nhiễm coivd thì đến đâu để làm xét nghiệm kiểm tra,request,common_infor
+Nghi nhiễm covid kiểm tra ở đâu,request,test
+có cách gì kiểm tra tại nhà để xem có phải covid không,request,common_infor
+Test dương tính,inform,test
+Xét nghiệm ra dương tính,request,test
+xét nghiệm pcr dương tính là bị covid đúng không,request,common_infor
+Test nhanh ,inform,information
+Test nhanh dương,inform,information
+Đến đâu kiểm tra pcr,request,test
+tôi có thể đến đâu để làm xét nghiệm rt pcr,request,common_infor
+Test nhanh dương tính,inform,test
+Test nhanh dương tính thì có bị covid không?,request,test
+Que test nhanh 2 vạch,request,information
+que test 2 vạch là sao,request,information
+Kit test nhanh,request,test
+những loại kit test nhanh nào đủ tiêu chuẩn được bộ y tế công nhận,request,test
+Đồng nghiệp tôi mắc covid 19,request,information
+Người làm chung cơ quan tôi bị covid,request,diagnostic
+Cơ quan tôi có người kqwcs covid,request,diagnostic
+Cơ quan tôi có người mắc covid,request,diagnostic
+Tôi nói chuyện với người mắc covid,request,information
+Đi cùng ô tô có người mắc covid,request,information
+Đi cùng ô tô có người mắc Covid,request,information
+Tôi vừa di chuyển với một người mắc covid có nghĩa tôi cũng bị covid ,request,diagnostic
+Rồi,inform,information
+test nhanh,inform,information
+dương tính,inform,test
+Tôi đang ở nơi gọi là vùng dịch tễ có phải tôi bị nhiễm Covid rồi không,request,contact
+5,inform,information
+Tôi đang ở vùng dịch tễ,request,information
+vùng nào được gọi là vùng dịch tễ,request,common_infor
+Ở vùng dịch tễ thì chắc chắn mắc covid hả?,request,information
+Tôi đang ở vùng dịch trẽ thì chắc chắn tôi bị mắc Covid hả?,request,diagnostic
+Tôi mới nói chuyện với người bị covid ,request,information
+tôi nói chuyện với người nghi nhiễm covid 19 thì có phải cách ly không,request,common_infor
+Tôi mới nói chuyện với người bị covid thì có nguy cơ bị covid không?,request,diagnostic
+hi,hello,information
+xin cha,request,vaccine
+xin chao,hello,vaccine
+vắc xin ngừa covid 19 có chứa microchip không,request,vaccine
+alo,hello,information
+số ca nhiễm nhiu á,request,current_number
+al,other,information
+số ca nhiễm>,request,current_number
+tôi bị ho thì có nguy cơ nhiễm covid không,request,diagnostic
+rồi,inform,information
+test nhanh,inform,information
+âm tính,inform,information
+có,inform,information
+vậy tôi muốn liên hệ với bác sĩ thì số nào,request,contact
+quận 3,inform,information
+tôi không biết cách sử dụng máy đo nồng độ oxy máu như thế nào,request,device
+alo,hello,information
+ tôi không biết cách sử dụng máy đo nồng độ oxy máu như thế nào,request,device
+đo spo2 như thế nào,request,device
+khai báo y tế là gì,request,contact
+đường dây nóng để phản hồi covid,request,contact
+số điện thoại trung tâm y tế quận bình thạnh,request,contact
+19,inform,information
+covid 19 là gì,request,information
+cách đo huyết áp như thế nào,request,device
+cách đo,request,device
+covid 19 là gì,request,information
+khai báo y tế là gì,request,contact
+số điện thoại trung tâm y tế quận bình thạnh,request,contact
+đo spo2 như thế nào,request,device
+khai báo y tế là gì,request,contact
+"tôi cảm thấy tuyệt vọng, bất lực, rất lo sợ, không thể thoát ra được thì phải làm sao",request,healthcare
+tôi cảm thấy tuyệt vọng,request,diagnostic
+"tôi có ý tưởng hoang đường, tôi có ý nghĩ tự sát thì làm sao",request,healthcare
+"tôi có ý tưởng hoang đường, tôi có ý nghĩ tự sát thì phải làm sao",request,healthcare
+tôi bị ho đàm thì nên làm gì,request,healthcare
+tôi bị ho đàm thì nên làm gì?,request,healthcare
+tôi bị ho đàm thì nên uống gì?,request,healthcare
+tôi nên uống bao nhiêu nước một ngày,request,current_number
+tôi cần làm gì tăng sức đề kháng,request,healthcare
+tôi có cần sử dụng thêm vitamin C không,request,healthcare
+có những tư thế nào giảm khó thở,request,healthcare
+có tư thế nào giảm khó thở,request,healthcare
+tôi nằm thấy khó thở thì phải làm sao,request,healthcare
+khó thở thì phải làm gì,request,healthcare
+giãn cơ cánh tay,inform,prevention
+cách điều trị triệu chứng nhẹ sau tiêm,request,vaccine
+cách điều trị triệu chứng nhẹ sau tiêm,request,vaccine
+cách điều trị triệu chứng nhẹ đau vai đỏ tại chỗ tiêm sốt nhẹ mệt mỏi đau đầu đau cơ sau tiêm,request,common_infor
+tôi bị đau vai sau tiêm vaccin,request,vaccine
+tôi bị sốt sau tiêm vaccin,request,vaccine
+tôi cần làm gì sau tiêm vaccine,request,common_infor
+triệu chứng nhẹ thường gặp sau tiêm vaccine,request,vaccine
+các triệu chứng nhiễm covid mức độ nhẹ,request,symptom
+các triệu chứng nhiễm covid mức độ nhẹ,request,symptom
+sốt là gì,request,symptom
+tần suất bị ho,request,symptom
+tần suất bị ho trên người mắc covid 19 là bao nhiêu,request,common_infor
+tôi nên làm gì nếu mất khứu giác,request,healthcare
+các bệnh nền,request,information
+các bệnh nền và yếu tố nguy cơ lây nhiễm covid 19 là gì,request,common_infor
+nhịp tim bình thường ,request,current_number
+nhịp tim bình thường là bao nhiêu,request,current_number
+nhịp tim bình thường là bao nhiêu,request,current_number
+Nhịp tim bình thường là bao nhiêu?,request,current_number
+Nhịp thở bình thường là bao nhiêu,request,symptom
+khi nào spo2 thấp,request,symptom
+spo2 bao nhiêu là thấp,request,common_infor
+liều lượng sử dụng para,request,medicine
+liều lương sử dụng paracetamol là bao nhiêu,request,common_infor
+các nhóm thuốc,request,medicine
+các nhóm thuốc điều trị tại nhà cho bệnh nhân covid 19 là gì,request,common_infor
+spo2 bao nhiêu là thấp,request,symptom
+những xét nghiệm hậu covid,request,test
+những xét nghiệm kiểm tra sức khỏe hậu covid là gì,request,test
+sau khi nhiễm covid tôi hay căng thẳng,request,healthcare
+sau khi nhiễm covid tôi hay stress tôi cần làm gì,request,common_infor
+tôi có thể đến đâu để xét nghiệm,request,test
+tôi có thể đến đâu để làm xét nghiệm rt pcr,request,common_infor
+test nhanh dương tính thì có bị covid không,request,test
+test nhanh dương tính,inform,test
+covid 19 là gì,request,information
+covid 19 là gì,request,information
+cách sử dụng máy đo spo2,request,information
+tôi không biết cách sử dụng máy đo nồng độ oxy máu spo2,request,common_infor
+đo spo2 như thế nào,request,device
+tôi bị ho phải làm sao,request,diagnostic
+tôi bị ho thì nên uống gì,request,healthcare
+tôi bị ho thì nên uống gì,request,healthcare
+tôi bị ho thì nên làm gì,request,healthcare
+tôi bị ho đàm thì nên làm gì,request,healthcare
+tôi bị ho có bị covid không?,request,diagnostic
+khai báo y tế là gì,request,contact
+rồi á,inform,information
+RT-PCR,inform,test
+dương tính,inform,test
+có những tư thế nào giảm khó thở,request,healthcare
+tư thế nằm,request,healthcare
+cách khạc đàm,request,healthcare
+khạc đàm như thế nào,request,common_infor
+đường dây nóng để phản hồi về covid là số nào,request,contact
+quận 1,inform,information
+tôi bị ho có sao ko,request,diagnostic
+paiPAI,other,information
+HHGF,other,information
+TEST NHANH DƯƠNG TÍNH LÀM SOA,inform,test
+TEST NHANH DƯƠNG TÍNH LÀM SAO,request,information
+TEST NHANH DƯƠNG TÍNH ?,inform,test
+Sau khi tiêm vaccine tôi có bị nhiễm không,request,vaccine
+Alo,hello,information
+Sau khi tiêm vaccine tôi có bị nhiễm covid không,request,vaccine
+Tiêm vaccine có bị nhiễm bệnh không,request,vaccine
+sau khi tiêm vaccine tôi có bị nhiễm covid không,request,common_infor
+Tiêm vaccine có gây nhiễm bệnh,request,vaccine
+Tiêm vaccine có gây nhiễm covid,request,vaccine
+Tiêm mũi 2 astrazeneca đau bao lâu,request,vaccine
+nếu mũi 1 tôi tiêm astrazeneca thì mũi 2 tiêm cách mũi 1 bao lâu,request,common_infor
+Tiêm mũi. 2 pfizer sau bao lâu,request,vaccine
+nếu mũi 1 tôi tiêm pfizer comirnaty thì mũi 2 tiêm cách mũi 1 bao lâu,request,common_infor
+Có thể tiêm trộn loại không,request,vaccine
+nếu mũi 1 tôi tiêm vaccine astrazeneca thì mũi 2 có thể tiêm trộn loại khác không,request,common_infor
+sau khi tiêm vaccine tôi có bị nhiễm covid không,request,vaccine
+Khai báo y tế là gì,request,contact
+Đường dây nóng để phản hồi về covid là số nào,request,contact
+Đường dây nóng để phản hồi về covid là số nào ,request,contact
+"Khai báo y tế có cần khai báo trung thực, chính xác không? ",request,prevention
+khi nào tôi cần khai báo y tế,request,common_infor
+Số điện thoại của trung tâm y tế bình thạnh ,request,contact
+"Khai báo y tế có cần khai báo trung  thực, chính xác không?",request,prevention
+Số điện thoại của trung tâm y tế bình thạnh,request,contact
+"Khai báo y tế có cần khai báo trung thực, chính xác không? ",request,prevention
+Số điện thoại trung tâm y tế bình thạnh ,request,contact
+Khai báo y tế là gì ,request,contact
+Đường dây nóng để phản hồi covid là số nào,request,contact
+Tôi không biết sử dụng máy đo nồng độ oxy máu,request,device
+Tôi không biết sử dụng máy đo nồng độ oxy máu ,request,device
+Cách dùng máy đo spo2,request,device
+tôi không thấy máy đo cũ tôi dùng máy khác được không,request,common_infor
+Đo spo2 như thế nào,request,device
+Cách đo nồng độ oxy máu,request,device
+tôi không biết cách sử dụng máy đo nồng độ oxy máu spo2,request,common_infor
+Tôi cảm thấy tuyệt vọng làm sao đây,request,diagnostic
+Tôi cảm thấy tuyệt vọng thì phải làm sao,request,healthcare
+Tôi cảm thấy tuyệt vọng thì phải làm sao,request,healthcare
+tôi cảm thấy tuyệt vọng bất lực rất lo sợ không thể thoát ra được thì phải làm sao,request,common_infor
+Tôi bị sốt thì nên uống gì,request,healthcare
+Tôi bị sốt thì nên ăn gì,request,healthcare
+Ho đàm thì nên uống gì,request,healthcare
+Tôi thấy tuyệt vọng,request,diagnostic
+Tôi bị ho đàm thì nên uống gì,request,healthcare
+Tôi nên uống bao nhiêu nước một ngày,request,current_number
+Tôi hút thuốc được không,request,healthcare
+tôi hút thuốc lá được không,request,common_infor
+Tôi bị chán ăn làm sao,request,healthcare
+tôi bị chán ăn thì nên ăn như thế nào,request,common_infor
+Có tư thế nào giảm khó thở không,request,healthcare
+Tư thế nằm,request,healthcare
+Tư thế ngồi,inform,healthcare
+Có tư thế nào giảm khó thở không,request,healthcare
+Tư thế ngồi,inform,healthcare
+Có tư thế nào giảm khó thở không,request,healthcare
+Ngồi,inform,information
+Có tư thế nào giảm khó thở không,request,healthcare
+Có tư thế nào giảm khó thở không ,request,healthcare
+Đứng,request,information
+tư thế đứng,request,common_infor
+Có tư thế nào giảm khó thở không,request,healthcare
+Tư thế đứng,request,healthcare
+Covid 19 là gì,request,information
+Covid 19 là gì,request,information
+Các tư thế giảm khó thở là gì ,request,healthcare
+có những tư thế nào giảm khó thở,request,common_infor
+Tư thế nằm,request,healthcare
+Tư thế đứng,request,healthcare
+Giãn cơ có những bài tập nào,request,symptom
+giãn cơ đùi,request,common_infor
+Giãn cơ cánh tay,inform,prevention
+Có các cách tập thể dục nào,request,healthcare
+Vận động tại giường,inform,information
+Tôi nến uống bao nhiêu nước mỗi ngày vậy,request,current_number
+Tôi nên uống bao nhiêu nước mỗi ngày vậy,request,prevention
+tôi nên uống bao nhiêu nước môt ngày,request,common_infor
+tôi nên uống bao nhiêu nước môt ngày,request,current_number
+covid 19 là gì,request,information
+covid 19 là gì,request,information
+Cách dùng para ,request,healthcare
+tôi phải dùng thuốc như thế nào khi bị sốt,request,common_infor
+Tôi bị sốt có phải covid không,request,diagnostic
+Tôi bị sốt có phải covid không,request,diagnostic
+Rồi,inform,information
+RT-PCR,inform,test
+dương tính,inform,test
+Quận 5,inform,information
+Cảm ơn,ok,diagnostic
+Tôi bị ho,request,diagnostic
+t bị ho nên làm gì,request,healthcare
+t bị ho có bị covid không,request,diagnostic
+có ạ,inform,information
+RT-PCR,inform,test
+âm tính,inform,information
+cách đo spo2,request,device
+tôi không biết cách sử dụng máy đo nồng độ oxy máu spo2,request,common_infor
+số ca nhiễm covid ở gia lai,request,current_number
+số điện thoại liên hệ trạm y tế gần nhất,request,contact
+quận 1,inform,information
+f0 có cần cách ly không,request,rule
+f0 cách ly bao nhiêu ngày,request,current_number
+f1 có phải cách ly không,request,rule
+tôi là f1 thì phải cách ly tại nhà bao lâu,request,common_infor
+f1 cách ly bao nhiêu ngày,request,current_number
+tôi là f1 thì phải cách ly tại nhà bao lâu,request,rule
+bao nhiêu,request,current_number
+f0 phải cách ly bao lâu,request,rule
+xin chào,hello,information
+alo,hello,information
+chỉ thị 16 là gì,request,information
+chỉ thị 16 có gì khác 15,request,common_infor
+tui bị ho có sao ko,request,diagnostic
+chưa,ok,information
+rồi,inform,information
+liên hệ như nào,request,contact
+q5,inform,information
+alo,hello,information
+covid là gì,request,information
+covid 19 là gì,request,common_infor
+liên hệ quận 3,request,contact
+tui bị ho có sao ko,request,diagnostic
+covid là gì á,request,information
+covid 19 là gì,request,common_infor
+mình bị ho có saoko,request,diagnostic
+chưa,ok,information
+có,inform,information
+alo,hello,
+chỉ thị 16 là gì á,request_information,
+alo,hello,information
+Tư vấn được gì,request,contact
+????,inform,information
+chỉ thị 16 là gì á,request,information
+giãn cách theo chỉ thị 16 là gì,request,common_infor
+chỉ thị 16 là gì á,request_information,
+chỉ thị 16 là gì á,request_information,
+chỉ thị 16 là gì á,request_information,
+giãn cách theo chỉ thị 16 là gì,request_rule,
+chỉ thị 16 là gì á,request_information,
+giãn cách theo chỉ thị 16 là gì,request_rule,
+mình bị ho thì có sao ko,request_diagnostic,
+mình bị ho thì có sao ko,request_diagnostic,
+mình bị ho thì có sao ko,request_diagnostic,
+mình bị ho thì có sao ko,request_diagnostic,
+mình bị ho có sao ko ạ,request_diagnostic,
+dạ chưa á,inform,
+không ạ,inform,
+là sao,request_information,
+có,inform,
+mình bị ho có sao ko,request_diagnostic,
+chưa,ok,
+mình bị ho có sao ko,request_diagnostic,
+dạ chưa á,inform,
+chỉ thị 16 là gì á,request_information,
+giãn cách theo chỉ thị 16 là gì,request_rule,
+mình bị ho có sao ko ạ,request_diagnostic,
+dạ chưa á,inform,
+số ca nhiễm nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+mình bị ho có sao ko,request_diagnostic,
+số ca nhiễm nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+dạ chưa á,inform,
+số ca nhiễm nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+không,inform,
+không,inform,
+mình bị ho thì có sao ko ạ,request_diagnostic,
+số ca nhiễm nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+không,inform,
+triệu chứng của covid là gì á,request_symptom,
+triệu chứng nặng nguy hiểm của covid 19 là gì,request_symptom,
+mình bị ho có sao ko,request_diagnostic,
+triệu chứng của covid là gì á,request_symptom,
+biến chứng của covid 19 là gì,request_information,
+mình bị ho có sao ko,request_diagnostic,
+mình bị ho có sao ko,request_diagnostic,
+số ca nhiễm là bao nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+có,inform,
+số ca nhiễm là bao nheieu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+triệu chứng covid là gì á,request_symptom,
+mình bị ho có sao ko,request_diagnostic,
+có,inform,
+tôi bị khó thở có nguy cơ nhiễm covid không,request_diagnostic,
+tôi bị khó thở có nguy cơ nhiễm covid không,request_diagnostic,
+tôi bị khó thở có nguy cơ nhiễm covid không,request_diagnostic,
+tôi bị đau đầu có sao ko,request_diagnostic,
+tôi bị đau đầu có sao ko,request_diagnostic,
+tôi bị đau đầu có sao ko,request_diagnostic,
+bị covid có được đi chơi không,request_information,
+tôi đi chơi với 1 nhóm bạn trong đó có người bị dương tính covid 19 mà tôi đã xét nghiệm âm tính thì có phải cách ly không,request_rule,
+tôi bị đau đầu có sao ko,request_diagnostic,
+dạ chwua á,inform,
+RT-PCR,inform,
+rtpcr á,other,
+dương tính,inform,
+liên hệ như thế nào á,request_contact,
+liên hệ như nào á,request_contact,
+liên hệ như nào á,request_contact,
+q9,inform,
+ok,ok,
+liên hệ như nào á,request_contact,
+q10,inform,
+liên hệ như nào á,request_contact,
+số ca nhiễm nhiêu á,request_current_number,
+liên hệ như nào ạ,request_contact,
+liên hệ quận 7 á,request_contact,
+tôi bị khó thở có sao ko ạ,request_diagnostic,
+tôi bị khó thở có sao ko,request_diagnostic,
+số ca nhiễm nhiu á,request_current_number,
+haisjc ascla sca c,other,
+ậc scma sca sc,other,
+tôi bị đau đầu có sao ko,request_diagnostic,
+chuwacas ,other,
+số ca nhiễm nheieu á,request_current_number,
+tôi bị ho có saok o,request_diagnostic,
+chưa,ok,
+có,inform,
+triệu chứng covid là gì,request_symptom,
+liên hệ như nào á,request_contact,
+q9,inform,
+tôi bị đau đầu có sao ko,request_diagnostic,
+alo,hello,
+alo,hello,
+tôi bị đau đầu có sao ko,request_diagnostic,
+alo,hello,
+al,other,
+alo,hello,
+mình bị đau đầu có sao ko,request_diagnostic,
+số ca nhiễm nhiêu á,request_current_number,
+mình bị ho có sao ko,request_diagnostic,
+chỉ thị 16 là gì,request_information,
+chỉ thị 16 là gì,request_information,
+chỉ thị 16 có gì khác 15,request_rule,
+đeo khẩu trang làm gì á,request_prevention,
+cách đeo khẩu trang vải,request_device,
+thực hiện các bài tập như nào,request_healthcare,
+giãn cơ có những bài tập nào,request_symptom,
+thực hiện các bài tập như nào,request_healthcare,
+giãn cơ có những bài tập nào,request_symptom,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ vai,request_information,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ cánh tay,inform,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ vai,request_information,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ cánh tay,inform,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ vai,request_information,
+tui bị ho có sao ko,request_diagnostic,
+chư á,other,
+chưa,ok,
+không,inform,
+số ca nhiễm nhiêu á,request_current_number,
+ok,ok,
+tui bị ho có sao ko,request_diagnostic,
+chưa,ok,
+số ca nhiễm nhiêu á,request_current_number,
+có,inform,
+tui bị ho có sao ko,request_diagnostic,
+có,inform,
+liên lạc bác sĩ như nào á,request_contact,
+q0,inform,
+q8,inform,
+cảm ơn,ok,
+số ca nhiễm gia lai bao nhiêu,request_current_number,
+mình bị khó thở có sao ko,request_diagnostic,
+dạ,ok,
+thực hiện bài tập như nào á,request_information,
+alo,hello,
+alo,hello,
+số ca nhiễm bình định,request_current_number,
+tui bị đau đầu có sao ko,request_diagnostic,
+chưa,ok,
+là sao,request_information,
+que test 2 vạch là sao,request_information,
+thực hiện bài tập nhưu nào,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ như nào,request_information,
+thực hiện bài tập nào,request_healthcare,
+giãn cơ có những bài tập nào,request_symptom,
+alo,hello,
+thực hiện bài tập như nào á,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ cánh tay,inform,
+cảm ơn,ok,
+tui bị ho có sao k,request_diagnostic,
+chưa,ok,
+là sao,request_information,
+có,inform,
+mẫu gộp âm tính là sao,request_test,
+tui bị ho có sao ko,request_diagnostic,
+có,inform,
+liên hệ như nào,request_contact,
+liên hệ như nào,request_contact,
+liên hệ như nào,request_contact,
+liên hệ như nào á,request_contact,
+liên hệ như nào á,request_contact,
+LIÊN HỆ NHƯ NÀO Á,request_contact,
+Q111111,inform,
+Q5,inform,
+lo,request_healthcare,
+số ca nhiễm nhiêu á,request_current_number,
+lo,request_healthcare,
+số ca nhiễm nhiêu á,request_current_number,
+tôi bị ho vs khó thở có sao ko,request_diagnostic,
+lo,request_healthcare,
+tôi bị ho có sao ko,request_diagnostic,
+chưa,ok,
+số ca nhiễm nhiêu á,request_current_number,
+tôi bị ho có sao ko,request_diagnostic,
+lác ác ac,other,
+có,inform,
+mình bị ho vs khó thở có sao ko ạ,request_diagnostic,
+mình bị ho vs đau đầu có sao  ko ạ,request_diagnostic,
+là sao,request_information,
+mình bị ho sao ko,request_diagnostic,
+là sao,request_information,
+có,inform,
+số ca nhiễm nhiu á,request_current_number,
+chỉ thị 16 là gì,request_information,
+số ca nhiễm bình định nhiu á,request_current_number,
+thực hiện bài tập như nào,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ đùi,inform,
+thực hiện bài tập như nào,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ đùi,inform,
+chỉ thị 16 là gì á,request_information,
+số ca nhiễm gia lai nhiêu á,request_current_number,
+chir thij 16 là gì,request_information,
+là sao,request_information,
+số ca nhiễm nhiêu á,request_current_number,
+là sao,request_information,
+số ca nhiễm nhiêu á,request_current_number,
+là sao,request_information,
+số ca nhiễm nhiêu á,request_current_number,
+tui bị ho có sao ko,request_diagnostic,
+là sao,request_information,
+tôi bị ho có sao ko,request_diagnostic,
+là sao,request_information,
+tôi bị ho có sao ko,request_diagnostic,
+số ca nhiễm nhiêu á,request_current_number,
+chỉ thị 16 là gì,request_information,
+số ca nhiễm nhiêu á,request_current_number,
+thực hiện bài tập như nào,request_information,
+giãn cơ có những bài tập nào,request_symptom,
+giãn cơ đùi,inform,
+tôi bị ho có sao ko,request_diagnostic,
+là sao,request_information,
+tôi bị ho có sao ko,request_diagnostic,
+tôi bị ho có sao ko,request_diagnostic,
+là sao,request_information,
+tôi bị ho có sao ko,request_diagnostic,
+chưa,ok,
+có,inform,
+liên hệ như nào á,request_contact,
+q8,inform,
+chỉ thị 18 là gì,request_information,
+số ca nhiễm nhieu á,request_current_number,
+tôi bị ho có sao ko ạ,request_diagnostic,
+có,inform,
+tôi bị khó thở có sao ko ạ,request_diagnostic,
+tôi bị ho có sao ko ạ,request_diagnostic,
+là sao,request_information,
+tôi bị khó thở có sao ko,request_diagnostic,
+tôi bị ho có sao ko,request_diagnostic,
+tôi bị ho có sao ko ạ,request_diagnostic,
+tôi bị khó thở có sao ko ạ,request_diagnostic,
+tôi bị ho có sao ko ạ,request_diagnostic,
+không,inform,
+tôi bị khó thở có sao ko ạ,request_diagnostic,
+tôi bị ho có sao ko ạ,request_diagnostic,
+tôi bị khó thở có sao ko ạ,request_diagnostic,
+tôi bị ho có sao ko ạ,request_diagnostic,
+chỉ thị 16 là gì á,request_information,
+số ca nhiễm nhiêu á,request_current_number,
+tôi bị đau đầu có sao ko,request_diagnostic,
+số ca nheiemx nhiêu á,request_current_number,
+tôi bị ho có sao ko,request_diagnostic,
+là sao,request_information,
+tôi bị khó thở có sao ko,request_diagnostic,
+tôi bị ho có sao ko,request_diagnostic,
+rồi,inform,
+test nhanh,inform,
+dương tính,inform,
+alo,hello,
+tôi ở nước ngoài về có nguy cơ nhiễm covid không,request_information,
+tôi vừa ở nước ngoài về thì có phải cách ly không,request_rule,
+chỉ thị 16 là gì,request_information,
+tôi bị gay,request_diagnostic,
+tôi bị ho,request_diagnostic,
+bị gay có chữa được không,request_healthcare,
+tôi bị ốm cần đến cơ sở y tế để khám chữa bệnh thì phải làm gì,request_prevention,
+tôi bị gay thì cần phải làm gì,request_healthcare,
+tôi bị gay,request_diagnostic,
+chỉ thị 16 là gì,request_information,
+giãn cách theo chỉ thị 16 là gì,request_rule,
+tôi bị ho thì có khả năng nhiễm covid không,request_diagnostic,
+dạ chưa,inform,
+có,inform,
+tôi có nên tiêm vắc-xin mũi 3 không,request_vaccine,
+vắc xin covid 19 có thể làm tôi mắc bệnh covid 19 không,request_vaccine,
+Hiện nay tại Việt Nam có thể tiêm những loại vắc-xin nào ?,request_vaccine,
+việt nam có bao nhiêu biến thể,request_information,
+Việt Nam có bao nhiêu vắc-xin,request_vaccine,
+không,inform,
+tạm biệt bạn,request_information,
+chào,hello,
+ở tmt có ai đang covid không,request_information,
+không phải,request_prevention,
+tôi là f3 thì có phải cách ly k,request_rule,
+tôi là f0 thì có phải cách ly k,request_rule,
+tôi là f2 thì có phải cách ly không,request_rule,
+ f2 có cách ly k,request_rule,
+f2 có cách ly không,request_rule,
+tôi đang ho,request_diagnostic,
+chưa ,ok,
+có,inform,
+rồi lỡ tiếp xúc rồi thì sao,request_information,
+tôi f0 tiếp xúc với mẹ thì mẹ có f0 không,request_information,
+al,other,
+alo,hello,
+số ca nhiễm là bao nhiêu nhỉ,request_current_number,
+mình bị đau bụng có nguy cơ nhiễm không nghỉ,request_diagnostic,
+alo,hello,
+chỉ thị 16 là gì ,request_information,
+giãn cách theo chỉ thị 16 là gì,request_rule,
+mình bị ho thì có khả năng nhiễm bệnh ko,request_diagnostic,
+dạ chưa,inform,
+có,inform,
+mình muốn liên hệ bác sĩ thì làm thế nào,request_contact,
+quận 3,inform,
+thực hiện test nhanh như thế nào,request_information,
+triệu chứng của covid là gì,request_symptom,
+triệu chứng nặng nguy hiểm của covid 19 là gì,request_symptom,
+triệu chứng của covid là gì,request_symptom,
+biến chứng của covid 19 là gì,request_information,
+Oke,ok,
+Mình bị khó thở,request_diagnostic,
+số ca nhiễm gia lai,request_current_number,
+mình bị đau bụng có sao ko,request_diagnostic,
+cảm ơn,ok,
+có,inform,
+cảm ơn,ok,
+Ok ,ok,
+mình bị đau bụng có sao ko,request_diagnostic,
+mình bị ho có sao ko,request_diagnostic,
+mình bị đau bụng có sao ko,request_diagnostic,
+mình bị ho có saoko,request_diagnostic,
+chưa á,ok,
+rồi,inform,
+cảm ơn ạ,ok,
+có,inform,
+số ca nhiễm bao nhiêu á,request_current_number,
+số ca nhiễm ở gia lai,request_current_number,
+số ca nhiễm ở gia lai bao nhiêi,request_current_number,
+số ca nhiễm ở gia lai bao nhiêu á,request_current_number,
+số ca nhiễm hiện nay là bao nhiêu,request_current_number,
+số ca nhiễm hiện nay ở bình định,request_current_number,
+số ca nhiễm bao nhiêu,request_current_number,
+số ca nhiễm ở sài gòn,request_current_number,
+số ca nhiễm ở bình dương,request_current_number,
+số ca nhiễm ở vĩnh long,request_current_number,
+số ca nhiễm ở vn,request_information,
+số ca nhiễm ở việt nam là bao nhiêu,request_current_number,
+tỉnh thành phố nào có số ca nhiễm mới nhiều nhất,request_current_number,
+số ca nhiễm ở gia lai,request_current_number,
+số ca nhiễm bao nhiêu á,request_current_number,
+số ca nhiễm bao nhiêu á,request_current_number,
+Các thuốc điều trị tại nhà cho bệnh nhân covid là gì,request_medicine,
+Alo,hello,
+Khi nào cần kiểm tra sức khỏe hậu covid,request_symptom,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+Cần tập gì để cải thiện phổi hậu covid,request_healthcare,
+tôi cần tập gì để cải thiện phổi bị tổn thương hậu covid 19,request_healthcare,
+Tôi bị ho có phải nhiễm covid không,request_diagnostic,
+Có,inform,
+rồi á,inform,
+test nhanh,inform,
+dương tính,inform,
+Ok cảm ơn,ok,
+Các thuốc điều trị tại nhà cho bệnh nhân covid là gì vậy,request_medicine,
+Các thuốc điều trị tin nhà cho bệnh nhân covid là gì,request_medicine,
+Khi nào tôi cần kiểm tra sức khỏe hậu covid,request_symptom,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+Các thuốc điều trị tại nhà cho bệnh nhân covid là gì,request_medicine,
+Khi nào tôi cần kiểm tra sức khỏe hậu covid vậy ,request_symptom,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+Các thuốc điều trị tại nhà cho bệnh nhân covid là gì,request_medicine,
+Khi nào tôi cần đi khám sức khỏe hậu covid,request_information,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+Tôi cần tập gì để cải thiện phổi hậu covid,request_healthcare,
+tôi cần tập gì để cải thiện phổi bị tổn thương hậu covid 19,request_healthcare,
+Tôi bị ho có phải nhiễm covid không,request_diagnostic,
+Rồi,inform,
+rồi á,inform,
+test nhanh,inform,
+dương tính,inform,
+OK cảm ơn,ok,
+các thuốc điều trị tại nhà cho bệnh nhân covid là gì vậy,request_medicine,
+toa thuốc để điều trị covid tại nhà là gì,request_medicine,
+các thuốc điều trị tại nhà cho bệnh nhân covid là gì,request_medicine,
+khi nào toi cần đi khám sức khỏe hậu covid,request_information,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+tôi cần tập gì để cải thiện phổi hậu covid,request_healthcare,
+tôi cần tập gì để cải thiện phổi bị tổn thương hậu covid 19,request_healthcare,
+tôi bị ho có nhiễm covid không,request_diagnostic,
+test rồi,inform,
+test nhanh,inform,
+âm tính,inform,
+không,inform,
+không,inform,
+các thuốc điều trị tại nhà cho bệnh nhân covid là gì,request_medicine,
+khi nào tôi cần đi khám sức khỏe hậu covid,request_information,
+tôi cần đến bệnh viện để kiểm tra sức khỏe hậu covid 19 khi nào,request_symptom,
+tôi cần tập gì để cải thiện phổi hậu covid,request_healthcare,
+tôi cần tập gì để cải thiện phổi bị tổn thương hậu covid 19,request_healthcare,
+tôi bị ho có nhiễm covid không,request_diagnostic,
+rồi,inform,
+test nhanh,inform,
+âm tính,inform,
+không,inform,
+không,inform,
+tôi nói chuyện người f0 có cần cách ly không,request_rule,
+tôi nói chuyện với người nghi nhiễm covid 19 thì có phải cách ly không,request_rule,
+Không,inform,
+Hi,hello,
+Hi,hello,
+Mình bị đau họng,request_diagnostic,
+al,other,
+tui bị ho có sao ko,request_diagnostic,
+chhu,other,
+chưa á,ok,
+có,inform,
+alo,hello,
+tôi bị covid có phải cách ly không,request_rule,
+tôi bị covid có phải cách ly không,request_rule,
+người nhà tôi là f0 thì tôi có phải cách ly không,request_rule,
+cách đeo khẩu trang y tế là gì,request_prevention,
+cách đeo khẩu trang y tế là gì,request_prevention,
+cách đeo khẩu trang y tế là gì,request_prevention,
+cách đeo khẩu trang y tế là gì,request_prevention,
+tôi phải dùng thuốc như thế nào khi bị sốt,request_medicine,
+tôi phải dùng thuốc như thế nào khi bị sốt,request_medicine,
+alo,hello,
+alo,hello,
+các bệnh nền và yếu tố nguy cơ lây nhiễm covid 19 là gì,request_symptom,
+các bệnh nền và yếu tố nguy cơ lây nhiễm covid 19 là gì,request_symptom,
+hello,ok,
+covid,request_information,
+covid 19 là gì,request_information,
+mình bị đau họng,request_diagnostic,
+dạ chưa,inform,
+không,inform,
+có,inform,
+vậy giờ phải làm sao,request_healthcare,
+hello,ok,
+mình có bị bệnh không,request_diagnostic,
+mình có bị covid không,request_diagnostic,
+nhưng hồi nãy nói có mà,request_information,
+sao kỳ vậy,request_information,
+"giận rồi, nghỉ chơi",request_information,
+tôi đi chơi với 1 nhóm bạn trong đó có người bị dương tính covid 19 mà tôi đã xét nghiệm âm tính thì có phải cách ly không,request_rule,
+vậy là mình cần cách ly hay không cách ly,request_prevention,
+Tôi bị ung thư thì có tiêm vaccine được ko,request_vaccine,
+Alo,hello,
+Máy đo spo2 có xài pin không,request_device,
+Alo,hello,
+Tui bị ung thư thì có nên tiêm vaccine không,request_vaccine,
+Tôi bị ung thư có nên tiêm vaccine hay ko,request_vaccine,
+Nếu tôi bị bệnh nền có nên tiêm vaccine hay không,request_vaccine,
+Ưu điểm của nhiệt kế điện tử,request_device,
+đưa nhiệt kế điện tử cách trán bao nhiêu cm,request_device,
+Nên mua máy đo spo2 ở đâu,request_device,
+mua dụng cụ y tế ở đâu,request_device,
+Ưu điểm khẩu trang n95,request_device,
+Spo2 thấp có phải tôi bị covid không,request_diagnostic,
+Biến chứng viêm cơ tim sau tiêm vaccin là gì á ,request_vaccine,
+biến chứng viêm cơ tim sau tiêm vaccine là gi,request_vaccine,
+Tỉnh Bình Định có bao nhiêu ca tử vong,request_current_number,
+Khẩu trang vải,request_device,
+Khẩu trang y tế,request_prevention,
+Số ca nhiễm mới ở Bình Định,request_current_number,
+Khẩu trang tôi bị rách thì có xài lại không,request_prevention,
+Có xài lại khẩu trang rách không,request_prevention,
+Số ca nhiễm mới hôm nay ở tphcm ,request_current_number,
+khẩu trang vải có giặt được không,request_prevention,
+tôi bị ung thư có cần tiêm vaccine covid 19 không,request_vaccine,
+Có thay khẩu trang y tế,request_prevention,
+khi nào cần thay khẩu trang y tế,request_prevention,
+những đối tượng cần tiêm vaccine covid 19,request_vaccine,
+đối tượng được ưu tiên tiêm vaccine covid 19,request_vaccine,
+Máy đo nồng độ oxy có xài pin không,request_device,
+Nếu tôi bị bệnh nền có nên tiêm vaccine hay không,request_vaccine,
+Việt Nam có bao nhiêu biến thể,request_information,
+Biến thể là gì,request_information,
+Biến thể an pha là gì,request_information,
+Hôm nay có bao nhiêu ca nhiễm mới ở Phú Yên,request_current_number,
+Phú Yên hôm nay có bao nhiêu ca nhiễm mới,request_current_number,
+Nếu tôi bị bệnh nền có nên tiêm vaccine hay không,request_vaccine,
+Có bao nhiêu ca nhiễm mới,request_current_number,
+Hồ chí minh số ca nhiễm,request_information,
+tỉnh thành phố nào có số ca nhiễm mới nhiều nhất,request_current_number,
+Tỉnh Phú yên có bao nhiêu ca nhiễm,request_current_number,
+"Tôi test nhanh 2 lần đều cho ra kết quả âm tính nhưng lại bị  mất khứu giác (chỉ ngửi được 1 chút), ho, sổ mũi,... vậy tôi có bị dương tính không?",request_diagnostic,
+Tỉnh Phú Yên có bao nhiêu ca tử vong,request_current_number,
+Số ca tử vong,request_current_number,
+Số ca tử vong,request_current_number,
+Số tử vong,request_information,
+tỉnh thành phố nào có số ca tử vong nhiều nhất,request_current_number,
+Tử vong,request_information,
+tỉnh thành phố hôm nay có bao nhiêu tử vong,request_current_number,
+Tỉnh Phú Yên có bao nhiêu ca nhiễm mới,request_current_number,
+Chăm sóc F0 tại nhà có cần máy đo huyết áp không?,request_device,
+Alo,hello,
+Chăm sóc F0 tại nhà có cần máy đo huyết áp không?,request_device,
+Alo,hello,
+Sự khác biệt của cúm và covid,request_information,
+sự khác biệt giữa covid 19 bệnh cúm là gì,request_information,
+Tôi bị đau cơ nên uống gì,request_healthcare,
+Alo,hello,
+Tôi bị đau cơ nên uống gì,request_healthcare,
