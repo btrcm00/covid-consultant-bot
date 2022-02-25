@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, File, UploadFile, Form
 from backend.config.config import get_config
 from backend.process.PretrainedModel import PretrainedModel
-from backend.models.re_train import re_train_model
+from backend.api.api_retrain_model import re_train_model
 import pickle
 from fastapi.responses import FileResponse
 import uvicorn
@@ -11,18 +11,6 @@ import csv
 from fastapi.encoders import jsonable_encoder
 from typing import List
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import JSONResponse
-
-
-from fastapi_cloud_drives import GoogleDrive
-from fastapi_cloud_drives import GoogleDriveConfig
-google_conf = {
-    "CLIENT_ID_JSON" : "client_id.json",
-    "SCOPES": [
-        "https://www.googleapis.com/auth/drive"
-        ]
-}
-config = GoogleDriveConfig(**google_conf)
 
 app = FastAPI()
 
@@ -32,7 +20,7 @@ logging.basicConfig(filename=config_app['log']['app'],
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 models = PretrainedModel(config_app['models_chatbot'])
 from backend.api.api_message import send_message
-from backend.api.api_update_database import update_database
+from backend.api.api_insert_update_response import insert_update_database
 
 
 templates =  Jinja2Templates(directory = 'templates')
@@ -64,10 +52,13 @@ def home():
 
 @app.get('/api/update_database_knn')
 def update_db():
-    data = models.reply_text
-    return update_database(data)
+    data = {
+        'question': ['tôi nên sử dụng xà phòng nào để rửa tay'],
+        'answer': ['iệc sử dụng xà phòng diệt khuẩn RỬA TAY tốt hơn xà phòng thường trong làm giảm nguy cơ gây bệnh tiêu chảy và nhiễm trùng đường hô hấp.']
+    }
+    return insert_update_database(data)
 
-@app.get('/api/export_data')
+@app.get('/api/export_new_data')
 def export_data():
     mydb = models.myclient["chatbot_data"]
     mycol = mydb["chatbot_conversations"]
@@ -106,23 +97,40 @@ def retrain():
         assert exception.__class__.__qualname__ == 'NameError'
 
 
-@app.post("/submit")
-async def submit(password: str = Form(...), files: List[UploadFile] = File(...)):
+@app.post("/data/insert")
+async def submit_insert(password: str = Form(...), files: List[UploadFile] = File(...)):
     import pandas as pd
     data = []
     if password != 'congminh':
         return 'SAI MAT KHAU'
     for file in files:
         data = await file.read()
-        print(len(data))
+        if not data:
+            return 'Vui lòng chọn file data'
         data = pd.read_excel(data)
-        print(data.shape)
 
-    return "Đã upload thành công " +  " và ".join([file.filename for file in files])
+    return "Đã insert thành công " +  " và ".join([file.filename for file in files])
+
+@app.get('/api/insert_data')
+def insert(request: Request):
+    return templates.TemplateResponse("insert.html", {"request": request})
+
+# @app.post("/data/update")
+# async def submit_update(password: str = Form(...), files: List[UploadFile] = File(...)):
+#     import pandas as pd
+#     data = []
+#     if password != 'congminh':
+#         return 'SAI MAT KHAU'
+#     for file in files:
+#         data = await file.read()
+#         data = pd.read_excel(data)
+
+#     return "Đã update thành công " +  " và ".join([file.filename for file in files])
+
+# @app.get('/api/update_data')
+# def update_data(request: Request):
+#     return templates.TemplateResponse("update.html", {"request": request})
 
 
-@app.get('/api/import_data')
-def main(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
 
 uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))

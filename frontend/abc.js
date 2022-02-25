@@ -1,11 +1,3 @@
-//  __   __  ___        ___
-// |__) /  \  |  |__/ |  |  
-// |__) \__/  |  |  \ |  |  
-
-// This is the main file for the mybot bot.
-
-// Import Botkit's core features
-
 const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
 
@@ -24,6 +16,7 @@ if (process.env.MONGO_URI) {
         url : process.env.MONGO_URI,
     });
 }
+document.write("welcome to Javatpoint");  
 
 const adapter = new WebAdapter({});
 
@@ -42,21 +35,21 @@ if (process.env.CMS_URI) {
         token: process.env.CMS_TOKEN,
     }));
 }
-controller.ready(() => {
+    controller.ready(() => {
 
-	// load traditional developer-created local custom feature modules
-	controller.loadModules(__dirname + '/features');
+        // load traditional developer-created local custom feature modules
+        controller.loadModules(__dirname + '/features');
 
-	/* catch-all that uses the CMS to trigger dialogs */
-	if (controller.plugins.cms) {
-		controller.on('message,direct_message', async (bot, message) => {
-			let results = false;
-			results = await controller.plugins.cms.testTrigger(bot, message);
+        /* catch-all that uses the CMS to trigger dialogs */
+        if (controller.plugins.cms) {
+            controller.on('message,direct_message', async (bot, message) => {
+                let results = false;
+                results = await controller.plugins.cms.testTrigger(bot, message);
 
-			if (results !== false) {
-				// do not continue middleware!
-				return false;
-			}
-		});
-	}
-});
+                if (results !== false) {
+                    // do not continue middleware!
+                    return false;
+                }
+            });
+        }
+    });

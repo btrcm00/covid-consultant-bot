@@ -13,7 +13,7 @@ TODO: Guide users through getting your code up and running on their own system. 
 
 # Build and Test
 
-- There are 4 main folder in Hume-Chatbot:
+- There are 2 main folder in Chatbot:
 
   - backend
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<form id="login">
+			<input type="text" autocomplete="off" id="username" placeholder="Username" />
+			<input type="password" autocomplete="off" id="password" placeholder="Password" />
+			<input type="submit" value="Submit Form" />
+		</form>
+
+		<script src="bot.js">
+			const form = document.getElementById('login')
+			form.addEventListener('submit', login)
+            
+			async function login(event) {
+                console.log('hihi')
+				event.preventDefault()
+				const username = document.getElementById('username').value
+				const password = document.getElementById('password').value
+
+				if (username === 'ok' && password=='hihi') {
+					// everythign went fine
+					bot()
+				} else {
+					alert(result.error)
+				}
+			}
+		</script>
+	</body>
+</html>
