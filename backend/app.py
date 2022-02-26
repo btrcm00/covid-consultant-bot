@@ -145,4 +145,4 @@ def insert(request: Request):
 
 
 
-uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+# uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
