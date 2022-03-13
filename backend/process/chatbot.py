@@ -32,7 +32,11 @@ class CovidBot():
                 last_intent = list(conversation_history[-1].keys())[0]
                 last_infor = conversation_history[-1][last_intent]
             print('Historyyy',conversation_history)
-
+            
+            # #check exist in db:
+            # check_ = self.check_exist_question(message)
+            # if check_ != 'None':
+                
             print("\t\t-------Natural Language Understanding (NLU)--------")
             # Module này để trích xuất các entity và intent từ message của người dùng để sử dụng trong module sau
             # - Intent Classification(IC)
@@ -45,7 +49,7 @@ class CovidBot():
             print("\t\tReturn code->",[i for i in result])
 
             print("\t\t-------Natural Language Generation (NLG)--------")
-            suggest_reply,result,check_end = generate_reply_text(result,models.reply_text,models.response_knn)
+            suggest_reply,result = generate_reply_text(result)
 
             suggest_reply = suggest_reply[0].upper() + suggest_reply[1:]
 
@@ -53,21 +57,21 @@ class CovidBot():
             rep_intent = [key for key in result]
             if 'choices' in result[rep_intent[0]] and result[rep_intent[0]]['choices'] and len(result[rep_intent[0]]['choices'])>1:
                 option = result[rep_intent[0]]['choices']
-            print("\t\t-------Insert data to DB--------")
-            col = {
-                'mid' : input_data['mid'],
-                'SenderId': input_data['sender_id'],
-                'intent': intent,
-                'last_conversation': result,
-                'message_text': input_data['text'],
-                'bot_suggest': suggest_reply,
-                'date':time_start
-            }
-            print("INSERTMONGGO==>",self.insert_mongo(col))
+                
+            # print("\t\t-------Insert data to DB--------")
+            # col = {
+            #     'mid' : input_data['mid'],
+            #     'SenderId': input_data['sender_id'],
+            #     'intent': intent,
+            #     'last_conversation': result,
+            #     'message_text': input_data['text'],
+            #     'bot_suggest': suggest_reply,
+            #     'date':time_start
+            # }
+            print("INSERTMONGGO==>",self.insert_mongo(input_data, intent, result, suggest_reply, time_start))
 
             # ---------------
             returned_res = {'suggest_reply': suggest_reply, 
-                    'check_end':check_end, 
                     'rep_intent': rep_intent,
                     'sender_id': input_data['sender_id'],
                     'option': option
@@ -78,10 +82,19 @@ class CovidBot():
         except Exception as e:
             print("IndexError")
             error_type = error_handler(e)
-            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ chút xíu nhenn😭", 'id_job': 1, 'check_end': False, 'rep_intent': ['BIG ERROR']}
+            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ chút xíu nhenn😭", 'id_job': 1,  'rep_intent': ['BIG ERROR']}
         return returned_res
     
-    def insert_mongo(self, col):
+    def insert_mongo(self, input_data, intent, result, suggest_reply, time_start):
+        col = {
+            'mid' : input_data['mid'],
+            'SenderId': input_data['sender_id'],
+            'intent': intent,
+            'last_conversation': result,
+            'message_text': input_data['text'],
+            'bot_suggest': suggest_reply,
+            'date':time_start
+        }
         try:
             mydb = models.myclient["chatbot_data"]
             mycol = mydb["chatbot_conversations"]
@@ -90,7 +103,14 @@ class CovidBot():
             return False
         return True
 
-
+    def check_exist_question(text):
+        mydb = models.myclient["chatbot_data"]
+        mycol = mydb["data_response_knn"]
+        document = mycol.find_one({'question': text})
+        if document:
+            return document['answer']
+        return 'None'
+    
     def check_mongo(self, input_data):
         mydb = models.myclient["chatbot_data"]
         mycol = mydb["chatbot_conversations"]

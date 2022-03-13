@@ -158,9 +158,7 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                     res[res_code] = last_infor
                     return res
                 else:
-                    res_code,ress = diagnose(text, last_req, last_infor)
-                    res[res_code] = ress[res_code]
-                    return res
+                    return diagnose(text, last_req, last_infor)
 
                 
     last_infor['choices']=[]

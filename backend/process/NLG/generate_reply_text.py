@@ -2,20 +2,29 @@ import regex as re
 
 from backend.process.PretrainedModel import PretrainedModel
 models = PretrainedModel()
+mydb = models.myclient["chatbot_data"]
+mycol_response_knn = mydb["data_response_knn"]
+mycol_response = mydb["data_response"]
 
-def generate_reply_text(result, reply_text,response_knn):
+def get_response():
+    cursor = mycol_response.find({})
+    res={}
+    for doc in cursor:
+        res[doc['question']] = doc['answer']
+    return res
+
+def generate_reply_text(result):
     print('result nè',result)
     res_code = list(result.keys())[0]
     suggest_reply = ""
-    check_end = False
+    reply_text = get_response()
+    
     
     for idx, res in enumerate(res_code.split('-')):
         if idx>=1:
             suggest_reply += '*'
 
-        if res == 'hello':
-            suggest_reply += reply_text['hello']
-        elif res.startswith('inform_first'):
+        if res.startswith('inform_first'):
             suggest_reply += reply_text[res.split('/')[0]].format(res.split('/')[1])
         elif res.startswith('inform_current_numbers'):
             loc,infected,caseToday,died = res.split('+')[1:]
@@ -31,10 +40,9 @@ def generate_reply_text(result, reply_text,response_knn):
         elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
         elif res == 'reply_correct_text':
-            mydb = models.myclient["chatbot_data"]
-            mycol = mydb["data_response_knn"]
+            
             reply = []
-            document = mycol.find_one({'question': result[res]['choices'][0].lower()})
+            document = mycol_response_knn.find_one({'question': result[res]['choices'][0].lower()})
             if document:
                 print(document)
                 a = document['answer']
@@ -60,4 +68,4 @@ def generate_reply_text(result, reply_text,response_knn):
         if "http" in text and (idx==0 or 'image' not in out_text[idx-1]):
             suggest_reply = re.sub(text, "<a target=\"_blank\" href=\"{}\">{}</a>".format(text,text), suggest_reply)
     
-    return suggest_reply, result, check_end
+    return suggest_reply, result

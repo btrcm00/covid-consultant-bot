@@ -15,12 +15,12 @@ class PretrainedModel:
             cls._instance = super(PretrainedModel, cls).__new__(cls, *args, **kwargs)
             
             # 1. Load response data trong send-message
-            json_data = open(cfg['response_data'], 'rb')
-            cls.reply_text = json.loads(json_data.read())
-            json_contact = open(cfg['emergency_contact'], 'rb')
-            cls.reply_text.update({'contact_list': json.loads(json_contact.read())})
-            json_knn = open(cfg['response_knn'], 'rb')
-            cls.response_knn = json.loads(json_knn.read())
+            # json_data = open(cfg['response_data'], 'rb')
+            # cls.reply_text = json.loads(json_data.read())
+            # json_contact = open(cfg['emergency_contact'], 'rb')
+            # cls.reply_text.update({'contact_list': json.loads(json_contact.read())})
+            # json_knn = open(cfg['response_knn'], 'rb')
+            # cls.response_knn = json.loads(json_knn.read())
 
             # 2. Model load text
             cls.tfidf_svm, cls.model_svm = pickle.load(open(cfg['model_load_text']['model'], 'rb'))

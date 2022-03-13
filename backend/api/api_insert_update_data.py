@@ -10,8 +10,8 @@ models = PretrainedModel(config_app['models_chatbot'])
 
 def insert_update_knn(data):
     mydb = models.myclient["chatbot_data"]
-    # mycol = mydb["data_response_knn"]
-    mycol = mydb["test_insert_data"]
+    mycol = mydb["data_response_knn"]
+    # mycol = mydb["test_insert_data"]
     col = []
     
     for idx in range(len(data['question'])):
@@ -22,8 +22,8 @@ def insert_update_knn(data):
 
 def insert_update_svm(data):
     mydb = models.myclient["chatbot_data"]
-    # mycol = mydb["data_intent"]
-    mycol = mydb["test_insert_data"]
+    mycol = mydb["data_intent"]
+    # mycol = mydb["test_insert_data"]
     col = []
     
     for idx in range(len(data['text'])):
@@ -33,6 +33,7 @@ def insert_update_svm(data):
             continue
         elif data['intent'][idx].lower()!='request':
             data['sub_intent'][idx]=='None'
+        print('ok')
         mycol.update({'text': data['text'][idx]}, 
                      {'$set': {'intent': data['intent'][idx], "sub_intent": data['sub_intent'][idx]}}, upsert= True)
         
@@ -55,7 +56,8 @@ def insert_data(data):
         'answer': []
     }
     for idx,ele in enumerate(data['text']):
-        if not data['intent'][idx] or data['intent'][idx].lower() != 'request':
+        if (not data['intent'][idx] or data['intent'][idx].lower() != 'request') and \
+            data['response'].lower()=='none' and data['sub_intent'].lower() != 'diagnostic':
             continue
         
         data_knn['question'].append(data['text'][idx])

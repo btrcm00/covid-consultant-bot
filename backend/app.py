@@ -108,18 +108,18 @@ async def submit_insert(password: str = Form(...), files: List[UploadFile] = Fil
         data = await file.read()
         if not data:
             return 'Vui lòng chọn file data'
-        try:
-            data = pd.read_excel(data)
-            data_insert = {
-                'text': [ele if pd.notna(ele) else 'None' for ele in data['text'].values],
-                'intent': [ele if pd.notna(ele) else 'None' for ele in data['intent'].values],
-                'sub_intent': [ele if pd.notna(ele) else 'None' for ele in data['sub_intent'].values],
-                'response': [ele if pd.notna(ele) else 'None' for ele in data['response']]
-            }
-            
-            insert_data(data_insert)
-        except:
-            return "Vui lòng insert data theo đúng format"
+        # try:
+        data = pd.read_excel(data)
+        data_insert = {
+            'text': [ele if pd.notna(ele) else 'None' for ele in data['text'].values],
+            'intent': [ele if pd.notna(ele) else 'None' for ele in data['intent'].values],
+            'sub_intent': [ele if pd.notna(ele) else 'None' for ele in data['sub_intent'].values],
+            'response': [ele if pd.notna(ele) else 'None' for ele in data['response']]
+        }
+        
+        insert_data(data_insert)
+        # except:
+        #     return "Vui lòng insert data theo đúng format"
 
     return "Đã insert thành công " +  " và ".join([file.filename for file in files])
 
@@ -145,4 +145,4 @@ def insert(request: Request):
 
 
 
-# uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
