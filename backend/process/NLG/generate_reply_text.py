@@ -42,7 +42,7 @@ def generate_reply_text(result):
         elif res == 'reply_correct_text':
             
             reply = []
-            document = mycol_response_knn.find_one({'question': result[res]['choices'][0].lower()})
+            document = mycol_response_knn.find_one({'question': result[res]['choices'][0]})
             if document:
                 print(document)
                 a = document['answer']

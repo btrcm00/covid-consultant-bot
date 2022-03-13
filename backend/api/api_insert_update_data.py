@@ -33,7 +33,6 @@ def insert_update_svm(data):
             continue
         elif data['intent'][idx].lower()!='request':
             data['sub_intent'][idx]=='None'
-        print('ok')
         mycol.update({'text': data['text'][idx]}, 
                      {'$set': {'intent': data['intent'][idx], "sub_intent": data['sub_intent'][idx]}}, upsert= True)
         
@@ -51,6 +50,7 @@ def insert_data(data):
             return {'suggest_reply': 'ERROR NOT ENOUGH PARAM', 'id_job': '', 'check_end': True}
     
     insert_update_svm(data)
+    print('Update svm done!')
     data_knn = {
         'question': [],
         'answer': []
@@ -63,6 +63,6 @@ def insert_data(data):
         data_knn['question'].append(data['text'][idx])
         data_knn['answer'].append(data['response'][idx])
     insert_update_knn(data_knn)
-    
+    print('Update knn done!')
     return 'Done'
 

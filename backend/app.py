@@ -88,14 +88,15 @@ def export_data():
 
 @app.get('/api/re_train_model')
 def retrain():
-    pass
-    try:
-        re_train_model()
-        return 'Done'
-    except Exception as e:
-        assert type(exception).__name__ == 'NameError'
-        assert exception.__class__.__name__ == 'NameError'
-        assert exception.__class__.__qualname__ == 'NameError'
+    re_train_model()
+    return 'Done'
+    # try:
+    #     re_train_model()
+    #     return 'Done'
+    # except Exception as e:
+    #     assert type(e).__name__ == 'NameError'
+    #     assert e.__class__.__name__ == 'NameError'
+    #     assert e.__class__.__qualname__ == 'NameError'
 
 
 @app.post("/data/insert")

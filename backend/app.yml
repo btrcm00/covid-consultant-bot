@@ -21,8 +21,10 @@ models_chatbot:
   emergency_contact: "data/emergycontact/contact.json"
   model_load_text:
     intent_model:  "models/intent_svm.pickle"
-    model: "models/sub_svm.pickle"
-    knn_model: "models/knn.pickle"
+    # model: "models/sub_svm.pickle"
+    # knn_model: "models/knn.pickle"
+    model: "models/sub_svm_new.pickle"
+    knn_model: "models/knn_new.pickle"
 log:
   app: "app.log"
   request: "request.log"
