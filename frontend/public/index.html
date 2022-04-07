@@ -23,16 +23,31 @@
 </head>
 
 <body>
-  <div class="main-container-background h-100" style="background-image: url('icon/bg.jpg');background-size: cover;background-attachment: fixed;">
-    <div class="row p-0 h-100 row-wrapper">
-      <div class="col-xs-5 col-sm-5 col-md-6 col-lg-5 offset-md-2">
-        <div class="wrapper">
-          <div id="message_window">
+<button id="myBtn" class="myBtn" ><img src="https://img.freepik.com/free-vector/cute-robot-cartoon-vector-icon-illustration-techology-robot-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-1474.jpg" style="  background-color:#fff;
+    border:1px solid blue;
+    height:100px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:100px;" ></button>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+
+
+
+
+
+
+          <div id="message_window" >
+
             <div class="header main-elements">
               <div>
                 <img src="icon/logo.png" class="avt">
               </div>
               <div id="user-id" class="name"><span style="width: 2vw">Covid Chatbot</span></div>
+
+               <span class="close">&times;</span>
             </div>
             <div class="disconnected main-elements" id="disconnected">
               Disconnected... reconnecting!
@@ -93,12 +108,7 @@
             </div>
             <footer class="main-elements">
               <div class="tool-bar">
-                <button class="tool-bar-btn" id="image_btn">
-                  <div class="far fa-image" color="#fff" id="image-icon">
-                    <span id="image-label"></span>
-                  </div>
-                  <input type="file" id="image-input" name="image-input" style="display: none;" accept="image/png*">
-                </button>
+
                 <form id="form_mesg" onsubmit="Botkit.send(Botkit.input.value, event)">
                 <input type="text" autocomplete="off" id="messenger_input" placeholder="Type the message ..."
                   onkeyup="stoppedTyping()" />
@@ -118,10 +128,40 @@
               
             </footer>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
+
+
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
