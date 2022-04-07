@@ -13,6 +13,8 @@ models = PretrainedModel(config_app['models_chatbot'])
 mydb = models.myclient["chatbot_data"]
 mycol = mydb["data_intent"]
 
+mycol_knn = mydb["data_response_knn"]
+
 def re_train_knn(Xknn, yknn):
     # try:
     knn_tfidf = TfidfVectorizer()
@@ -56,17 +58,34 @@ def re_train_svm(X, y):
 
 def re_train_model():
     Xknn=[]
-    yknn=[]    
+    yknn=[] 
+    Xsvm=[]
+    ysvm=[]    
+    count=0
     cursor = mycol.find({})
     for doc in cursor:
         if doc['intent'].lower()!='request' or type(doc['text']) != str:
             continue
         
-        Xknn.append(doc['text'])
-        yknn.append(doc['sub_intent'])
+        Xsvm.append(doc['text'])
+        ysvm.append(doc['sub_intent'])
+
+    # re_train_svm(Xsvm,ysvm)
+    print('Retrain svm done!')
     
+    
+    cursor_knn = mycol_knn.find({})
+    for doc in cursor_knn:
+        
+        if 'question' not in doc:
+            print(doc)
+        elif doc['question'] in Xsvm:
+            Xknn.append(doc['question'])
+            yknn.append(ysvm[Xsvm.index(doc['question'])])
+        else:
+            print(count)
+            count+=1
+        
     re_train_knn(Xknn,yknn)
     print('Retrain knn done!')
-    re_train_svm(Xknn,yknn)
-    print('Retrain svm done!')
     return 'Done'
