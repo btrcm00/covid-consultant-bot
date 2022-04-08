@@ -90,7 +90,7 @@ section::-webkit-scrollbar-thumb {
 footer {
   text-align: center;
   border-top: 2px solid #0b4347;
-  border-bottom: 3px solid #0b4347;
+  /* border-bottom: 3px solid #0b4347; */
 }
 
 .hero {
@@ -184,12 +184,14 @@ a.button:hover {
   -webkit-font-smoothing: subpixel-antialiased;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   height: 80%;
-  width: 25%;
+  width: 27%;
   display: flex;
   flex-direction: column;
   font-family: "Roboto", "helvetica", sans-serif;
   position: absolute;
-  right:5%;
+  right: 25px !important;
+  bottom: 100px !important;
+  border-radius: 10px !important;
 }
 
 #message_window .disconnected {
@@ -255,7 +257,7 @@ a.button:hover {
 
 #message_window footer input[type="text"] {
   flex-grow: 1;
-  background: none;
+  /* background: none; */
   padding: 0px 10px 0px 10px;
   font-size: 18px;
   outline: none;
@@ -690,8 +692,9 @@ td {
   background-color: var(--primary-color);
   padding: 0 35px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  border-top: 3px solid #0b4347;
-  border-bottom: 2px solid #0b4347;
+  border-radius: 10px 10px 0px 0px !important;
+  /* border-top: 3px solid #0b4347;
+  border-bottom: 2px solid #0b4347; */
 }
 
 .header span {
@@ -771,7 +774,9 @@ td {
   width: 14px;
   height: 14px;
   margin-left: 3px;
-  fill: var(--primary-color);
+  margin-top: 5px;
+  color: white;
+  /* fill: var(--primary-color); */
 }
 
 .close:hover {
@@ -1582,7 +1587,7 @@ td {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #ffffff;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -1610,7 +1615,7 @@ border: none;
 background-repeat: no-repeat;
 cursor: pointer;
 position:absolute;
-right:10%;
-top: 80%;
+right: 25px !important;
+bottom: 25px !important;
 
 }
