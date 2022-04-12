@@ -1,6 +1,8 @@
 import urllib.request, json 
 import regex as re
 from backend.config.constant import province_lst
+from backend.process.config import PretrainedModel
+models = PretrainedModel()
 
 def current_numbers_rep(text, last_infor):
     #----------------------------------------------#
@@ -11,8 +13,10 @@ def current_numbers_rep(text, last_infor):
     print('\t\t------------------THÔNG TIN SỐ CA NHIỄM-------------------')
     data = {}
     res = {}
-    with urllib.request.urlopen("https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true") as url:
+    
+    with urllib.request.urlopen(models.current_number_url) as url:
         data = json.loads(url.read().decode())
+        
     infected = data['infected']
     recovered = data['recovered']
     died = data['died']

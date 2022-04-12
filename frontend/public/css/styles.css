@@ -178,19 +178,19 @@ a.button:hover {
 /* chat client */
 
 #message_window {
-  background: #ffffff;
+  background: rgb(245, 255, 252);
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: subpixel-antialiased;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  height: 80%;
-  width: 27%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Roboto", "helvetica", sans-serif;
   position: absolute;
-  right: 25px !important;
-  bottom: 100px !important;
+  right: 0px !important;
+  bottom: 0px !important;
   border-radius: 10px !important;
 }
 
@@ -262,6 +262,7 @@ a.button:hover {
   font-size: 18px;
   outline: none;
   border: none;
+  width: 100%;
 }
 
 #message_window footer button {
@@ -1569,16 +1570,18 @@ td {
 
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  /* padding-top: 100px; /* Location of the box */
 
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
+  height: 80%;
+  width: 25%;
+  top: auto !important;
+  left: auto !important;
+  right: 25px !important;
+  bottom: 100px !important;
+  border-radius: 10px !important;
 
 }
 
@@ -1612,12 +1615,19 @@ background-color: transparent;
 outline: none;
 overflow: hidden;
 border: none;
+border-radius: 70%;
 background-repeat: no-repeat;
 cursor: pointer;
 position:absolute;
 right: 25px !important;
 bottom: 25px !important;
+cursor: pointer !important;
+  outline: none !important;
 
+  background-repeat: no-repeat !important;
+  background-size: 35px !important;
+  background-position-x: 14px !important;
+  background-position-y: 14px !important;
 }
 
 

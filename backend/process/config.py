@@ -13,20 +13,10 @@ class PretrainedModel:
     def __new__(cls, cfg=None, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(PretrainedModel, cls).__new__(cls, *args, **kwargs)
-            
-            # 1. Load response data trong send-message
-            # json_data = open(cfg['response_data'], 'rb')
-            # cls.reply_text = json.loads(json_data.read())
-            # json_contact = open(cfg['emergency_contact'], 'rb')
-            # cls.reply_text.update({'contact_list': json.loads(json_contact.read())})
-            # json_knn = open(cfg['response_knn'], 'rb')
-            # cls.response_knn = json.loads(json_knn.read())
 
-            # 2. Model load text
             cls.tfidf_svm, cls.model_svm = pickle.load(open(cfg['model_load_text']['model'], 'rb'))
             cls.tfidf_intent, cls.model_intent = pickle.load(open(cfg['model_load_text']['intent_model'], 'rb'))
             
-            #3. Load monggodb
             cls.myclient = pymongo.MongoClient(config_app['mongodb']['link_db_server'])
 
             short_word_file = open(config_app['chatbot_api']['general_chatbot']['spell_corection']['short_word_file'], encoding='utf-8')
@@ -47,4 +37,6 @@ class PretrainedModel:
 
             f2 = open(config_app['chatbot_api']['general_chatbot']['spell_corection']['tudien_don'], 'r', encoding='utf-8')
             cls.dictionary = json.load(f2)
+            
+            cls.current_number_url = config_app['chatbot_api']['general_chatbot']['current_number_url']
         return cls._instance

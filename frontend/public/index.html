@@ -50,10 +50,10 @@
                <span class="close">&times;</span>
             </div>
             <div class="disconnected main-elements" id="disconnected">
-              Disconnected... reconnecting!
+              Mất kết nối! Đang kết nối lại ...!
             </div>
             <div class="offline main-elements">
-              Offline! Reload to reconnect.
+              Ngoại tuyến! Tải lại để kết nối lại...
             </div>
             <section class="message-wrapper">
               <div id="logo-wrapper">
@@ -110,7 +110,7 @@
               <div class="tool-bar">
 
                 <form id="form_mesg" onsubmit="Botkit.send(Botkit.input.value, event)">
-                <input type="text" autocomplete="off" id="messenger_input" placeholder="Type the message ..."
+                <input type="text" autocomplete="off" id="messenger_input" placeholder="Nhập tin nhắn ..."
                   onkeyup="stoppedTyping()" />
                 </form>
                 <button class="tool-bar-btn" type="submit" onclick="Botkit.send(Botkit.input.value, event);stoppedTyping()" id="send_btn">
@@ -147,7 +147,9 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+  if (modal.style.display === "block")
+    modal.style.display = "none";
+  else modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal

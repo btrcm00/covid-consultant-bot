@@ -1,10 +1,9 @@
 from backend.utils.utils import preprocess_message
 from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
 from backend.config.constant import DISTRICT
-
 from backend.process.config import PretrainedModel
-from unidecode import unidecode
 
+from unidecode import unidecode
 import regex as re
 
 models = PretrainedModel()

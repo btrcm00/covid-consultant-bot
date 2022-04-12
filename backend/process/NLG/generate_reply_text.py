@@ -50,8 +50,7 @@ def generate_reply_text(result, mydb):
                 a = document['answer']
             else:
                 a = 'Chưa có dữ liệu cho câu hỏi này'
-            
-            #a = response_knn.get(result[res]['choices'][0].lower(),'Chưa có dữ liệu cho câu hỏi này')
+                
             if isinstance(a,list):
                 suggest_reply += a[0]
                 result[res]['choices'] = a[1]

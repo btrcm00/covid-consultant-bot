@@ -4,6 +4,7 @@ server:
 
 mongodb:
   link_db_server: "mongodb+srv://cminh_chatbot:231196168@covidcluster.lxgvr.mongodb.net/test"
+
 chatbot_api:
   general_chatbot:
     spell_corection:
@@ -14,13 +15,15 @@ chatbot_api:
       vowel: "data/spell_corection/vietnamese_vowel.json"
       telex_fault: "data/spell_corection/additional_telex_fault.json"
       tudien_don: "data/spell_corection/tudien_don.json"
+    current_number_url: "https://api.apify.com/v2/key-value-stores/EaCBL1JNntjR3EakU/records/LATEST?disableRedirect=true"
+
   password:
     insert_data: "yds.hcmut@covidchatbot"
 
 models_chatbot:
   response_data: "models/response.json"
   response_knn: "models/data_knn.json"
-  emergency_contact: "data/emergycontact/contact.json"
+  # emergency_contact: "data/emergycontact/contact.json"
   model_load_text:
     intent_model:  "models/intent_svm.pickle"
     # model: "models/sub_svm.pickle"

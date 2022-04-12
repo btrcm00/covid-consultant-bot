@@ -7,9 +7,9 @@ const limits = new Map();
 var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
-
-var url ='http://apibackend-covid-chatbot.herokuapp.com/api/send-message'
-var image_url = 'http://apibackend-covid-chatbot.herokuapp.com/api/send-image' ;
+//http://apibackend-covid-chatbot.herokuapp.com/
+var url ='http://localhost:8000/api/send-message'
+var image_url = 'http://localhost:8000/api/send-image' ;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};
@@ -220,7 +220,7 @@ module.exports = function (controller) {
     debug("Welcome back");
     UserState[message.user] = await createUserState(message);
     UserState[message.user+'check_respones'] = true;
-    await bot.reply(message, "Xin chào, mình là Covid Chatbot. Bạn cần mình tư vấn gì hong,");
+    await bot.reply(message, "Xin chào, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?");
   };
 
   const onHelloClient = async (bot, message) => {
@@ -228,7 +228,7 @@ module.exports = function (controller) {
     UserState[message.user] = await createUserState(message);
     UserState[message.user+'check_respones'] = true;
 
-    await bot.reply(message, "Xin chào, mình là Covid Chatbot. Bạn cần mình tư vấn gì hong nè");
+    await bot.reply(message, "Xin chào, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?");
   };
 
   const onHelloAdmin = async (bot, message) => {

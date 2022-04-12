@@ -5,8 +5,8 @@ from backend.config.regrex import *
 from backend.config.config import get_config
 config_app = get_config()
 
-with open(config_app['models_chatbot']['emergency_contact'], encoding='utf-8') as f:
-    contact_emergency = json.load(f)
+# with open(config_app['models_chatbot']['emergency_contact'], encoding='utf-8') as f:
+#     contact_emergency = json.load(f)
 
 CODE_RETURN = [
     'inform_symptoms_info','request_age','request_sex', 'request_serious_symptom',

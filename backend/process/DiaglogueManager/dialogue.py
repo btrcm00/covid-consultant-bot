@@ -1,10 +1,10 @@
 import regex as re
+
 from backend.config.constant import DISTRICT
 from backend.process.DiaglogueManager.utils_message.diagnose_reply import symptom_rep
 from backend.process.DiaglogueManager.utils_message.emergency_contact_reply import emergency_contact_rep
 from backend.process.DiaglogueManager.utils_message.current_number_reply import current_numbers_rep
 from backend.process.DiaglogueManager.utils_message.common_infor_reply import common_infor_rep
-
 from backend.process.config import PretrainedModel
 models = PretrainedModel()
 
@@ -65,8 +65,10 @@ def update_slots(entity_dict, last_infor):
             }
     # Cập nhật các entity mới nhất vào slots của hội thoại
     for i in entity_dict:
+        
         if not entity_dict[i]:
             continue
+        
         if i in ['age', 'sex', 'address']:
             last_infor['infor'][i] = entity_dict[i]
         elif i == 'symptom':
@@ -75,6 +77,7 @@ def update_slots(entity_dict, last_infor):
         elif i == 'medical_history':
             for j in entity_dict[i]:
                 last_infor['history'][j] = 1 
+                
     print("last infor after update", last_infor)
     return last_infor
 
@@ -88,6 +91,7 @@ def predict_reply(message, last_intent, last_infor, intent):
     
     if intent in ['hello']:
         res[intent] = last_infor
+        
     elif intent in ['inform', 'ok', 'other']:
         print('haha',intent,last_intent )
         if 'request_symptom' in last_intent and 'request' not in intent:
