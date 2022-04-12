@@ -10,13 +10,15 @@ from backend.process.NLU.message_understanding import extract_information_messag
 from backend.process.DiaglogueManager.dialogue import dialogue
 from backend.process.NLG.generate_reply_text import generate_reply_text
 from backend.utils.error_handler import error_handler
+from backend.process.config import PretrainedModel
 
-from backend.process.PretrainedModel import PretrainedModel
 models = PretrainedModel()
+
 
 class CovidBot():
     def __init__(self):
         pass
+
     def reply(self,input_data):
         # get time start
         time_start = datetime.now()
@@ -24,10 +26,12 @@ class CovidBot():
         
         try:
             print("\t\t-------RETRIEVE LAST CONVERSATION FROM DB--------")
-            message = input_data['text']
-            conversation_history = self.check_mongo(input_data)
             last_infor = {}
             last_intent = ''
+
+            message = input_data['text']
+            conversation_history = self.__check_mongo(input_data)
+            
             if conversation_history:
                 last_intent = list(conversation_history[-1].keys())[0]
                 last_infor = conversation_history[-1][last_intent]
@@ -49,9 +53,9 @@ class CovidBot():
             print("\t\tReturn code->",[i for i in result])
 
             print("\t\t-------Natural Language Generation (NLG)--------")
-            suggest_reply,result = generate_reply_text(result)
-
+            suggest_reply,result = generate_reply_text(result, models.myclient["chatbot_data"])
             suggest_reply = suggest_reply[0].upper() + suggest_reply[1:]
+
 
             option = []
             rep_intent = [key for key in result]
@@ -68,7 +72,7 @@ class CovidBot():
             #     'bot_suggest': suggest_reply,
             #     'date':time_start
             # }
-            print("INSERTMONGGO==>",self.insert_mongo(input_data, intent, result, suggest_reply, time_start))
+            print("INSERTMONGGO==>",self.__insert_mongo(input_data, intent, result, suggest_reply, time_start))
 
             # ---------------
             returned_res = {'suggest_reply': suggest_reply, 
@@ -82,10 +86,10 @@ class CovidBot():
         except Exception as e:
             print("IndexError")
             error_type = error_handler(e)
-            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ chút xíu nhenn😭", 'id_job': 1,  'rep_intent': ['BIG ERROR']}
+            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ giây lát", 'id_job': 1,  'rep_intent': ['BIG ERROR']}
         return returned_res
     
-    def insert_mongo(self, input_data, intent, result, suggest_reply, time_start):
+    def __insert_mongo(self, input_data, intent, result, suggest_reply, time_start):
         col = {
             'mid' : input_data['mid'],
             'SenderId': input_data['sender_id'],
@@ -103,18 +107,23 @@ class CovidBot():
             return False
         return True
 
+
     def check_exist_question(text):
         mydb = models.myclient["chatbot_data"]
         mycol = mydb["data_response_knn"]
         document = mycol.find_one({'question': text})
+
         if document:
             return document['answer']
         return 'None'
     
-    def check_mongo(self, input_data):
+
+    def __check_mongo(self, input_data):
+        conversation_history = []
+
         mydb = models.myclient["chatbot_data"]
         mycol = mydb["chatbot_conversations"]
-        conversation_history = []
+        
         for ele in mycol.find({'SenderId': input_data['sender_id']}):
             conversation_history.append(ele['last_conversation'])
         

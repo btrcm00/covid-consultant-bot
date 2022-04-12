@@ -4,7 +4,7 @@ server:
 
 mongodb:
   link_db_server: "mongodb+srv://cminh_chatbot:231196168@covidcluster.lxgvr.mongodb.net/test"
-create_chatbot_api:
+chatbot_api:
   general_chatbot:
     spell_corection:
       short_word_file: "data/spell_corection/short_word.json"
@@ -14,6 +14,8 @@ create_chatbot_api:
       vowel: "data/spell_corection/vietnamese_vowel.json"
       telex_fault: "data/spell_corection/additional_telex_fault.json"
       tudien_don: "data/spell_corection/tudien_don.json"
+  password:
+    insert_data: "yds.hcmut@covidchatbot"
 
 models_chatbot:
   response_data: "models/response.json"

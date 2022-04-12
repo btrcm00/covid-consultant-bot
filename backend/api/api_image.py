@@ -1,4 +1,4 @@
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 import numpy as np
 
 import tensorflow

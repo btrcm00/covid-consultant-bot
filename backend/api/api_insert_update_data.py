@@ -4,7 +4,8 @@ import json
 sys.path.append('.')
 from backend.config.config import get_config
 config_app = get_config()
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
+
 models = PretrainedModel(config_app['models_chatbot'])
 
 
@@ -37,10 +38,6 @@ def insert_update_svm(data):
                      {'$set': {'intent': data['intent'][idx], "sub_intent": data['sub_intent'][idx]}}, upsert= True)
         
     return 'done'
-
-def check_data_svm(data):
-    intent_list = []
-    sub_intent_list = []
 
 def insert_data(data):
     ls_param = ['text', 'intent', 'sub_intent', 'response']

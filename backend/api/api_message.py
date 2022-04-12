@@ -2,7 +2,7 @@ import pickle
 import sys
 import json
 sys.path.append('.')
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 models = PretrainedModel()
 from backend.config.config import get_config
 config_app = get_config()

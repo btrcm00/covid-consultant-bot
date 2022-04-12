@@ -5,13 +5,15 @@ from backend.process.DiaglogueManager.utils_message.emergency_contact_reply impo
 from backend.process.DiaglogueManager.utils_message.current_number_reply import current_numbers_rep
 from backend.process.DiaglogueManager.utils_message.common_infor_reply import common_infor_rep
 
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 models = PretrainedModel()
+
 
 def dialogue(message,last_intent, entity_dict, last_infor, intent):
     new_last_infor = update_slots(entity_dict, last_infor)
     result = predict_reply(message,last_intent, new_last_infor, intent)
     return result
+
 
 def update_slots(entity_dict, last_infor):
     if not last_infor:
@@ -75,6 +77,7 @@ def update_slots(entity_dict, last_infor):
                 last_infor['history'][j] = 1 
     print("last infor after update", last_infor)
     return last_infor
+
 
 def predict_reply(message, last_intent, last_infor, intent):
     res={}

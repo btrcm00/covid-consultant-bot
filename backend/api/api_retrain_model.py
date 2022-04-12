@@ -8,7 +8,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from backend.config.config import get_config
 config_app = get_config()
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 models = PretrainedModel(config_app['models_chatbot'])
 mydb = models.myclient["chatbot_data"]
 mycol = mydb["data_intent"]

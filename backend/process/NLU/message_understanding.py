@@ -1,11 +1,14 @@
 from backend.utils.utils import preprocess_message
 from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
 from backend.config.constant import DISTRICT
-from backend.process.PretrainedModel import PretrainedModel
+
+from backend.process.config import PretrainedModel
 from unidecode import unidecode
 
 import regex as re
+
 models = PretrainedModel()
+
 def extract_information_message(message):
     print('RAW MESSAGE====', message)
     message = preprocess_message(message)
@@ -15,6 +18,7 @@ def extract_information_message(message):
     intent = extract_intent_message(message, entity_dict)
         
     return intent, entity_dict
+
 
 def extract_entity_message(message):
     entity_dict = {
@@ -48,6 +52,7 @@ def extract_entity_message(message):
             entity_dict['address'] = ''.join(unidecode(location[0]).split())
 
     return entity_dict
+
 
 def extract_intent_message(message, entity_dict):
     print("\t\t+++++++++ INTENT message +++++++++")

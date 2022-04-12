@@ -1,23 +1,22 @@
 import regex as re
 
-from backend.process.PretrainedModel import PretrainedModel
-models = PretrainedModel()
-mydb = models.myclient["chatbot_data"]
-mycol_response_knn = mydb["data_response_knn"]
-mycol_response = mydb["data_response"]
 
-def get_response():
+def get_response(mycol_response):
     cursor = mycol_response.find({})
     res={}
     for doc in cursor:
         res[doc['question']] = doc['answer']
     return res
 
-def generate_reply_text(result):
-    print('result nè',result)
+
+def generate_reply_text(result, mydb):
+
+    mycol_response_knn = mydb["data_response_knn"]
+    mycol_response = mydb["data_response"]
+
     res_code = list(result.keys())[0]
     suggest_reply = ""
-    reply_text = get_response()
+    reply_text = get_response(mycol_response)
     
     
     for idx, res in enumerate(res_code.split('-')):
@@ -26,9 +25,11 @@ def generate_reply_text(result):
 
         if res.startswith('inform_first'):
             suggest_reply += reply_text[res.split('/')[0]].format(res.split('/')[1])
+
         elif res.startswith('inform_current_numbers'):
             loc,infected,caseToday,died = res.split('+')[1:]
             suggest_reply += reply_text['inform_current_numbers'].format(loc,infected,died,caseToday)
+
         elif 'inform_contact' in res:
             suggest_reply += reply_text['inform_contact']
             link = reply_text['contact_list']['tram-y-te'].get(res.split('+')[-1], 'none')
@@ -37,11 +38,12 @@ def generate_reply_text(result):
                 result['request_location_contact'] = result.pop(res)
             else:
                 suggest_reply += "*image " + link
+
         elif res.startswith('request_symptom'):
             suggest_reply += reply_text['request_symptom'][re.sub('request_symptom_', '', res)]
+
         elif res == 'reply_correct_text':
             
-            reply = []
             document = mycol_response_knn.find_one({'question': result[res]['choices'][0]})
             if document:
                 print(document)
@@ -58,8 +60,10 @@ def generate_reply_text(result):
                 suggest_reply+=a
             if not suggest_reply:
                 suggest_reply += "Chưa có dữ liệu câu trả lời cho câu hỏi này"
+
         elif res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
+            
         else:
             suggest_reply += reply_text.get(res, 'Bạn muốn hỏi gì ạ?')
     #convert link

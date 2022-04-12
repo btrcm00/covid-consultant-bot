@@ -1,5 +1,5 @@
 import re
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 import numpy as np
 from numpy.linalg import norm
 from backend.utils.spell_corrector import correct_sent

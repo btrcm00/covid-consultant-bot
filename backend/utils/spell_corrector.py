@@ -1,7 +1,7 @@
 import json
 import re
 import unicodedata
-from backend.process.PretrainedModel import PretrainedModel
+from backend.process.config import PretrainedModel
 import unidecode
 from backend.config.constant import MAP_TO_DISTRICT_HCM
 
