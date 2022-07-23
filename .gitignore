@@ -1,5 +1,5 @@
-backend/config/regrex
-backend/config/constant
+backend/config/regrex.py
+backend/config/constant.py
 
 *.csv
 *.zip
