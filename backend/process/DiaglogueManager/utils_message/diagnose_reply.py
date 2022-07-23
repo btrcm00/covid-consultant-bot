@@ -1,5 +1,6 @@
-from backend.config.regrex import *
 import regex as re
+from backend.config.regrex import *
+
 
 def diagnose(text, last_request, last_infor):
     tree_diagnose = {
@@ -52,7 +53,7 @@ def diagnose(text, last_request, last_infor):
             res_code = tree_diagnose[degree][agree]
         else:
             if degree==0:
-                choices = ['chưa á','rồi á']
+                choices = ['chưa','rồi']
                 res_code = 'request_symptom_correct_covid_test'
             else:
                 choices = last_infor['choices']
@@ -67,16 +68,16 @@ def diagnose(text, last_request, last_infor):
                 choices = ['dương tính','âm tính']
         else:
             if agree==None:
-                choices = ['chưa á','rồi á']
+                choices = ['chưa','rồi']
                 res_code = 'request_symptom_correct_close_f'
             else:
                 last_infor['diagnose']['been_covidarea'] = agree
                 res_code = tree_diagnose[degree]["close_f"][agree]
     else:
         if "test_type" in last_request:
-            if re.search(r't[e|é][s|t]*\s*nha[n|]h',text):
+            if re.search(r't[e|é][s|t]*\s*nha[n|]h',text.lower()):
                 last_infor['diagnose']['covid_test'] = 'test-nhanh'
-            elif re.search(r'pcr|rt.pcr',text):
+            elif re.search(r'pcr|rt.pcr|',text.lower()):
                 last_infor['diagnose']['covid_test'] = 'rt-pcr'
             else:
                 choices = ['test nhanh', 'rt-pcr']
@@ -133,7 +134,6 @@ def symptom_rep(text, sub_intent, last_req, last_infor):
                         last_infor['diagnose'][intensity_sym] = 1
 
             if last_infor['diagnose']["tree_degree"] == "":
-                
                 if last_infor['diagnose']['serious_symptom']:
                     if not serious_sym:
                         res_code = 'inform_symptoms_info'

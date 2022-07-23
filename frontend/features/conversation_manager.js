@@ -8,6 +8,7 @@ var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
 //http://apibackend-covid-chatbot.herokuapp.com/
+//https://backend-chatbotcovid.herokuapp.com/
 var url ='http://localhost:8000/api/send-message'
 var image_url = 'http://localhost:8000/api/send-image' ;
 var message_queue = {};
@@ -220,7 +221,7 @@ module.exports = function (controller) {
     debug("Welcome back");
     UserState[message.user] = await createUserState(message);
     UserState[message.user+'check_respones'] = true;
-    await bot.reply(message, "Xin chào, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?");
+    await bot.reply(message, "Xin chào, mình là Chatbot giúp cung cấp thông tin và giải đáp các vấn đề sức khỏe cho người dân trong đại dịch COVID-19. Bạn cần hỗ trợ gì vậy ạ?");
   };
 
   const onHelloClient = async (bot, message) => {
@@ -228,7 +229,7 @@ module.exports = function (controller) {
     UserState[message.user] = await createUserState(message);
     UserState[message.user+'check_respones'] = true;
 
-    await bot.reply(message, "Xin chào, mình là chatbot hỗ trợ giải đáp thắc mắc cho người dân thành phố Hồ Chí Minh đang phải cách ly tại nhà vì Covid-19. Bạn cần tư vấn về vấn đề gì vậy?");
+    await bot.reply(message, "Xin chào, mình là Chatbot giúp cung cấp thông tin và giải đáp các vấn đề sức khỏe cho người dân trong đại dịch COVID-19. Bạn cần hỗ trợ gì vậy ạ?");
   };
 
   const onHelloAdmin = async (bot, message) => {
@@ -243,7 +244,7 @@ module.exports = function (controller) {
         });
     }
     await bot.reply(message, {
-      text: "Hệ thống hiện có các khách hàng sau",
+      text: "",
       quick_replies: reply,
     });
   };

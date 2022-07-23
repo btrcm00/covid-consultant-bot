@@ -1,12 +1,10 @@
 import regex as re
 
-from backend.config.constant import DISTRICT
+from backend.config.constant import DISTRICT, DEFAULT_INFO
 from backend.process.DiaglogueManager.utils_message.diagnose_reply import symptom_rep
 from backend.process.DiaglogueManager.utils_message.emergency_contact_reply import emergency_contact_rep
 from backend.process.DiaglogueManager.utils_message.current_number_reply import current_numbers_rep
 from backend.process.DiaglogueManager.utils_message.common_infor_reply import common_infor_rep
-from backend.process.config import PretrainedModel
-models = PretrainedModel()
 
 
 def dialogue(message,last_intent, entity_dict, last_infor, intent):
@@ -17,52 +15,7 @@ def dialogue(message,last_intent, entity_dict, last_infor, intent):
 
 def update_slots(entity_dict, last_infor):
     if not last_infor:
-        last_infor = {
-                'infor':{
-                    'age' : '' ,
-                    'sex' : '' ,
-                    'address': '',
-                },
-                'symptom': {
-                    "sot": "",
-                    "met-moi": "",
-                    "ho": "",
-                    "kho-tho": "",
-                    "tuc-nguc": "",
-                    "mat-kha-nang": "",
-                    "dau-hong": "",
-                    "dau-nhuc": "",
-                    "tieu-chay": "",
-                    "mat-vi-giac": "",
-                    "tim-tai": "",
-                    "noi-man": "",
-                    "tho-met": "",
-                    "ho-ra-mau": "",
-                    "dau-dau": ""
-                },
-                'diagnose':{
-                    "tree_degree":"",
-                    "normal_symptom": "",
-                    "serious_symptom": "",
-                    "covid_test": "",
-                    "result_test": "",
-                    "been_covidarea": "",
-                    "close_f": ""
-                },
-                'history':{
-                'cothai':'',
-                'gan':'',
-                'diung':'',
-                'mantinh':'',
-                'datiemvaccine':'',
-                'vaccinedatiem':'',
-                'f':'',
-                'ruoubia':'',
-                'chongchidinh':'',
-                'state_vaccine':'',
-                'state_medication':''
-                }
-            }
+        last_infor = DEFAULT_INFO
     # Cập nhật các entity mới nhất vào slots của hội thoại
     for i in entity_dict:
         

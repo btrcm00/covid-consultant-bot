@@ -1,6 +1,8 @@
-from backend.config.constant import DISTRICT
 import regex as re
 from unidecode import unidecode
+
+from backend.config.constant import DISTRICT
+
 
 def emergency_contact_rep(text, last_infor):
     #----------------------------------------------#

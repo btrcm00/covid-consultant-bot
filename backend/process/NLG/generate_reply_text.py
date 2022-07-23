@@ -1,22 +1,15 @@
 import regex as re
+from backend.config.config import Config
+from backend.config.regrex import URL_REGEX
 
 
-def get_response(mycol_response):
-    cursor = mycol_response.find({})
-    res={}
-    for doc in cursor:
-        res[doc['question']] = doc['answer']
-    return res
+def generate_reply_text(result):
 
-
-def generate_reply_text(result, mydb):
-
-    mycol_response_knn = mydb["data_response_knn"]
-    mycol_response = mydb["data_response"]
+    mycol_response_knn = Config.mycol_response_knn #mydb["data_response_knn"]
 
     res_code = list(result.keys())[0]
     suggest_reply = ""
-    reply_text = get_response(mycol_response)
+    reply_text = Config.reply_text #get_response(mycol_response)
     
     
     for idx, res in enumerate(res_code.split('-')):
@@ -24,7 +17,13 @@ def generate_reply_text(result, mydb):
             suggest_reply += '*'
 
         if res.startswith('inform_first'):
-            suggest_reply += reply_text[res.split('/')[0]].format(res.split('/')[1])
+            suggest_reply_temp = reply_text.get(res.split('/')[0], "")
+            if not suggest_reply_temp:
+                suggest_reply_temp = reply_text["do_not_have_response"]
+            else:
+                suggest_reply_temp = suggest_reply_temp.format(res.split('/')[1])
+            
+            suggest_reply += suggest_reply_temp
 
         elif res.startswith('inform_current_numbers'):
             loc,infected,caseToday,died = res.split('+')[1:]
@@ -46,29 +45,33 @@ def generate_reply_text(result, mydb):
             
             document = mycol_response_knn.find_one({'question': result[res]['choices'][0]})
             if document:
-                print(document)
+                # print(22222222222222222222, document)
                 a = document['answer']
             else:
-                a = 'Chưa có dữ liệu cho câu hỏi này'
-                
+                a = reply_text["do_not_have_response"]
+            
+            # print(1111111111111111111111111111111,a)
             if isinstance(a,list):
                 suggest_reply += a[0]
                 result[res]['choices'] = a[1]
                 result['request_correct_text'] = result.pop(res)
             else:
-                suggest_reply+=a
+                suggest_reply += a
             if not suggest_reply:
-                suggest_reply += "Chưa có dữ liệu câu trả lời cho câu hỏi này"
+                suggest_reply += reply_text["do_not_have_response"]
 
         elif res == 'request_correct_text':
             suggest_reply += 'Dạ ý bạn có phải là:'
             
         else:
             suggest_reply += reply_text.get(res, 'Bạn muốn hỏi gì ạ?')
+            
     #convert link
     out_text = suggest_reply.split(" ")
     for idx, text in enumerate(out_text):
-        if "http" in text and (idx==0 or 'image' not in out_text[idx-1]):
-            suggest_reply = re.sub(text, "<a target=\"_blank\" href=\"{}\">{}</a>".format(text,text), suggest_reply)
+        if re.search(URL_REGEX, text) and (idx==0 or 'image' not in out_text[idx-1]):
+            # print(666666666666666666666, text, text in suggest_reply)
+            suggest_reply = suggest_reply.replace(text, "<a target=\"_blank\" href=\"{}\">{}</a>".format(text,text))
+            # print(55555555555555,suggest_reply, suggest_reply.replace(text, "<a target=\"_blank\" href=\"{}\">{}</a>".format(text,text)))
     
     return suggest_reply, result

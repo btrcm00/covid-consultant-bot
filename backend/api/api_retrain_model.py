@@ -1,19 +1,14 @@
 import pickle
+import numpy as np
+
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.svm import SVC
-import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 
-from backend.config.config import get_config
-config_app = get_config()
-from backend.process.config import PretrainedModel
-models = PretrainedModel(config_app['models_chatbot'])
-mydb = models.myclient["chatbot_data"]
-mycol = mydb["data_intent"]
+from backend.config.config import Config
 
-mycol_knn = mydb["data_response_knn"]
 
 def re_train_knn(Xknn, yknn):
     # try:
@@ -25,7 +20,7 @@ def re_train_knn(Xknn, yknn):
     
     print("train score knn",knn_model.score(Xtrain_knn, yknn))
     
-    pickle.dump([Xknn,knn_model,knn_tfidf],open('./models/knn_new.pickle','wb'))
+    pickle.dump([Xknn,knn_model,knn_tfidf],open('./models/knn_new_22_7.pickle','wb'))
     print('done')
     return True
     # except:
@@ -62,7 +57,7 @@ def re_train_model():
     Xsvm=[]
     ysvm=[]    
     count=0
-    cursor = mycol.find({})
+    cursor = Config.intent_db.find({})
     for doc in cursor:
         if doc['intent'].lower()!='request' or type(doc['text']) != str:
             continue
@@ -74,7 +69,7 @@ def re_train_model():
     print('Retrain svm done!')
     
     
-    cursor_knn = mycol_knn.find({})
+    cursor_knn = Config.mycol_response_knn.find({})
     for doc in cursor_knn:
         
         if 'question' not in doc:

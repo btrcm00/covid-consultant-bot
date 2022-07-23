@@ -1,12 +1,10 @@
 import re
-from backend.process.config import PretrainedModel
 import numpy as np
 from numpy.linalg import norm
-from backend.utils.spell_corrector import correct_sent
-global dictionary
-dictionary = {}
 
-models = PretrainedModel()
+from backend.utils.spell_corrector import correct_sent
+
+# models = PretrainedModel()
 def split(delimiters, string, maxsplit=0):
     regexPattern = '|'.join(map(re.escape, delimiters))
     return re.split(regexPattern, string, maxsplit)

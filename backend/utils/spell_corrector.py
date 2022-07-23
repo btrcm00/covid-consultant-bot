@@ -1,11 +1,11 @@
 import json
 import re
 import unicodedata
-from backend.process.config import PretrainedModel
 import unidecode
-from backend.config.constant import MAP_TO_DISTRICT_HCM
 
-models = PretrainedModel()
+from backend.config.constant import MAP_TO_DISTRICT_HCM
+from backend.config.config import Config
+
 def preprocess(sent):
     sent = sent.lower()
     sent = unicodedata.normalize("NFC", sent)
@@ -26,7 +26,7 @@ def processing_after(sent):
 
 def in_dictionary(word):
     try:
-        return models.dictionary[word] != 0
+        return Config.dictionary[word] != 0
     except:
         return False
 
@@ -62,7 +62,7 @@ def correct_sent(sent):
 
 def fix_telex_word(word):
     try:
-        if models.eng_dic[word] == 1: return word
+        if Config.eng_dic[word] == 1: return word
     except:
         ## define accent_to_telex and additional_keystrokes
         chars = ['ơ', 'ô', 'ê', 'e', 'ă', 'â', 'ư', 'a', 'o', 'i', 'u', 'y']
@@ -133,11 +133,11 @@ def fix_telex_word(word):
         for key, value in accent_telex_errors.items():
             word = re.sub(key, value, word)
 
-        for key, value in models.complex_telex.items():
+        for key, value in Config.complex_telex.items():
             word = re.sub(key, value, word)
         return word
 
-def replace_one_one(word, dictionary = models.short_word_dic):
+def replace_one_one(word, dictionary = None):
     '''
     replace teencode with correct one by using dictionary
     Input:
@@ -146,9 +146,12 @@ def replace_one_one(word, dictionary = models.short_word_dic):
     return:
         new_word    :str - correct word
     '''
+    if dictionary == None:
+        dictionary = Config.short_word_dic
+        
     new_word = dictionary.get(word, word)
     if new_word == word:
-        uni_word = replace_with_regex(word, models.teencode_re_dic, dictionary)
+        uni_word = replace_with_regex(word, Config.teencode_re_dic, dictionary)
         new_word = dictionary.get(uni_word, word)
     return new_word
 
@@ -170,9 +173,9 @@ def replace_with_regex(word, regex_list, dic_one_one, check=0):
             break
     if dic_one_one.get(new_word, new_word) != new_word:
         return dic_one_one.get(new_word, new_word)
-    if check == 2 or unidecode.unidecode(new_word) in models.single_word_dic:
+    if check == 2 or unidecode.unidecode(new_word) in Config.single_word_dic:
         return new_word
-    new_word = replace_with_regex(new_word, models.teencode_re_dic, models.short_word_dic, check + 1)
+    new_word = replace_with_regex(new_word, Config.teencode_re_dic, Config.short_word_dic, check + 1)
     return new_word
 
 def unique_charaters(sent):
@@ -189,13 +192,13 @@ def unique_charaters(sent):
 def correct_teencode_word(word):
     word = preprocess(word)
     try:
-        if models.eng_dic[word] == 1: return word
+        if Config.eng_dic[word] == 1: return word
     except:
         new_word = word
-        new_word = correct_vowel(new_word, models.vowel_dic)
-        new_word = replace_one_one(new_word, models.short_word_dic)
+        new_word = correct_vowel(new_word, Config.vowel_dic)
+        new_word = replace_one_one(new_word, Config.short_word_dic)
         if word == new_word:
-            new_word = replace_with_regex(new_word, models.teencode_re_dic, models.short_word_dic)
+            new_word = replace_with_regex(new_word, Config.teencode_re_dic, Config.short_word_dic)
         return new_word
 def correct_vowel(word, vowel_dictionary):
     '''

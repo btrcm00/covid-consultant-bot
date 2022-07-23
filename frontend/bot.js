@@ -41,7 +41,7 @@ if (process.env.CMS_URI) {
         uri: process.env.CMS_URI,
         token: process.env.CMS_TOKEN,
     }));
-}
+}	
 controller.ready(() => {
 
 	// load traditional developer-created local custom feature modules

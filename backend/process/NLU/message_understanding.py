@@ -1,12 +1,11 @@
-from backend.utils.utils import preprocess_message
-from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
-from backend.config.constant import DISTRICT
-from backend.process.config import PretrainedModel
-
 from unidecode import unidecode
 import regex as re
 
-models = PretrainedModel()
+from backend.utils.utils import preprocess_message
+from backend.config.regrex import sex_reg, age_reg, check_has_symp, symptom_list, num_req, covid_infor_reg, w_ques
+from backend.config.constant import DISTRICT
+from backend.config.config import Config
+
 
 def extract_information_message(message):
     print('RAW MESSAGE====', message)
@@ -55,9 +54,9 @@ def extract_entity_message(message):
 
 def extract_intent_message(message, entity_dict):
     print("\t\t+++++++++ INTENT message +++++++++")
-    intent = models.model_intent.predict(models.tfidf_intent.transform([message]))[0].lower()
+    intent = Config.model_intent.predict(Config.tfidf_intent.transform([message]))[0].lower()
     #intent sử dụng cho Request
-    sub_intent = models.model_svm.predict(models.tfidf_svm.transform([message]))[0].lower()
+    sub_intent = Config.model_svm.predict(Config.tfidf_svm.transform([message]))[0].lower()
     print('Intent:',intent,'- Request intent:',sub_intent)
     
     print("\t\t+++++++++ Extract intent +++++++++")

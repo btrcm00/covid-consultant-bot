@@ -1,7 +1,8 @@
-import sys, datetime
+import sys
+import datetime
 import traceback
-from backend.config.config import get_config
-config_app = get_config()
+from backend.config.config import Config
+
 def error_handler(e):
     exc_type, exc_obj, exc_tb = sys.exc_info()
 
@@ -11,6 +12,6 @@ def error_handler(e):
     error = str(e).replace(r"_", "-")
     error_type = str(exc_type).split("\'")[1] + ': ' + error
     # print(time)
-    with open(config_app['log']['app'], 'a') as app_log:
+    with open(Config.logging, 'a') as app_log:
         app_log.write(log)
     return error_type

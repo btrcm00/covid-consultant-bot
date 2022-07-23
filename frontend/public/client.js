@@ -377,14 +377,14 @@ var Botkit = {
         if (!that.next_line) {
             that.next_line = that.createNextLine();
         }
-        console.log(options)
+        // console.log(options)
         res = document.createElement("div");
         options.forEach((v, i) => {
             wrapper = document.createElement("div");
             wrapper.style.display = 'inline'
             wrapper.style.margin = '10px'
             button = document.createElement("button");
-            button.className = "btn btn-secondary btn-px";
+            button.className = "chatbot-btn btn-chatbot btn-px";
             text = document.createTextNode(v.value);
             button.appendChild(text);
             wrapper.appendChild(button);
@@ -401,7 +401,7 @@ var Botkit = {
             e.childNodes[0].addEventListener("click", () => {
                 that.tthc_id = options[i].key;
                 if (count == 0){
-                    console.log(count)
+                    // console.log(count)
                     that.renderMessage({
                         type: "outgoing",
                         text:options[i].value

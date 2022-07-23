@@ -1,3 +1,9 @@
+backend/config/regrex
+backend/config/constant
+
+*.csv
+*.zip
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

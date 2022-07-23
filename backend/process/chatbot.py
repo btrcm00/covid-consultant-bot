@@ -1,18 +1,14 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-os.environ['NO_PROXY'] = '127.0.0.1'
-
 from datetime import datetime
-import sys
-sys.path.append("..")
 
 from backend.process.NLU.message_understanding import extract_information_message
 from backend.process.DiaglogueManager.dialogue import dialogue
 from backend.process.NLG.generate_reply_text import generate_reply_text
 from backend.utils.error_handler import error_handler
-from backend.process.config import PretrainedModel
+from backend.config.config import Config
 
-models = PretrainedModel()
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+os.environ['NO_PROXY'] = '127.0.0.1'
 
 
 class CovidBot():
@@ -53,7 +49,7 @@ class CovidBot():
             print("\t\tReturn code->",[i for i in result])
 
             print("\t\t-------Natural Language Generation (NLG)--------")
-            suggest_reply,result = generate_reply_text(result, models.myclient["chatbot_data"])
+            suggest_reply,result = generate_reply_text(result)
             suggest_reply = suggest_reply[0].upper() + suggest_reply[1:]
 
 
@@ -86,7 +82,7 @@ class CovidBot():
         except Exception as e:
             print("IndexError")
             error_type = error_handler(e)
-            return {'suggest_reply': "Hệ thống đang gặp vấn đề, bạn vui lòng load lại trang hoặc chờ giây lát", 'id_job': 1,  'rep_intent': ['BIG ERROR']}
+            return {'suggest_reply': Config.reply_text["error"], 'id_job': 1,  'rep_intent': ['BIG ERROR']}
         return returned_res
     
     def __insert_mongo(self, input_data, intent, result, suggest_reply, time_start):
@@ -100,8 +96,7 @@ class CovidBot():
             'date':time_start
         }
         try:
-            mydb = models.myclient["chatbot_data"]
-            mycol = mydb["chatbot_conversations"]
+            mycol = Config.database["chatbot_conversations"]
             tmp = mycol.insert_one(col)
         except:
             return False
@@ -109,8 +104,7 @@ class CovidBot():
 
 
     def check_exist_question(text):
-        mydb = models.myclient["chatbot_data"]
-        mycol = mydb["data_response_knn"]
+        mycol = Config.database["data_response_knn"]
         document = mycol.find_one({'question': text})
 
         if document:
@@ -121,8 +115,7 @@ class CovidBot():
     def __check_mongo(self, input_data):
         conversation_history = []
 
-        mydb = models.myclient["chatbot_data"]
-        mycol = mydb["chatbot_conversations"]
+        mycol = Config.database["chatbot_conversations"]
         
         for ele in mycol.find({'SenderId': input_data['sender_id']}):
             conversation_history.append(ele['last_conversation'])

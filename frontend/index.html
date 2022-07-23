@@ -1,0 +1,201 @@
+<html>
+
+<head>
+  <title>Covid Chatbot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="apple-touch-icon" href="public/icon/logo.png">
+  <link rel="icon" type="image/png"  href="public/icon/logo.png">
+  <link rel="manifest" href="public/icon/site.webmanifest">
+  <link rel="mask-icon" href="public/icon/safari-pinned-tab.svg" color="#4a4a4a">
+  <meta name="msapplication-TileColor" content="#4a4a4a">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.0/tiny-slider.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/styles.css" />
+  <meta http-equiv="Content-Security-Policy" >
+</head>
+<body>
+<a href="#" class="float">
+    <button id="myBtn" class="myBtn"><img src="https://img.freepik.com/free-vector/cute-robot-cartoon-vector-icon-illustration-techology-robot-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-1474.jpg" style="  background-color:transparent;
+      height:70px;
+      border-radius: 50%;
+      width:70px;" ></button>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+                <div id="message_window" >
+      
+                  <div class="header main-elements">
+                    <div>
+                      <img src="public/icon/logo.png" class="avt">
+                    </div>
+                    <div id="user-id" class="name"><span style="width: 2vw">Covid Chatbot</span></div>
+      
+                     <span class="close">&times;</span>
+                  </div>
+                  <div class="disconnected main-elements" id="disconnected">
+                    Mất kết nối! Đang kết nối lại ...!
+                  </div>
+                  <div class="offline main-elements">
+                    Ngoại tuyến! Tải lại để kết nối lại...
+                  </div>
+                  <section class="message-wrapper">
+                    <div id="logo-wrapper">
+                      <img src="public/icon/logo.png" id="background-logo">
+      
+                    </div>
+                    <div class="main-elements" id="message_list">
+                      <div id="message_template">
+      
+                        <div class="message {{message.type}}">
+                          {{#if message.isTyping}}
+                          <div class="wrapper-typing-indicator">
+                          <div class="typing-indicator-custom"><div class="iball"></div><div class="iball"></div><div class="iball"></div><div class="iball"></div></div>
+                          </div>
+                          {{/if}}
+                          {{{message.html}}}
+                        </div>
+                      </div>
+      
+                      <div id="message_rating_template">
+                        <div class="rating-mask" id="rating-mask-{{{message.ratingId}}}">
+                          <svg style="display: none;">
+                            <symbol id="star" viewBox="0 0 98 92">
+                              <title>star</title>
+                              <path stroke='#fff' stroke-width='0'
+                                d='M49 73.5L22.55 87.406l5.05-29.453-21.398-20.86 29.573-4.296L49 6l13.225 26.797 29.573 4.297-21.4 20.86 5.052 29.452z'
+                                fill-rule='evenodd' />
+                          </svg>
+                        </div>
+                      </div>
+      
+                    </div>
+      
+                    <div class="main-elements" id="message_slider_template">
+                      <div class="carousel-mask" id="mask-{{{message.resultSliderId}}}">
+                        <div class="carousel-items" id="wrapper-{{{message.resultSliderId}}}">
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="main-elements" id="message_list_template">
+                      <div class="list-mask" id="list-mask-{{{message.attrListId}}}">
+                      </div>
+                    </div>
+      
+                    <div class="main-elements" id="message_intent_template">
+                      <div class="list-mask" id="intent-mask-{{{message.intentListId}}}">
+                      </div>
+                    </div>
+                  </section>
+                  <div id="message_replies">
+                  </div>
+                  <footer class="main-elements">
+                    <div class="tool-bar">
+      
+                      <form id="form_mesg" onsubmit="Botkit.send(Botkit.input.value, event)">
+                      <input type="text" autocomplete="off" id="messenger_input" placeholder="Nhập tin nhắn ..."
+                        onkeyup="stoppedTyping()" />
+                      </form>
+                      <button class="tool-bar-btn" type="submit" onclick="Botkit.send(Botkit.input.value, event);stoppedTyping()" id="send_btn">
+                        <div class="send">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            viewBox="0 0 23 23" xml:space="preserve" class="active svg-toolbar-icon" style="fill:var(--primary-color-disabled)"
+                            id="fill_btn">
+                            <path
+                              d="M22,11.7V12h-0.1c-0.1,1-17.7,9.5-18.8,9.1c-1.1-0.4,2.4-6.7,3-7.5C6.8,12.9,17.1,12,17.1,12H17c0,0,0-0.2,0-0.2c0,0,0,0,0,0c0-0.4-10.2-1-10.8-1.7c-0.6-0.7-4-7.1-3-7.5C4.3,2.1,22,10.5,22,11.7z">
+                            </path>
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    
+                  </footer>
+                </div>
+      </div>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          if (modal.style.display === "block")
+            modal.style.display = "none";
+          else modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.0/min/tiny-slider.js"></script>
+
+<script type="text/javascript">
+$("#messenger_input").focus();
+function stoppedTyping() {
+  if (document.getElementById("messenger_input").value === "") {
+    $('#send_btn').attr("disabled", true);
+    $('#fill_btn').attr('style', "fill:var(--primary-color-disabled)");
+  } else {
+    $('#send_btn').attr("disabled", false);
+    $('#fill_btn').attr('style', "fill: var(--primary-color)");
+  }
+}
+</script>
+<script src="public/icon/leader-line.min.js"></script>
+<script type="text/javascript"> 
+// setTimeout(() => { $("#n1").hide() }, 6400)
+
+
+$(document).ready(function(){
+    $("#title-project").fadeIn(1000);
+    $("#title-name").slideDown(1000);
+  });
+</script>
+<!-- <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popmotion/9.0.0-beta-8/popmotion.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script  type="text/javascript">
+
+</script>
+<script src="public/icon/typing_indicator.js"></script>
+<script src="public/client.js"></script>
+<script src="bot.js"></script>
+<script>
+window.toggle = function(index) {  
+  var nameId = 'showhide'+index.toString();
+  console.log(nameId);
+  var myDiv = document.getElementById('showhide'+index.toString());
+  if (myDiv.style.display == 'block') { 
+    myDiv.style.display = 'none';
+  } else {  
+    myDiv.style.display = 'block';
+  }
+}  
+</script>
+</a>
+</body>
+
+</html>

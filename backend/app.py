@@ -1,14 +1,3 @@
-from fastapi import FastAPI, Request, File, UploadFile, Form
-from fastapi.responses import FileResponse
-from fastapi.encoders import jsonable_encoder
-from fastapi.templating import Jinja2Templates
-
-from backend.api.api_insert_update_data import insert_data
-from backend.config.config import get_config
-from backend.process.config import PretrainedModel
-from backend.api.api_retrain_model import re_train_model
-from backend.api.api_message import send_message
-
 import pandas as pd
 import uvicorn
 import logging
@@ -16,13 +5,20 @@ import os
 import csv
 from typing import List
 
+from fastapi import FastAPI, Request, File, UploadFile, Form
+from fastapi.responses import FileResponse
+from fastapi.encoders import jsonable_encoder
+from fastapi.templating import Jinja2Templates
+
+from backend.api.api_insert_update_data import insert_data
+from backend.api.api_retrain_model import re_train_model
+from backend.api.api_message import send_message
+from backend.config.config import Config
+
 app = FastAPI()
-config_app = get_config()
-models = PretrainedModel(config_app['models_chatbot'])
 templates =  Jinja2Templates(directory = 'templates')
 
-
-logging.basicConfig(filename=config_app['log']['app'],
+logging.basicConfig(filename=Config.logging,
                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 
@@ -50,9 +46,7 @@ async def api_send_image(request: Request):
 
 @app.get('/')
 def home():
-    mydb = models.myclient["chatbot_data"]
-    mycol = mydb["chatbot_conversations"]
-    return "Covid-chatbot " + str(mycol.count_documents({}))
+    return "Covid-chatbot " + str(Config.database["chatbot_conversations"].count_documents({}))
 
 
 # @app.get('/api/update_database_knn')
@@ -66,9 +60,9 @@ def home():
 
 @app.get('/api/export_new_data')
 def export_data():
-    mydb = models.myclient["chatbot_data"]
-    mycol = mydb["chatbot_conversations"]
-    cursor = mycol.find({})
+    # mydb = models.myclient["chatbot_data"]
+    # mycol = mydb["chatbot_conversations"]
+    cursor = Config.database["chatbot_conversations"].find({})
     data = []
     for doc in cursor:
         if 'intent' in doc:
@@ -102,24 +96,24 @@ def retrain():
 async def submit_insert(password: str = Form(...), files: List[UploadFile] = File(...)):
     
     data = []
-    if password != models.chatbot_api.password["insert_data"]:
+    if password != Config.chatbot_password:
         return 'SAI MAT KHAU'
     for file in files:
         data = await file.read()
         if not data:
             return 'Vui lòng chọn file data'
-        # try:
-        data = pd.read_excel(data)
-        data_insert = {
-            'text': [ele if pd.notna(ele) else 'None' for ele in data['text'].values],
-            'intent': [ele if pd.notna(ele) else 'None' for ele in data['intent'].values],
-            'sub_intent': [ele if pd.notna(ele) else 'None' for ele in data['sub_intent'].values],
-            'response': [ele if pd.notna(ele) else 'None' for ele in data['response']]
-        }
-        
-        insert_data(data_insert)
-        # except:
-        #     return "Vui lòng insert data theo đúng format"
+        try:
+            data = pd.read_excel(data)
+            data_insert = {
+                'text': [ele if pd.notna(ele) else 'None' for ele in data['text'].values],
+                'intent': [ele if pd.notna(ele) else 'None' for ele in data['intent'].values],
+                'sub_intent': [ele if pd.notna(ele) else 'None' for ele in data['sub_intent'].values],
+                'response': [ele if pd.notna(ele) else 'None' for ele in data['response']]
+            }
+            
+            insert_data(data_insert)
+        except:
+            return "Vui lòng insert data theo đúng format"
 
     return "Đã insert thành công " +  " và ".join([file.filename for file in files])
 
@@ -128,20 +122,5 @@ async def submit_insert(password: str = Form(...), files: List[UploadFile] = Fil
 def insert(request: Request):
     return templates.TemplateResponse("insert.html", {"request": request})
 
-# @app.post("/data/update")
-# async def submit_update(password: str = Form(...), files: List[UploadFile] = File(...)):
-#     import pandas as pd
-#     data = []
-#     if password != 'congminh':
-#         return 'SAI MAT KHAU'
-#     for file in files:
-#         data = await file.read()
-#         data = pd.read_excel(data)
 
-#     return "Đã update thành công " +  " và ".join([file.filename for file in files])
-
-# @app.get('/api/update_data')
-# def update_data(request: Request):
-#     return templates.TemplateResponse("update.html", {"request": request})
-
-uvicorn.run(app, host=config_app['server']['ip_address'], port=int(config_app['server']['port']))
+# uvicorn.run(app, host=Config.config_app['server']['ip_address'], port=int(Config.config_app['server']['port']))
