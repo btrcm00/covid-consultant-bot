@@ -1,0 +1,4 @@
+[core]
+    remote = starage
+['remote "starage"']
+    url = gdrive://1S10aYnYCCBE72--gxMM8s_gFBwmWIyja
