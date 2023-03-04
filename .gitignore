@@ -1,6 +1,7 @@
 backend/config/regrex.py
 backend/config/constant.py
-
+models/*
+*/data/*
 *.yml
 *.csv
 *.zip
