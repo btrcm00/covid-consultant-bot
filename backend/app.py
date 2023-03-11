@@ -123,4 +123,4 @@ def insert(request: Request):
     return templates.TemplateResponse("insert.html", {"request": request})
 
 
-uvicorn.run(app, host=Config.config_app['server']['ip_address'], port=int(Config.config_app['server']['port']))
+uvicorn.run(app, host=Config.service_host, port=int(Config.service_port))

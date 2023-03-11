@@ -7,10 +7,8 @@ const limits = new Map();
 var UserState = {};
 var AdminState = {};
 const pLimit = require('p-limit');
-//http://apibackend-covid-chatbot.herokuapp.com/
-//https://backend-chatbotcovid.herokuapp.com/
-var url ='http://localhost:8000/api/send-message'
-var image_url = 'http://localhost:8000/api/send-image' ;
+var url = `http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/api/send-message`;
+var image_url = `http://${process.env.BACKEND_HOST}:${process.env.BACKEND_PORT}/api/send-image`;
 var message_queue = {};
 var id_job_js = {};
 var image_queue = {};
